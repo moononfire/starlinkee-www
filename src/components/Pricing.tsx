@@ -1,0 +1,91 @@
+import type { Locale, Translations } from "@/i18n";
+
+export default function Pricing({
+  t,
+  locale,
+}: {
+  t: Translations;
+  locale: Locale;
+}) {
+  const features = [
+    t.pricing.feature1,
+    t.pricing.feature2,
+    t.pricing.feature3,
+    t.pricing.feature4,
+    t.pricing.feature5,
+    t.pricing.feature6,
+    t.pricing.feature7,
+  ];
+
+  return (
+    <section id="pricing" className="py-20 px-4 sm:px-6">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            {t.pricing.sectionTitle}
+          </h2>
+          <p className="text-lg text-gray-500">{t.pricing.sectionSubtitle}</p>
+        </div>
+
+        <div className="bg-white rounded-3xl border-2 border-brand-600 p-8 sm:p-10 shadow-xl shadow-brand-600/10">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              {t.pricing.planName}
+            </h3>
+            <div className="flex items-baseline justify-center gap-1">
+              <span className="text-5xl sm:text-6xl font-bold text-gray-900">
+                {t.pricing.price}
+              </span>
+              <span className="text-2xl font-medium text-gray-500">
+                {t.pricing.currency}
+              </span>
+              <span className="text-lg text-gray-400 ml-1">
+                {t.pricing.period}
+              </span>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-100 pt-8 mb-8">
+            <p className="text-sm font-medium text-gray-900 mb-4 uppercase tracking-wide">
+              {t.pricing.includes}
+            </p>
+            <ul className="space-y-3">
+              {features.map((f) => (
+                <li key={f} className="flex items-center gap-3">
+                  <svg
+                    className="w-5 h-5 text-brand-600 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-gray-700">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <a
+            href={`/order?lang=${locale}`}
+            className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
+          >
+            {t.pricing.cta}
+          </a>
+
+          <div className="mt-6 text-center space-y-1">
+            <p className="text-sm text-gray-400">{t.pricing.extra}</p>
+            <p className="text-sm text-brand-600 font-medium">
+              {t.pricing.plates}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
