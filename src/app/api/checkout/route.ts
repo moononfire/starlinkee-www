@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       line_items: lineItems,
-      payment_method_types: ["card", "p24"],
+      payment_method_types: ["card"],
       billing_address_collection: "required",
       shipping_address_collection: {
         allowed_countries: ["PL", "DE", "AT", "CZ", "SK", "GB", "US", "NL", "FR", "ES", "IT"],
