@@ -20,21 +20,21 @@ const translations = {
       ctaSecondary: "Zamów bezpłatną prezentację",
     },
     features: {
-      sectionTitle: "Wszystko, czego potrzebujesz",
+      sectionTitle: "Kompleksowe narzędzie do reputacji online",
       sectionSubtitle:
-        "Jedno rozwiązanie zamiast kilku narzędzi. Płacisz jeden abonament — dostajesz cały system.",
-      reviewTitle: "Filtrowanie opinii",
+        "Jedna tabliczka NFC — i masz pełną kontrolę nad opinią w Google, bazą kontaktów i lojalnością klientów. Bez aplikacji, bez skomplikowanej konfiguracji.",
+      reviewTitle: "Ochrona profilu Google",
       reviewDesc:
-        "Klient skanuje tabliczkę NFC i ocenia wizytę. Pozytywne opinie trafiają prosto na Google — negatywne zostajesz tylko Ty, z szansą na naprawę sytuacji.",
-      promoTitle: "Kupony & promocje SMS",
+        "Klient skanuje tabliczkę NFC i ocenia wizytę. Zadowolony? Jego opinia trafia prosto na Twój profil Google. Niezadowolony? Feedback zostaje u Ciebie — reagujesz zanim negatyw trafi do sieci.",
+      promoTitle: "Zbieraj zgody i dane kontaktowe",
       promoDesc:
-        "Automatycznie wysyłaj kupony rabatowe przez SMS po skanowaniu. Klient wraca po zniżkę — Ty zyskujesz ponowną wizytę i dane kontaktowe.",
-      loyaltyTitle: "Karta lojalnościowa",
+        "Przy każdym skanowaniu możesz pozyskać numer telefonu i zgodę na kontakt marketingowy. Wysyłaj kupony SMS, informuj o promocjach — buduj bazę klientów, do których wrócisz z ofertą.",
+      loyaltyTitle: "Karta lojalnościowa bez aplikacji",
       loyaltyDesc:
-        "Cyfrowa karta stałego klienta bez aplikacji. Klient skanuje tabliczkę przy każdej wizycie — po X wizytach dostaje nagrodę.",
-      dashboardTitle: "Panel administracyjny",
+        "Cyfrowa karta stałego klienta, która działa przez sam skan NFC. Klient zbiera wizyty, a po osiągnięciu progu — dostaje nagrodę. Budujesz nawyk powracania bez żadnych dodatkowych aplikacji.",
+      dashboardTitle: "Wszystko w jednym panelu",
       dashboardDesc:
-        "Śledź opinie, skany, kupony i lojalność w jednym miejscu. Zarządzaj wieloma lokalizacjami z jednego konta.",
+        "Opinie, skany, kupony, lojalność, dane kontaktowe — wszystko w jednym miejscu. Zarządzaj wieloma lokalizacjami z jednego konta i miej pełen obraz swojego marketingu lokalnego.",
     },
     pricing: {
       sectionTitle: "Prosty cennik",
@@ -95,21 +95,21 @@ const translations = {
       ctaSecondary: "Book a free demo",
     },
     features: {
-      sectionTitle: "Everything you need",
+      sectionTitle: "Complete online reputation management",
       sectionSubtitle:
-        "One solution instead of multiple tools. One subscription — the full system.",
-      reviewTitle: "Review filtering",
+        "One NFC plate — full control over your Google reviews, contact database, and customer loyalty. No app needed, no complex setup.",
+      reviewTitle: "Google profile protection",
       reviewDesc:
-        "Customer scans the NFC plate and rates their visit. Positive reviews go straight to Google — negative ones stay private, giving you a chance to make it right.",
-      promoTitle: "SMS coupons & promos",
+        "Customer scans the NFC plate and rates their visit. Happy? Their review goes straight to your Google profile. Unhappy? The feedback stays with you — react before a negative review hits the web.",
+      promoTitle: "Collect consent & contact data",
       promoDesc:
-        "Automatically send discount coupons via SMS after scanning. Customer comes back for the deal — you get a repeat visit and their contact info.",
-      loyaltyTitle: "Loyalty card",
+        "With every scan you can capture a phone number and marketing consent. Send SMS coupons, announce promotions — build a customer base you can reach again with offers.",
+      loyaltyTitle: "Loyalty card without an app",
       loyaltyDesc:
-        "Digital loyalty card with no app install. Customer scans the plate on each visit — after X visits they get a reward.",
-      dashboardTitle: "Admin dashboard",
+        "A digital loyalty card that works with a simple NFC scan. Customers collect visits and earn a reward after reaching the threshold — no extra apps required.",
+      dashboardTitle: "Everything in one dashboard",
       dashboardDesc:
-        "Track reviews, scans, coupons, and loyalty in one place. Manage multiple locations from a single account.",
+        "Reviews, scans, coupons, loyalty, contact data — all in one place. Manage multiple locations from a single account and get a full picture of your local marketing.",
     },
     pricing: {
       sectionTitle: "Simple pricing",
@@ -170,21 +170,21 @@ const translations = {
       ctaSecondary: "Kostenlose Demo buchen",
     },
     features: {
-      sectionTitle: "Alles, was Sie brauchen",
+      sectionTitle: "Komplettes Online-Reputationsmanagement",
       sectionSubtitle:
-        "Eine Lösung statt mehrerer Tools. Ein Abo — das komplette System.",
-      reviewTitle: "Bewertungsfilter",
+        "Ein NFC-Aufsteller — volle Kontrolle über Ihre Google-Bewertungen, Kontaktdatenbank und Kundenbindung. Keine App nötig, kein kompliziertes Setup.",
+      reviewTitle: "Google-Profil-Schutz",
       reviewDesc:
-        "Der Gast scannt den NFC-Aufsteller und bewertet seinen Besuch. Positive Bewertungen gehen direkt zu Google — negative bleiben privat und geben Ihnen die Chance, die Situation zu klären.",
-      promoTitle: "SMS-Gutscheine & Aktionen",
+        "Der Gast scannt den NFC-Aufsteller und bewertet seinen Besuch. Zufrieden? Die Bewertung geht direkt auf Ihr Google-Profil. Unzufrieden? Das Feedback bleibt bei Ihnen — reagieren Sie, bevor eine negative Bewertung online geht.",
+      promoTitle: "Einwilligungen & Kontaktdaten sammeln",
       promoDesc:
-        "Senden Sie nach dem Scannen automatisch Rabattgutscheine per SMS. Der Gast kommt für den Rabatt zurück — Sie gewinnen einen erneuten Besuch und Kontaktdaten.",
-      loyaltyTitle: "Treuekarte",
+        "Bei jedem Scan können Sie eine Telefonnummer und Marketingeinwilligung erfassen. Senden Sie SMS-Gutscheine, informieren Sie über Aktionen — bauen Sie eine Kundenbasis auf, die Sie erneut erreichen können.",
+      loyaltyTitle: "Treuekarte ohne App",
       loyaltyDesc:
-        "Digitale Treuekarte ohne App. Der Gast scannt bei jedem Besuch den Aufsteller — nach X Besuchen erhält er eine Belohnung.",
-      dashboardTitle: "Admin-Dashboard",
+        "Eine digitale Treuekarte, die per NFC-Scan funktioniert. Gäste sammeln Besuche und erhalten nach Erreichen der Schwelle eine Belohnung — keine zusätzlichen Apps nötig.",
+      dashboardTitle: "Alles in einem Dashboard",
       dashboardDesc:
-        "Verfolgen Sie Bewertungen, Scans, Gutscheine und Treue an einem Ort. Verwalten Sie mehrere Standorte von einem Konto aus.",
+        "Bewertungen, Scans, Gutscheine, Treue, Kontaktdaten — alles an einem Ort. Verwalten Sie mehrere Standorte von einem Konto aus und behalten Sie Ihr lokales Marketing im Blick.",
     },
     pricing: {
       sectionTitle: "Einfache Preise",
@@ -245,21 +245,21 @@ const translations = {
       ctaSecondary: "Prenota una demo gratuita",
     },
     features: {
-      sectionTitle: "Tutto ciò di cui hai bisogno",
+      sectionTitle: "Gestione completa della reputazione online",
       sectionSubtitle:
-        "Una soluzione al posto di più strumenti. Un abbonamento — il sistema completo.",
-      reviewTitle: "Filtro recensioni",
+        "Una targa NFC — controllo totale sulle recensioni Google, database contatti e fidelizzazione clienti. Nessuna app necessaria, nessuna configurazione complicata.",
+      reviewTitle: "Protezione del profilo Google",
       reviewDesc:
-        "Il cliente scansiona la targa NFC e valuta la visita. Le recensioni positive vanno direttamente su Google — quelle negative restano private, dandoti la possibilità di rimediare.",
-      promoTitle: "Coupon e promozioni SMS",
+        "Il cliente scansiona la targa NFC e valuta la visita. Soddisfatto? La recensione va direttamente sul tuo profilo Google. Insoddisfatto? Il feedback resta a te — reagisci prima che una recensione negativa finisca online.",
+      promoTitle: "Raccogli consensi e dati di contatto",
       promoDesc:
-        "Invia automaticamente coupon sconto via SMS dopo la scansione. Il cliente torna per lo sconto — tu ottieni una nuova visita e i dati di contatto.",
-      loyaltyTitle: "Carta fedeltà",
+        "Ad ogni scansione puoi raccogliere un numero di telefono e il consenso marketing. Invia coupon SMS, comunica promozioni — costruisci una base clienti da ricontattare con le tue offerte.",
+      loyaltyTitle: "Carta fedeltà senza app",
       loyaltyDesc:
-        "Carta fedeltà digitale senza app. Il cliente scansiona la targa ad ogni visita — dopo X visite riceve un premio.",
-      dashboardTitle: "Pannello di controllo",
+        "Una carta fedeltà digitale che funziona con un semplice scan NFC. I clienti accumulano visite e ricevono un premio al raggiungimento della soglia — nessuna app aggiuntiva necessaria.",
+      dashboardTitle: "Tutto in un unico pannello",
       dashboardDesc:
-        "Monitora recensioni, scansioni, coupon e fedeltà in un unico posto. Gestisci più sedi da un solo account.",
+        "Recensioni, scansioni, coupon, fedeltà, dati di contatto — tutto in un unico posto. Gestisci più sedi da un solo account e tieni sotto controllo tutto il tuo marketing locale.",
     },
     pricing: {
       sectionTitle: "Prezzi semplici",

@@ -9,21 +9,22 @@ export default function Hero({ t }: { t: Translations }) {
         alt=""
         fill
         priority
-        className="object-cover object-bottom opacity-50"
+        className="object-cover object-bottom opacity-30"
       />
+      <div className="absolute inset-0 bg-blue-500/15" />
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         <div className="inline-block mb-6 px-4 py-1.5 bg-brand-50 text-brand-700 text-sm font-medium rounded-full border border-brand-100">
           {t.hero.badge}
         </div>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-2">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-2">
           {t.hero.title}
         </h1>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-600 mb-6">
           {t.hero.titleHighlight}
         </h1>
 
-        <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg sm:text-xl text-black max-w-2xl mx-auto mb-10 leading-relaxed" style={{ textShadow: '0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.6)' }}>
           {t.hero.subtitle}
         </p>
 
