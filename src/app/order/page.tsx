@@ -3,9 +3,34 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import Image from "next/image";
 
+type Locale = "pl" | "en" | "de" | "it";
 
-const t = {
+const t: Record<Locale, {
+  title: string;
+  subtitle: string;
+  subscription: string;
+  subscriptionDesc: string;
+  perMonth: string;
+  plates: string;
+  platesDesc: string;
+  free: string;
+  each: string;
+  howMany: string;
+  summary: string;
+  monthlyFee: string;
+  platesOnetime: string;
+  firstFree: string;
+  additional: string;
+  total: string;
+  subscriptionNote: string;
+  checkout: string;
+  back: string;
+  loading: string;
+  includes: string;
+  features: string[];
+}> = {
   pl: {
     title: "Skonfiguruj zamówienie",
     subtitle: "Wybierz ile tabliczek NFC potrzebujesz do swoich lokalizacji.",
@@ -27,6 +52,16 @@ const t = {
     checkout: "Przejdź do płatności",
     back: "Wróć do strony głównej",
     loading: "Przekierowanie do płatności...",
+    includes: "W cenie:",
+    features: [
+      "1 tabliczka NFC w cenie",
+      "Filtrowanie opinii Google",
+      "System kuponów SMS",
+      "Karta lojalnościowa",
+      "Panel administracyjny",
+      "200 SMS-ów/mies. w cenie",
+      "Wsparcie techniczne",
+    ],
   },
   en: {
     title: "Configure your order",
@@ -35,7 +70,7 @@ const t = {
     subscriptionDesc: "Review filtering, SMS coupons, loyalty card, admin dashboard",
     perMonth: "/mo",
     plates: "NFC Plates",
-    platesDesc: "First plate free — each additional plate €7",
+    platesDesc: "First plate free — each additional plate €9",
     free: "Free",
     each: "/ each",
     howMany: "How many plates?",
@@ -49,24 +84,103 @@ const t = {
     checkout: "Proceed to payment",
     back: "Back to homepage",
     loading: "Redirecting to payment...",
+    includes: "Includes:",
+    features: [
+      "1 NFC plate included",
+      "Google review filtering",
+      "SMS coupon system",
+      "Loyalty card",
+      "Admin dashboard",
+      "200 SMS/mo included",
+      "Technical support",
+    ],
   },
+  de: {
+    title: "Bestellung konfigurieren",
+    subtitle: "Wählen Sie, wie viele NFC-Aufsteller Sie für Ihre Standorte benötigen.",
+    subscription: "Starlinkee Pro Abo",
+    subscriptionDesc: "Bewertungsfilter, SMS-Gutscheine, Treuekarte, Admin-Dashboard",
+    perMonth: "/Monat",
+    plates: "NFC-Aufsteller",
+    platesDesc: "Erster Aufsteller gratis — jeder weitere 9 €",
+    free: "Gratis",
+    each: "/ Stk.",
+    howMany: "Wie viele Aufsteller?",
+    summary: "Zusammenfassung",
+    monthlyFee: "Monatliches Abo",
+    platesOnetime: "NFC-Aufsteller (einmalig)",
+    firstFree: "1 × gratis",
+    additional: "weitere",
+    total: "Jetzt zu zahlen",
+    subscriptionNote: "Abo 49 €/Monat — wiederkehrende Zahlung",
+    checkout: "Zur Zahlung",
+    back: "Zurück zur Startseite",
+    loading: "Weiterleitung zur Zahlung...",
+    includes: "Inklusive:",
+    features: [
+      "1 NFC-Aufsteller inklusive",
+      "Google-Bewertungsfilter",
+      "SMS-Gutscheinsystem",
+      "Treuekarte",
+      "Admin-Dashboard",
+      "200 SMS/Monat inklusive",
+      "Technischer Support",
+    ],
+  },
+  it: {
+    title: "Configura il tuo ordine",
+    subtitle: "Scegli quante targhe NFC ti servono per le tue sedi.",
+    subscription: "Abbonamento Starlinkee Pro",
+    subscriptionDesc: "Filtro recensioni, coupon SMS, carta fedeltà, pannello di controllo",
+    perMonth: "/mese",
+    plates: "Targhe NFC",
+    platesDesc: "Prima targa gratis — ogni altra 9 €",
+    free: "Gratis",
+    each: "/ cad.",
+    howMany: "Quante targhe?",
+    summary: "Riepilogo",
+    monthlyFee: "Abbonamento mensile",
+    platesOnetime: "Targhe NFC (una tantum)",
+    firstFree: "1 × gratis",
+    additional: "aggiuntive",
+    total: "Da pagare ora",
+    subscriptionNote: "Abbonamento 49 €/mese — pagamento ricorrente",
+    checkout: "Procedi al pagamento",
+    back: "Torna alla homepage",
+    loading: "Reindirizzamento al pagamento...",
+    includes: "Include:",
+    features: [
+      "1 targa NFC inclusa",
+      "Filtro recensioni Google",
+      "Sistema coupon SMS",
+      "Carta fedeltà",
+      "Pannello di controllo",
+      "200 SMS/mese inclusi",
+      "Supporto tecnico",
+    ],
+  },
+};
+
+const pricing: Record<Locale, { subPrice: number; platePrice: number; currency: string }> = {
+  pl: { subPrice: 199, platePrice: 29, currency: "zł" },
+  en: { subPrice: 49, platePrice: 9, currency: "€" },
+  de: { subPrice: 49, platePrice: 9, currency: "€" },
+  it: { subPrice: 49, platePrice: 9, currency: "€" },
 };
 
 function OrderContent() {
   const searchParams = useSearchParams();
-  const locale = searchParams.get("lang") === "en" ? "en" : "pl";
+  const langParam = searchParams.get("lang") as Locale | null;
+  const locale: Locale = langParam && langParam in t ? langParam : "pl";
   const l = t[locale];
+  const p = pricing[locale];
 
   const [plates, setPlates] = useState(1);
   const [loading, setLoading] = useState(false);
 
-  const isEn = locale === "en";
-  const subPrice = isEn ? 49 : 199;
-  const platePrice = isEn ? 7 : 29;
-  const currency = isEn ? "€" : "zł";
   const extraPlates = Math.max(0, plates - 1);
-  const platesCost = extraPlates * platePrice;
-  const totalNow = subPrice + platesCost;
+  const platesCost = extraPlates * p.platePrice;
+  const totalNow = p.subPrice + platesCost;
 
   async function handleCheckout() {
     setLoading(true);
@@ -103,6 +217,33 @@ function OrderContent() {
         <h1 className="text-3xl font-bold text-gray-900 mb-2">{l.title}</h1>
         <p className="text-gray-500 mb-10">{l.subtitle}</p>
 
+        {/* What's included */}
+        <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-4">
+          <p className="text-sm font-medium text-gray-900 mb-3 uppercase tracking-wide">
+            {l.includes}
+          </p>
+          <ul className="space-y-2">
+            {l.features.map((f) => (
+              <li key={f} className="flex items-center gap-3">
+                <svg
+                  className="w-5 h-5 text-brand-600 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span className="text-gray-700 text-sm">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Subscription */}
         <div className="bg-white rounded-2xl border border-gray-100 p-6 mb-4">
           <div className="flex items-center justify-between">
@@ -112,7 +253,7 @@ function OrderContent() {
             </div>
             <div className="text-right shrink-0 ml-4">
               <span className="text-2xl font-bold text-gray-900">
-                {subPrice} {currency}
+                {p.subPrice} {p.currency}
               </span>
               <span className="text-sm text-gray-400">{l.perMonth}</span>
             </div>
@@ -128,34 +269,46 @@ function OrderContent() {
             </div>
           </div>
 
-          <label className="block text-sm font-medium text-gray-700 mb-3">
-            {l.howMany}
-          </label>
-          <div className="flex items-center gap-4">
-            <button
-              type="button"
-              onClick={() => setPlates(Math.max(1, plates - 1))}
-              className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-lg font-medium hover:bg-gray-50 transition-colors cursor-pointer"
-            >
-              -
-            </button>
-            <span className="text-3xl font-bold w-12 text-center">{plates}</span>
-            <button
-              type="button"
-              onClick={() => setPlates(Math.min(50, plates + 1))}
-              className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-lg font-medium hover:bg-gray-50 transition-colors cursor-pointer"
-            >
-              +
-            </button>
+          <div className="flex items-center gap-6">
+            <div className="w-28 h-28 relative rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shrink-0">
+              <Image
+                src="/product.webp"
+                alt="Starlinkee NFC"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-3">
+                {l.howMany}
+              </label>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => setPlates(Math.max(1, plates - 1))}
+                  className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-lg font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+                >
+                  -
+                </button>
+                <span className="text-3xl font-bold w-12 text-center">{plates}</span>
+                <button
+                  type="button"
+                  onClick={() => setPlates(Math.min(50, plates + 1))}
+                  className="w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-lg font-medium hover:bg-gray-50 transition-colors cursor-pointer"
+                >
+                  +
+                </button>
+              </div>
+            </div>
           </div>
 
           {plates > 1 && (
             <div className="mt-4 text-sm text-gray-500">
               <span className="text-brand-600 font-medium">{l.firstFree}</span>
               {" + "}
-              {extraPlates} {l.additional} × {platePrice} {currency} ={" "}
+              {extraPlates} {l.additional} × {p.platePrice} {p.currency} ={" "}
               <span className="font-semibold text-gray-900">
-                {platesCost} {currency}
+                {platesCost} {p.currency}
               </span>
             </div>
           )}
@@ -174,7 +327,7 @@ function OrderContent() {
             <div className="flex justify-between">
               <span className="text-gray-500">{l.monthlyFee}</span>
               <span className="font-medium text-gray-900">
-                {subPrice} {currency}
+                {p.subPrice} {p.currency}
               </span>
             </div>
             {platesCost > 0 && (
@@ -183,14 +336,14 @@ function OrderContent() {
                   {l.platesOnetime} ({extraPlates}×)
                 </span>
                 <span className="font-medium text-gray-900">
-                  {platesCost} {currency}
+                  {platesCost} {p.currency}
                 </span>
               </div>
             )}
             <div className="border-t border-gray-100 pt-3 flex justify-between">
               <span className="font-semibold text-gray-900">{l.total}</span>
               <span className="text-xl font-bold text-gray-900">
-                {totalNow} {currency}
+                {totalNow} {p.currency}
               </span>
             </div>
           </div>

@@ -1,7 +1,7 @@
-import type { Translations } from "@/i18n";
+import type { Locale, Translations } from "@/i18n";
 import Image from "next/image";
 
-export default function Hero({ t }: { t: Translations }) {
+export default function Hero({ t, locale }: { t: Translations; locale: Locale }) {
   return (
     <section className="relative pt-32 pb-20 px-4 sm:px-6 overflow-hidden">
       <Image
@@ -13,10 +13,6 @@ export default function Hero({ t }: { t: Translations }) {
       />
       <div className="absolute inset-0 bg-blue-500/15" />
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        <div className="inline-block mb-6 px-4 py-1.5 bg-brand-50 text-brand-700 text-sm font-medium rounded-full border border-brand-100">
-          {t.hero.badge}
-        </div>
-
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-2">
           {t.hero.title}
         </h1>
@@ -30,14 +26,14 @@ export default function Hero({ t }: { t: Translations }) {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#pricing"
+            href={`/order?lang=${locale}`}
             className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-xl px-8 py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
           >
             {t.hero.cta}
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center border border-gray-900 text-gray-700 font-medium rounded-xl px-8 py-3.5 text-base hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center justify-center bg-white text-gray-900 font-medium rounded-xl px-8 py-3.5 text-base hover:bg-gray-100 transition-colors shadow-md"
           >
             {t.hero.ctaSecondary}
           </a>

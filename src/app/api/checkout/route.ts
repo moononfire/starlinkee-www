@@ -5,12 +5,24 @@ function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!);
 }
 
+function getPriceIds(locale: string) {
+  const isEur = locale === "en" || locale === "de" || locale === "it";
+
+  return {
+    subscription: isEur
+      ? process.env.STRIPE_PRICE_ID_SUBSCRIPTION_EUR
+      : process.env.STRIPE_PRICE_ID_SUBSCRIPTION,
+    plate: isEur
+      ? process.env.STRIPE_PRICE_ID_EXTRA_PLATE_EUR
+      : process.env.STRIPE_PRICE_ID_EXTRA_PLATE,
+  };
+}
+
 export async function POST(request: NextRequest) {
   const { plates, locale } = await request.json();
 
   const numPlates = Math.max(1, Math.min(50, Number(plates) || 1));
-  const subscriptionPriceId = process.env.STRIPE_PRICE_ID_SUBSCRIPTION;
-  const platePriceId = process.env.STRIPE_PRICE_ID_EXTRA_PLATE;
+  const { subscription: subscriptionPriceId, plate: platePriceId } = getPriceIds(locale);
 
   if (!subscriptionPriceId) {
     return NextResponse.json({ error: "Subscription price not configured" }, { status: 500 });
@@ -39,9 +51,9 @@ export async function POST(request: NextRequest) {
         allowed_countries: ["PL", "DE", "AT", "CZ", "SK", "GB", "US", "NL", "FR", "ES", "IT"],
       },
       tax_id_collection: { enabled: true },
-      locale: locale === "pl" ? "pl" : "en",
+      locale: (["pl", "en", "de", "it"].includes(locale) ? locale : "en") as "pl" | "en" | "de" | "it",
       success_url: `${appUrl}/order/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${appUrl}/order?lang=${locale === "pl" ? "pl" : "en"}`,
+      cancel_url: `${appUrl}/order?lang=${locale}`,
       metadata: {
         total_plates: String(numPlates),
       },

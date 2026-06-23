@@ -113,7 +113,7 @@ export default function Navbar({
           </div>
 
           <a
-            href="#pricing"
+            href={`/order?lang=${locale}`}
             className="text-sm font-medium bg-brand-600 text-white rounded-lg px-4 py-2 hover:bg-brand-700 transition-colors"
           >
             {t.nav.getStarted}
@@ -193,7 +193,7 @@ export default function Navbar({
             ))}
           </div>
           <a
-            href="#pricing"
+            href={`/order?lang=${locale}`}
             onClick={() => setMobileOpen(false)}
             className="text-sm font-medium bg-brand-600 text-white rounded-lg px-4 py-2 text-center"
           >

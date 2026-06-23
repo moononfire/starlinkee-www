@@ -128,7 +128,7 @@ const translations = {
       feature7: "Technical support",
       cta: "Buy now",
       extra: "Additional SMS: €0.02/each",
-      plates: "First NFC plate free, additional plates €7 each",
+      plates: "First NFC plate free, additional plates €9 each",
     },
     contact: {
       sectionTitle: "Let's talk",
@@ -203,7 +203,7 @@ const translations = {
       feature7: "Technischer Support",
       cta: "Jetzt kaufen",
       extra: "Zusätzliche SMS: 0,02 €/Stk.",
-      plates: "Erster NFC-Aufsteller gratis, weitere je 7 €",
+      plates: "Erster NFC-Aufsteller gratis, weitere je 9 €",
     },
     contact: {
       sectionTitle: "Lassen Sie uns sprechen",
@@ -278,7 +278,7 @@ const translations = {
       feature7: "Supporto tecnico",
       cta: "Acquista ora",
       extra: "SMS aggiuntivi: 0,02 €/cad.",
-      plates: "Prima targa NFC gratis, ogni altra 7 €",
+      plates: "Prima targa NFC gratis, ogni altra 9 €",
     },
     contact: {
       sectionTitle: "Parliamone",

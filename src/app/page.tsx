@@ -17,7 +17,7 @@ export default function Home() {
     <>
       <Navbar t={t} locale={locale} onLocaleChange={setLocale} />
       <main>
-        <Hero t={t} />
+        <Hero t={t} locale={locale} />
         <Features t={t} />
         <Pricing t={t} locale={locale} />
         <ContactForm t={t} />
