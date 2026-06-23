@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import type { Locale } from "@/i18n";
+
 
 const t = {
   pl: {
@@ -54,7 +54,7 @@ const t = {
 
 function OrderContent() {
   const searchParams = useSearchParams();
-  const locale = (searchParams.get("lang") === "en" ? "en" : "pl") as Locale;
+  const locale = searchParams.get("lang") === "en" ? "en" : "pl";
   const l = t[locale];
 
   const [plates, setPlates] = useState(1);
