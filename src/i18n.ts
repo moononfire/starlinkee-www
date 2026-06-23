@@ -1,4 +1,4 @@
-export type Locale = "pl" | "en";
+export type Locale = "pl" | "en" | "de" | "it";
 
 export const defaultLocale: Locale = "pl";
 
@@ -8,7 +8,7 @@ const translations = {
       features: "Funkcje",
       pricing: "Cennik",
       contact: "Kontakt",
-      getStarted: "Rozpocznij",
+      getStarted: "Kup teraz",
     },
     hero: {
       badge: "System opinii & lojalności dla gastronomii",
@@ -16,8 +16,8 @@ const translations = {
       titleHighlight: "Więcej powracających klientów.",
       subtitle:
         "Tabliczki NFC, które automatycznie filtrują negatywne opinie, wysyłają kupony promocyjne i budują lojalność — bez aplikacji dla Twoich klientów.",
-      cta: "Zamów bezpłatną prezentację",
-      ctaSecondary: "Zobacz jak działa",
+      cta: "Kup teraz",
+      ctaSecondary: "Zamów bezpłatną prezentację",
     },
     features: {
       sectionTitle: "Wszystko, czego potrzebujesz",
@@ -83,7 +83,7 @@ const translations = {
       features: "Features",
       pricing: "Pricing",
       contact: "Contact",
-      getStarted: "Get started",
+      getStarted: "Buy now",
     },
     hero: {
       badge: "Review & loyalty system for restaurants",
@@ -91,8 +91,8 @@ const translations = {
       titleHighlight: "More returning customers.",
       subtitle:
         "NFC plates that automatically filter negative reviews, send promo coupons, and build loyalty — no app install needed for your customers.",
-      cta: "Book a free demo",
-      ctaSecondary: "See how it works",
+      cta: "Buy now",
+      ctaSecondary: "Book a free demo",
     },
     features: {
       sectionTitle: "Everything you need",
@@ -151,6 +151,156 @@ const translations = {
     footer: {
       tagline: "Review & loyalty system for restaurants.",
       rights: "All rights reserved.",
+    },
+  },
+  de: {
+    nav: {
+      features: "Funktionen",
+      pricing: "Preise",
+      contact: "Kontakt",
+      getStarted: "Jetzt kaufen",
+    },
+    hero: {
+      badge: "Bewertungs- & Treueprogramm für Gastronomie",
+      title: "Mehr positive Bewertungen.",
+      titleHighlight: "Mehr wiederkehrende Gäste.",
+      subtitle:
+        "NFC-Aufsteller, die negative Bewertungen automatisch filtern, Rabattgutscheine per SMS versenden und Kundentreue aufbauen — ohne App für Ihre Gäste.",
+      cta: "Jetzt kaufen",
+      ctaSecondary: "Kostenlose Demo buchen",
+    },
+    features: {
+      sectionTitle: "Alles, was Sie brauchen",
+      sectionSubtitle:
+        "Eine Lösung statt mehrerer Tools. Ein Abo — das komplette System.",
+      reviewTitle: "Bewertungsfilter",
+      reviewDesc:
+        "Der Gast scannt den NFC-Aufsteller und bewertet seinen Besuch. Positive Bewertungen gehen direkt zu Google — negative bleiben privat und geben Ihnen die Chance, die Situation zu klären.",
+      promoTitle: "SMS-Gutscheine & Aktionen",
+      promoDesc:
+        "Senden Sie nach dem Scannen automatisch Rabattgutscheine per SMS. Der Gast kommt für den Rabatt zurück — Sie gewinnen einen erneuten Besuch und Kontaktdaten.",
+      loyaltyTitle: "Treuekarte",
+      loyaltyDesc:
+        "Digitale Treuekarte ohne App. Der Gast scannt bei jedem Besuch den Aufsteller — nach X Besuchen erhält er eine Belohnung.",
+      dashboardTitle: "Admin-Dashboard",
+      dashboardDesc:
+        "Verfolgen Sie Bewertungen, Scans, Gutscheine und Treue an einem Ort. Verwalten Sie mehrere Standorte von einem Konto aus.",
+    },
+    pricing: {
+      sectionTitle: "Einfache Preise",
+      sectionSubtitle: "Keine versteckten Kosten. Keine langfristigen Verträge.",
+      planName: "Starlinkee Pro",
+      price: "49",
+      currency: "€",
+      period: "/Monat",
+      includes: "Inklusive:",
+      feature1: "1 NFC-Aufsteller inklusive",
+      feature2: "Google-Bewertungsfilter",
+      feature3: "SMS-Gutscheinsystem",
+      feature4: "Treuekarte",
+      feature5: "Admin-Dashboard",
+      feature6: "200 SMS/Monat inklusive",
+      feature7: "Technischer Support",
+      cta: "Jetzt kaufen",
+      extra: "Zusätzliche SMS: 0,02 €/Stk.",
+      plates: "Erster NFC-Aufsteller gratis, weitere je 7 €",
+    },
+    contact: {
+      sectionTitle: "Lassen Sie uns sprechen",
+      sectionSubtitle:
+        "Hinterlassen Sie Ihre Daten — wir melden uns innerhalb von 24 Stunden und zeigen Ihnen, wie Starlinkee Ihrem Betrieb helfen kann.",
+      nameLabel: "Vollständiger Name",
+      namePlaceholder: "Max Mustermann",
+      emailLabel: "E-Mail",
+      emailPlaceholder: "max@restaurant.de",
+      phoneLabel: "Telefon",
+      phonePlaceholder: "+49 170 1234567",
+      businessLabel: "Name des Lokals",
+      businessPlaceholder: "Zum Goldenen Löwen",
+      messageLabel: "Nachricht (optional)",
+      messagePlaceholder: "Erzählen Sie uns, was Sie brauchen...",
+      submit: "Anfrage senden",
+      success: "Vielen Dank! Wir melden uns in Kürze.",
+      error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    },
+    footer: {
+      tagline: "Bewertungs- & Treueprogramm für Gastronomie.",
+      rights: "Alle Rechte vorbehalten.",
+    },
+  },
+  it: {
+    nav: {
+      features: "Funzionalità",
+      pricing: "Prezzi",
+      contact: "Contatti",
+      getStarted: "Acquista ora",
+    },
+    hero: {
+      badge: "Sistema di recensioni e fedeltà per la ristorazione",
+      title: "Più recensioni positive.",
+      titleHighlight: "Più clienti che ritornano.",
+      subtitle:
+        "Targhe NFC che filtrano automaticamente le recensioni negative, inviano coupon promozionali via SMS e costruiscono la fedeltà — senza app per i tuoi clienti.",
+      cta: "Acquista ora",
+      ctaSecondary: "Prenota una demo gratuita",
+    },
+    features: {
+      sectionTitle: "Tutto ciò di cui hai bisogno",
+      sectionSubtitle:
+        "Una soluzione al posto di più strumenti. Un abbonamento — il sistema completo.",
+      reviewTitle: "Filtro recensioni",
+      reviewDesc:
+        "Il cliente scansiona la targa NFC e valuta la visita. Le recensioni positive vanno direttamente su Google — quelle negative restano private, dandoti la possibilità di rimediare.",
+      promoTitle: "Coupon e promozioni SMS",
+      promoDesc:
+        "Invia automaticamente coupon sconto via SMS dopo la scansione. Il cliente torna per lo sconto — tu ottieni una nuova visita e i dati di contatto.",
+      loyaltyTitle: "Carta fedeltà",
+      loyaltyDesc:
+        "Carta fedeltà digitale senza app. Il cliente scansiona la targa ad ogni visita — dopo X visite riceve un premio.",
+      dashboardTitle: "Pannello di controllo",
+      dashboardDesc:
+        "Monitora recensioni, scansioni, coupon e fedeltà in un unico posto. Gestisci più sedi da un solo account.",
+    },
+    pricing: {
+      sectionTitle: "Prezzi semplici",
+      sectionSubtitle: "Nessun costo nascosto. Nessun contratto a lungo termine.",
+      planName: "Starlinkee Pro",
+      price: "49",
+      currency: "€",
+      period: "/mese",
+      includes: "Include:",
+      feature1: "1 targa NFC inclusa",
+      feature2: "Filtro recensioni Google",
+      feature3: "Sistema coupon SMS",
+      feature4: "Carta fedeltà",
+      feature5: "Pannello di controllo",
+      feature6: "200 SMS/mese inclusi",
+      feature7: "Supporto tecnico",
+      cta: "Acquista ora",
+      extra: "SMS aggiuntivi: 0,02 €/cad.",
+      plates: "Prima targa NFC gratis, ogni altra 7 €",
+    },
+    contact: {
+      sectionTitle: "Parliamone",
+      sectionSubtitle:
+        "Lascia i tuoi dati — ti ricontatteremo entro 24 ore e ti mostreremo come Starlinkee può aiutare la tua attività.",
+      nameLabel: "Nome completo",
+      namePlaceholder: "Mario Rossi",
+      emailLabel: "Email",
+      emailPlaceholder: "mario@ristorante.it",
+      phoneLabel: "Telefono",
+      phonePlaceholder: "+39 333 1234567",
+      businessLabel: "Nome del locale",
+      businessPlaceholder: "Trattoria Da Mario",
+      messageLabel: "Messaggio (facoltativo)",
+      messagePlaceholder: "Dicci di cosa hai bisogno...",
+      submit: "Invia richiesta",
+      success: "Grazie! Ti ricontatteremo presto.",
+      error: "Qualcosa è andato storto. Riprova.",
+    },
+    footer: {
+      tagline: "Sistema di recensioni e fedeltà per la ristorazione.",
+      rights: "Tutti i diritti riservati.",
     },
   },
 };
