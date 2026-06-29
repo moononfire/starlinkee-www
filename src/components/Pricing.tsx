@@ -50,7 +50,7 @@ export default function Pricing({
                 <span className="text-2xl font-medium text-gray-500">
                   {t.pricing.currency}
                 </span>
-                <span className="text-lg text-gray-400 ml-1">
+                <span className="text-lg text-gray-500 ml-1">
                   {t.pricing.period}
                 </span>
               </div>
@@ -90,7 +90,7 @@ export default function Pricing({
             </a>
 
             <div className="mt-6 text-center md:text-left space-y-1">
-              <p className="text-sm text-gray-400">{t.pricing.extra}</p>
+              <p className="text-sm text-gray-500">{t.pricing.extra}</p>
               <p className="text-sm text-brand-600 font-medium">
                 {t.pricing.plates}
               </p>
