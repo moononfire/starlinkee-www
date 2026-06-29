@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Starlinkee — System opinii i lojalności dla gastronomii",
   description:
     "Tabliczki NFC, które filtrują negatywne opinie, wysyłają kupony SMS i budują lojalność klientów. Bez aplikacji.",
+  verification: {
+    google: "jbyNhpr36lFIEJO21S7LGPJKaOEOqu5tGssShFS7Dj4",
+  },
 };
 
 export default function RootLayout({
