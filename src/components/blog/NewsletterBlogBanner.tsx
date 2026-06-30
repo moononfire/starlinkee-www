@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 
-const STORAGE_KEY = "newsletter_status";
-const SUBSCRIBED = "subscribed";
-
 export default function NewsletterBlogBanner() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -22,9 +19,6 @@ export default function NewsletterBlogBanner() {
     setLoading(false);
     if (!res.ok) return;
     setSubmitted(true);
-    if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, SUBSCRIBED);
-    }
   }
 
   return (

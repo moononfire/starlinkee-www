@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const STORAGE_KEY = "newsletter_status";
 const SUBSCRIBED = "subscribed";
-const DELAY_MS = 8000;
+const DELAY_MS = 15000;
 
 function getTodayDate() {
   return new Date().toISOString().split("T")[0]; // "2026-06-30"
@@ -25,8 +25,31 @@ export default function NewsletterPopup() {
 
   useEffect(() => {
     if (!shouldShow()) return;
-    const timer = setTimeout(() => setVisible(true), DELAY_MS);
-    return () => clearTimeout(timer);
+
+    let shown = false;
+
+    function triggerPopup() {
+      if (!shown) {
+        shown = true;
+        setVisible(true);
+      }
+    }
+
+    const timer = setTimeout(triggerPopup, DELAY_MS);
+
+    // Exit intent: kursor opuszcza widok przez górną krawędź (kierunek paska przeglądarki)
+    function handleMouseLeave(e: MouseEvent) {
+      if (e.clientY <= 0) {
+        triggerPopup();
+      }
+    }
+
+    document.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener("mouseleave", handleMouseLeave);
+    };
   }, []);
 
   function dismiss() {

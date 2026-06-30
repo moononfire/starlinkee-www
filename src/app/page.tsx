@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { type Locale, defaultLocale, getTranslations } from "@/i18n";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -89,7 +90,9 @@ export default async function Home({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
-      <Navbar t={t} locale={locale} />
+      <Suspense fallback={null}>
+        <Navbar t={t} locale={locale} />
+      </Suspense>
       <main>
         <Hero t={t} locale={locale} />
         <Features t={t} />

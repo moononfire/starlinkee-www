@@ -13,12 +13,30 @@ import {
 import { type Locale, defaultLocale } from "@/i18n";
 import BlogImage from "@/components/blog/BlogImage";
 import JakSzybkoZdobycOpinie from "@/components/blog/articles/JakSzybkoZdobycOpinie";
+import JakSzybkoZdobycOpinieEn from "@/components/blog/articles/JakSzybkoZdobycOpinieEn";
+import JakSzybkoZdobycOpinieDe from "@/components/blog/articles/JakSzybkoZdobycOpinieDe";
+import JakSzybkoZdobycOpinieIt from "@/components/blog/articles/JakSzybkoZdobycOpinieIt";
+import WizytowkaGoogleMojaFirma from "@/components/blog/articles/WizytowkaGoogleMojaFirma";
+import WizytowkaGoogleMojaFirmaEn from "@/components/blog/articles/WizytowkaGoogleMojaFirmaEn";
+import WizytowkaGoogleMojaFirmaDe from "@/components/blog/articles/WizytowkaGoogleMojaFirmaDe";
+import WizytowkaGoogleMojaFirmaIt from "@/components/blog/articles/WizytowkaGoogleMojaFirmaIt";
 
 const SITE_URL = "https://starlinkee.pl";
 const LOCALES: Locale[] = ["pl", "en", "de", "it"];
 
-const articleComponents: Record<string, React.ComponentType> = {
-  "jak-szybko-zdobyc-opinie-w-google": JakSzybkoZdobycOpinie,
+const articleComponents: Record<string, Partial<Record<Locale, React.ComponentType>>> = {
+  "jak-szybko-zdobyc-opinie-w-google": {
+    pl: JakSzybkoZdobycOpinie,
+    en: JakSzybkoZdobycOpinieEn,
+    de: JakSzybkoZdobycOpinieDe,
+    it: JakSzybkoZdobycOpinieIt,
+  },
+  "wizytowka-google-moja-firma-jak-zoptymalizowac": {
+    pl: WizytowkaGoogleMojaFirma,
+    en: WizytowkaGoogleMojaFirmaEn,
+    de: WizytowkaGoogleMojaFirmaDe,
+    it: WizytowkaGoogleMojaFirmaIt,
+  },
 };
 
 type Props = {
@@ -167,9 +185,9 @@ export default async function BlogSlugPage({ params, searchParams }: Props) {
   if (!post) notFound();
 
   const requestedLocale = LOCALES.includes(lang as Locale) ? (lang as Locale) : defaultLocale;
-  void getEffectiveLocale(slug, requestedLocale);
+  const effectiveLocale = getEffectiveLocale(slug, requestedLocale);
 
-  const ArticleContent = articleComponents[slug];
+  const ArticleContent = articleComponents[slug]?.[effectiveLocale];
   if (!ArticleContent) notFound();
 
   const relatedPosts = getRelatedPosts(slug);

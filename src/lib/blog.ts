@@ -3,6 +3,7 @@ import { type Locale } from "@/i18n";
 export interface BlogCategory {
   slug: string;
   name: string;
+  names: Partial<Record<Locale, string>>;
   description: string;
 }
 
@@ -10,21 +11,25 @@ export const blogCategories: BlogCategory[] = [
   {
     slug: "opinie-google",
     name: "Opinie Google",
+    names: { en: "Google Reviews", de: "Google-Bewertungen", it: "Recensioni Google" },
     description: "Strategie zdobywania opinii, regulamin Google i systemy zbierania recenzji.",
   },
   {
     slug: "wizytowka-google",
     name: "Wizytówka Google",
+    names: { en: "Google Business Profile", de: "Google Business Profile", it: "Google Business Profile" },
     description: "Optymalizacja profilu Google Business Profile, Local Pack i lokalne SEO.",
   },
   {
     slug: "zarzadzanie-reputacja",
     name: "Zarządzanie reputacją",
+    names: { en: "Reputation Management", de: "Reputationsmanagement", it: "Gestione della reputazione" },
     description: "Odpowiadanie na opinie, obsługa negatywnych recenzji i budowanie wizerunku.",
   },
   {
     slug: "marketing-lokalny",
     name: "Marketing lokalny",
+    names: { en: "Local Marketing", de: "Lokales Marketing", it: "Marketing locale" },
     description: "Strategie marketingowe dla firm lokalnych, NFC i automatyzacja procesów.",
   },
 ];
@@ -48,9 +53,81 @@ export interface BlogPostMeta {
   keywords: string[];
   faq: FaqItem[];
   availableLocales: Locale[];
+  localized?: Partial<Record<Locale, { title: string; description: string; category: string }>>;
 }
 
 export const blogPosts: BlogPostMeta[] = [
+  {
+    slug: "wizytowka-google-moja-firma-jak-zoptymalizowac",
+    title: "Wizytówka Google Moja Firma: jak wypełnić i zoptymalizować profil krok po kroku",
+    description:
+      "Dowiedz się, jak założyć, zweryfikować i zoptymalizować wizytówkę Google Moja Firma. Sprawdź, które sygnały rankingowe mają największy wpływ na pozycję w Google Maps i Local Pack.",
+    publishedAt: "2026-06-30",
+    author: "Zespół Starlinkee",
+    authorBio:
+      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Wizytówka Google",
+    categorySlug: "wizytowka-google",
+    ogImage: "/images/blog/wizytowka-google-moja-firma-hero.jpg",
+    keywords: [
+      "wizytówka google moja firma",
+      "google business profile",
+      "pozycjonowanie wizytówki google",
+      "jak zoptymalizować wizytówkę google",
+      "profil firmy google",
+      "jak wypełnić wizytówkę google",
+      "co wpływa na pozycję w google maps",
+      "local seo dla restauracji",
+    ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "Google Business Profile: How to Fill In and Optimise Your Profile Step by Step",
+        description:
+          "Learn how to create, verify and optimise your Google Business Profile. Discover which ranking signals have the greatest impact on your position in Google Maps and the Local Pack.",
+        category: "Google Business Profile",
+      },
+      de: {
+        title: "Google Business Profile: So füllen und optimieren Sie Ihr Profil Schritt für Schritt",
+        description:
+          "Erfahren Sie, wie Sie Ihr Google Business Profil anlegen, verifizieren und optimieren. Entdecken Sie, welche Rankingsignale die größte Auswirkung auf Ihre Position in Google Maps und dem Local Pack haben.",
+        category: "Google Business Profile",
+      },
+      it: {
+        title: "Google Business Profile: come compilare e ottimizzare il profilo passo dopo passo",
+        description:
+          "Scopri come creare, verificare e ottimizzare il tuo Google Business Profile. Scopri quali segnali di ranking hanno il maggiore impatto sulla tua posizione in Google Maps e nel Local Pack.",
+        category: "Google Business Profile",
+      },
+    },
+    faq: [
+      {
+        question: "Czy wizytówka Google Moja Firma jest bezpłatna?",
+        answer:
+          "Tak, założenie i prowadzenie profilu w Google Business Profile jest całkowicie bezpłatne. Google nie pobiera żadnych opłat za wyświetlanie firmy w wynikach lokalnych ani za korzystanie z funkcji postów, zdjęć czy odpowiedzi na opinie.",
+      },
+      {
+        question: "Ile trwa weryfikacja wizytówki Google?",
+        answer:
+          "Weryfikacja przez pocztówkę trwa zwykle 5–14 dni roboczych. Jeśli dostępna jest weryfikacja przez SMS lub natychmiastowa weryfikacja, możesz aktywować profil w ciągu kilku minut.",
+      },
+      {
+        question: "Jak często powinienem aktualizować wizytówkę Google?",
+        answer:
+          "Minimum to jeden post tygodniowo i przegląd godzin otwarcia raz w miesiącu. Zdjęcia warto uzupełniać przynajmniej co kwartał. Po każdej zmianie w ofercie lub godzinach zaktualizuj profil od razu.",
+      },
+      {
+        question: "Czy mogę dodać słowa kluczowe do nazwy firmy w wizytówce?",
+        answer:
+          "Nie. Google wymaga, żeby nazwa w wizytówce była zgodna z rzeczywistą nazwą firmy. Dodawanie słów kluczowych do nazwy narusza regulamin i może skutkować zawieszeniem profilu.",
+      },
+      {
+        question: "Czy warto odpowiadać na wszystkie opinie — także te pozytywne?",
+        answer:
+          "Tak. Odpowiadanie na opinie to sygnał zaangażowania uwzględniany przez Google przy ocenie aktywności profilu. Krótka odpowiedź na pozytywną recenzję buduje lojalność klientów i zachęca innych do zostawienia swojej opinii.",
+      },
+    ],
+  },
   {
     slug: "jak-szybko-zdobyc-opinie-w-google",
     title: "Jak szybko zdobyć opinie w Google? Automatyzacja i regulamin",
@@ -71,6 +148,27 @@ export const blogPosts: BlogPostMeta[] = [
       "zbieranie recenzji",
       "pozycjonowanie wizytówki google",
     ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "How to Get Google Reviews Fast? Automation and Guidelines",
+        description:
+          "Find out how to legally and effectively collect Google reviews. Learn when to ask for a review, which barriers to remove, and why an NFC system changes the game.",
+        category: "Google Reviews",
+      },
+      de: {
+        title: "Wie bekommt man schnell Google-Bewertungen? Automatisierung und Richtlinien",
+        description:
+          "Erfahren Sie, wie Sie legal und effektiv Google-Bewertungen sammeln. Wann Sie um eine Rezension bitten, welche Hindernisse beseitigt werden müssen und warum ein NFC-System alles verändert.",
+        category: "Google-Bewertungen",
+      },
+      it: {
+        title: "Come ottenere rapidamente recensioni su Google? Automazione e linee guida",
+        description:
+          "Scopri come raccogliere recensioni su Google in modo legale ed efficace. Quando chiedere una recensione, quali ostacoli rimuovere e perché un sistema NFC cambia le regole del gioco.",
+        category: "Recensioni Google",
+      },
+    },
     faq: [
       {
         question: "Czy mogę dać rabat za pozytywną opinię?",
@@ -88,9 +186,24 @@ export const blogPosts: BlogPostMeta[] = [
           "Tak. Każdy biznes działający lokalnie lub obsługujący klientów z danego regionu zyskuje na widoczności dzięki aktywnemu profilowi w wynikach wyszukiwania.",
       },
     ],
-    availableLocales: ["pl"],
   },
 ];
+
+export function getLocalizedPost(
+  post: BlogPostMeta,
+  locale: Locale,
+): { title: string; description: string; category: string } {
+  const loc = locale !== "pl" ? post.localized?.[locale] : undefined;
+  return {
+    title: loc?.title ?? post.title,
+    description: loc?.description ?? post.description,
+    category: loc?.category ?? post.category,
+  };
+}
+
+export function getCategoryName(cat: BlogCategory, locale: Locale): string {
+  return (locale !== "pl" ? cat.names[locale] : undefined) ?? cat.name;
+}
 
 export function getBlogPost(slug: string): BlogPostMeta | null {
   return blogPosts.find((p) => p.slug === slug) ?? null;
