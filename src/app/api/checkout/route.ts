@@ -18,8 +18,11 @@ function getPriceIds(locale: string) {
   };
 }
 
+const VALID_LOCALES = ["pl", "en", "de", "it"] as const;
+
 export async function POST(request: NextRequest) {
-  const { plates, locale } = await request.json();
+  const { plates, locale: rawLocale } = await request.json();
+  const locale = VALID_LOCALES.includes(rawLocale) ? rawLocale : "pl";
 
   const numPlates = Math.max(1, Math.min(50, Number(plates) || 1));
   const { subscription: subscriptionPriceId, plate: platePriceId } = getPriceIds(locale);
@@ -51,9 +54,9 @@ export async function POST(request: NextRequest) {
         allowed_countries: ["PL", "DE", "AT", "CZ", "SK", "GB", "US", "NL", "FR", "ES", "IT"],
       },
       tax_id_collection: { enabled: true },
-      locale: (["pl", "en", "de", "it"].includes(locale) ? locale : "en") as "pl" | "en" | "de" | "it",
-      success_url: `${appUrl}/order/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${appUrl}/order?lang=${locale}`,
+      locale,
+      success_url: `${appUrl}/${locale}/order/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${appUrl}/${locale}/order`,
       metadata: {
         total_plates: String(numPlates),
       },

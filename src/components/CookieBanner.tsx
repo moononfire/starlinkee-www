@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import type { Locale } from "@/i18n";
 
 const STORAGE_KEY = "cookie_consent";
 const CONSENT_EXPIRY_DAYS = 365;
@@ -43,7 +44,7 @@ export function getConsent(): ConsentState | null {
   return loadConsent();
 }
 
-export default function CookieBanner() {
+export default function CookieBanner({ locale }: { locale: Locale }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -81,7 +82,7 @@ export default function CookieBanner() {
               cookies (analityczne, marketingowe) pomagają nam ulepszać serwis — możesz je
               odrzucić bez wpływu na korzystanie ze strony.{" "}
               <Link
-                href="/polityka-cookies"
+                href={`/${locale}/polityka-cookies`}
                 className="text-brand-600 hover:underline underline-offset-2 whitespace-nowrap"
               >
                 Dowiedz się więcej

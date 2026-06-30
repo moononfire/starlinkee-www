@@ -1,4 +1,4 @@
-import type { Translations } from "@/i18n";
+import type { Locale, Translations } from "@/i18n";
 import Link from "next/link";
 
 const legalLinks = [
@@ -15,7 +15,7 @@ const navLinks = [
   { href: "/blog", label: "Blog" },
 ];
 
-export default function Footer({ t }: { t: Translations }) {
+export default function Footer({ t, locale }: { t: Translations; locale: Locale }) {
   const year = new Date().getFullYear();
 
   return (
@@ -24,7 +24,7 @@ export default function Footer({ t }: { t: Translations }) {
         {/* Górna część: brand + nawigacja */}
         <div className="flex flex-col sm:flex-row justify-between gap-8">
           <div>
-            <Link href="/" className="text-lg font-bold text-brand-600">
+            <Link href={`/${locale}`} className="text-lg font-bold text-brand-600">
               Starlinkee
             </Link>
             <p className="text-sm text-gray-500 mt-1 max-w-xs">{t.footer.tagline}</p>
@@ -33,7 +33,7 @@ export default function Footer({ t }: { t: Translations }) {
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                href={href}
+                href={`/${locale}${href}`}
                 className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
               >
                 {label}
@@ -51,7 +51,7 @@ export default function Footer({ t }: { t: Translations }) {
             {legalLinks.map(({ href, label }) => (
               <Link
                 key={href}
-                href={href}
+                href={`/${locale}${href}`}
                 className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
               >
                 {label}

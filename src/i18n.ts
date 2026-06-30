@@ -2,6 +2,10 @@ export type Locale = "pl" | "en" | "de" | "it";
 
 export const defaultLocale: Locale = "pl";
 
+export const LOCALES: Locale[] = ["pl", "en", "de", "it"];
+
+export const LOCALE_COOKIE_NAME = "locale";
+
 const translations = {
   pl: {
     nav: {
@@ -76,6 +80,16 @@ const translations = {
     footer: {
       tagline: "System opinii i lojalności dla gastronomii.",
       rights: "Wszelkie prawa zastrzeżone.",
+    },
+    chat: {
+      triggerLabel: "Napisz do nas",
+      openAria: "Otwórz czat",
+      closeAria: "Zamknij czat",
+      headerName: "Starlinkee",
+      headerSubtitle: "Zazwyczaj odpowiadamy szybko",
+      greeting: "Cześć! 👋 W czym mogę pomóc?",
+      placeholder: "Napisz wiadomość...",
+      sendAria: "Wyślij",
     },
   },
   en: {
@@ -152,6 +166,16 @@ const translations = {
       tagline: "Review & loyalty system for restaurants.",
       rights: "All rights reserved.",
     },
+    chat: {
+      triggerLabel: "Message us",
+      openAria: "Open chat",
+      closeAria: "Close chat",
+      headerName: "Starlinkee",
+      headerSubtitle: "We usually reply quickly",
+      greeting: "Hi! 👋 How can I help?",
+      placeholder: "Type a message...",
+      sendAria: "Send",
+    },
   },
   de: {
     nav: {
@@ -227,6 +251,16 @@ const translations = {
       tagline: "Bewertungs- & Treueprogramm für Gastronomie.",
       rights: "Alle Rechte vorbehalten.",
     },
+    chat: {
+      triggerLabel: "Schreiben Sie uns",
+      openAria: "Chat öffnen",
+      closeAria: "Chat schließen",
+      headerName: "Starlinkee",
+      headerSubtitle: "Wir antworten normalerweise schnell",
+      greeting: "Hallo! 👋 Wie kann ich helfen?",
+      placeholder: "Nachricht schreiben...",
+      sendAria: "Senden",
+    },
   },
   it: {
     nav: {
@@ -301,6 +335,16 @@ const translations = {
     footer: {
       tagline: "Sistema di recensioni e fedeltà per la ristorazione.",
       rights: "Tutti i diritti riservati.",
+    },
+    chat: {
+      triggerLabel: "Scrivici",
+      openAria: "Apri chat",
+      closeAria: "Chiudi chat",
+      headerName: "Starlinkee",
+      headerSubtitle: "Di solito rispondiamo velocemente",
+      greeting: "Ciao! 👋 Come posso aiutarti?",
+      placeholder: "Scrivi un messaggio...",
+      sendAria: "Invia",
     },
   },
 };

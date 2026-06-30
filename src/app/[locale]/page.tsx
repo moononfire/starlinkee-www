@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import { type Locale, defaultLocale, getTranslations } from "@/i18n";
+import { getTranslations } from "@/i18n";
+import { resolveLocale } from "@/lib/locale";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -8,17 +8,14 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 const SITE_URL = "https://starlinkee.pl";
-const LOCALES: Locale[] = ["pl", "en", "de", "it"];
 
 export default async function Home({
-  searchParams,
+  params,
 }: {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: Promise<{ locale: string }>;
 }) {
-  const { lang } = await searchParams;
-  const locale: Locale = LOCALES.includes(lang as Locale)
-    ? (lang as Locale)
-    : defaultLocale;
+  const { locale: rawLocale } = await params;
+  const locale = resolveLocale(rawLocale);
   const t = getTranslations(locale);
 
   const productJsonLd = {
@@ -34,7 +31,7 @@ export default async function Home({
       price: "199",
       priceCurrency: "PLN",
       availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/order`,
+      url: `${SITE_URL}/${locale}/order`,
       priceValidUntil: "2027-12-31",
     },
   };
@@ -90,16 +87,14 @@ export default async function Home({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
-      <Suspense fallback={null}>
-        <Navbar t={t} locale={locale} />
-      </Suspense>
+      <Navbar t={t} locale={locale} />
       <main>
         <Hero t={t} locale={locale} />
         <Features t={t} />
         <Pricing t={t} locale={locale} />
         <ContactForm t={t} />
       </main>
-      <Footer t={t} />
+      <Footer t={t} locale={locale} />
     </>
   );
 }

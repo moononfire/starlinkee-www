@@ -83,7 +83,7 @@ export default function Pricing({
             </div>
 
             <a
-              href={`/order?lang=${locale}`}
+              href={`/${locale}/order`}
               className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
             >
               {t.pricing.cta}

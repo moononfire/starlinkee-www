@@ -21,7 +21,7 @@ export default function Hero({ t, locale }: { t: Translations; locale: Locale })
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href={`/order?lang=${locale}`}
+            href={`/${locale}/order`}
             className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-xl px-8 py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
           >
             {t.hero.cta}

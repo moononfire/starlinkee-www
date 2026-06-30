@@ -1,15 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { getTranslations, type Locale } from "@/i18n";
 
 type Message = { id: string; sender: "user" | "owner"; text: string; ts: number };
-
-const GREETING: Message = {
-  id: "greeting",
-  sender: "owner",
-  text: "Cześć! 👋 W czym mogę pomóc?",
-  ts: Date.now(),
-};
 
 function getOrCreateSessionId(): string {
   const key = "chat_session_id";
@@ -21,9 +15,19 @@ function getOrCreateSessionId(): string {
   return id;
 }
 
-export default function ChatWidget() {
+export default function ChatWidget({ locale }: { locale: Locale }) {
+  const lang = locale;
+  const t = getTranslations(lang).chat;
+
+  const greeting: Message = {
+    id: "greeting",
+    sender: "owner",
+    text: t.greeting,
+    ts: 0,
+  };
+
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([GREETING]);
+  const [messages, setMessages] = useState<Message[]>([greeting]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -32,6 +36,10 @@ export default function ChatWidget() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const lastCountRef = useRef(0);
+
+  useEffect(() => {
+    setMessages((prev) => [greeting, ...prev.slice(1)]);
+  }, [lang]);
 
   useEffect(() => {
     const FOOTER_HEIGHT = 180;
@@ -64,7 +72,7 @@ export default function ChatWidget() {
           const data = await res.json();
           const remote: Message[] = data.messages ?? [];
           if (remote.length > 0) {
-            setMessages([GREETING, ...remote]);
+            setMessages([greeting, ...remote]);
             if (remote.length > lastCountRef.current) {
               lastCountRef.current = remote.length;
               noNewOwnerMsgSince = Date.now();
@@ -140,13 +148,13 @@ export default function ChatWidget() {
               💬
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-bold text-sm leading-tight">Starlinkee</p>
-              <p className="text-xs text-blue-200">Zazwyczaj odpowiadamy szybko</p>
+              <p className="font-bold text-sm leading-tight">{t.headerName}</p>
+              <p className="text-xs text-blue-200">{t.headerSubtitle}</p>
             </div>
             <button
               onClick={() => setOpen(false)}
               className="text-white/70 hover:text-white transition-colors ml-auto"
-              aria-label="Zamknij czat"
+              aria-label={t.closeAria}
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
                 <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
@@ -190,7 +198,7 @@ export default function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Napisz wiadomość..."
+              placeholder={t.placeholder}
               disabled={sending}
               className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm outline-none focus:bg-gray-50 border border-transparent focus:border-blue-300 transition-colors"
             />
@@ -199,7 +207,7 @@ export default function ChatWidget() {
               disabled={!input.trim() || sending}
               className="w-8 h-8 rounded-full flex items-center justify-center transition-colors disabled:opacity-40"
               style={{ background: "#1877F2" }}
-              aria-label="Wyślij"
+              aria-label={t.sendAria}
             >
               <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4 rotate-90">
                 <path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z" />
@@ -212,7 +220,7 @@ export default function ChatWidget() {
       {/* Trigger button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        aria-label={open ? "Zamknij czat" : "Otwórz czat"}
+        aria-label={open ? t.closeAria : t.openAria}
         className={`fixed right-5 z-50 flex items-center justify-center text-amber-900 shadow-lg transition-[bottom,transform] duration-200 hover:scale-105 active:scale-95 ${
           open ? "w-14 h-14 rounded-full" : "h-12 px-4 gap-2 rounded-full"
         }`}
@@ -231,7 +239,7 @@ export default function ChatWidget() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 shrink-0">
               <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
             </svg>
-            <span className="text-sm font-semibold whitespace-nowrap">Napisz do nas</span>
+            <span className="text-sm font-semibold whitespace-nowrap">{t.triggerLabel}</span>
           </>
         )}
         {hasUnread && !open && (

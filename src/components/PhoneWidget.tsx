@@ -1,7 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n";
 
 const PHONE_NUMBER = "+48 123 456 789";
@@ -16,10 +15,8 @@ const callUs: Record<Locale, string> = {
   it: "Chiamaci",
 };
 
-function PhoneWidgetInner() {
-  const searchParams = useSearchParams();
-  const lang = (searchParams.get("lang") ?? "pl") as Locale;
-  const label = callUs[lang] ?? callUs.pl;
+export default function PhoneWidget({ locale }: { locale: Locale }) {
+  const label = callUs[locale] ?? callUs.pl;
 
   const [bottom, setBottom] = useState(BASE_BOTTOM);
 
@@ -65,13 +62,5 @@ function PhoneWidgetInner() {
         <span className="text-sm font-bold text-amber-900">{PHONE_NUMBER}</span>
       </div>
     </a>
-  );
-}
-
-export default function PhoneWidget() {
-  return (
-    <Suspense>
-      <PhoneWidgetInner />
-    </Suspense>
   );
 }

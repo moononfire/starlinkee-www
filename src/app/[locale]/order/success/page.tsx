@@ -5,7 +5,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function OrderSuccess() {
+export default async function OrderSuccess({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md text-center">
@@ -35,7 +40,7 @@ export default function OrderSuccess() {
           Tabliczki NFC wyślemy na podany adres w ciągu 3-5 dni roboczych.
         </p>
         <a
-          href="/"
+          href={`/${locale}`}
           className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-xl px-6 py-3 hover:bg-brand-700 transition-colors"
         >
           Wróć na stronę główną

@@ -1,10 +1,11 @@
 "use client";
 
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
-import type { Locale, Translations } from "@/i18n";
+import { type Locale, type Translations } from "@/i18n";
 import { blogPosts } from "@/lib/blog";
+import { setLocaleCookie } from "@/lib/actions";
 
 const flags: Record<Locale, ReactNode> = {
   pl: (
@@ -58,15 +59,11 @@ export default function Navbar({
   const [langOpen, setLangOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
-  const currentLocale: Locale = (() => {
-    const p = searchParams.get("lang");
-    return locales.includes(p as Locale) ? (p as Locale) : locale;
-  })();
+  const pathWithoutLocale = pathname.replace(/^\/(pl|en|de|it)(?=\/|$)/, "") || "/";
 
   function changeLocale(l: Locale) {
-    const blogSlugMatch = pathname.match(/^\/blog\/([^/]+)$/);
+    const blogSlugMatch = pathWithoutLocale.match(/^\/blog\/([^/]+)$/);
     if (blogSlugMatch) {
       const post = blogPosts.find((p) => p.slug === blogSlugMatch[1]);
       if (post && !post.availableLocales.includes(l)) {
@@ -75,7 +72,8 @@ export default function Navbar({
         return;
       }
     }
-    router.push(`${pathname}?lang=${l}`);
+    setLocaleCookie(l);
+    router.push(`/${l}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`);
     setLangOpen(false);
     setMobileOpen(false);
   }
@@ -83,31 +81,31 @@ export default function Navbar({
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold text-brand-600">
+        <Link href={`/${locale}`} className="text-xl font-bold text-brand-600">
           Starlinkee
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="/#features"
+            href={`/${locale}/#features`}
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t.nav.features}
           </a>
           <a
-            href="/#pricing"
+            href={`/${locale}/#pricing`}
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t.nav.pricing}
           </a>
           <a
-            href="/#contact"
+            href={`/${locale}/#contact`}
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t.nav.contact}
           </a>
           <a
-            href="/blog"
+            href={`/${locale}/blog`}
             className="text-sm text-gray-600 hover:text-gray-700 border border-gray-300 hover:border-gray-400 rounded-lg px-3 py-1.5 transition-colors"
           >
             Blog
@@ -118,13 +116,13 @@ export default function Navbar({
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 border border-gray-200 rounded-md px-2.5 py-1 transition-colors cursor-pointer"
             >
-              {flags[currentLocale]}
-              {localeLabels[currentLocale]}
+              {flags[locale]}
+              {localeLabels[locale]}
             </button>
             {langOpen && (
               <div className="absolute top-full mt-1 right-0 bg-white border border-gray-200 rounded-md shadow-lg py-1 min-w-[80px]">
                 {locales
-                  .filter((l) => l !== currentLocale)
+                  .filter((l) => l !== locale)
                   .map((l) => (
                     <button
                       key={l}
@@ -143,7 +141,7 @@ export default function Navbar({
           </div>
 
           <a
-            href={`/order?lang=${locale}`}
+            href={`/${locale}/order`}
             className="text-sm font-medium bg-brand-600 text-white rounded-lg px-4 py-2 hover:bg-brand-700 transition-colors"
           >
             {t.nav.getStarted}
@@ -183,28 +181,28 @@ export default function Navbar({
       {mobileOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 flex flex-col gap-3">
           <a
-            href="/#features"
+            href={`/${locale}/#features`}
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600"
           >
             {t.nav.features}
           </a>
           <a
-            href="/#pricing"
+            href={`/${locale}/#pricing`}
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600"
           >
             {t.nav.pricing}
           </a>
           <a
-            href="/#contact"
+            href={`/${locale}/#contact`}
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600"
           >
             {t.nav.contact}
           </a>
           <a
-            href="/blog"
+            href={`/${locale}/blog`}
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600 border border-gray-300 rounded-lg px-3 py-1.5 self-start"
           >
@@ -219,7 +217,7 @@ export default function Navbar({
                   setMobileOpen(false);
                 }}
                 className={`flex items-center gap-1.5 text-sm border rounded-md px-2.5 py-1 cursor-pointer ${
-                  l === currentLocale
+                  l === locale
                     ? "border-brand-600 text-brand-600 font-medium"
                     : "border-gray-200 text-gray-500"
                 }`}
@@ -230,7 +228,7 @@ export default function Navbar({
             ))}
           </div>
           <a
-            href={`/order?lang=${locale}`}
+            href={`/${locale}/order`}
             onClick={() => setMobileOpen(false)}
             className="text-sm font-medium bg-brand-600 text-white rounded-lg px-4 py-2 text-center"
           >
