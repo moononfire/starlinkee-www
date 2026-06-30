@@ -30,6 +30,12 @@ const t: Record<Locale, {
   loading: string;
   includes: string;
   features: string[];
+  billingMonthly: string;
+  billingAnnual: string;
+  annualSavingsBadge: string;
+  annualNote: string;
+  comingSoon: string;
+  periodAnnual: string;
 }> = {
   pl: {
     productName: "Starlinkee Pro + tabliczka NFC",
@@ -64,6 +70,12 @@ const t: Record<Locale, {
       "200 SMS-ów/mies. w cenie",
       "Wsparcie techniczne",
     ],
+    billingMonthly: "Płatność miesięczna",
+    billingAnnual: "Płatność roczna",
+    annualSavingsBadge: "2 miesiące gratis",
+    annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
+    comingSoon: "Wkrótce dostępne",
+    periodAnnual: "/rok",
   },
   en: {
     productName: "Starlinkee Pro + NFC plate",
@@ -98,6 +110,12 @@ const t: Record<Locale, {
       "200 SMS/mo included",
       "Technical support",
     ],
+    billingMonthly: "Monthly billing",
+    billingAnnual: "Annual billing",
+    annualSavingsBadge: "2 months free",
+    annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
+    comingSoon: "Coming soon",
+    periodAnnual: "/yr",
   },
   de: {
     productName: "Starlinkee Pro + NFC-Aufsteller",
@@ -132,6 +150,12 @@ const t: Record<Locale, {
       "200 SMS/Monat inklusive",
       "Technischer Support",
     ],
+    billingMonthly: "Monatliche Zahlung",
+    billingAnnual: "Jährliche Zahlung",
+    annualSavingsBadge: "2 Monate gratis",
+    annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
+    comingSoon: "Demnächst verfügbar",
+    periodAnnual: "/Jahr",
   },
   it: {
     productName: "Starlinkee Pro + targa NFC",
@@ -166,6 +190,12 @@ const t: Record<Locale, {
       "200 SMS/mese inclusi",
       "Supporto tecnico",
     ],
+    billingMonthly: "Pagamento mensile",
+    billingAnnual: "Pagamento annuale",
+    annualSavingsBadge: "2 mesi gratis",
+    annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
+    comingSoon: "Prossimamente",
+    periodAnnual: "/anno",
   },
 };
 
@@ -188,10 +218,12 @@ export default function OrderPage() {
   const [plates, setPlates] = useState(1);
   const [loading, setLoading] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
   const extraPlates = Math.max(0, plates - 1);
   const platesCost = extraPlates * p.platePrice;
-  const totalNow = p.subPrice + platesCost;
+  const annualSubPrice = p.subPrice * 10;
+  const totalNow = (billing === "annual" ? annualSubPrice : p.subPrice) + platesCost;
 
   async function handleCheckout() {
     setLoading(true);
@@ -258,12 +290,47 @@ export default function OrderPage() {
           {/* Details + purchase */}
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{l.productName}</h1>
-            <div className="flex items-baseline gap-2 mb-5">
-              <span className="text-3xl font-bold text-gray-900">
-                {p.subPrice} {p.currency}
-              </span>
-              <span className="text-gray-400">{l.perMonth}</span>
+
+            <div className="inline-flex items-center rounded-xl border border-gray-200 bg-white p-1 mb-4">
+              <button
+                type="button"
+                onClick={() => setBilling("monthly")}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+                  billing === "monthly"
+                    ? "bg-brand-600 text-white"
+                    : "text-gray-500 hover:text-gray-900"
+                }`}
+              >
+                {l.billingMonthly}
+              </button>
+              <button
+                type="button"
+                onClick={() => setBilling("annual")}
+                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+                  billing === "annual"
+                    ? "bg-brand-600 text-white"
+                    : "text-gray-500 hover:text-gray-900"
+                }`}
+              >
+                {l.billingAnnual}
+                <span className="ml-2 inline-block rounded-full bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 align-middle">
+                  {l.annualSavingsBadge}
+                </span>
+              </button>
             </div>
+
+            <div className="flex items-baseline gap-2 mb-1">
+              <span className="text-3xl font-bold text-gray-900">
+                {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
+              </span>
+              <span className="text-gray-400">
+                {billing === "annual" ? l.periodAnnual : l.perMonth}
+              </span>
+            </div>
+            {billing === "annual" && (
+              <p className="text-xs text-gray-400 mb-5">{l.annualNote}</p>
+            )}
+            {billing === "monthly" && <div className="mb-5" />}
 
             <p className="text-gray-600 leading-relaxed mb-6">{l.description}</p>
 
@@ -343,7 +410,7 @@ export default function OrderPage() {
               <div className="flex justify-between">
                 <span className="text-gray-500">{l.monthlyFee}</span>
                 <span className="font-medium text-gray-900">
-                  {p.subPrice} {p.currency}
+                  {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
                 </span>
               </div>
               {platesCost > 0 && (
@@ -364,13 +431,23 @@ export default function OrderPage() {
               </div>
             </div>
 
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-            >
-              {loading ? l.loading : l.checkout}
-            </button>
+            {billing === "annual" ? (
+              <button
+                type="button"
+                disabled
+                className="block w-full text-center bg-gray-200 text-gray-500 font-medium rounded-xl py-3.5 text-base cursor-not-allowed"
+              >
+                {l.comingSoon}
+              </button>
+            ) : (
+              <button
+                onClick={handleCheckout}
+                disabled={loading}
+                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+              >
+                {loading ? l.loading : l.checkout}
+              </button>
+            )}
 
             <p className="text-xs text-gray-400 mt-3 text-center">{l.subscriptionNote}</p>
           </div>

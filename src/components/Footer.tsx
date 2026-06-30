@@ -1,22 +1,62 @@
 import type { Locale, Translations } from "@/i18n";
 import Link from "next/link";
 
-const legalLinks = [
-  { href: "/regulamin", label: "Regulamin" },
-  { href: "/polityka-prywatnosci", label: "Polityka Prywatności" },
-  { href: "/polityka-cookies", label: "Polityka Cookies" },
-];
-
-const navLinks = [
-  { href: "/#features", label: "Funkcje" },
-  { href: "/#pricing", label: "Cennik" },
-  { href: "/#contact", label: "Kontakt" },
-  { href: "/order", label: "Zamów" },
-  { href: "/blog", label: "Blog" },
-];
+const footerUi = {
+  pl: {
+    nav: "Nawigacja stopki",
+    legal: "Dokumenty prawne",
+    order: "Zamów",
+    blog: "Blog",
+    terms: "Regulamin",
+    privacy: "Polityka Prywatności",
+    cookies: "Polityka Cookies",
+  },
+  en: {
+    nav: "Footer navigation",
+    legal: "Legal documents",
+    order: "Order",
+    blog: "Blog",
+    terms: "Terms & Conditions",
+    privacy: "Privacy Policy",
+    cookies: "Cookie Policy",
+  },
+  de: {
+    nav: "Footer-Navigation",
+    legal: "Rechtliche Dokumente",
+    order: "Bestellen",
+    blog: "Blog",
+    terms: "AGB",
+    privacy: "Datenschutzerklärung",
+    cookies: "Cookie-Richtlinie",
+  },
+  it: {
+    nav: "Navigazione del footer",
+    legal: "Documenti legali",
+    order: "Ordina",
+    blog: "Blog",
+    terms: "Termini e Condizioni",
+    privacy: "Informativa sulla Privacy",
+    cookies: "Politica dei Cookie",
+  },
+} satisfies Record<Locale, Record<string, string>>;
 
 export default function Footer({ t, locale }: { t: Translations; locale: Locale }) {
   const year = new Date().getFullYear();
+  const fu = footerUi[locale];
+
+  const navLinks = [
+    { href: "/#features", label: t.nav.features },
+    { href: "/#pricing", label: t.nav.pricing },
+    { href: "/#contact", label: t.nav.contact },
+    { href: "/order", label: fu.order },
+    { href: "/blog", label: fu.blog },
+  ];
+
+  const legalLinks = [
+    { href: "/regulamin", label: fu.terms },
+    { href: "/polityka-prywatnosci", label: fu.privacy },
+    { href: "/polityka-cookies", label: fu.cookies },
+  ];
 
   return (
     <footer className="border-t border-gray-100 py-12 px-4 sm:px-6">
@@ -29,7 +69,7 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
             </Link>
             <p className="text-sm text-gray-500 mt-1 max-w-xs">{t.footer.tagline}</p>
           </div>
-          <nav aria-label="Nawigacja stopki" className="flex flex-wrap gap-x-6 gap-y-2">
+          <nav aria-label={fu.nav} className="flex flex-wrap gap-x-6 gap-y-2">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
@@ -47,7 +87,7 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
           <p className="text-xs text-gray-400">
             &copy; {year} Starlinkee. {t.footer.rights}
           </p>
-          <nav aria-label="Dokumenty prawne" className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2">
+          <nav aria-label={fu.legal} className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2">
             {legalLinks.map(({ href, label }) => (
               <Link
                 key={href}

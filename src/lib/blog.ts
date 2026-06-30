@@ -53,7 +53,9 @@ export interface BlogPostMeta {
   keywords: string[];
   faq: FaqItem[];
   availableLocales: Locale[];
-  localized?: Partial<Record<Locale, { title: string; description: string; category: string }>>;
+  localized?: Partial<
+    Record<Locale, { title: string; description: string; category: string; keywords: string[] }>
+  >;
 }
 
 export const blogPosts: BlogPostMeta[] = [
@@ -86,18 +88,48 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Learn how to create, verify and optimise your Google Business Profile. Discover which ranking signals have the greatest impact on your position in Google Maps and the Local Pack.",
         category: "Google Business Profile",
+        keywords: [
+          "google business profile",
+          "how to optimize google business profile",
+          "google maps ranking factors",
+          "local seo for restaurants",
+          "google my business setup",
+          "google business profile verification",
+          "local pack ranking",
+          "google maps optimization",
+        ],
       },
       de: {
         title: "Google Business Profile: So füllen und optimieren Sie Ihr Profil Schritt für Schritt",
         description:
           "Erfahren Sie, wie Sie Ihr Google Business Profil anlegen, verifizieren und optimieren. Entdecken Sie, welche Rankingsignale die größte Auswirkung auf Ihre Position in Google Maps und dem Local Pack haben.",
         category: "Google Business Profile",
+        keywords: [
+          "google unternehmensprofil",
+          "google business profile optimieren",
+          "google maps ranking faktoren",
+          "local seo für restaurants",
+          "google mein unternehmen einrichten",
+          "google business profile verifizieren",
+          "local pack ranking",
+          "google maps optimierung",
+        ],
       },
       it: {
         title: "Google Business Profile: come compilare e ottimizzare il profilo passo dopo passo",
         description:
           "Scopri come creare, verificare e ottimizzare il tuo Google Business Profile. Scopri quali segnali di ranking hanno il maggiore impatto sulla tua posizione in Google Maps e nel Local Pack.",
         category: "Google Business Profile",
+        keywords: [
+          "profilo google business",
+          "come ottimizzare google business profile",
+          "fattori di ranking google maps",
+          "local seo per ristoranti",
+          "configurare google my business",
+          "verifica profilo google business",
+          "local pack ranking",
+          "ottimizzazione google maps",
+        ],
       },
     },
     faq: [
@@ -155,18 +187,42 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Find out how to legally and effectively collect Google reviews. Learn when to ask for a review, which barriers to remove, and why an NFC system changes the game.",
         category: "Google Reviews",
+        keywords: [
+          "google reviews",
+          "how to get google reviews",
+          "NFC review system",
+          "google business profile",
+          "collecting reviews",
+          "google business profile ranking",
+        ],
       },
       de: {
         title: "Wie bekommt man schnell Google-Bewertungen? Automatisierung und Richtlinien",
         description:
           "Erfahren Sie, wie Sie legal und effektiv Google-Bewertungen sammeln. Wann Sie um eine Rezension bitten, welche Hindernisse beseitigt werden müssen und warum ein NFC-System alles verändert.",
         category: "Google-Bewertungen",
+        keywords: [
+          "google bewertungen",
+          "wie bekommt man google bewertungen",
+          "NFC bewertungssystem",
+          "google unternehmensprofil",
+          "bewertungen sammeln",
+          "google business profile ranking",
+        ],
       },
       it: {
         title: "Come ottenere rapidamente recensioni su Google? Automazione e linee guida",
         description:
           "Scopri come raccogliere recensioni su Google in modo legale ed efficace. Quando chiedere una recensione, quali ostacoli rimuovere e perché un sistema NFC cambia le regole del gioco.",
         category: "Recensioni Google",
+        keywords: [
+          "recensioni google",
+          "come ottenere recensioni google",
+          "sistema NFC recensioni",
+          "profilo google business",
+          "raccogliere recensioni",
+          "ranking profilo google business",
+        ],
       },
     },
     faq: [
@@ -192,12 +248,13 @@ export const blogPosts: BlogPostMeta[] = [
 export function getLocalizedPost(
   post: BlogPostMeta,
   locale: Locale,
-): { title: string; description: string; category: string } {
+): { title: string; description: string; category: string; keywords: string[] } {
   const loc = locale !== "pl" ? post.localized?.[locale] : undefined;
   return {
     title: loc?.title ?? post.title,
     description: loc?.description ?? post.description,
     category: loc?.category ?? post.category,
+    keywords: loc?.keywords ?? post.keywords,
   };
 }
 

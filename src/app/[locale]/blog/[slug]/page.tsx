@@ -150,7 +150,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${locPost.title} | Starlinkee`,
     description: locPost.description,
-    keywords: post.keywords,
+    keywords: locPost.keywords,
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
     alternates: { canonical: effectiveCanonicalUrl, languages: languageAlternates },
     openGraph: {
@@ -280,7 +280,7 @@ export default async function BlogSlugPage({ params }: Props) {
     "@type": "Article",
     headline: locPost.title,
     description: locPost.description,
-    keywords: post.keywords.join(", "),
+    keywords: locPost.keywords.join(", "),
     datePublished: post.publishedAt,
     dateModified: post.modifiedAt ?? post.publishedAt,
     author: { "@type": "Person", name: post.author, url: SITE_URL },

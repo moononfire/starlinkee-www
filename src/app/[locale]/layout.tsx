@@ -126,7 +126,7 @@ export default async function RootLayout({
     >
       <body className="min-h-screen bg-white text-gray-900">
         {children}
-        <NewsletterPopup />
+        <NewsletterPopup locale={locale} />
         <PhoneWidget locale={locale} />
         <ChatWidget locale={locale} />
         <CookieBanner locale={locale} />
