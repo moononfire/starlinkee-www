@@ -9,11 +9,10 @@ export default function Hero({ t, locale }: { t: Translations; locale: Locale })
           {t.hero.badge}
         </div>
 
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-2">
-          {t.hero.title}
-        </h1>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-600 mb-6">
-          {t.hero.titleHighlight}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+          <span className="text-gray-900">{t.hero.title}</span>
+          <br />
+          <span className="text-brand-600">{t.hero.titleHighlight}</span>
         </h1>
 
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -41,7 +40,7 @@ export default function Hero({ t, locale }: { t: Translations; locale: Locale })
         <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/15 border border-gray-200/80">
           <Image
             src="/hero.png"
-            alt=""
+            alt="Starlinkee — panel zarządzania opiniami dla restauracji"
             width={1200}
             height={675}
             priority

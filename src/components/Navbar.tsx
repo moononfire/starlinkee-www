@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import type { Locale, Translations } from "@/i18n";
 
@@ -47,40 +48,51 @@ const locales: Locale[] = ["pl", "en", "de", "it"];
 export default function Navbar({
   t,
   locale,
-  onLocaleChange,
 }: {
   t: Translations;
   locale: Locale;
-  onLocaleChange: (l: Locale) => void;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const router = useRouter();
+
+  function changeLocale(l: Locale) {
+    router.push(`/?lang=${l}`);
+    setLangOpen(false);
+    setMobileOpen(false);
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold text-brand-600">
+        <a href="/" className="text-xl font-bold text-brand-600">
           Starlinkee
         </a>
 
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="#features"
+            href="/#features"
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t.nav.features}
           </a>
           <a
-            href="#pricing"
+            href="/#pricing"
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t.nav.pricing}
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             {t.nav.contact}
+          </a>
+          <a
+            href="/blog"
+            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            Blog
           </a>
 
           <div className="relative">
@@ -99,7 +111,7 @@ export default function Navbar({
                     <button
                       key={l}
                       onClick={() => {
-                        onLocaleChange(l);
+                        changeLocale(l);
                         setLangOpen(false);
                       }}
                       className="flex items-center gap-1.5 w-full text-left text-sm text-gray-600 hover:bg-gray-50 px-3 py-1.5 cursor-pointer"
@@ -153,32 +165,39 @@ export default function Navbar({
       {mobileOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 flex flex-col gap-3">
           <a
-            href="#features"
+            href="/#features"
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600"
           >
             {t.nav.features}
           </a>
           <a
-            href="#pricing"
+            href="/#pricing"
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600"
           >
             {t.nav.pricing}
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setMobileOpen(false)}
             className="text-sm text-gray-600"
           >
             {t.nav.contact}
+          </a>
+          <a
+            href="/blog"
+            onClick={() => setMobileOpen(false)}
+            className="text-sm text-gray-600"
+          >
+            Blog
           </a>
           <div className="flex gap-2">
             {locales.map((l) => (
               <button
                 key={l}
                 onClick={() => {
-                  onLocaleChange(l);
+                  changeLocale(l);
                   setMobileOpen(false);
                 }}
                 className={`flex items-center gap-1.5 text-sm border rounded-md px-2.5 py-1 cursor-pointer ${
