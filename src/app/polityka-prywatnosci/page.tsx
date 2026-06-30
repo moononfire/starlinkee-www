@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Polityka Prywatności | Starlinkee",
   description: "Polityka prywatności serwisu Starlinkee — informacje o przetwarzaniu danych osobowych zgodnie z RODO.",
   alternates: { canonical: `${SITE_URL}/polityka-prywatnosci` },
+  robots: { index: false, follow: false },
 };
 
 export default function PolitykaPrywatnosci() {

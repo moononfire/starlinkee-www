@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
+import Link from "next/link";
 import type { Locale, Translations } from "@/i18n";
 
 const flags: Record<Locale, ReactNode> = {
@@ -65,9 +66,9 @@ export default function Navbar({
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold text-brand-600">
+        <Link href="/" className="text-xl font-bold text-brand-600">
           Starlinkee
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           <a

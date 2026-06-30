@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Polityka Cookies | Starlinkee",
   description: "Polityka plików cookies serwisu Starlinkee — jakie cookies używamy i jak nimi zarządzać.",
   alternates: { canonical: `${SITE_URL}/polityka-cookies` },
+  robots: { index: false, follow: false },
 };
 
 export default function PolitykaCookies() {

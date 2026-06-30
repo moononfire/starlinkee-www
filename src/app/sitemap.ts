@@ -47,5 +47,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...categoryEntries,
     ...blogEntries,
+    {
+      url: `${SITE_URL}/regulamin`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.1,
+    },
+    {
+      url: `${SITE_URL}/polityka-prywatnosci`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.1,
+    },
+    {
+      url: `${SITE_URL}/polityka-cookies`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.1,
+    },
   ];
 }

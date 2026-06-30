@@ -4,6 +4,7 @@ import "./globals.css";
 import NewsletterPopup from "@/components/NewsletterPopup";
 import PhoneWidget from "@/components/PhoneWidget";
 import ChatWidget from "@/components/ChatWidget";
+import CookieBanner from "@/components/CookieBanner";
 
 const SITE_URL = "https://starlinkee.pl";
 
@@ -86,6 +87,7 @@ export default function RootLayout({
         <NewsletterPopup />
         <PhoneWidget />
         <ChatWidget />
+        <CookieBanner />
       </body>
     </html>
   );

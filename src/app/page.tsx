@@ -43,13 +43,21 @@ export default async function Home({
     "@type": "Organization",
     name: "Starlinkee",
     url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/hero.png`,
+      width: 1200,
+      height: 675,
+    },
     description:
       "System opinii i lojalności dla gastronomii oparty na technologii NFC.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
+      email: "kontakt@starlinkee.pl",
       availableLanguage: ["Polish", "English", "German", "Italian"],
     },
+    sameAs: [],
   };
 
   const softwareJsonLd = {

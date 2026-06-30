@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Regulamin Sklepu | Starlinkee",
   description: "Regulamin sprzedaży produktów Starlinkee — warunki zakupu, prawo do odstąpienia od umowy, reklamacje.",
   alternates: { canonical: `${SITE_URL}/regulamin` },
+  robots: { index: false, follow: false },
 };
 
 export default function Regulamin() {
