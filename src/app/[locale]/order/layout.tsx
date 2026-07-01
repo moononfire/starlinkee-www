@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { getTranslations, type Locale } from "@/i18n";
 import { resolveLocale } from "@/lib/locale";
 
-const SITE_URL = "https://starlinkee.pl";
+const SITE_URL = "https://starlinkee.com";
 
 const titles: Record<Locale, string> = {
   pl: "Zamów tabliczkę NFC do opinii Google | Starlinkee",

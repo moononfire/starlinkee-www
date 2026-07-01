@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  getBlogPost,
-  getBlogCategory,
   getPostsByCategory,
-  getEffectiveLocale,
   getRelatedPosts,
   getLocalizedPost,
   getCategoryName,
+  getLocalizedCategorySlug,
+  getBlogCategory,
+  findPostByLocalizedSlug,
+  findCategoryByLocalizedSlug,
   blogPosts,
   blogCategories,
 } from "@/lib/blog";
@@ -24,8 +25,9 @@ import WizytowkaGoogleMojaFirmaEn from "@/components/blog/articles/WizytowkaGoog
 import WizytowkaGoogleMojaFirmaDe from "@/components/blog/articles/WizytowkaGoogleMojaFirmaDe";
 import WizytowkaGoogleMojaFirmaIt from "@/components/blog/articles/WizytowkaGoogleMojaFirmaIt";
 
-const SITE_URL = "https://starlinkee.pl";
+const SITE_URL = "https://starlinkee.com";
 
+// Klucz to kanoniczny (polski) `post.slug` — niezależny od adresu URL widocznego w danym języku.
 const articleComponents: Record<string, Partial<Record<Locale, React.ComponentType>>> = {
   "jak-szybko-zdobyc-opinie-w-google": {
     pl: JakSzybkoZdobycOpinie,
@@ -111,8 +113,16 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  const slugs = [...blogPosts.map((post) => post.slug), ...blogCategories.map((cat) => cat.slug)];
-  return LOCALES.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+  return LOCALES.flatMap((locale) => {
+    const postSlugs = blogPosts
+      .filter((post) => post.availableLocales.includes(locale))
+      .map((post) => ({ locale, slug: getLocalizedPost(post, locale).slug }));
+    const categorySlugs = blogCategories.map((cat) => ({
+      locale,
+      slug: getLocalizedCategorySlug(cat, locale),
+    }));
+    return [...postSlugs, ...categorySlugs];
+  });
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -120,7 +130,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = resolveLocale(rawLocale);
   const canonicalUrl = `${SITE_URL}/${locale}/blog/${slug}`;
 
-  const cat = getBlogCategory(slug);
+  const cat = findCategoryByLocalizedSlug(locale, slug);
   if (cat) {
     const catName = getCategoryName(cat, locale);
     return {
@@ -132,37 +142,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const post = getBlogPost(slug);
+  const post = findPostByLocalizedSlug(locale, slug);
   if (!post) return {};
 
-  const effectiveLocale = getEffectiveLocale(slug, locale);
-  const locPost = getLocalizedPost(post, effectiveLocale);
-
-  // Post nieprzetłumaczony na żądany locale — kanoniczny URL wskazuje na wersję, która faktycznie istnieje (unika cienkiej/duplikowanej treści).
-  const effectiveCanonicalUrl = `${SITE_URL}/${effectiveLocale}/blog/${slug}`;
+  const locPost = getLocalizedPost(post, locale);
 
   const languageAlternates: Record<string, string> = {};
   for (const loc of post.availableLocales) {
-    languageAlternates[loc] = `${SITE_URL}/${loc}/blog/${slug}`;
+    languageAlternates[loc] = `${SITE_URL}/${loc}/blog/${getLocalizedPost(post, loc).slug}`;
   }
-  languageAlternates["x-default"] = `${SITE_URL}/pl/blog/${slug}`;
+  languageAlternates["x-default"] = `${SITE_URL}/pl/blog/${post.slug}`;
 
   return {
     title: `${locPost.title} | Starlinkee`,
     description: locPost.description,
     keywords: locPost.keywords,
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
-    alternates: { canonical: effectiveCanonicalUrl, languages: languageAlternates },
+    alternates: { canonical: canonicalUrl, languages: languageAlternates },
     openGraph: {
       type: "article",
-      url: effectiveCanonicalUrl,
+      url: canonicalUrl,
       siteName: "Starlinkee",
       title: locPost.title,
       description: locPost.description,
       publishedTime: post.publishedAt,
       modifiedTime: post.modifiedAt ?? post.publishedAt,
       authors: [post.author],
-      locale: ogLocales[effectiveLocale],
+      locale: ogLocales[locale],
       images: [{ url: post.ogImage, width: 1200, height: 675, alt: locPost.title }],
     },
     twitter: { card: "summary_large_image", title: locPost.title, description: locPost.description, images: [post.ogImage] },
@@ -175,9 +181,9 @@ export default async function BlogSlugPage({ params }: Props) {
   const canonicalUrl = `${SITE_URL}/${requestedLocale}/blog/${slug}`;
 
   // ── WIDOK KATEGORII ──────────────────────────────────────────────
-  const cat = getBlogCategory(slug);
+  const cat = findCategoryByLocalizedSlug(requestedLocale, slug);
   if (cat) {
-    const posts = getPostsByCategory(slug);
+    const posts = getPostsByCategory(cat.slug);
     const ui = slugUi[requestedLocale];
     const catName = getCategoryName(cat, requestedLocale);
 
@@ -200,7 +206,7 @@ export default async function BlogSlugPage({ params }: Props) {
         "@type": "ListItem",
         position: index + 1,
         name: post.title,
-        url: `${SITE_URL}/${requestedLocale}/blog/${post.slug}`,
+        url: `${SITE_URL}/${requestedLocale}/blog/${getLocalizedPost(post, requestedLocale).slug}`,
       })),
     };
 
@@ -242,10 +248,10 @@ export default async function BlogSlugPage({ params }: Props) {
                         </time>
                       </div>
                       <h2 className="text-xl font-bold text-gray-900 mb-2">
-                        <Link href={`/${requestedLocale}/blog/${post.slug}`} className="hover:text-blue-600 transition-colors">{locPost.title}</Link>
+                        <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="hover:text-blue-600 transition-colors">{locPost.title}</Link>
                       </h2>
                       <p className="text-gray-600 leading-relaxed mb-4">{locPost.description}</p>
-                      <Link href={`/${requestedLocale}/blog/${post.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700">
+                      <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700">
                         {ui.readMore} <span aria-hidden="true">→</span>
                       </Link>
                     </article>
@@ -260,20 +266,20 @@ export default async function BlogSlugPage({ params }: Props) {
   }
 
   // ── WIDOK ARTYKUŁU ───────────────────────────────────────────────
-  const post = getBlogPost(slug);
+  const post = findPostByLocalizedSlug(requestedLocale, slug);
   if (!post) notFound();
 
-  const effectiveLocale = getEffectiveLocale(slug, requestedLocale);
-  const ui = slugUi[effectiveLocale];
-  const locPost = getLocalizedPost(post, effectiveLocale);
+  const ui = slugUi[requestedLocale];
+  const locPost = getLocalizedPost(post, requestedLocale);
+  const postCategory = getBlogCategory(post.categorySlug);
+  const categoryHref = postCategory ? getLocalizedCategorySlug(postCategory, requestedLocale) : post.categorySlug;
 
-  const ArticleContent = articleComponents[slug]?.[effectiveLocale];
+  const ArticleContent = articleComponents[post.slug]?.[requestedLocale];
   if (!ArticleContent) notFound();
 
-  const relatedPosts = getRelatedPosts(slug);
+  const relatedPosts = getRelatedPosts(post.slug);
 
-  const inLanguage = dateLocales[effectiveLocale];
-  const effectiveCanonicalUrl = `${SITE_URL}/${effectiveLocale}/blog/${slug}`;
+  const inLanguage = dateLocales[requestedLocale];
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -286,8 +292,8 @@ export default async function BlogSlugPage({ params }: Props) {
     author: { "@type": "Person", name: post.author, url: SITE_URL },
     publisher: { "@type": "Organization", name: "Starlinkee", url: SITE_URL, logo: { "@type": "ImageObject", url: `${SITE_URL}/hero.png`, width: 1200, height: 675 } },
     image: { "@type": "ImageObject", url: `${SITE_URL}${post.ogImage}`, width: 1200, height: 675 },
-    url: effectiveCanonicalUrl,
-    mainEntityOfPage: effectiveCanonicalUrl,
+    url: canonicalUrl,
+    mainEntityOfPage: canonicalUrl,
     inLanguage,
     articleSection: locPost.category,
   };
@@ -296,10 +302,10 @@ export default async function BlogSlugPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: ui.home, item: `${SITE_URL}/${effectiveLocale}` },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/${effectiveLocale}/blog` },
-      { "@type": "ListItem", position: 3, name: locPost.category, item: `${SITE_URL}/${effectiveLocale}/blog/${post.categorySlug}` },
-      { "@type": "ListItem", position: 4, name: locPost.title, item: effectiveCanonicalUrl },
+      { "@type": "ListItem", position: 1, name: ui.home, item: `${SITE_URL}/${requestedLocale}` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/${requestedLocale}/blog` },
+      { "@type": "ListItem", position: 3, name: locPost.category, item: `${SITE_URL}/${requestedLocale}/blog/${categoryHref}` },
+      { "@type": "ListItem", position: 4, name: locPost.title, item: canonicalUrl },
     ],
   };
 
@@ -325,12 +331,12 @@ export default async function BlogSlugPage({ params }: Props) {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10">
           <nav aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-              <li><Link href={`/${effectiveLocale}`} className="hover:text-gray-700">{ui.home}</Link></li>
+              <li><Link href={`/${requestedLocale}`} className="hover:text-gray-700">{ui.home}</Link></li>
               <li aria-hidden="true" className="text-gray-300">/</li>
-              <li><Link href={`/${effectiveLocale}/blog`} className="hover:text-gray-700">Blog</Link></li>
+              <li><Link href={`/${requestedLocale}/blog`} className="hover:text-gray-700">Blog</Link></li>
               <li aria-hidden="true" className="text-gray-300">/</li>
               <li>
-                <Link href={`/${effectiveLocale}/blog/${post.categorySlug}`} className="hover:text-gray-700">
+                <Link href={`/${requestedLocale}/blog/${categoryHref}`} className="hover:text-gray-700">
                   {locPost.category}
                 </Link>
               </li>
@@ -346,13 +352,13 @@ export default async function BlogSlugPage({ params }: Props) {
             <header className="mb-8">
               <div className="flex items-center gap-3 mb-4">
                 <Link
-                  href={`/${effectiveLocale}/blog/${post.categorySlug}`}
+                  href={`/${requestedLocale}/blog/${categoryHref}`}
                   className="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full transition-colors"
                 >
                   {locPost.category}
                 </Link>
                 <time dateTime={post.publishedAt} className="text-sm text-gray-500">
-                  {new Date(post.publishedAt).toLocaleDateString(dateLocales[effectiveLocale], { day: "2-digit", month: "long", year: "numeric" })}
+                  {new Date(post.publishedAt).toLocaleDateString(dateLocales[requestedLocale], { day: "2-digit", month: "long", year: "numeric" })}
                 </time>
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-4">{locPost.title}</h1>
@@ -386,7 +392,7 @@ export default async function BlogSlugPage({ params }: Props) {
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">Starlinkee</p>
               <h2 className="text-3xl font-bold mb-4">{ui.ctaHeading}</h2>
               <p className="text-blue-100 mb-8 leading-relaxed text-lg">{ui.ctaBody}</p>
-              <Link href={`/${effectiveLocale}/order`} className="inline-block bg-white text-blue-700 font-bold px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors text-base shadow-lg">
+              <Link href={`/${requestedLocale}/order`} className="inline-block bg-white text-blue-700 font-bold px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors text-base shadow-lg">
                 {ui.ctaButton}
               </Link>
             </div>
@@ -398,19 +404,21 @@ export default async function BlogSlugPage({ params }: Props) {
               <h2 className="text-xl font-bold text-gray-900 mb-6">{ui.relatedPosts}</h2>
               <div className="grid gap-4">
                 {relatedPosts.map((related) => {
-                  const locRelated = getLocalizedPost(related, effectiveLocale);
+                  const locRelated = getLocalizedPost(related, requestedLocale);
+                  const relatedCat = getBlogCategory(related.categorySlug);
+                  const relatedCategoryHref = relatedCat ? getLocalizedCategorySlug(relatedCat, requestedLocale) : related.categorySlug;
                   return (
                     <article key={related.slug} className="border border-gray-200 rounded-xl p-5 hover:border-gray-300 hover:shadow-sm transition-all">
                       <div className="flex items-center gap-2 mb-2">
-                        <Link href={`/${effectiveLocale}/blog/${related.categorySlug}`} className="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-2.5 py-0.5 rounded-full transition-colors">
+                        <Link href={`/${requestedLocale}/blog/${relatedCategoryHref}`} className="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-2.5 py-0.5 rounded-full transition-colors">
                           {locRelated.category}
                         </Link>
                         <time dateTime={related.publishedAt} className="text-xs text-gray-400">
-                          {new Date(related.publishedAt).toLocaleDateString(dateLocales[effectiveLocale], { day: "2-digit", month: "long", year: "numeric" })}
+                          {new Date(related.publishedAt).toLocaleDateString(dateLocales[requestedLocale], { day: "2-digit", month: "long", year: "numeric" })}
                         </time>
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">
-                        <Link href={`/${effectiveLocale}/blog/${related.slug}`} className="hover:text-blue-600 transition-colors">{locRelated.title}</Link>
+                        <Link href={`/${requestedLocale}/blog/${locRelated.slug}`} className="hover:text-blue-600 transition-colors">{locRelated.title}</Link>
                       </h3>
                       <p className="text-sm text-gray-500 leading-relaxed">{locRelated.description}</p>
                     </article>

@@ -4,7 +4,12 @@ import { useRouter, usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
 import { type Locale, type Translations } from "@/i18n";
-import { blogPosts } from "@/lib/blog";
+import {
+  findPostByLocalizedSlug,
+  findCategoryByLocalizedSlug,
+  getLocalizedPost,
+  getLocalizedCategorySlug,
+} from "@/lib/blog";
 import { setLocaleCookie } from "@/lib/actions";
 
 const flags: Record<Locale, ReactNode> = {
@@ -64,16 +69,28 @@ export default function Navbar({
 
   function changeLocale(l: Locale) {
     const blogSlugMatch = pathWithoutLocale.match(/^\/blog\/([^/]+)$/);
+    let targetPath = pathWithoutLocale;
+
     if (blogSlugMatch) {
-      const post = blogPosts.find((p) => p.slug === blogSlugMatch[1]);
-      if (post && !post.availableLocales.includes(l)) {
-        setLangOpen(false);
-        setMobileOpen(false);
-        return;
+      const currentSlug = blogSlugMatch[1];
+      const post = findPostByLocalizedSlug(locale, currentSlug);
+      if (post) {
+        if (!post.availableLocales.includes(l)) {
+          setLangOpen(false);
+          setMobileOpen(false);
+          return;
+        }
+        targetPath = `/blog/${getLocalizedPost(post, l).slug}`;
+      } else {
+        const cat = findCategoryByLocalizedSlug(locale, currentSlug);
+        if (cat) {
+          targetPath = `/blog/${getLocalizedCategorySlug(cat, l)}`;
+        }
       }
     }
+
     setLocaleCookie(l);
-    router.push(`/${l}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`);
+    router.push(`/${l}${targetPath === "/" ? "" : targetPath}`);
     setLangOpen(false);
     setMobileOpen(false);
   }

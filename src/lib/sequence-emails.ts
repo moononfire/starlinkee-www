@@ -87,7 +87,7 @@ const COURSE_SEQUENCE: Record<number, SequenceEmail> = {
       `<p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;">Opinie to waluta Google. Im więcej masz (i im wyższe), tym wyżej jesteś w wynikach lokalnych.</p>
        <p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;"><strong>Najskuteczniejszy sposób:</strong> tabliczka NFC przy kasie lub na stoliku — klient przykłada telefon i trafia prosto na formularz opinii.</p>
        <p style="margin:0 0 24px;color:#6b7280;font-size:15px;line-height:1.7;">Bez proszenia, bez QR kodów do skanowania, bez wpisywania linków. Jeden dotyk = opinia.</p>`,
-      { label: "Zobacz tabliczki NFC →", url: "https://starlinkee.pl/order" }
+      { label: "Zobacz tabliczki NFC →", url: "https://starlinkee.com/order" }
     ),
   },
 };
@@ -152,7 +152,7 @@ function buildCourseEmail(
           <p style="margin:0;color:#9ca3af;font-size:13px;">Możesz wypisać się w dowolnej chwili — wystarczy odpowiedzieć na tę wiadomość.</p>
         </td></tr>
         <tr><td style="background:#f3f4f6;padding:20px 40px;text-align:center;">
-          <p style="margin:0;color:#9ca3af;font-size:12px;">© 2025 Starlinkee · starlinkee.pl</p>
+          <p style="margin:0;color:#9ca3af;font-size:12px;">© 2025 Starlinkee · starlinkee.com</p>
         </td></tr>
       </table>
     </td></tr>
@@ -177,13 +177,13 @@ function buildDiscountEmail(title: string, body: string): string {
           </div><br>
           <table cellpadding="0" cellspacing="0" style="margin:0 auto 28px;">
             <tr><td style="background:#2563eb;border-radius:8px;">
-              <a href="https://starlinkee.pl/order" style="display:inline-block;padding:14px 28px;color:#ffffff;font-size:15px;font-weight:bold;text-decoration:none;">Zamów tabliczkę NFC →</a>
+              <a href="https://starlinkee.com/order" style="display:inline-block;padding:14px 28px;color:#ffffff;font-size:15px;font-weight:bold;text-decoration:none;">Zamów tabliczkę NFC →</a>
             </td></tr>
           </table>
           <p style="margin:0;color:#9ca3af;font-size:13px;">Możesz wypisać się w dowolnej chwili — wystarczy odpowiedzieć na tę wiadomość.</p>
         </td></tr>
         <tr><td style="background:#f3f4f6;padding:20px 40px;text-align:center;">
-          <p style="margin:0;color:#9ca3af;font-size:12px;">© 2025 Starlinkee · starlinkee.pl</p>
+          <p style="margin:0;color:#9ca3af;font-size:12px;">© 2025 Starlinkee · starlinkee.com</p>
         </td></tr>
       </table>
     </td></tr>

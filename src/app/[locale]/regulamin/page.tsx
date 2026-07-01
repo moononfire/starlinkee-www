@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const SITE_URL = "https://starlinkee.pl";
+const SITE_URL = "https://starlinkee.com";
 
 export const metadata: Metadata = {
   title: "Regulamin Sklepu | Starlinkee",

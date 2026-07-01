@@ -1,6 +1,28 @@
 import type { NextConfig } from "next";
+import { LOCALES } from "./src/i18n";
+import { blogPosts, getLocalizedPost } from "./src/lib/blog";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    // Stare URL-e bloga reużywały polskiego sluga pod każdym językiem (/en/blog/<pl-slug>).
+    // Po wprowadzeniu lokalizowanych slugów te adresy mogą być już zaindeksowane —
+    // przekierowujemy je na nowy, prawidłowy URL zamiast zwracać 404.
+    const blogSlugRedirects = blogPosts.flatMap((post) =>
+      LOCALES.filter((locale) => post.availableLocales.includes(locale)).flatMap((locale) => {
+        const localizedSlug = getLocalizedPost(post, locale).slug;
+        if (localizedSlug === post.slug) return [];
+        return [
+          {
+            source: `/${locale}/blog/${post.slug}`,
+            destination: `/${locale}/blog/${localizedSlug}`,
+            permanent: true,
+          },
+        ];
+      }),
+    );
+
+    return blogSlugRedirects;
+  },
   async headers() {
     return [
       {

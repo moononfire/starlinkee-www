@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://starlinkee.pl/sitemap.xml",
+    sitemap: "https://starlinkee.com/sitemap.xml",
   };
 }

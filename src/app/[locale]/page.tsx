@@ -7,7 +7,7 @@ import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
-const SITE_URL = "https://starlinkee.pl";
+const SITE_URL = "https://starlinkee.com";
 
 export default async function Home({
   params,
@@ -52,7 +52,7 @@ export default async function Home({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "kontakt@starlinkee.pl",
+      email: "kontakt@starlinkee.com",
       availableLanguage: ["Polish", "English", "German", "Italian"],
     },
     sameAs: [],

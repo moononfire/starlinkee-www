@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
   const resendKey = process.env.RESEND_API_KEY;
   const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL ?? "vikbobinski@gmail.com";
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://starlinkee.pl";
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://starlinkee.com";
   const adminToken = process.env.CHAT_ADMIN_TOKEN ?? "changeme";
 
   if (resendKey) {

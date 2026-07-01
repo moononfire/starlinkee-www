@@ -4,6 +4,7 @@ export interface BlogCategory {
   slug: string;
   name: string;
   names: Partial<Record<Locale, string>>;
+  slugs: Partial<Record<Locale, string>>;
   description: string;
 }
 
@@ -12,24 +13,28 @@ export const blogCategories: BlogCategory[] = [
     slug: "opinie-google",
     name: "Opinie Google",
     names: { en: "Google Reviews", de: "Google-Bewertungen", it: "Recensioni Google" },
+    slugs: { en: "google-reviews", de: "google-bewertungen", it: "recensioni-google" },
     description: "Strategie zdobywania opinii, regulamin Google i systemy zbierania recenzji.",
   },
   {
     slug: "wizytowka-google",
     name: "Wizytówka Google",
     names: { en: "Google Business Profile", de: "Google Business Profile", it: "Google Business Profile" },
+    slugs: { en: "google-business-profile", de: "google-unternehmensprofil", it: "profilo-google-business" },
     description: "Optymalizacja profilu Google Business Profile, Local Pack i lokalne SEO.",
   },
   {
     slug: "zarzadzanie-reputacja",
     name: "Zarządzanie reputacją",
     names: { en: "Reputation Management", de: "Reputationsmanagement", it: "Gestione della reputazione" },
+    slugs: { en: "reputation-management", de: "reputationsmanagement", it: "gestione-reputazione" },
     description: "Odpowiadanie na opinie, obsługa negatywnych recenzji i budowanie wizerunku.",
   },
   {
     slug: "marketing-lokalny",
     name: "Marketing lokalny",
     names: { en: "Local Marketing", de: "Lokales Marketing", it: "Marketing locale" },
+    slugs: { en: "local-marketing", de: "lokales-marketing", it: "marketing-locale" },
     description: "Strategie marketingowe dla firm lokalnych, NFC i automatyzacja procesów.",
   },
 ];
@@ -54,7 +59,7 @@ export interface BlogPostMeta {
   faq: FaqItem[];
   availableLocales: Locale[];
   localized?: Partial<
-    Record<Locale, { title: string; description: string; category: string; keywords: string[] }>
+    Record<Locale, { title: string; description: string; category: string; keywords: string[]; slug: string }>
   >;
 }
 
@@ -88,6 +93,7 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Learn how to create, verify and optimise your Google Business Profile. Discover which ranking signals have the greatest impact on your position in Google Maps and the Local Pack.",
         category: "Google Business Profile",
+        slug: "google-business-profile-how-to-optimize",
         keywords: [
           "google business profile",
           "how to optimize google business profile",
@@ -104,6 +110,7 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Erfahren Sie, wie Sie Ihr Google Business Profil anlegen, verifizieren und optimieren. Entdecken Sie, welche Rankingsignale die größte Auswirkung auf Ihre Position in Google Maps und dem Local Pack haben.",
         category: "Google Business Profile",
+        slug: "google-unternehmensprofil-optimieren",
         keywords: [
           "google unternehmensprofil",
           "google business profile optimieren",
@@ -120,6 +127,7 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Scopri come creare, verificare e ottimizzare il tuo Google Business Profile. Scopri quali segnali di ranking hanno il maggiore impatto sulla tua posizione in Google Maps e nel Local Pack.",
         category: "Google Business Profile",
+        slug: "profilo-google-business-come-ottimizzare",
         keywords: [
           "profilo google business",
           "come ottimizzare google business profile",
@@ -187,6 +195,7 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Find out how to legally and effectively collect Google reviews. Learn when to ask for a review, which barriers to remove, and why an NFC system changes the game.",
         category: "Google Reviews",
+        slug: "how-to-get-google-reviews-fast",
         keywords: [
           "google reviews",
           "how to get google reviews",
@@ -201,6 +210,7 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Erfahren Sie, wie Sie legal und effektiv Google-Bewertungen sammeln. Wann Sie um eine Rezension bitten, welche Hindernisse beseitigt werden müssen und warum ein NFC-System alles verändert.",
         category: "Google-Bewertungen",
+        slug: "schnell-google-bewertungen-bekommen",
         keywords: [
           "google bewertungen",
           "wie bekommt man google bewertungen",
@@ -215,6 +225,7 @@ export const blogPosts: BlogPostMeta[] = [
         description:
           "Scopri come raccogliere recensioni su Google in modo legale ed efficace. Quando chiedere una recensione, quali ostacoli rimuovere e perché un sistema NFC cambia le regole del gioco.",
         category: "Recensioni Google",
+        slug: "come-ottenere-recensioni-google-velocemente",
         keywords: [
           "recensioni google",
           "come ottenere recensioni google",
@@ -248,13 +259,14 @@ export const blogPosts: BlogPostMeta[] = [
 export function getLocalizedPost(
   post: BlogPostMeta,
   locale: Locale,
-): { title: string; description: string; category: string; keywords: string[] } {
+): { title: string; description: string; category: string; keywords: string[]; slug: string } {
   const loc = locale !== "pl" ? post.localized?.[locale] : undefined;
   return {
     title: loc?.title ?? post.title,
     description: loc?.description ?? post.description,
     category: loc?.category ?? post.category,
     keywords: loc?.keywords ?? post.keywords,
+    slug: loc?.slug ?? post.slug,
   };
 }
 
@@ -262,12 +274,26 @@ export function getCategoryName(cat: BlogCategory, locale: Locale): string {
   return (locale !== "pl" ? cat.names[locale] : undefined) ?? cat.name;
 }
 
+export function getLocalizedCategorySlug(cat: BlogCategory, locale: Locale): string {
+  return (locale !== "pl" ? cat.slugs[locale] : undefined) ?? cat.slug;
+}
+
+// `slug` jest kanonicznym (polskim) identyfikatorem posta używanym wewnętrznie —
+// adres URL widoczny dla danego języka pochodzi z getLocalizedPost(...).slug.
 export function getBlogPost(slug: string): BlogPostMeta | null {
   return blogPosts.find((p) => p.slug === slug) ?? null;
 }
 
 export function getBlogCategory(slug: string): BlogCategory | null {
   return blogCategories.find((c) => c.slug === slug) ?? null;
+}
+
+export function findPostByLocalizedSlug(locale: Locale, slug: string): BlogPostMeta | null {
+  return blogPosts.find((p) => getLocalizedPost(p, locale).slug === slug) ?? null;
+}
+
+export function findCategoryByLocalizedSlug(locale: Locale, slug: string): BlogCategory | null {
+  return blogCategories.find((c) => getLocalizedCategorySlug(c, locale) === slug) ?? null;
 }
 
 export function getPostsByCategory(categorySlug: string): BlogPostMeta[] {
@@ -280,12 +306,4 @@ export function getRelatedPosts(slug: string, limit = 3): BlogPostMeta[] {
   return blogPosts
     .filter((p) => p.slug !== slug && p.categorySlug === post.categorySlug)
     .slice(0, limit);
-}
-
-export function getEffectiveLocale(slug: string, requested: Locale): Locale {
-  const post = getBlogPost(slug);
-  if (!post) return "pl";
-  return post.availableLocales.includes(requested)
-    ? requested
-    : (post.availableLocales[0] ?? "pl");
 }

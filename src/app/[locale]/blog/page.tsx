@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { blogPosts, blogCategories, getLocalizedPost, getCategoryName } from "@/lib/blog";
+import { blogPosts, blogCategories, getLocalizedPost, getCategoryName, getLocalizedCategorySlug, getBlogCategory } from "@/lib/blog";
 import { LOCALES, type Locale } from "@/i18n";
 import { resolveLocale } from "@/lib/locale";
 
-const SITE_URL = "https://starlinkee.pl";
+const SITE_URL = "https://starlinkee.com";
 
 const BLOG_DESCRIPTIONS: Record<Locale, string> = {
   pl: "Praktyczne poradniki o zdobywaniu opinii w Google, pozycjonowaniu wizytówki i nowoczesnych systemach NFC dla restauracji i lokali.",
@@ -142,7 +142,7 @@ export default async function BlogPage({ params }: Props) {
         "@type": "ListItem",
         position: index + 1,
         name: locPost.title,
-        url: `${SITE_URL}/${locale}/blog/${post.slug}`,
+        url: `${SITE_URL}/${locale}/blog/${locPost.slug}`,
         description: locPost.description,
       };
     }),
@@ -175,7 +175,7 @@ export default async function BlogPage({ params }: Props) {
               {blogCategories.map((cat) => (
                 <Link
                   key={cat.slug}
-                  href={`/${locale}/blog/${cat.slug}`}
+                  href={`/${locale}/blog/${getLocalizedCategorySlug(cat, locale)}`}
                   className="text-sm font-medium text-gray-600 bg-gray-100 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 rounded-full transition-colors"
                 >
                   {getCategoryName(cat, locale)}
@@ -187,6 +187,8 @@ export default async function BlogPage({ params }: Props) {
           <div className="grid gap-8">
             {blogPosts.map((post) => {
               const locPost = getLocalizedPost(post, locale);
+              const cat = getBlogCategory(post.categorySlug);
+              const catHref = cat ? getLocalizedCategorySlug(cat, locale) : post.categorySlug;
               return (
                 <article
                   key={post.slug}
@@ -194,7 +196,7 @@ export default async function BlogPage({ params }: Props) {
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <Link
-                      href={`/${locale}/blog/${post.categorySlug}`}
+                      href={`/${locale}/blog/${catHref}`}
                       className="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full transition-colors"
                     >
                       {locPost.category}
@@ -211,7 +213,7 @@ export default async function BlogPage({ params }: Props) {
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 mb-2">
                     <Link
-                      href={`/${locale}/blog/${post.slug}`}
+                      href={`/${locale}/blog/${locPost.slug}`}
                       className="hover:text-blue-600 transition-colors"
                     >
                       {locPost.title}
@@ -219,7 +221,7 @@ export default async function BlogPage({ params }: Props) {
                   </h2>
                   <p className="text-gray-600 leading-relaxed mb-4">{locPost.description}</p>
                   <Link
-                    href={`/${locale}/blog/${post.slug}`}
+                    href={`/${locale}/blog/${locPost.slug}`}
                     className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
                   >
                     {t.readMore}

@@ -9,7 +9,7 @@ import CookieBanner from "@/components/CookieBanner";
 import { LOCALES, type Locale } from "@/i18n";
 import { isValidLocale } from "@/lib/locale";
 
-const SITE_URL = "https://starlinkee.pl";
+const SITE_URL = "https://starlinkee.com";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
