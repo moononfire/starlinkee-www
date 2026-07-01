@@ -24,6 +24,10 @@ import WizytowkaGoogleMojaFirma from "@/components/blog/articles/WizytowkaGoogle
 import WizytowkaGoogleMojaFirmaEn from "@/components/blog/articles/WizytowkaGoogleMojaFirmaEn";
 import WizytowkaGoogleMojaFirmaDe from "@/components/blog/articles/WizytowkaGoogleMojaFirmaDe";
 import WizytowkaGoogleMojaFirmaIt from "@/components/blog/articles/WizytowkaGoogleMojaFirmaIt";
+import JakOdpowiadacNaOpinie from "@/components/blog/articles/JakOdpowiadacNaOpinie";
+import JakOdpowiadacNaOpinieEn from "@/components/blog/articles/JakOdpowiadacNaOpinieEn";
+import JakOdpowiadacNaOpinieDe from "@/components/blog/articles/JakOdpowiadacNaOpinieDe";
+import JakOdpowiadacNaOpinieIt from "@/components/blog/articles/JakOdpowiadacNaOpinieIt";
 
 const SITE_URL = "https://starlinkee.com";
 
@@ -40,6 +44,12 @@ const articleComponents: Record<string, Partial<Record<Locale, React.ComponentTy
     en: WizytowkaGoogleMojaFirmaEn,
     de: WizytowkaGoogleMojaFirmaDe,
     it: WizytowkaGoogleMojaFirmaIt,
+  },
+  "jak-odpowiadac-na-opinie-w-google": {
+    pl: JakOdpowiadacNaOpinie,
+    en: JakOdpowiadacNaOpinieEn,
+    de: JakOdpowiadacNaOpinieDe,
+    it: JakOdpowiadacNaOpinieIt,
   },
 };
 

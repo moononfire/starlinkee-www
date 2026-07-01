@@ -65,6 +65,115 @@ export interface BlogPostMeta {
 
 export const blogPosts: BlogPostMeta[] = [
   {
+    slug: "jak-odpowiadac-na-opinie-w-google",
+    title: "Jak odpowiadać na opinie w Google: pozytywne, negatywne i fałszywe",
+    description:
+      "Sprawdź, jak odpowiadać na opinie Google — pozytywne, negatywne i fałszywe. Dowiedz się, kiedy Google usunie recenzję i jak legalnie ograniczyć liczbę niesprawiedliwych ocen.",
+    publishedAt: "2026-07-01",
+    author: "Zespół Starlinkee",
+    authorBio:
+      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Zarządzanie reputacją",
+    categorySlug: "zarzadzanie-reputacja",
+    ogImage: "/images/blog/jak-odpowiadac-na-opinie-hero.jpg",
+    keywords: [
+      "jak odpowiadać na opinie w google",
+      "jak odpowiedzieć na negatywną opinię google",
+      "jak odpowiedzieć na pozytywną opinię google",
+      "przykłady odpowiedzi na opinie google",
+      "jak usunąć fałszywą opinię google",
+      "jak zgłosić opinię do usunięcia google",
+      "review gating google",
+      "filtrowanie opinii google",
+      "ochrona profilu google",
+      "jak radzić sobie z hejtem w internecie",
+    ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "How to Respond to Google Reviews: Positive, Negative and Fake",
+        description:
+          "Learn how to respond to Google reviews — positive, negative and fake. Find out when Google actually removes a review and how to legally reduce unfair ratings.",
+        category: "Reputation Management",
+        slug: "how-to-respond-to-google-reviews",
+        keywords: [
+          "how to respond to google reviews",
+          "how to respond to a negative google review",
+          "how to respond to a positive google review",
+          "google review response examples",
+          "how to remove a fake google review",
+          "how to report a google review",
+          "google review gating",
+          "review filtering google",
+          "protect google business profile",
+        ],
+      },
+      de: {
+        title: "Wie man auf Google-Bewertungen antwortet: positiv, negativ und gefälscht",
+        description:
+          "Erfahren Sie, wie Sie auf Google-Bewertungen antworten — positive, negative und gefälschte. Wann entfernt Google tatsächlich eine Bewertung und wie reduzieren Sie unfaire Bewertungen legal?",
+        category: "Reputationsmanagement",
+        slug: "wie-auf-google-bewertungen-antworten",
+        keywords: [
+          "wie auf google bewertungen antworten",
+          "negative google bewertung beantworten",
+          "positive google bewertung beantworten",
+          "beispiele antworten google bewertungen",
+          "gefälschte google bewertung entfernen",
+          "google bewertung melden",
+          "google review gating",
+          "bewertungsfilter google",
+          "google unternehmensprofil schützen",
+        ],
+      },
+      it: {
+        title: "Come rispondere alle recensioni Google: positive, negative e false",
+        description:
+          "Scopri come rispondere alle recensioni Google — positive, negative e false. Scopri quando Google rimuove davvero una recensione e come ridurre legalmente le valutazioni ingiuste.",
+        category: "Gestione della reputazione",
+        slug: "come-rispondere-alle-recensioni-google",
+        keywords: [
+          "come rispondere alle recensioni google",
+          "come rispondere a una recensione negativa google",
+          "come rispondere a una recensione positiva google",
+          "esempi di risposte alle recensioni google",
+          "come rimuovere una recensione falsa google",
+          "come segnalare una recensione google",
+          "google review gating",
+          "filtro recensioni google",
+          "proteggere il profilo google business",
+        ],
+      },
+    },
+    faq: [
+      {
+        question: "Czy muszę odpowiadać na każdą opinię w Google?",
+        answer:
+          "Nie ma takiego wymogu formalnego, ale jest to mocno zalecane. Odpowiadanie na opinie — zarówno pozytywne, jak i negatywne — jest sygnałem aktywności profilu branym pod uwagę przez algorytm lokalnego SEO i buduje zaufanie u czytających profil klientów.",
+      },
+      {
+        question: "Jak szybko powinienem odpowiadać na negatywne opinie?",
+        answer:
+          "Optymalny czas reakcji to 24–48 godzin. Wystarczająco szybko, żeby pokazać zaangażowanie, ale na tyle długo, żeby odpowiedzieć na chłodno, bez emocji, które mogłyby zaostrzyć sytuację.",
+      },
+      {
+        question: "Czy Google usunie negatywną opinię, jeśli poproszę o to klienta?",
+        answer:
+          "Klient może samodzielnie usunąć lub edytować swoją opinię w dowolnym momencie, ale Google nie zrobi tego automatycznie na Twoją prośbę, jeśli treść nie narusza regulaminu. Najskuteczniejsze jest wyjaśnienie sprawy prywatnie i uprzejma prośba o aktualizację, gdy problem zostanie rozwiązany.",
+      },
+      {
+        question: "Czym różni się filtr opinii od zakazanego review gatingu?",
+        answer:
+          "Review gating blokuje niezadowolonym klientom dostęp do formularza opinii Google — to naruszenie regulaminu. Legalny filtr opinii, jak ten w systemie Starlinkee, daje dostęp do Google każdemu klientowi, a jedynie dodatkowo oferuje niezadowolonym osobny kanał zgłoszenia problemu bezpośrednio do firmy.",
+      },
+      {
+        question: "Co zrobić, gdy podejrzewam, że opinię napisał konkurent?",
+        answer:
+          "Zgłoś opinię przez formularz Google, wskazując konflikt interesów jako powód. Warto dołączyć konkretne przesłanki (np. brak dowodu wizyty w Twojej historii rezerwacji). Odpowiedz też publicznie w sposób rzeczowy, nie oskarżając wprost — inni czytelnicy sami wyciągną wnioski z faktów.",
+      },
+    ],
+  },
+  {
     slug: "wizytowka-google-moja-firma-jak-zoptymalizowac",
     title: "Wizytówka Google Moja Firma: jak wypełnić i zoptymalizować profil krok po kroku",
     description:
