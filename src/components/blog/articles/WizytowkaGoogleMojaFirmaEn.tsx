@@ -363,7 +363,7 @@ export default function WizytowkaGoogleMojaFirmaEn() {
           sources, profile activity and any mentions in local directories (e.g. Tripadvisor,
           Yelp). Google reviews are the key direct factor here — for more on collecting reviews,
           see our article on{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
             how to get Google reviews quickly
           </Link>
           .

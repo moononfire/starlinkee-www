@@ -136,7 +136,7 @@ export default function JakSzybkoZdobycOpinieDe() {
           wenig Bewertungen oder stammt die letzte von vor einem Jahr, entsteht ein Gefühl der
           Stagnation. In der Praxis sollte ein Eintrag so aussehen, als würde er täglich zufriedene
           Kunden bedienen. Mehr dazu lesen Sie in unserem Artikel über{" "}
-          <Link href="/blog" className="text-blue-600 hover:underline">
+          <Link href="/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
             die Grundlagen der Optimierung Ihres Google Business-Profils
           </Link>
           .
@@ -336,6 +336,15 @@ export default function JakSzybkoZdobycOpinieDe() {
           Wahl. So kann der Gast eine Bewertung hinterlassen, während er auf das Wechselgeld wartet
           oder nach dem Essen einen Kaffee trinkt. Wichtig ist, dass der Träger gut beschriftet ist
           und keine zusätzlichen Apps erfordert.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-8">
+          Derselbe NFC-Träger muss nicht bei der Bewertungserfassung stehen bleiben — er kann
+          gleichzeitig eine digitale Treuekarte betreiben, mit der Stammgäste Besuche sammeln, ohne
+          etwas zu installieren. Erfahren Sie, wie Sie{" "}
+          <Link href="/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen" className="text-blue-600 hover:underline">
+            ein Treueprogramm ohne App aufbauen
+          </Link>
+          .
         </p>
       </div>
 

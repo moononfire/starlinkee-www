@@ -147,7 +147,13 @@ export default function JakOdpowiadacNaOpinieDe() {
           dass das Konto von einem echten Unternehmen betreut wird, das sich mit seinen Kunden
           auseinandersetzt — und kein verwaistes, unbetreutes Profil ist. Je mehr Antworten
           natürliche, thematisch passende Begriffe zu Ihrer Branche und Ihrem Standort enthalten,
-          desto stärker das Relevanzsignal für lokale Suchanfragen.
+          desto stärker das Relevanzsignal für lokale Suchanfragen. Das ist nur eines von mehreren
+          Elementen, die gemeinsam das Ranking eines Profils bilden — die vollständige Liste der
+          Rankingfaktoren finden Sie in unserem Artikel darüber,{" "}
+          <Link href="/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
+            wie Sie Ihr Google Business Profile optimieren
+          </Link>
+          .
         </p>
 
         <h3 id="was-andere-sehen" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">

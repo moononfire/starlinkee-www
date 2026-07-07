@@ -135,7 +135,7 @@ export default function JakSzybkoZdobycOpinie() {
           polecaną. Jeśli profil ma mało ocen lub ostatnia pochodzi sprzed roku, pojawia się poczucie
           stagnacji. W praktyce wizytówka powinna wyglądać tak, jakby codziennie obsługiwała
           zadowolonych ludzi. Więcej na ten temat przeczytasz w naszym artykule o{" "}
-          <Link href="/blog" className="text-blue-600 hover:underline">
+          <Link href="/blog/wizytowka-google-moja-firma-jak-zoptymalizowac" className="text-blue-600 hover:underline">
             podstawach optymalizacji wizytówki Google Moja Firma
           </Link>
           .
@@ -326,6 +326,15 @@ export default function JakSzybkoZdobycOpinie() {
           , które można umieścić bezpośrednio na stołach lub w etui z rachunkiem. Dzięki temu gość
           może wystawić opinię, czekając na resztę lub pijąc kawę po posiłku. Ważne, aby nośnik był
           czytelnie oznaczony i nie wymagał instalowania żadnych dodatkowych aplikacji.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-8">
+          Ten sam nośnik NFC nie musi kończyć swojej roli na zbieraniu opinii — może jednocześnie
+          obsługiwać cyfrową kartę lojalnościową, dzięki której stali goście zbierają wizyty bez
+          instalowania aplikacji. Zobacz, jak{" "}
+          <Link href="/blog/program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow" className="text-blue-600 hover:underline">
+            zbudować program lojalnościowy bez aplikacji
+          </Link>
+          .
         </p>
       </div>
 

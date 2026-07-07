@@ -145,7 +145,13 @@ export default function JakOdpowiadacNaOpinieEn() {
           prominence signal. Activity in this section shows the algorithm that the account is
           managed by a real business engaged with its customers — not an abandoned, unmanaged
           profile. The more replies containing natural, topical language tied to your industry and
-          location, the stronger the relevance signal for local searches.
+          location, the stronger the relevance signal for local searches. It&apos;s just one of
+          several elements that together build a profile&apos;s ranking — see the full list of
+          ranking factors in our article on{" "}
+          <Link href="/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
+            how to optimise your Google Business Profile
+          </Link>
+          .
         </p>
 
         <h3 id="what-others-see" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">

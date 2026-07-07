@@ -368,7 +368,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
           tuo sito da fonti esterne, attività del profilo e menzioni in directory locali (ad es.
           Tripadvisor, TheFork). Le recensioni Google sono il fattore diretto chiave — per saperne
           di più su come raccogliere recensioni, leggi il nostro articolo su{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
             come ottenere rapidamente recensioni su Google
           </Link>
           .

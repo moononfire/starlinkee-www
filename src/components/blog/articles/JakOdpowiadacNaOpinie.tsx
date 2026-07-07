@@ -147,7 +147,12 @@ export default function JakOdpowiadacNaOpinie() {
           konto jest zarządzane przez realną firmę, która angażuje się w relację z klientami — a nie
           porzucony profil bez opieki. Im więcej odpowiedzi zawierających naturalne, tematyczne
           słownictwo związane z Twoją branżą i lokalizacją, tym silniejszy sygnał trafności dla
-          zapytań lokalnych.
+          zapytań lokalnych. To jeden z wielu elementów, które razem budują pozycję profilu —
+          pełną listę czynników rankingowych znajdziesz w artykule o tym,{" "}
+          <Link href="/blog/wizytowka-google-moja-firma-jak-zoptymalizowac" className="text-blue-600 hover:underline">
+            jak zoptymalizować wizytówkę Google Moja Firma
+          </Link>
+          .
         </p>
 
         <h3 id="co-widza-inni" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">

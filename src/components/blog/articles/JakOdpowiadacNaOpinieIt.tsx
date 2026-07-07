@@ -148,7 +148,13 @@ export default function JakOdpowiadacNaOpinieIt() {
           mostra all&apos;algoritmo che l&apos;account è gestito da un&apos;attività reale che si
           impegna con i propri clienti — non un profilo abbandonato e non gestito. Più risposte
           contengono un linguaggio naturale e pertinente al tuo settore e alla tua zona, più forte
-          è il segnale di rilevanza per le ricerche locali.
+          è il segnale di rilevanza per le ricerche locali. È solo uno dei tanti elementi che
+          insieme costruiscono il posizionamento di un profilo — trovi l&apos;elenco completo dei
+          fattori di ranking nel nostro articolo su{" "}
+          <Link href="/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
+            come ottimizzare il tuo Google Business Profile
+          </Link>
+          .
         </p>
 
         <h3 id="cosa-vedono-gli-altri" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
