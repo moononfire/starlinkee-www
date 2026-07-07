@@ -29,6 +29,9 @@ import JakOdpowiadacNaOpinieEn from "@/components/blog/articles/JakOdpowiadacNaO
 import JakOdpowiadacNaOpinieDe from "@/components/blog/articles/JakOdpowiadacNaOpinieDe";
 import JakOdpowiadacNaOpinieIt from "@/components/blog/articles/JakOdpowiadacNaOpinieIt";
 import ProgramLojalnosciowyBezAplikacji from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacji";
+import ProgramLojalnosciowyBezAplikacjiEn from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacjiEn";
+import ProgramLojalnosciowyBezAplikacjiDe from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacjiDe";
+import ProgramLojalnosciowyBezAplikacjiIt from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacjiIt";
 
 const SITE_URL = "https://starlinkee.com";
 
@@ -54,6 +57,9 @@ const articleComponents: Record<string, Partial<Record<Locale, React.ComponentTy
   },
   "program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow": {
     pl: ProgramLojalnosciowyBezAplikacji,
+    en: ProgramLojalnosciowyBezAplikacjiEn,
+    de: ProgramLojalnosciowyBezAplikacjiDe,
+    it: ProgramLojalnosciowyBezAplikacjiIt,
   },
 };
 

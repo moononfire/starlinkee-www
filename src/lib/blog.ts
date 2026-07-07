@@ -387,7 +387,66 @@ export const blogPosts: BlogPostMeta[] = [
       "karta lojalnościowa barbershop",
       "loyalty program bez aplikacji mobilnej",
     ],
-    availableLocales: ["pl"],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "Loyalty Program Without an App: How to Build Customer Loyalty",
+        description:
+          "Find out how to build a digital loyalty program without a mobile app. Learn how an NFC loyalty card works and how to set the reward threshold for a restaurant, salon or barbershop.",
+        category: "Local Marketing",
+        slug: "loyalty-program-without-an-app-how-to-build-customer-loyalty",
+        keywords: [
+          "loyalty card without an app",
+          "digital loyalty card",
+          "loyalty program for restaurants",
+          "how to build customer loyalty",
+          "how to retain restaurant customers",
+          "how to increase customer return rate",
+          "regular customer card restaurant",
+          "hair salon loyalty program",
+          "barbershop loyalty card",
+          "loyalty program without a mobile app",
+        ],
+      },
+      de: {
+        title: "Treueprogramm ohne App: Wie man Kundentreue aufbaut",
+        description:
+          "Erfahren Sie, wie Sie ein digitales Treueprogramm ohne mobile App aufbauen. Entdecken Sie, wie eine NFC-Treuekarte funktioniert und wie Sie die Belohnungsschwelle für Restaurant, Salon oder Barbershop festlegen.",
+        category: "Lokales Marketing",
+        slug: "treueprogramm-ohne-app-wie-kundentreue-aufbauen",
+        keywords: [
+          "treuekarte ohne app",
+          "digitale treuekarte",
+          "treueprogramm für restaurants",
+          "wie kundentreue aufbauen",
+          "kunden im restaurant halten",
+          "kundenrückkehrrate erhöhen",
+          "stammkundenkarte restaurant",
+          "treueprogramm friseursalon",
+          "treuekarte barbershop",
+          "treueprogramm ohne mobile app",
+        ],
+      },
+      it: {
+        title: "Programma fedeltà senza app: come costruire la fedeltà dei clienti",
+        description:
+          "Scopri come costruire un programma fedeltà digitale senza app mobile. Scopri come funziona una tessera fedeltà NFC e come impostare la soglia premio per ristorante, salone o barbershop.",
+        category: "Marketing locale",
+        slug: "programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti",
+        keywords: [
+          "tessera fedeltà senza app",
+          "tessera fedeltà digitale",
+          "programma fedeltà per ristoranti",
+          "come costruire la fedeltà dei clienti",
+          "come trattenere i clienti al ristorante",
+          "come aumentare il ritorno dei clienti",
+          "tessera cliente abituale ristorante",
+          "programma fedeltà parrucchiere",
+          "tessera fedeltà barbershop",
+          "programma fedeltà senza app mobile",
+        ],
+      },
+    },
     faq: [
       {
         question: "Czy klient musi pobrać aplikację, żeby korzystać z cyfrowej karty lojalnościowej?",
