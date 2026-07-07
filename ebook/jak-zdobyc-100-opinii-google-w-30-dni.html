@@ -1,0 +1,686 @@
+<title>Jak zdobyć 100 opinii Google w 30 dni</title>
+<style>
+  :root{
+    --paper:#F5F6F3;
+    --paper-raised:#FFFFFF;
+    --ink:#1A211F;
+    --ink-soft:#4B5654;
+    --ink-faint:#7C8785;
+    --accent:#175864;
+    --accent-deep:#0E3A42;
+    --accent-tint:#E4ECEA;
+    --gold:#A97B32;
+    --rule:#D8DCD8;
+    --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+    --sans: -apple-system, 'Segoe UI', system-ui, Roboto, sans-serif;
+  }
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact;}
+  html,body{margin:0;padding:0;}
+  @page{ size:A4; margin:16mm 14mm; }
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16.5px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:700px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  img,svg{max-width:100%;}
+  .overflow-x{overflow-x:auto;}
+
+  /* ---------- Cover ---------- */
+  .cover{
+    min-height:92vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    max-width:640px;
+    margin:0 auto;
+    padding:80px 28px;
+    text-align:left;
+  }
+  .cover .kicker{
+    font-family:var(--sans);
+    font-size:12.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:28px;
+  }
+  .cover h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(34px,6vw,52px);
+    line-height:1.12;
+    letter-spacing:-.01em;
+    margin:0 0 22px 0;
+    color:var(--accent-deep);
+    text-wrap:balance;
+  }
+  .cover .subtitle{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:30em;
+    margin:0 0 56px 0;
+    text-wrap:balance;
+  }
+  .cover .stars{
+    display:flex;
+    gap:6px;
+    margin-bottom:20px;
+    color:var(--gold);
+    font-size:18px;
+    letter-spacing:2px;
+  }
+  .cover .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:auto;
+    padding-top:40px;
+    border-top:1px solid var(--rule);
+  }
+  .cover .brand .mark{
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--paper);
+    font-family:var(--serif);
+    font-size:15px;
+  }
+  .cover .brand .name{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:14.5px;
+    letter-spacing:.02em;
+  }
+  .cover .brand .tag{
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- TOC ---------- */
+  .toc{
+    padding:96px 28px 80px;
+    max-width:640px;
+    margin:0 auto;
+    page-break-before: always;
+  }
+  .toc .kicker{
+    font-size:12.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .toc h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:30px;
+    margin:0 0 40px 0;
+    color:var(--accent-deep);
+  }
+  .toc ol{
+    list-style:none;
+    margin:0;padding:0;
+    counter-reset:toc;
+  }
+  .toc li{
+    counter-increment:toc;
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--rule);
+    font-family:var(--serif);
+    font-size:18px;
+  }
+  .toc li::before{
+    content:counter(toc,decimal-leading-zero);
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--gold);
+    letter-spacing:.06em;
+    flex-shrink:0;
+    padding-top:3px;
+  }
+  .toc li .t{flex:1;color:var(--ink);}
+  .toc li .sub{
+    display:block;
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--ink-faint);
+    margin-top:3px;
+  }
+
+  /* ---------- Chapters ---------- */
+  .chapter{
+    padding:88px 0 8px;
+    page-break-before: always;
+  }
+  .chapter.intro{padding-top:96px;}
+  .kicker-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:16px;
+  }
+  .kicker-row .num{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:15px;
+    color:var(--gold);
+  }
+  .kicker-row .line{
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+  h2.chapter-title{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:32px;
+    line-height:1.22;
+    letter-spacing:-.01em;
+    color:var(--accent-deep);
+    margin:0 0 34px 0;
+    text-wrap:balance;
+  }
+  h3{
+    font-family:var(--serif);
+    font-weight:400;
+    font-style:italic;
+    font-size:21px;
+    color:var(--ink);
+    margin:40px 0 14px 0;
+  }
+  p{
+    margin:0 0 18px 0;
+    color:var(--ink);
+  }
+  p.lead{
+    font-family:var(--serif);
+    font-size:19px;
+    line-height:1.65;
+    color:var(--ink);
+  }
+  ul, ol.plain{
+    margin:0 0 20px 0;
+    padding-left:22px;
+  }
+  ul li, ol.plain li{
+    margin-bottom:9px;
+    color:var(--ink);
+  }
+  strong{color:var(--accent-deep);}
+
+  /* checklist */
+  ul.checklist{list-style:none;padding-left:0;margin:0 0 22px 0;}
+  ul.checklist li{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:9px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  ul.checklist li::before{
+    content:"";
+    flex-shrink:0;
+    width:16px;height:16px;
+    margin-top:3px;
+    border:1.5px solid var(--accent);
+    border-radius:3px;
+  }
+
+  /* table */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:8px 0 26px 0;
+    font-size:14.5px;
+  }
+  thead th{
+    text-align:left;
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    background:var(--accent-tint);
+    padding:10px 14px;
+    font-weight:600;
+  }
+  tbody td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--rule);
+    vertical-align:top;
+    color:var(--ink);
+  }
+  tbody td:first-child{font-weight:600;color:var(--accent-deep);white-space:nowrap;}
+
+  /* sms template */
+  .tpl{
+    background:var(--paper-raised);
+    border-left:3px solid var(--accent);
+    border-radius:2px;
+    padding:16px 20px;
+    margin:0 0 20px 0;
+  }
+  .tpl .label{
+    display:block;
+    font-family:var(--sans);
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:8px;
+  }
+  .tpl .msg{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:16px;
+    color:var(--ink);
+  }
+
+  /* divider */
+  .divider{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin:56px 0;
+  }
+  .divider .ln{flex:1;height:1px;background:var(--rule);}
+  .divider .mk{
+    color:var(--gold);
+    font-size:14px;
+  }
+
+  /* callout */
+  .callout{
+    background:var(--accent-tint);
+    border-radius:6px;
+    padding:28px 30px;
+    margin:28px 0 8px 0;
+  }
+  .callout .label{
+    font-family:var(--sans);
+    font-size:11.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  .callout p{margin-bottom:0;color:var(--accent-deep);}
+  .callout p + p{margin-top:12px;}
+
+  .appendix-note{
+    font-family:var(--sans);
+    font-size:14px;
+    color:var(--ink-faint);
+    margin-bottom:30px;
+  }
+
+  .endcap{
+    padding:60px 0 100px;
+    text-align:center;
+  }
+  .endcap .mark{
+    width:34px;height:34px;
+    border-radius:50%;
+    background:var(--accent);
+    color:var(--paper);
+    font-family:var(--serif);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 14px;
+    font-size:16px;
+  }
+  .endcap .name{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.04em;color:var(--ink-soft);}
+
+  @media print{
+    .cover{ min-height:auto; height:263mm; }
+    .toc{ min-height:auto; }
+    h2, h3{ break-after:avoid; page-break-after:avoid; }
+    .kicker-row{ break-after:avoid; page-break-after:avoid; }
+    table, .tpl, .callout, li.checklist, .cover .brand{
+      break-inside:avoid; page-break-inside:avoid;
+    }
+    ul.checklist li{ break-inside:avoid; page-break-inside:avoid; }
+    thead{ display:table-header-group; }
+    .endcap{ page-break-before:always; }
+  }
+</style>
+
+<div class="cover">
+  <div class="stars">★★★★★</div>
+  <div class="kicker">Przewodnik Starlinkee</div>
+  <h1>Jak zdobyć 100&nbsp;opinii Google w 30&nbsp;dni</h1>
+  <p class="subtitle">Praktyczny przewodnik dla właścicieli restauracji, salonów i lokalnych firm usługowych — bez proszenia się, bez kombinowania i bez łamania zasad Google.</p>
+  <div class="brand">
+    <div class="mark">S</div>
+    <div>
+      <div class="name">Starlinkee</div>
+      <div class="tag">System zbierania opinii i lojalności klientów</div>
+    </div>
+  </div>
+</div>
+
+<div class="toc">
+  <div class="kicker">Spis treści</div>
+  <h2>Co znajdziesz w środku</h2>
+  <ol>
+    <li><span class="t">Wstęp<span class="sub">Dlaczego warto się tym zająć</span></span></li>
+    <li><span class="t">Dlaczego opinie Google decydują o wyborze klienta<span class="sub">Local Pack, progi zaufania, niewidoczny koszt</span></span></li>
+    <li><span class="t">Dlaczego klienci nie zostawiają opinii<span class="sub">Trzy powody i różnica między „proszę" a „mam system"</span></span></li>
+    <li><span class="t">Kiedy i jak prosić o opinię<span class="sub">Złote momenty, kanały, gotowe szablony</span></span></li>
+    <li><span class="t">Jak nie łamać zasad Google<span class="sub">Review gating a legalny filtr opinii</span></span></li>
+    <li><span class="t">Automatyzacja: NFC, QR i SMS<span class="sub">Jak to działa w 15 sekund</span></span></li>
+    <li><span class="t">Plan 30-dniowy krok po kroku<span class="sub">Checklisty tydzień po tygodniu</span></span></li>
+    <li><span class="t">Podsumowanie<span class="sub">Jedna zasada, którą warto zapamiętać</span></span></li>
+    <li><span class="t">Załącznik<span class="sub">Gotowe szablony wiadomości</span></span></li>
+  </ol>
+</div>
+
+<div class="page">
+
+  <section class="chapter intro">
+    <div class="kicker-row"><span class="num">Wstęp</span><span class="line"></span></div>
+    <h2 class="chapter-title">Zanim zaczniesz</h2>
+
+    <p class="lead">99% Twoich klientów sprawdza opinie Google, zanim zdecyduje się przyjść do Twojego lokalu, salonu czy gabinetu. Nie stronę internetową. Nie Instagrama. Opinie Google — bo to one wyświetlają się jako pierwsze, gdy ktoś szuka „restauracja w pobliżu" albo „salon kosmetyczny [nazwa miasta]".</p>
+
+    <p>Problem nie w tym, że Twoi klienci są niezadowoleni. Problem w tym, że ci zadowoleni nigdy nie zostawiają opinii. Wychodzą z lokalu z pełnym brzuchem, wychodzą z salonu z idealną fryzurą — i zapominają o Tobie w chwilę później. Opinię zostawia za to ten jeden niezadowolony klient, który akurat miał gorszy dzień. W efekcie Twoja wizytówka Google pokazuje ocenę, która nie ma nic wspólnego z tym, jak faktycznie prowadzisz firmę.</p>
+
+    <p>Da się to odwrócić — i to bez proszenia się, bez kombinowania i bez łamania zasad Google.</p>
+
+    <h3>Z tego przewodnika dowiesz się:</h3>
+    <ul>
+      <li>dlaczego liczba i jakość opinii bezpośrednio przekładają się na to, ilu nowych klientów trafia do Twojej firmy,</li>
+      <li>dlaczego klienci nie zostawiają opinii sami z siebie — i co dokładnie trzeba zmienić, żeby zaczęli,</li>
+      <li>w którym dokładnie momencie prosić o opinię, żeby dostać „tak", a nie ciszę,</li>
+      <li>jak legalnie oddzielić niezadowolonych klientów od tych, którzy trafiają na Twój publiczny profil,</li>
+      <li>i jak rozłożyć to wszystko na konkretny plan działania na 30 dni — z checklistą, którą możesz zacząć odhaczać już dziś.</li>
+    </ul>
+
+    <p>Nie znajdziesz tu teorii marketingu ani ogólników w stylu „bądź blisko klienta". Znajdziesz konkretne kroki, momenty i szablony, które możesz wdrożyć w restauracji, salonie, gabinecie czy hotelu — niezależnie od tego, czy masz jedną lokalizację, czy pięć.</p>
+
+    <p>Zaczynamy od tego, dlaczego w ogóle warto się tym zająć.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Rozdział 1</span><span class="line"></span></div>
+    <h2 class="chapter-title">Dlaczego opinie Google decydują o wyborze klienta</h2>
+
+    <h3>Wizytówka Google to Twoja nowa witryna sklepowa</h3>
+    <p>Zanim ktoś wejdzie do Twojej restauracji, zajrzy do salonu czy zadzwoni do gabinetu — najpierw wpisuje frazę w Google. „Restauracja w pobliżu", „fryzjer [dzielnica]", „stomatolog [miasto]". To, co widzi w pierwszej kolejności, to nie Twoja strona internetowa — to karta wizytówki z gwiazdkami, liczbą opinii i kilkoma zdaniami ostatnich klientów. Decyzja zapada w tym miejscu, zanim jeszcze klient kliknie cokolwiek więcej.</p>
+    <p>To nie jest dodatek do Twojego marketingu. To jest pierwszy — i często jedyny — punkt kontaktu, zanim klient w ogóle dowie się, że masz stronę, menu czy cennik.</p>
+
+    <h3>Local Pack: trzy miejsca, o które walczy cała okolica</h3>
+    <p>Kiedy ktoś szuka firmy „w pobliżu", Google pokazuje tzw. Local Pack — mapę i trzy wyróżnione wizytówki nad resztą wyników. To właśnie tam trafia większość kliknięć, bo mało kto przewija dalej. O te trzy miejsca konkurujesz nie tylko jakością usługi, ale wprost liczbą i świeżością opinii — algorytm Google traktuje je jako jeden z głównych sygnałów, obok odległości i trafności kategorii.</p>
+    <p>Innymi słowy: możesz mieć lepszą kuchnię niż konkurencja dwie ulice dalej, ale jeśli oni mają 180 opinii ze średnią 4,8, a Ty 12 opinii ze średnią 3,9 — to oni pojawiają się w Local Pack, a Ty nie. Klient nigdy się nie dowie, że jesteś lepszą opcją, bo nigdy Cię nie zobaczy.</p>
+
+    <h3>Ile opinii i jaka ocena robi realną różnicę</h3>
+    <p>Nie chodzi o to, żeby mieć „jak najwięcej" opinii w oderwaniu od kontekstu. Chodzi o dwa progi psychologiczne, które klienci przekraczają nieświadomie:</p>
+    <ul>
+      <li><strong>Próg zaufania do liczby</strong> — poniżej kilkunastu opinii klient traktuje ocenę jako przypadkową. Powyżej kilkudziesięciu-kilkuset opinii ocena zaczyna być odbierana jako wiarygodna, statystycznie „prawdziwa".</li>
+      <li><strong>Próg oceny 4,0</strong> — to nieformalna granica, poniżej której duża część klientów odrzuca firmę na starcie, nawet nie czytając treści opinii. Różnica między 3,8 a 4,3 to nie 0,5 punktu na papierze — to realnie inna grupa klientów, która w ogóle rozważy przyjście.</li>
+    </ul>
+    <p>Firma z 15 opiniami i oceną 4,9 wygląda gorzej w oczach klienta niż firma z 150 opiniami i oceną 4,5 — bo ta druga ma więcej dowodów społecznych. Liczba opinii buduje wiarygodność samej oceny.</p>
+
+    <h3>Koszt braku opinii jest niewidoczny — i dlatego ignorowany</h3>
+    <p>Nikt nie wystawia Ci faktury za utraconych klientów. Nie zobaczysz w żadnym raporcie „37 osób w tym miesiącu zobaczyło Twoją wizytówkę, porównało Cię z konkurencją i wybrało kogoś innego, bo mieli więcej opinii". Ten koszt jest całkowicie niewidoczny — a mimo to realny i, w wielu branżach lokalnych, większy niż koszt jakiejkolwiek kampanii reklamowej.</p>
+    <p>Zwrot jest odwrotnie proporcjonalny: poprawa oceny i liczby opinii nie wymaga wydawania złotówki na reklamę — wymaga wyłącznie systemowego podejścia do proszenia klientów, którzy i tak już są zadowoleni, o dwie minuty ich czasu.</p>
+
+    <div class="divider"><span class="ln"></span><span class="mk">★</span><span class="ln"></span></div>
+    <p>W kolejnym rozdziale wyjaśniamy, dlaczego mimo tej oczywistej korzyści większość zadowolonych klientów nigdy nie zostawia opinii sama z siebie — i co dokładnie trzeba zmienić, żeby zaczęli.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Rozdział 2</span><span class="line"></span></div>
+    <h2 class="chapter-title">Dlaczego klienci nie zostawiają opinii (i jak to zmienić)</h2>
+
+    <h3>Zadowolenie nie wystarcza</h3>
+    <p>Zadowolony klient nie zostawia opinii nie dlatego, że mu nie zależy — tylko dlatego, że w momencie, w którym mógłby to zrobić, opinia nie jest u niego priorytetem. Wychodzi z lokalu, myśli o czymś innym, wsiada do samochodu, odbiera telefon. Chęć zostawienia opinii jest ulotna — trwa kilkadziesiąt sekund po pozytywnym doświadczeniu, a potem znika, wyparta przez kolejne bodźce dnia.</p>
+    <p>Firmy, które czekają, aż klient „sam z siebie" wejdzie na Google i wystawi ocenę, opierają swoją reputację na przypadku. A przypadek premiuje tych, którzy mieli silne emocje — najczęściej negatywne.</p>
+
+    <h3>Trzy powody, dla których opinia nigdy nie powstaje</h3>
+    <p><strong>1. Nikt nie poprosił.</strong> To najczęstszy i najprostszy do naprawienia powód. Klienci poproszeni o opinię zostawiają ją wielokrotnie częściej niż ci, którzy mieliby zrobić to z własnej inicjatywy. Prośba nie jest natarczywa — jest brakującym bodźcem.</p>
+    <p><strong>2. Proces jest za trudny.</strong> „Zostaw nam opinię na Google" brzmi prosto, dopóki klient nie musi: otworzyć Mapy, wpisać nazwę firmy, znaleźć właściwą lokalizację, kliknąć „Napisz opinię", zalogować się, jeśli nie jest zalogowany. Każdy dodatkowy krok to kolejna szansa, że klient się poddaje. Trzy kliknięcia to obojętność. Osiem kroków to rezygnacja.</p>
+    <p><strong>3. Zły moment.</strong> Prośba zadana zbyt wcześnie, zanim doświadczenie się dopełniło, albo zbyt późno, gdy emocje już wygasły — po prostu nie działa. Kelner pytający o opinię zaraz po podaniu dania, zanim klient w ogóle go spróbował, to prośba skazana na porażkę.</p>
+
+    <h3>Dlaczego „proś ustnie" i „proś systemowo" to dwie różne ligi</h3>
+    <p>Wielu właścicieli firm już „prosi o opinie" — mówiąc to gościom przy wyjściu albo dorzucając zdanie na paragonie. To lepsze niż nic, ale ma wbudowany sufit: zależy od tego, czy akurat pracownik o tym pamiętał, czy nie było kolejki, czy klient nie wychodził w pośpiechu. Ustna prośba jest niespójna z definicji.</p>
+    <p>System działa inaczej: każdy klient, w każdym momencie zamknięcia obsługi, dostaje tę samą, zoptymalizowaną szansę zostawienia opinii — bez polegania na pamięci personelu. Różnica w wynikach między podejściem „od czasu do czasu proszę" a podejściem systemowym to zwykle nie kilkanaście, a kilkaset procent więcej zebranych opinii w tym samym okresie.</p>
+
+    <div class="divider"><span class="ln"></span><span class="mk">★</span><span class="ln"></span></div>
+    <p>W kolejnym rozdziale pokazujemy dokładnie, kiedy i jak prosić o opinię, żeby trafić w ten krótki moment, w którym klient chce powiedzieć „tak".</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Rozdział 3</span><span class="line"></span></div>
+    <h2 class="chapter-title">Kiedy i jak prosić o opinię</h2>
+
+    <h3>Złoty moment różni się w zależności od branży</h3>
+    <p>Nie ma jednej uniwersalnej chwili na prośbę o opinię — jest moment, w którym pozytywne doświadczenie jest już domknięte, a klient wciąż jest fizycznie lub mentalnie „przy Tobie":</p>
+    <ul>
+      <li><strong>Restauracja, kawiarnia, bar</strong> — moment płatności rachunku. Gość dojadł, jest najedzony i zadowolony, a rachunek i tak trzyma w ręku.</li>
+      <li><strong>Salon kosmetyczny, fryzjer, barbershop</strong> — moment przy kasie, tuż po tym, jak klient zobaczył efekt w lustrze.</li>
+      <li><strong>Gabinet lekarski, stomatologia, fizjoterapia</strong> — moment tuż po wizycie, przy recepcji, gdy ulga po zakończonym zabiegu jest największa.</li>
+      <li><strong>Hotel, pensjonat</strong> — moment wymeldowania. Gość podsumowuje cały pobyt naraz.</li>
+      <li><strong>Warsztat samochodowy, myjnia, detailing</strong> — moment odbioru pojazdu, gdy klient widzi efekt na własne oczy.</li>
+      <li><strong>Siłownia, klub fitness</strong> — moment tuż po pierwszych zajęciach próbnych albo po podpisaniu karnetu.</li>
+    </ul>
+    <p>Wspólny mianownik: prośba pojawia się natychmiast po tym, jak klient doświadczył efektu Twojej usługi — nie przed, nie kilka godzin czy dni później, kiedy emocje już opadły.</p>
+
+    <h3>Kanały: co realnie działa, a co jest tylko dodatkiem</h3>
+    <div class="overflow-x">
+    <table>
+      <thead><tr><th>Kanał</th><th>Skuteczność</th><th>Dlaczego</th></tr></thead>
+      <tbody>
+        <tr><td>NFC</td><td>Bardzo wysoka</td><td>Klient przykłada telefon i od razu jest na formularzu — zero wpisywania, zero szukania nazwy firmy</td></tr>
+        <tr><td>QR kod</td><td>Wysoka</td><td>Podobny efekt do NFC, ale wymaga uruchomienia aparatu i czasem ręcznego wpisania linku</td></tr>
+        <tr><td>SMS po wizycie</td><td>Wysoka</td><td>Dociera bezpośrednio, wysoki wskaźnik otwarcia, dobry moment na przypomnienie</td></tr>
+        <tr><td>Rozmowa ustna</td><td>Średnia, niespójna</td><td>Zależy od pracownika, dnia i obciążenia lokalu — nie skaluje się</td></tr>
+        <tr><td>E-mail</td><td>Niska–średnia</td><td>Niski wskaźnik otwarcia w porównaniu do SMS</td></tr>
+        <tr><td>Link na paragonie</td><td>Niska</td><td>Wymaga ręcznego wpisania adresu — wysoka rezygnacja</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>NFC i SMS wygrywają z jednego powodu: skracają dystans między „chcę zostawić opinię" a „zostawiłem opinię" do absolutnego minimum. Im więcej kroków między tymi dwoma punktami, tym więcej klientów odpada po drodze.</p>
+
+    <h3>Gotowe szablony wiadomości</h3>
+    <div class="tpl">
+      <span class="label">SMS — restauracja</span>
+      <div class="msg">„Dziękujemy za odwiedziny w [Nazwa]! Jeśli smakowało, będzie nam bardzo miło, jeśli zostawisz krótką opinię: [link]. Do zobaczenia!"</div>
+    </div>
+    <div class="tpl">
+      <span class="label">SMS — salon</span>
+      <div class="msg">„Cześć [Imię]! Mamy nadzieję, że efekt Ci się podoba. Jeśli tak, podziel się opinią na Google — zajmie dosłownie chwilę: [link]."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">SMS — gabinet</span>
+      <div class="msg">„Dziękujemy za wizytę w [Nazwa]. Jeśli jesteś zadowolony/a z obsługi, prosimy o krótką opinię na Google: [link]."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">Komunikat przy kasie / tabliczce NFC</span>
+      <div class="msg">„Podobało Ci się u nas? Przyłóż telefon i zostaw opinię — zajmie 15 sekund."</div>
+    </div>
+    <p>Zasada wspólna dla wszystkich szablonów: podziękowanie, warunek („jeśli podobało się"), bezpośredni link, brak presji. Klient ma czuć zaproszenie, nie zobowiązanie.</p>
+
+    <div class="divider"><span class="ln"></span><span class="mk">★</span><span class="ln"></span></div>
+    <p>W kolejnym rozdziale zajmujemy się drugą stroną medalu: co zrobić, gdy klient jednak nie był zadowolony — i jak zbierać opinie bez łamania zasad Google.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Rozdział 4</span><span class="line"></span></div>
+    <h2 class="chapter-title">Jak nie łamać zasad Google (review gating)</h2>
+
+    <h3>Co to jest review gating i dlaczego Google to karze</h3>
+    <p>Review gating to praktyka polegająca na tym, że firma pyta klienta o poziom zadowolenia <em>przed</em> przekierowaniem go do opinii publicznej — i w zależności od odpowiedzi, kieruje zadowolonych na Google, a niezadowolonych donikąd, blokując im możliwość wystawienia publicznej opinii. Google wprost zabrania tej praktyki w swoich wytycznych dla firm, ponieważ sztucznie zawyża oceny i wprowadza w błąd innych użytkowników.</p>
+    <p>Ryzyko nie jest teoretyczne — Google potrafi wykryć nienaturalne wzorce i nałożyć sankcje: od ukrycia opinii, przez ograniczenie widoczności wizytówki, aż po jej zawieszenie w skrajnych przypadkach.</p>
+
+    <h3>Filtr opinii — legalna granica, o której mało kto wie</h3>
+    <p>Istnieje istotna różnica między <em>blokowaniem</em> niezadowolonego klienta a <em>przekierowaniem</em> jego opinii do wewnętrznego kanału, dając mu jednocześnie pełną możliwość wystawienia publicznej opinii. To druga opcja jest zgodna z zasadami Google — i to właśnie robi dobrze zaprojektowany filtr opinii:</p>
+    <ol class="plain">
+      <li>Klient kończy wizytę i skanuje NFC lub QR.</li>
+      <li>Pojawia się krótkie pytanie o poziom zadowolenia.</li>
+      <li>Zadowolony klient trafia bezpośrednio na formularz opinii Google.</li>
+      <li>Niezadowolony klient trafia na wewnętrzny formularz feedbacku — bez blokady możliwości wystawienia opinii publicznej, jeśli mimo wszystko chce to zrobić.</li>
+    </ol>
+    <p>Kluczowa różnica względem zakazanego review gatingu: firma nie ukrywa negatywnej opinii przed światem — kieruje niezadowolonego klienta do kanału, w którym problem może zostać naprawiony <em>zanim</em> eskaluje publicznie, ale nie odbiera mu prawa głosu.</p>
+
+    <h3>Co robić z niezadowolonym klientem zamiast go ukrywać</h3>
+    <ul>
+      <li><strong>Reaguj szybko.</strong> Skontaktuj się z klientem w ciągu 24–48 godzin, jeśli zostawił dane kontaktowe.</li>
+      <li><strong>Traktuj feedback jako dane, nie atak.</strong> Powtarzający się problem to sygnał operacyjny — coś w obsłudze wymaga poprawy.</li>
+      <li><strong>Zamknij pętlę.</strong> Poinformuj klienta, co zmieniłeś w odpowiedzi na jego uwagę.</li>
+    </ul>
+    <p>Efekt: Twój publiczny profil Google odzwierciedla realną jakość obsługi, a niezadowoleni klienci dostają kanał do rozwiązania problemu zamiast frustrującej ciszy.</p>
+
+    <div class="divider"><span class="ln"></span><span class="mk">★</span><span class="ln"></span></div>
+    <p>W kolejnym rozdziale pokazujemy, jak całą tę logikę — moment, kanał, filtr — zautomatyzować za pomocą NFC, QR i SMS.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Rozdział 5</span><span class="line"></span></div>
+    <h2 class="chapter-title">Automatyzacja: NFC, QR i SMS w praktyce</h2>
+
+    <h3>Dlaczego automatyzacja, a nie „pamiętanie o tym"</h3>
+    <p>Najlepszy proces zbierania opinii to taki, który działa niezależnie od tego, czy personel akurat o nim pamięta, czy w lokalu jest tłok, czy zmiennik zna procedurę. Automatyzacja nie zastępuje dobrej obsługi — zdejmuje z niej obowiązek pamiętania o kroku administracyjnym.</p>
+
+    <h3>Porównanie technologii</h3>
+    <p><strong>NFC</strong> — klient przykłada telefon do tabliczki lub naklejki, formularz otwiera się natychmiast, bez aparatu i wpisywania nazwy firmy. Działa na niemal wszystkich telefonach z ostatnich lat. Fizyczny nośnik można umieścić dokładnie w złotym momencie: przy kasie, na stoliku, na recepcji.</p>
+    <p><strong>QR kod</strong> — wymaga uruchomienia aparatu i, na starszych telefonach, ręcznego wpisania linku. Tańszy do wdrożenia, ale bardziej podatny na uszkodzenia czy zasłonięcie. Dobre uzupełnienie NFC na materiałach drukowanych.</p>
+    <p><strong>SMS</strong> — dociera bezpośrednio do klienta po wizycie, dobry kanał na przypomnienie, jeśli klient nie zeskanował NFC/QR na miejscu. Wymaga zebrania numeru telefonu i zgody marketingowej w momencie kontaktu.</p>
+
+    <h3>Jak wygląda proces zbierania opinii w 15 sekund</h3>
+    <ol class="plain">
+      <li>Klient kończy wizytę i widzi tabliczkę NFC przy kasie lub recepcji.</li>
+      <li>Przykłada telefon — bez otwierania żadnej aplikacji.</li>
+      <li>Trafia na krótkie pytanie o zadowolenie (filtr opinii z Rozdziału 4).</li>
+      <li>Zadowolony klient trafia bezpośrednio na formularz opinii Google.</li>
+      <li>Przy okazji system może poprosić o numer telefonu i zgodę marketingową — jedno pole, jedno kliknięcie.</li>
+    </ol>
+
+    <h3>Dane kontaktowe i zgody RODO przy okazji zbierania opinii</h3>
+    <ul>
+      <li>Zgoda marketingowa musi być jednoznaczna i opcjonalna — klient wystawia opinię niezależnie od tego, czy zostawi numer telefonu.</li>
+      <li>Cel przetwarzania danych powinien być jasno opisany w momencie zbierania zgody, zgodnie z RODO.</li>
+      <li>Zebrana baza kontaktowa staje się fundamentem programu lojalnościowego i kampanii SMS — bez dodatkowego wysiłku pozyskiwania danych osobno.</li>
+    </ul>
+
+    <div class="divider"><span class="ln"></span><span class="mk">★</span><span class="ln"></span></div>
+    <p>W ostatnim rozdziale przechodzimy od teorii do praktyki: konkretny plan wdrożenia rozłożony na 30 dni.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Rozdział 6</span><span class="line"></span></div>
+    <h2 class="chapter-title">Plan 30-dniowy krok po kroku</h2>
+
+    <h3>Tydzień 1 — Przygotowanie</h3>
+    <ul class="checklist">
+      <li>Zweryfikuj i uzupełnij wizytówkę Google (kategoria, godziny, zdjęcia, opis).</li>
+      <li>Ustal złoty moment dla swojej branży (patrz Rozdział 3).</li>
+      <li>Przygotuj fizyczny nośnik (tabliczkę/naklejkę NFC lub kod QR) i umieść go w tym momencie kontaktu z klientem.</li>
+      <li>Napisz i przetestuj komunikat SMS oraz komunikat przy kasie, korzystając z szablonów z Rozdziału 3.</li>
+      <li>Skonfiguruj filtr opinii, żeby niezadowoleni klienci trafiali na wewnętrzny formularz, a zadowoleni — na Google.</li>
+    </ul>
+
+    <h3>Tydzień 2 — Wdrożenie i pierwsze wyniki</h3>
+    <ul class="checklist">
+      <li>Przeszkól personel: nie musi „prosić o opinię" werbalnie — wystarczy, że wskaże nośnik NFC/QR.</li>
+      <li>Uruchom zbieranie opinii przy każdej obsłużonej wizycie, bez wyjątków.</li>
+      <li>Monitoruj codziennie liczbę skanowań i zebranych opinii.</li>
+      <li>Odpowiadaj publicznie na każdą nową opinię w ciągu 24–48 godzin.</li>
+    </ul>
+
+    <h3>Tydzień 3 — Wzmocnienie tempa</h3>
+    <ul class="checklist">
+      <li>Sprawdź, w których godzinach skuteczność skanowania jest najniższa i czy nośnik jest dobrze umieszczony.</li>
+      <li>Uzupełnij kanał SMS jako przypomnienie dla klientów, którzy nie zeskanowali NFC/QR na miejscu.</li>
+      <li>Przejrzyj feedback z formularza wewnętrznego i wdróż pierwsze poprawki operacyjne.</li>
+      <li>Zacznij budować bazę kontaktową przy okazji skanowań.</li>
+    </ul>
+
+    <h3>Tydzień 4 — Optymalizacja i utrzymanie tempa</h3>
+    <ul class="checklist">
+      <li>Podsumuj liczbę zebranych opinii i zmianę średniej oceny względem stanu sprzed 30 dni.</li>
+      <li>Zidentyfikuj najskuteczniejszy kanał i połóż na niego większy nacisk.</li>
+      <li>Zaplanuj pierwszą kampanię SMS z kuponem dla zebranej bazy kontaktowej.</li>
+      <li>Ustal stały, cykliczny przegląd wyników, żeby zbieranie opinii było trwałym elementem obsługi.</li>
+    </ul>
+
+    <div class="divider"><span class="ln"></span><span class="mk">★</span><span class="ln"></span></div>
+    <p>Po 30 dniach konsekwentnego działania większość lokalnych firm notuje wzrost liczby opinii liczony w dziesiątkach, a często w setkach procent względem poprzedniego miesiąca — nie dlatego, że nagle więcej klientów jest zadowolonych, tylko dlatego, że w końcu ma się dokąd zapytać.</p>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Podsumowanie</span><span class="line"></span></div>
+    <h2 class="chapter-title">Jedna zasada, którą warto zapamiętać</h2>
+
+    <p class="lead">Opinie Google nie rosną same z siebie — rosną wtedy, gdy poprosisz właściwego klienta, we właściwym momencie, właściwym kanałem, i dasz mu proces tak prosty, że rezygnacja jest trudniejsza niż dokończenie oceny.</p>
+    <p>To wszystko, o czym przeczytałeś w tym przewodniku, sprowadza się do jednej zasady: zamień przypadkowe proszenie o opinię w system, który działa identycznie za każdym razem — niezależnie od tego, kto jest akurat za ladą.</p>
+
+    <div class="callout">
+      <div class="label">Jeśli wolisz to zautomatyzować</div>
+      <p>Dokładnie to robi <strong>Starlinkee Pro</strong>: tabliczka NFC do skanowania w złotym momencie, wbudowany filtr opinii zgodny z zasadami Google, zbieranie danych kontaktowych z automatyczną zgodą RODO oraz kupony SMS i cyfrowa karta lojalnościowa — w jednym panelu, bez umów długoterminowych, od 199 zł miesięcznie.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="kicker-row"><span class="num">Załącznik</span><span class="line"></span></div>
+    <h2 class="chapter-title">Gotowe szablony wiadomości</h2>
+    <p class="appendix-note">Skopiuj, podmień dane w nawiasach kwadratowych i wdróż od razu.</p>
+
+    <div class="tpl">
+      <span class="label">SMS — restauracja / kawiarnia</span>
+      <div class="msg">„Dziękujemy za odwiedziny w [Nazwa]! Jeśli smakowało, będzie nam bardzo miło, jeśli zostawisz krótką opinię: [link]. Do zobaczenia!"</div>
+    </div>
+    <div class="tpl">
+      <span class="label">SMS — salon / fryzjer / barber</span>
+      <div class="msg">„Cześć [Imię]! Mamy nadzieję, że efekt Ci się podoba. Jeśli tak, podziel się opinią na Google — zajmie dosłownie chwilę: [link]. Dziękujemy!"</div>
+    </div>
+    <div class="tpl">
+      <span class="label">SMS — gabinet / klinika</span>
+      <div class="msg">„Dziękujemy za wizytę w [Nazwa]. Jeśli jesteś zadowolony/a z obsługi, prosimy o krótką opinię na Google: [link]. To dla nas bardzo ważne."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">SMS — hotel (po wymeldowaniu)</span>
+      <div class="msg">„Dziękujemy za pobyt w [Nazwa]! Mamy nadzieję, że wszystko było zgodnie z oczekiwaniami. Będzie nam miło, jeśli podzielisz się opinią: [link]."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">SMS — warsztat / myjnia (po odbiorze pojazdu)</span>
+      <div class="msg">„Dziękujemy za zaufanie, [Imię]. Jeśli jesteś zadowolony/a z usługi, prosimy o krótką opinię na Google: [link]."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">Komunikat przy kasie / tabliczce NFC</span>
+      <div class="msg">„Podobało Ci się u nas? Przyłóż telefon i zostaw opinię — zajmie 15 sekund."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">Komunikat na recepcji (gabinet / hotel)</span>
+      <div class="msg">„Prosimy o chwilę uwagi — Twoja opinia pomaga nam się rozwijać. Zeskanuj kod, żeby ją zostawić."</div>
+    </div>
+    <div class="tpl">
+      <span class="label">Wewnętrzne pytanie filtrujące (przed przekierowaniem)</span>
+      <div class="msg">„Czy wszystko było zgodnie z Twoimi oczekiwaniami?" — [Tak, było świetnie] / [Mogło być lepiej]</div>
+    </div>
+  </section>
+
+  <div class="endcap">
+    <div class="mark">S</div>
+    <div class="name">STARLINKEE</div>
+  </div>
+
+</div>

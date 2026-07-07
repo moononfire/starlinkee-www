@@ -363,6 +363,59 @@ export const blogPosts: BlogPostMeta[] = [
       },
     ],
   },
+  {
+    slug: "program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow",
+    title: "Program lojalnościowy bez aplikacji: jak budować lojalność klientów",
+    description:
+      "Sprawdź, jak zbudować cyfrowy program lojalnościowy bez aplikacji mobilnej. Dowiedz się, jak działa karta lojalnościowa NFC i jak dobrać próg nagrody dla restauracji, salonu czy barbershopu.",
+    publishedAt: "2026-07-07",
+    author: "Zespół Starlinkee",
+    authorBio:
+      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Marketing lokalny",
+    categorySlug: "marketing-lokalny",
+    ogImage: "/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg",
+    keywords: [
+      "karta lojalnościowa bez aplikacji",
+      "cyfrowa karta lojalnościowa",
+      "program lojalnościowy dla restauracji",
+      "jak budować lojalność klientów",
+      "jak zatrzymać klientów w restauracji",
+      "jak zwiększyć powracalność klientów",
+      "karta stałego klienta restauracja",
+      "program lojalnościowy salon fryzjerski",
+      "karta lojalnościowa barbershop",
+      "loyalty program bez aplikacji mobilnej",
+    ],
+    availableLocales: ["pl"],
+    faq: [
+      {
+        question: "Czy klient musi pobrać aplikację, żeby korzystać z cyfrowej karty lojalnościowej?",
+        answer:
+          "Nie. Cała karta działa w przeglądarce telefonu po zbliżeniu go do tabliczki NFC — bez instalacji, bez zakładania konta i bez logowania hasłem.",
+      },
+      {
+        question: "Jaki próg nagrody sprawdza się najlepiej?",
+        answer:
+          "Taki, który klient osiąga w ciągu kilku tygodni do maksymalnie dwóch–trzech miesięcy, dopasowany do naturalnej częstotliwości wizyt w Twojej branży. Zbyt odległa nagroda traci moc motywacyjną.",
+      },
+      {
+        question: "Czy dane zebrane przez program lojalnościowy można wykorzystać do marketingu SMS?",
+        answer:
+          "Tak, pod warunkiem uzyskania zgody marketingowej zgodnej z RODO w momencie zbierania numeru telefonu. Po jej udzieleniu numer można wykorzystać do wysyłki kuponów i przypomnień o programie.",
+      },
+      {
+        question: "Czy program lojalnościowy działa też dla salonów i gabinetów, nie tylko gastronomii?",
+        answer:
+          "Tak. Sprawdza się wszędzie tam, gdzie klient wraca cyklicznie — salony fryzjerskie, barbershopy, gabinety kosmetyczne, siłownie czy warsztaty samochodowe. Kluczem jest dopasowanie progu nagrody do rzeczywistego rytmu wizyt danej branży.",
+      },
+      {
+        question: "Czym różni się karta lojalnościowa NFC od kodu QR?",
+        answer:
+          "Kod QR wymaga uruchomienia aparatu, odpowiedniego oświetlenia i wycelowania telefonu, co bywa niewygodne przy kasie. Tabliczka NFC wystarczy zbliżyć — działanie trwa ułamek sekundy i nie zależy od jakości skanu.",
+      },
+    ],
+  },
 ];
 
 export function getLocalizedPost(
