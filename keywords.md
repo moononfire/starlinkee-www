@@ -17,7 +17,7 @@
 ### Cennik:
 - 199 zł/mies. (lub 49 €/mies.)
 - 1 tabliczka NFC w cenie, kolejne 29 zł (lub 9 €)
-- 200 SMS-ów miesięcznie w cenie; nadwyżka 0,09 zł/szt.
+- 200 SMS-ów miesięcznie w cenie
 - Bez długoterminowych umów, bez ukrytych kosztów
 
 ### Główna propozycja wartości:

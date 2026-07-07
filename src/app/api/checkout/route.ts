@@ -5,27 +5,37 @@ function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!);
 }
 
-function getPriceIds(locale: string) {
-  const isEur = locale === "en" || locale === "de" || locale === "it";
-
-  return {
-    subscription: isEur
-      ? process.env.STRIPE_PRICE_ID_SUBSCRIPTION_EUR
-      : process.env.STRIPE_PRICE_ID_SUBSCRIPTION,
-    plate: isEur
-      ? process.env.STRIPE_PRICE_ID_EXTRA_PLATE_EUR
-      : process.env.STRIPE_PRICE_ID_EXTRA_PLATE,
-  };
-}
-
 const VALID_LOCALES = ["pl", "en", "de", "it"] as const;
 
 export async function POST(request: NextRequest) {
-  const { plates, locale: rawLocale } = await request.json();
+  const { plates, plateLanguages, billing: rawBilling, locale: rawLocale } = await request.json();
   const locale = VALID_LOCALES.includes(rawLocale) ? rawLocale : "pl";
+  const billing = rawBilling === "annual" ? "annual" : "monthly";
 
-  const numPlates = Math.max(1, Math.min(50, Number(plates) || 1));
-  const { subscription: subscriptionPriceId, plate: platePriceId } = getPriceIds(locale);
+  let platesByLanguage: Record<string, number> | null = null;
+  if (plateLanguages && typeof plateLanguages === "object" && !Array.isArray(plateLanguages)) {
+    const entries = Object.entries(plateLanguages)
+      .filter(([lang]) => (VALID_LOCALES as readonly string[]).includes(lang))
+      .map(([lang, qty]) => [lang, Math.max(0, Math.min(50, Math.floor(Number(qty) || 0)))] as const)
+      .filter(([, qty]) => qty > 0);
+    if (entries.length > 0) {
+      platesByLanguage = Object.fromEntries(entries);
+    }
+  }
+
+  const requestedPlates = platesByLanguage
+    ? Object.values(platesByLanguage).reduce((sum, qty) => sum + qty, 0)
+    : Number(plates) || 1;
+  const numPlates = Math.max(1, Math.min(50, requestedPlates));
+
+  // Multi-currency prices: one price ID per product, Stripe picks the amount
+  // from the price's currency_options based on the session currency.
+  const subscriptionPriceId =
+    billing === "annual"
+      ? process.env.STRIPE_PRICE_ID_SUBSCRIPTION_YEARLY
+      : process.env.STRIPE_PRICE_ID_SUBSCRIPTION;
+  const platePriceId = process.env.STRIPE_PRICE_ID_EXTRA_PLATE;
+  const currency = locale === "pl" ? "pln" : "eur";
 
   if (!subscriptionPriceId) {
     return NextResponse.json({ error: "Subscription price not configured" }, { status: 500 });
@@ -47,6 +57,7 @@ export async function POST(request: NextRequest) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
+      currency,
       line_items: lineItems,
       payment_method_types: ["card"],
       billing_address_collection: "required",
@@ -59,6 +70,10 @@ export async function POST(request: NextRequest) {
       cancel_url: `${appUrl}/${locale}/order`,
       metadata: {
         total_plates: String(numPlates),
+        billing,
+        ...(platesByLanguage
+          ? { plates_by_language: JSON.stringify(platesByLanguage) }
+          : {}),
       },
     });
 

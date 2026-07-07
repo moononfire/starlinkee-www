@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 
@@ -18,6 +18,9 @@ const t: Record<Locale, {
   free: string;
   each: string;
   quantity: string;
+  languageNames: Record<Locale, string>;
+  addLanguageHint: string;
+  removeLanguage: string;
   summary: string;
   monthlyFee: string;
   platesOnetime: string;
@@ -34,7 +37,7 @@ const t: Record<Locale, {
   billingAnnual: string;
   annualSavingsBadge: string;
   annualNote: string;
-  comingSoon: string;
+  subscriptionNoteAnnual: string;
   periodAnnual: string;
 }> = {
   pl: {
@@ -50,6 +53,9 @@ const t: Record<Locale, {
     free: "Gratis",
     each: "/ szt.",
     quantity: "Ilość tabliczek",
+    languageNames: { pl: "Polski", en: "Angielski", de: "Niemiecki", it: "Włoski" },
+    addLanguageHint: "Potrzebujesz tabliczek w innych językach? Dodaj wersję językową:",
+    removeLanguage: "Usuń język",
     summary: "Podsumowanie",
     monthlyFee: "Abonament miesięczny",
     platesOnetime: "Tabliczki NFC (jednorazowo)",
@@ -74,7 +80,7 @@ const t: Record<Locale, {
     billingAnnual: "Płatność roczna",
     annualSavingsBadge: "2 miesiące gratis",
     annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
-    comingSoon: "Wkrótce dostępne",
+    subscriptionNoteAnnual: "Abonament 1990 zł/rok — płatność cykliczna",
     periodAnnual: "/rok",
   },
   en: {
@@ -90,6 +96,9 @@ const t: Record<Locale, {
     free: "Free",
     each: "/ each",
     quantity: "Quantity",
+    languageNames: { pl: "Polish", en: "English", de: "German", it: "Italian" },
+    addLanguageHint: "Need plates in other languages? Add a language version:",
+    removeLanguage: "Remove language",
     summary: "Summary",
     monthlyFee: "Monthly subscription",
     platesOnetime: "NFC plates (one-time)",
@@ -114,7 +123,7 @@ const t: Record<Locale, {
     billingAnnual: "Annual billing",
     annualSavingsBadge: "2 months free",
     annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
-    comingSoon: "Coming soon",
+    subscriptionNoteAnnual: "Subscription €490/yr — recurring billing",
     periodAnnual: "/yr",
   },
   de: {
@@ -130,6 +139,9 @@ const t: Record<Locale, {
     free: "Gratis",
     each: "/ Stk.",
     quantity: "Anzahl",
+    languageNames: { pl: "Polnisch", en: "Englisch", de: "Deutsch", it: "Italienisch" },
+    addLanguageHint: "Benötigen Sie Aufsteller in anderen Sprachen? Sprachversion hinzufügen:",
+    removeLanguage: "Sprache entfernen",
     summary: "Zusammenfassung",
     monthlyFee: "Monatliches Abo",
     platesOnetime: "NFC-Aufsteller (einmalig)",
@@ -154,7 +166,7 @@ const t: Record<Locale, {
     billingAnnual: "Jährliche Zahlung",
     annualSavingsBadge: "2 Monate gratis",
     annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
-    comingSoon: "Demnächst verfügbar",
+    subscriptionNoteAnnual: "Abo 490 €/Jahr — wiederkehrende Zahlung",
     periodAnnual: "/Jahr",
   },
   it: {
@@ -170,6 +182,9 @@ const t: Record<Locale, {
     free: "Gratis",
     each: "/ cad.",
     quantity: "Quantità",
+    languageNames: { pl: "Polacco", en: "Inglese", de: "Tedesco", it: "Italiano" },
+    addLanguageHint: "Ti servono targhe in altre lingue? Aggiungi una versione linguistica:",
+    removeLanguage: "Rimuovi lingua",
     summary: "Riepilogo",
     monthlyFee: "Abbonamento mensile",
     platesOnetime: "Targhe NFC (una tantum)",
@@ -194,7 +209,7 @@ const t: Record<Locale, {
     billingAnnual: "Pagamento annuale",
     annualSavingsBadge: "2 mesi gratis",
     annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
-    comingSoon: "Prossimamente",
+    subscriptionNoteAnnual: "Abbonamento 490 €/anno — pagamento ricorrente",
     periodAnnual: "/anno",
   },
 };
@@ -208,6 +223,9 @@ const pricing: Record<Locale, { subPrice: number; platePrice: number; currency: 
 
 const galleryImages = ["/product.webp"];
 
+const MAX_PLATES = 50;
+const ALL_LOCALES = Object.keys(pricing) as Locale[];
+
 export default function OrderPage() {
   const pathname = usePathname();
   const pathLocale = pathname.split("/")[1] as Locale | undefined;
@@ -216,22 +234,50 @@ export default function OrderPage() {
   const p = pricing[locale];
 
   const [plates, setPlates] = useState(1);
+  const [otherLangs, setOtherLangs] = useState<{ lang: Locale; qty: number }[]>([]);
   const [loading, setLoading] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
-  const extraPlates = Math.max(0, plates - 1);
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("billing") === "annual") {
+      setBilling("annual");
+    }
+  }, []);
+
+  const totalPlates = plates + otherLangs.reduce((sum, o) => sum + o.qty, 0);
+  const extraPlates = Math.max(0, totalPlates - 1);
   const platesCost = extraPlates * p.platePrice;
   const annualSubPrice = p.subPrice * 10;
   const totalNow = (billing === "annual" ? annualSubPrice : p.subPrice) + platesCost;
 
+  const availableLangs = ALL_LOCALES.filter(
+    (lang) => lang !== locale && !otherLangs.some((o) => o.lang === lang)
+  );
+
+  function addLanguage(lang: Locale) {
+    if (totalPlates >= MAX_PLATES) return;
+    setOtherLangs((prev) => [...prev, { lang, qty: 1 }]);
+  }
+
+  function setLangQty(lang: Locale, qty: number) {
+    setOtherLangs((prev) => prev.map((o) => (o.lang === lang ? { ...o, qty } : o)));
+  }
+
+  function removeLanguage(lang: Locale) {
+    setOtherLangs((prev) => prev.filter((o) => o.lang !== lang));
+  }
+
   async function handleCheckout() {
     setLoading(true);
     try {
+      const plateLanguages: Record<string, number> = { [locale]: plates };
+      for (const o of otherLangs) plateLanguages[o.lang] = o.qty;
+
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plates, locale }),
+        body: JSON.stringify({ plates: totalPlates, plateLanguages, billing, locale }),
       });
       const data = await res.json();
       if (data.url) {
@@ -369,27 +415,104 @@ export default function OrderPage() {
                 {l.quantity}
               </label>
               <p className="text-xs text-gray-400 mb-3">{l.platesDesc}</p>
-              <div className="inline-flex items-center rounded-xl border border-gray-300 overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => setPlates(Math.max(1, plates - 1))}
-                  className="w-11 h-11 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-                >
-                  -
-                </button>
-                <span className="w-12 text-center text-base font-semibold border-x border-gray-300 h-11 flex items-center justify-center">
-                  {plates}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setPlates(Math.min(50, plates + 1))}
-                  className="w-11 h-11 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-                >
-                  +
-                </button>
+
+              <div className="space-y-2">
+                {/* Main language row */}
+                <div className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-2.5">
+                  <span className="text-sm font-medium text-gray-900">
+                    {l.languageNames[locale]}
+                  </span>
+                  <div className="inline-flex items-center rounded-lg border border-gray-300 overflow-hidden">
+                    <button
+                      type="button"
+                      onClick={() => setPlates(Math.max(1, plates - 1))}
+                      className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
+                    >
+                      -
+                    </button>
+                    <span className="w-11 text-center text-base font-semibold border-x border-gray-300 h-10 flex items-center justify-center">
+                      {plates}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => totalPlates < MAX_PLATES && setPlates(plates + 1)}
+                      className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                {/* Other language rows */}
+                {otherLangs.map((o) => (
+                  <div
+                    key={o.lang}
+                    className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-2.5"
+                  >
+                    <span className="text-sm font-medium text-gray-900">
+                      {l.languageNames[o.lang]}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <div className="inline-flex items-center rounded-lg border border-gray-300 overflow-hidden">
+                        <button
+                          type="button"
+                          onClick={() => setLangQty(o.lang, Math.max(1, o.qty - 1))}
+                          className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
+                        >
+                          -
+                        </button>
+                        <span className="w-11 text-center text-base font-semibold border-x border-gray-300 h-10 flex items-center justify-center">
+                          {o.qty}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => totalPlates < MAX_PLATES && setLangQty(o.lang, o.qty + 1)}
+                          className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
+                        >
+                          +
+                        </button>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => removeLanguage(o.lang)}
+                        aria-label={l.removeLanguage}
+                        title={l.removeLanguage}
+                        className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              {plates > 1 ? (
+              {/* Add language */}
+              {availableLangs.length > 0 && (
+                <div className="mt-3">
+                  <p className="text-xs text-gray-400 mb-2">{l.addLanguageHint}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {availableLangs.map((lang) => (
+                      <button
+                        key={lang}
+                        type="button"
+                        onClick={() => addLanguage(lang)}
+                        className="inline-flex items-center gap-1 rounded-full border border-dashed border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition-colors cursor-pointer"
+                      >
+                        + {l.languageNames[lang]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {totalPlates > 1 ? (
                 <div className="mt-3 text-sm text-gray-500">
                   <span className="text-brand-600 font-medium">{l.firstFree}</span>
                   {" + "}
@@ -408,7 +531,9 @@ export default function OrderPage() {
             {/* Order summary */}
             <div className="space-y-2 text-sm mb-6">
               <div className="flex justify-between">
-                <span className="text-gray-500">{l.monthlyFee}</span>
+                <span className="text-gray-500">
+                  {billing === "annual" ? l.billingAnnual : l.monthlyFee}
+                </span>
                 <span className="font-medium text-gray-900">
                   {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
                 </span>
@@ -431,25 +556,17 @@ export default function OrderPage() {
               </div>
             </div>
 
-            {billing === "annual" ? (
-              <button
-                type="button"
-                disabled
-                className="block w-full text-center bg-gray-200 text-gray-500 font-medium rounded-xl py-3.5 text-base cursor-not-allowed"
-              >
-                {l.comingSoon}
-              </button>
-            ) : (
-              <button
-                onClick={handleCheckout}
-                disabled={loading}
-                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-              >
-                {loading ? l.loading : l.checkout}
-              </button>
-            )}
+            <button
+              onClick={handleCheckout}
+              disabled={loading}
+              className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+            >
+              {loading ? l.loading : l.checkout}
+            </button>
 
-            <p className="text-xs text-gray-400 mt-3 text-center">{l.subscriptionNote}</p>
+            <p className="text-xs text-gray-400 mt-3 text-center">
+              {billing === "annual" ? l.subscriptionNoteAnnual : l.subscriptionNote}
+            </p>
           </div>
         </div>
       </div>

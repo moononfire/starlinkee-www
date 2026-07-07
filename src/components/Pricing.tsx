@@ -122,25 +122,14 @@ export default function Pricing({
               </ul>
             </div>
 
-            {billing === "annual" ? (
-              <button
-                type="button"
-                disabled
-                className="block w-full text-center bg-gray-200 text-gray-500 font-medium rounded-xl py-3.5 text-base cursor-not-allowed"
-              >
-                {t.pricing.comingSoon}
-              </button>
-            ) : (
-              <a
-                href={`/${locale}/order`}
-                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
-              >
-                {t.pricing.cta}
-              </a>
-            )}
+            <a
+              href={`/${locale}/order${billing === "annual" ? "?billing=annual" : ""}`}
+              className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
+            >
+              {t.pricing.cta}
+            </a>
 
-            <div className="mt-6 text-center md:text-left space-y-1">
-              <p className="text-sm text-gray-500">{t.pricing.extra}</p>
+            <div className="mt-6 text-center md:text-left">
               <p className="text-sm text-brand-600 font-medium">
                 {t.pricing.plates}
               </p>
