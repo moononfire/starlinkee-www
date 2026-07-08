@@ -97,7 +97,6 @@ const slugUi = {
     soon: "Wkrótce pojawią się artykuły w tej kategorii.",
     backToBlog: "← Wróć do bloga",
     author: "Autor",
-    founderNote: "Twórcą Starlinkee jest Viktor Bobiński, ekspert marketingu, sprzedaży i IT.",
     relatedPosts: "Powiązane artykuły",
     ctaHeading: "Gotowy na więcej opinii w Google?",
     ctaBody: "Tabliczka NFC, która sprawia, że klient wystawia opinię jednym dotknięciem — bez aplikacji, bez logowania.",
@@ -110,7 +109,6 @@ const slugUi = {
     soon: "Articles in this category are coming soon.",
     backToBlog: "← Back to blog",
     author: "Author",
-    founderNote: "Starlinkee was founded by Viktor Bobiński, an expert in marketing, sales and IT.",
     relatedPosts: "Related articles",
     ctaHeading: "Ready for more Google reviews?",
     ctaBody: "An NFC stand that lets customers leave a review with a single tap — no app, no login.",
@@ -123,7 +121,6 @@ const slugUi = {
     soon: "Artikel in dieser Kategorie erscheinen in Kürze.",
     backToBlog: "← Zurück zum Blog",
     author: "Autor",
-    founderNote: "Starlinkee wurde von Viktor Bobiński gegründet, einem Experten für Marketing, Vertrieb und IT.",
     relatedPosts: "Ähnliche Artikel",
     ctaHeading: "Bereit für mehr Google-Bewertungen?",
     ctaBody: "Ein NFC-Aufsteller, mit dem Gäste eine Bewertung mit einem einzigen Antippen hinterlassen — ohne App, ohne Anmeldung.",
@@ -136,7 +133,6 @@ const slugUi = {
     soon: "Gli articoli in questa categoria saranno disponibili a breve.",
     backToBlog: "← Torna al blog",
     author: "Autore",
-    founderNote: "Starlinkee è stata fondata da Viktor Bobiński, esperto di marketing, vendite e IT.",
     relatedPosts: "Articoli correlati",
     ctaHeading: "Pronto per più recensioni su Google?",
     ctaBody: "Un supporto NFC che permette ai clienti di lasciare una recensione con un solo tocco — senza app, senza registrazione.",
@@ -415,13 +411,12 @@ export default async function BlogSlugPage({ params }: Props) {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 mt-12">
             <div className="flex items-start gap-4 p-5 bg-gray-50 rounded-xl border border-gray-100">
               <div className="w-11 h-11 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
-                <span className="text-white font-bold text-base">S</span>
+                <span className="text-white font-bold text-base">VB</span>
               </div>
               <div>
                 <p className="font-semibold text-gray-900 text-sm">{post.author}</p>
                 <p className="text-xs text-gray-400 mt-0.5">Starlinkee</p>
-                <p className="text-sm text-gray-600 leading-relaxed mt-2">{post.authorBio}</p>
-                <p className="text-sm text-gray-600 leading-relaxed mt-2">{ui.founderNote}</p>
+                <p className="text-sm text-gray-600 leading-relaxed mt-2">{locPost.authorBio}</p>
               </div>
             </div>
           </div>

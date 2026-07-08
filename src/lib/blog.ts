@@ -59,7 +59,10 @@ export interface BlogPostMeta {
   faq: FaqItem[];
   availableLocales: Locale[];
   localized?: Partial<
-    Record<Locale, { title: string; description: string; category: string; keywords: string[]; slug: string }>
+    Record<
+      Locale,
+      { title: string; description: string; category: string; keywords: string[]; slug: string; authorBio?: string }
+    >
   >;
 }
 
@@ -70,9 +73,9 @@ export const blogPosts: BlogPostMeta[] = [
     description:
       "Sprawdź, jak odpowiadać na opinie Google — pozytywne, negatywne i fałszywe. Dowiedz się, kiedy Google usunie recenzję i jak legalnie ograniczyć liczbę niesprawiedliwych ocen.",
     publishedAt: "2026-07-01",
-    author: "Zespół Starlinkee",
+    author: "Viktor Bobiński",
     authorBio:
-      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Zarządzanie reputacją",
     categorySlug: "zarzadzanie-reputacja",
     ogImage: "/images/blog/jak-odpowiadac-na-opinie-hero.jpg",
@@ -96,6 +99,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Learn how to respond to Google reviews — positive, negative and fake. Find out when Google actually removes a review and how to legally reduce unfair ratings.",
         category: "Reputation Management",
         slug: "how-to-respond-to-google-reviews",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
         keywords: [
           "how to respond to google reviews",
           "how to respond to a negative google review",
@@ -114,6 +119,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Erfahren Sie, wie Sie auf Google-Bewertungen antworten — positive, negative und gefälschte. Wann entfernt Google tatsächlich eine Bewertung und wie reduzieren Sie unfaire Bewertungen legal?",
         category: "Reputationsmanagement",
         slug: "wie-auf-google-bewertungen-antworten",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
         keywords: [
           "wie auf google bewertungen antworten",
           "negative google bewertung beantworten",
@@ -132,6 +139,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Scopri come rispondere alle recensioni Google — positive, negative e false. Scopri quando Google rimuove davvero una recensione e come ridurre legalmente le valutazioni ingiuste.",
         category: "Gestione della reputazione",
         slug: "come-rispondere-alle-recensioni-google",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
         keywords: [
           "come rispondere alle recensioni google",
           "come rispondere a una recensione negativa google",
@@ -179,9 +188,9 @@ export const blogPosts: BlogPostMeta[] = [
     description:
       "Dowiedz się, jak założyć, zweryfikować i zoptymalizować wizytówkę Google Moja Firma. Sprawdź, które sygnały rankingowe mają największy wpływ na pozycję w Google Maps i Local Pack.",
     publishedAt: "2026-06-30",
-    author: "Zespół Starlinkee",
+    author: "Viktor Bobiński",
     authorBio:
-      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Wizytówka Google",
     categorySlug: "wizytowka-google",
     ogImage: "/images/blog/wizytowka-google-moja-firma-hero.jpg",
@@ -203,6 +212,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Learn how to create, verify and optimise your Google Business Profile. Discover which ranking signals have the greatest impact on your position in Google Maps and the Local Pack.",
         category: "Google Business Profile",
         slug: "google-business-profile-how-to-optimize",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
         keywords: [
           "google business profile",
           "how to optimize google business profile",
@@ -220,6 +231,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Erfahren Sie, wie Sie Ihr Google Business Profil anlegen, verifizieren und optimieren. Entdecken Sie, welche Rankingsignale die größte Auswirkung auf Ihre Position in Google Maps und dem Local Pack haben.",
         category: "Google Business Profile",
         slug: "google-unternehmensprofil-optimieren",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
         keywords: [
           "google unternehmensprofil",
           "google business profile optimieren",
@@ -237,6 +250,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Scopri come creare, verificare e ottimizzare il tuo Google Business Profile. Scopri quali segnali di ranking hanno il maggiore impatto sulla tua posizione in Google Maps e nel Local Pack.",
         category: "Google Business Profile",
         slug: "profilo-google-business-come-ottimizzare",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
         keywords: [
           "profilo google business",
           "come ottimizzare google business profile",
@@ -283,9 +298,9 @@ export const blogPosts: BlogPostMeta[] = [
     description:
       "Dowiedz się, jak legalnie i skutecznie zdobywać opinie w Google. Sprawdź, kiedy prosić o recenzję, jakie bariery usunąć i dlaczego system NFC zmienia zasady gry.",
     publishedAt: "2026-06-12",
-    author: "Zespół Starlinkee",
+    author: "Viktor Bobiński",
     authorBio:
-      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Opinie Google",
     categorySlug: "opinie-google",
     ogImage: "/images/blog/jak-szybko-zdobyc-opinie-hero.jpg",
@@ -305,6 +320,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Find out how to legally and effectively collect Google reviews. Learn when to ask for a review, which barriers to remove, and why an NFC system changes the game.",
         category: "Google Reviews",
         slug: "how-to-get-google-reviews-fast",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
         keywords: [
           "google reviews",
           "how to get google reviews",
@@ -320,6 +337,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Erfahren Sie, wie Sie legal und effektiv Google-Bewertungen sammeln. Wann Sie um eine Rezension bitten, welche Hindernisse beseitigt werden müssen und warum ein NFC-System alles verändert.",
         category: "Google-Bewertungen",
         slug: "schnell-google-bewertungen-bekommen",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
         keywords: [
           "google bewertungen",
           "wie bekommt man google bewertungen",
@@ -335,6 +354,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Scopri come raccogliere recensioni su Google in modo legale ed efficace. Quando chiedere una recensione, quali ostacoli rimuovere e perché un sistema NFC cambia le regole del gioco.",
         category: "Recensioni Google",
         slug: "come-ottenere-recensioni-google-velocemente",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
         keywords: [
           "recensioni google",
           "come ottenere recensioni google",
@@ -369,9 +390,9 @@ export const blogPosts: BlogPostMeta[] = [
     description:
       "Sprawdź, jak zbudować cyfrowy program lojalnościowy bez aplikacji mobilnej. Dowiedz się, jak działa karta lojalnościowa NFC i jak dobrać próg nagrody dla restauracji, salonu czy barbershopu.",
     publishedAt: "2026-07-07",
-    author: "Zespół Starlinkee",
+    author: "Viktor Bobiński",
     authorBio:
-      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Marketing lokalny",
     categorySlug: "marketing-lokalny",
     ogImage: "/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg",
@@ -395,6 +416,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Find out how to build a digital loyalty program without a mobile app. Learn how an NFC loyalty card works and how to set the reward threshold for a restaurant, salon or barbershop.",
         category: "Local Marketing",
         slug: "loyalty-program-without-an-app-how-to-build-customer-loyalty",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
         keywords: [
           "loyalty card without an app",
           "digital loyalty card",
@@ -414,6 +437,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Erfahren Sie, wie Sie ein digitales Treueprogramm ohne mobile App aufbauen. Entdecken Sie, wie eine NFC-Treuekarte funktioniert und wie Sie die Belohnungsschwelle für Restaurant, Salon oder Barbershop festlegen.",
         category: "Lokales Marketing",
         slug: "treueprogramm-ohne-app-wie-kundentreue-aufbauen",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
         keywords: [
           "treuekarte ohne app",
           "digitale treuekarte",
@@ -433,6 +458,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Scopri come costruire un programma fedeltà digitale senza app mobile. Scopri come funziona una tessera fedeltà NFC e come impostare la soglia premio per ristorante, salone o barbershop.",
         category: "Marketing locale",
         slug: "programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
         keywords: [
           "tessera fedeltà senza app",
           "tessera fedeltà digitale",
@@ -481,9 +508,9 @@ export const blogPosts: BlogPostMeta[] = [
     description:
       "Sprawdź, jak salon kosmetyczny, fryzjer i barbershop mogą zdobywać więcej opinii Google. Dowiedz się, kiedy prosić o recenzję, jak reagować na trudne opinie i jak połączyć je z lojalnością klientów.",
     publishedAt: "2026-07-08",
-    author: "Zespół Starlinkee",
+    author: "Viktor Bobiński",
     authorBio:
-      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Opinie Google",
     categorySlug: "opinie-google",
     ogImage: "/images/blog/opinie-google-salon-fryzjerski-hero.jpg",
@@ -509,6 +536,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Find out how hair salons, barbershops and beauty salons can get more Google reviews. Learn when to ask for a review, how to handle difficult reviews, and how to link them to customer loyalty.",
         category: "Google Reviews",
         slug: "google-reviews-hair-salons-barbershops-how-to-get-more-ratings",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
         keywords: [
           "google reviews hair salon",
           "how to get reviews beauty salon",
@@ -530,6 +559,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Erfahren Sie, wie Friseursalons, Barbershops und Kosmetiksalons mehr Google-Bewertungen sammeln. Wann Sie um eine Bewertung bitten, wie Sie mit schwierigen Bewertungen umgehen und wie Sie diese mit Kundentreue verbinden.",
         category: "Google-Bewertungen",
         slug: "google-bewertungen-friseursalon-barbershop-mehr-bewertungen-bekommen",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
         keywords: [
           "google bewertungen friseursalon",
           "bewertungen bekommen kosmetiksalon",
@@ -551,6 +582,8 @@ export const blogPosts: BlogPostMeta[] = [
           "Scopri come saloni di parrucchiere, barbershop e centri estetici possono ottenere più recensioni Google. Quando chiedere una recensione, come gestire quelle difficili e come collegarle alla fedeltà dei clienti.",
         category: "Recensioni Google",
         slug: "recensioni-google-parrucchiere-barbiere-come-ottenere-piu-recensioni",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
         keywords: [
           "recensioni google salone estetico",
           "come ottenere recensioni salone estetico",
@@ -602,7 +635,7 @@ export const blogPosts: BlogPostMeta[] = [
 export function getLocalizedPost(
   post: BlogPostMeta,
   locale: Locale,
-): { title: string; description: string; category: string; keywords: string[]; slug: string } {
+): { title: string; description: string; category: string; keywords: string[]; slug: string; authorBio: string } {
   const loc = locale !== "pl" ? post.localized?.[locale] : undefined;
   return {
     title: loc?.title ?? post.title,
@@ -610,6 +643,7 @@ export function getLocalizedPost(
     category: loc?.category ?? post.category,
     keywords: loc?.keywords ?? post.keywords,
     slug: loc?.slug ?? post.slug,
+    authorBio: loc?.authorBio ?? post.authorBio,
   };
 }
 
