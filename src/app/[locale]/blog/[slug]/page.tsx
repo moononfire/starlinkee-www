@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OpenLinksInNewTab from "@/components/blog/OpenLinksInNewTab";
 import { notFound } from "next/navigation";
 import {
   getPostsByCategory,
@@ -12,6 +13,7 @@ import {
   findCategoryByLocalizedSlug,
   blogPosts,
   blogCategories,
+  BLOG_POSTS_PER_PAGE,
 } from "@/lib/blog";
 import { LOCALES, type Locale } from "@/i18n";
 import { resolveLocale } from "@/lib/locale";
@@ -213,7 +215,7 @@ export default async function BlogSlugPage({ params }: Props) {
   // ── WIDOK KATEGORII ──────────────────────────────────────────────
   const cat = findCategoryByLocalizedSlug(requestedLocale, slug);
   if (cat) {
-    const posts = getPostsByCategory(cat.slug);
+    const posts = getPostsByCategory(cat.slug).slice(0, BLOG_POSTS_PER_PAGE);
     const ui = slugUi[requestedLocale];
     const catName = getCategoryName(cat, requestedLocale);
 
@@ -245,6 +247,7 @@ export default async function BlogSlugPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
         <main className="min-h-screen bg-white">
+         <OpenLinksInNewTab>
           <div className="max-w-4xl mx-auto px-4 py-16">
             <header className="mb-12">
               <nav aria-label="Breadcrumb" className="mb-6">
@@ -290,6 +293,7 @@ export default async function BlogSlugPage({ params }: Props) {
               </div>
             )}
           </div>
+         </OpenLinksInNewTab>
         </main>
       </>
     );
@@ -356,6 +360,7 @@ export default async function BlogSlugPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       <main className="min-h-screen bg-white overflow-x-hidden">
+       <OpenLinksInNewTab>
 
         {/* Breadcrumb */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-10">
@@ -460,6 +465,7 @@ export default async function BlogSlugPage({ params }: Props) {
 
           <div className="h-16" />
         </article>
+       </OpenLinksInNewTab>
       </main>
     </>
   );

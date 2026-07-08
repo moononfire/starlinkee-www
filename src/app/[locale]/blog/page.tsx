@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { blogPosts, blogCategories, getLocalizedPost, getCategoryName, getLocalizedCategorySlug, getBlogCategory } from "@/lib/blog";
+import OpenLinksInNewTab from "@/components/blog/OpenLinksInNewTab";
+import {
+  blogPosts,
+  blogCategories,
+  getLocalizedPost,
+  getCategoryName,
+  getLocalizedCategorySlug,
+  getBlogCategory,
+  sortPostsByDateDesc,
+  BLOG_POSTS_PER_PAGE,
+} from "@/lib/blog";
 import { LOCALES, type Locale } from "@/i18n";
 import { resolveLocale } from "@/lib/locale";
 
@@ -129,6 +139,7 @@ export default async function BlogPage({ params }: Props) {
   const locale = resolveLocale(rawLocale);
   const t = ui[locale];
   const canonicalUrl = `${SITE_URL}/${locale}/blog`;
+  const posts = sortPostsByDateDesc(blogPosts).slice(0, BLOG_POSTS_PER_PAGE);
 
   const itemListJsonLd = {
     "@context": "https://schema.org",
@@ -136,7 +147,7 @@ export default async function BlogPage({ params }: Props) {
     name: "Blog Starlinkee",
     description: BLOG_DESCRIPTIONS[locale],
     url: canonicalUrl,
-    itemListElement: blogPosts.map((post, index) => {
+    itemListElement: posts.map((post, index) => {
       const locPost = getLocalizedPost(post, locale);
       return {
         "@type": "ListItem",
@@ -155,6 +166,7 @@ export default async function BlogPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
       />
       <main className="min-h-screen bg-white">
+       <OpenLinksInNewTab>
         <div className="max-w-4xl mx-auto px-4 py-16">
           <header className="mb-12">
             <nav aria-label="Breadcrumb" className="mb-6">
@@ -185,7 +197,7 @@ export default async function BlogPage({ params }: Props) {
           </header>
 
           <div className="grid gap-8">
-            {blogPosts.map((post) => {
+            {posts.map((post) => {
               const locPost = getLocalizedPost(post, locale);
               const cat = getBlogCategory(post.categorySlug);
               const catHref = cat ? getLocalizedCategorySlug(cat, locale) : post.categorySlug;
@@ -232,6 +244,7 @@ export default async function BlogPage({ params }: Props) {
             })}
           </div>
         </div>
+       </OpenLinksInNewTab>
       </main>
     </>
   );

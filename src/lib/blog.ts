@@ -639,8 +639,16 @@ export function findCategoryByLocalizedSlug(locale: Locale, slug: string): BlogC
   return blogCategories.find((c) => getLocalizedCategorySlug(c, locale) === slug) ?? null;
 }
 
+export const BLOG_POSTS_PER_PAGE = 20;
+
+export function sortPostsByDateDesc(posts: BlogPostMeta[]): BlogPostMeta[] {
+  return [...posts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+}
+
 export function getPostsByCategory(categorySlug: string): BlogPostMeta[] {
-  return blogPosts.filter((p) => p.categorySlug === categorySlug);
+  return sortPostsByDateDesc(blogPosts.filter((p) => p.categorySlug === categorySlug));
 }
 
 export function getRelatedPosts(slug: string, limit = 3): BlogPostMeta[] {
