@@ -233,8 +233,9 @@ export default function OrderPage() {
   const l = t[locale];
   const p = pricing[locale];
 
-  const [plates, setPlates] = useState(1);
-  const [otherLangs, setOtherLangs] = useState<{ lang: Locale; qty: number }[]>([]);
+  const [langRows, setLangRows] = useState<{ lang: Locale; qty: number }[]>([
+    { lang: locale, qty: 1 },
+  ]);
   const [loading, setLoading] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
@@ -245,34 +246,34 @@ export default function OrderPage() {
     }
   }, []);
 
-  const totalPlates = plates + otherLangs.reduce((sum, o) => sum + o.qty, 0);
+  const totalPlates = langRows.reduce((sum, o) => sum + o.qty, 0);
   const extraPlates = Math.max(0, totalPlates - 1);
   const platesCost = extraPlates * p.platePrice;
   const annualSubPrice = p.subPrice * 10;
   const totalNow = (billing === "annual" ? annualSubPrice : p.subPrice) + platesCost;
 
   const availableLangs = ALL_LOCALES.filter(
-    (lang) => lang !== locale && !otherLangs.some((o) => o.lang === lang)
+    (lang) => !langRows.some((o) => o.lang === lang)
   );
 
   function addLanguage(lang: Locale) {
     if (totalPlates >= MAX_PLATES) return;
-    setOtherLangs((prev) => [...prev, { lang, qty: 1 }]);
+    setLangRows((prev) => [...prev, { lang, qty: 1 }]);
   }
 
   function setLangQty(lang: Locale, qty: number) {
-    setOtherLangs((prev) => prev.map((o) => (o.lang === lang ? { ...o, qty } : o)));
+    setLangRows((prev) => prev.map((o) => (o.lang === lang ? { ...o, qty } : o)));
   }
 
   function removeLanguage(lang: Locale) {
-    setOtherLangs((prev) => prev.filter((o) => o.lang !== lang));
+    setLangRows((prev) => (prev.length > 1 ? prev.filter((o) => o.lang !== lang) : prev));
   }
 
   async function handleCheckout() {
     setLoading(true);
     try {
-      const plateLanguages: Record<string, number> = { [locale]: plates };
-      for (const o of otherLangs) plateLanguages[o.lang] = o.qty;
+      const plateLanguages: Record<string, number> = {};
+      for (const o of langRows) plateLanguages[o.lang] = o.qty;
 
       const res = await fetch("/api/checkout", {
         method: "POST",
@@ -417,34 +418,7 @@ export default function OrderPage() {
               <p className="text-xs text-gray-400 mb-3">{l.platesDesc}</p>
 
               <div className="space-y-2">
-                {/* Main language row */}
-                <div className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-2.5">
-                  <span className="text-sm font-medium text-gray-900">
-                    {l.languageNames[locale]}
-                  </span>
-                  <div className="inline-flex items-center rounded-lg border border-gray-300 overflow-hidden">
-                    <button
-                      type="button"
-                      onClick={() => setPlates(Math.max(1, plates - 1))}
-                      className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-                    >
-                      -
-                    </button>
-                    <span className="w-11 text-center text-base font-semibold border-x border-gray-300 h-10 flex items-center justify-center">
-                      {plates}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => totalPlates < MAX_PLATES && setPlates(plates + 1)}
-                      className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-
-                {/* Other language rows */}
-                {otherLangs.map((o) => (
+                {langRows.map((o) => (
                   <div
                     key={o.lang}
                     className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-2.5"
@@ -472,22 +446,24 @@ export default function OrderPage() {
                           +
                         </button>
                       </div>
-                      <button
-                        type="button"
-                        onClick={() => removeLanguage(o.lang)}
-                        aria-label={l.removeLanguage}
-                        title={l.removeLanguage}
-                        className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
-                      >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                      </button>
+                      {langRows.length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => removeLanguage(o.lang)}
+                          aria-label={l.removeLanguage}
+                          title={l.removeLanguage}
+                          className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M6 18L18 6M6 6l12 12"
+                            />
+                          </svg>
+                        </button>
+                      )}
                     </div>
                   </div>
                 ))}
