@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDueSubscribers, advanceSubscriber } from "@/lib/supabase";
+import { getDueSubscribers, advanceSubscriber } from "@/lib/db";
 import { getSequenceEmail, getMaxStep, sendTrackedEmail } from "@/lib/sequence-emails";
+import { LOCALES, type Locale } from "@/i18n";
 
 export async function GET(req: NextRequest) {
   const auth = req.headers.get("authorization");
@@ -12,7 +13,8 @@ export async function GET(req: NextRequest) {
   const results = { sent: 0, skipped: 0, errors: 0 };
 
   for (const sub of subscribers) {
-    const email = getSequenceEmail(sub.source, sub.sequence_step);
+    const locale: Locale = LOCALES.includes(sub.locale as Locale) ? (sub.locale as Locale) : "pl";
+    const email = getSequenceEmail(sub.source, sub.sequence_step, locale);
 
     if (!email) {
       await advanceSubscriber(sub.id, sub.sequence_step, null);

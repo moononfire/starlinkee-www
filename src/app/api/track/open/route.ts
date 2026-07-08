@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { recordOpen } from "@/lib/supabase";
+import { recordOpen } from "@/lib/db";
 
 // 1x1 transparent GIF
 const PIXEL = Buffer.from(

@@ -1,8 +1,11 @@
--- Newsletter subscribers + sequence tracking
+-- Newsletter subscribers + sequence tracking (Neon Postgres)
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 CREATE TABLE IF NOT EXISTS newsletter_subscribers (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   email TEXT NOT NULL,
   source TEXT NOT NULL DEFAULT 'course',
+  locale TEXT NOT NULL DEFAULT 'pl',
   sequence_step INTEGER DEFAULT 1,
   next_send_at TIMESTAMPTZ,
   unsubscribed_at TIMESTAMPTZ,

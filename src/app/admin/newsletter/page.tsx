@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getDashboardData } from "@/lib/supabase";
+import { getDashboardData } from "@/lib/db";
 
 interface Props {
   searchParams: Promise<{ token?: string }>;
@@ -56,7 +56,7 @@ export default async function NewsletterDashboard({ searchParams }: Props) {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", maxWidth: 900, margin: "0 auto", padding: "32px 16px", color: "#111" }}>
       <h1 style={{ fontSize: 24, fontWeight: 700, marginBottom: 4 }}>Newsletter Dashboard</h1>
-      <p style={{ color: "#6b7280", marginBottom: 32, fontSize: 14 }}>Starlinkee · dane z Supabase</p>
+      <p style={{ color: "#6b7280", marginBottom: 32, fontSize: 14 }}>Starlinkee · dane z Neon</p>
 
       {/* ── Karty ogólne ── */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16, marginBottom: 40 }}>
