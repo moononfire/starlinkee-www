@@ -32,6 +32,10 @@ import ProgramLojalnosciowyBezAplikacji from "@/components/blog/articles/Program
 import ProgramLojalnosciowyBezAplikacjiEn from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacjiEn";
 import ProgramLojalnosciowyBezAplikacjiDe from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacjiDe";
 import ProgramLojalnosciowyBezAplikacjiIt from "@/components/blog/articles/ProgramLojalnosciowyBezAplikacjiIt";
+import OpinieGoogleSalonFryzjerski from "@/components/blog/articles/OpinieGoogleSalonFryzjerski";
+import OpinieGoogleSalonFryzjerskiEn from "@/components/blog/articles/OpinieGoogleSalonFryzjerskiEn";
+import OpinieGoogleSalonFryzjerskiDe from "@/components/blog/articles/OpinieGoogleSalonFryzjerskiDe";
+import OpinieGoogleSalonFryzjerskiIt from "@/components/blog/articles/OpinieGoogleSalonFryzjerskiIt";
 
 const SITE_URL = "https://starlinkee.com";
 
@@ -60,6 +64,12 @@ const articleComponents: Record<string, Partial<Record<Locale, React.ComponentTy
     en: ProgramLojalnosciowyBezAplikacjiEn,
     de: ProgramLojalnosciowyBezAplikacjiDe,
     it: ProgramLojalnosciowyBezAplikacjiIt,
+  },
+  "opinie-google-salon-fryzjerski-jak-zdobyc-wiecej-ocen": {
+    pl: OpinieGoogleSalonFryzjerski,
+    en: OpinieGoogleSalonFryzjerskiEn,
+    de: OpinieGoogleSalonFryzjerskiDe,
+    it: OpinieGoogleSalonFryzjerskiIt,
   },
 };
 

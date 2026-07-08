@@ -475,6 +475,128 @@ export const blogPosts: BlogPostMeta[] = [
       },
     ],
   },
+  {
+    slug: "opinie-google-salon-fryzjerski-jak-zdobyc-wiecej-ocen",
+    title: "Opinie Google dla salonu kosmetycznego i fryzjera: jak zdobyć więcej ocen",
+    description:
+      "Sprawdź, jak salon kosmetyczny, fryzjer i barbershop mogą zdobywać więcej opinii Google. Dowiedz się, kiedy prosić o recenzję, jak reagować na trudne opinie i jak połączyć je z lojalnością klientów.",
+    publishedAt: "2026-07-08",
+    author: "Zespół Starlinkee",
+    authorBio:
+      "Zespół Starlinkee specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Opinie Google",
+    categorySlug: "opinie-google",
+    ogImage: "/images/blog/opinie-google-salon-fryzjerski-hero.jpg",
+    keywords: [
+      "opinie google salon kosmetyczny",
+      "jak zdobyć opinie salon kosmetyczny",
+      "zbieranie opinii salon piękności",
+      "nfc salon kosmetyczny",
+      "tabliczka nfc salon",
+      "opinie google fryzjer",
+      "jak zdobyć opinie fryzjer",
+      "system opinii barbershop",
+      "nfc barbershop opinie",
+      "karta lojalnościowa barbershop",
+      "karta lojalnościowa fryzjer",
+      "program lojalnościowy salon fryzjerski",
+    ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "Google Reviews for Hair Salons and Barbershops: How to Get More Ratings",
+        description:
+          "Find out how hair salons, barbershops and beauty salons can get more Google reviews. Learn when to ask for a review, how to handle difficult reviews, and how to link them to customer loyalty.",
+        category: "Google Reviews",
+        slug: "google-reviews-hair-salons-barbershops-how-to-get-more-ratings",
+        keywords: [
+          "google reviews hair salon",
+          "how to get reviews beauty salon",
+          "collecting reviews beauty salon",
+          "nfc beauty salon",
+          "nfc plate salon",
+          "google reviews hairdresser",
+          "how to get reviews hairdresser",
+          "review system barbershop",
+          "nfc barbershop reviews",
+          "loyalty card barbershop",
+          "loyalty card hairdresser",
+          "loyalty program hair salon",
+        ],
+      },
+      de: {
+        title: "Google-Bewertungen für Friseursalons und Barbershops: Mehr Bewertungen bekommen",
+        description:
+          "Erfahren Sie, wie Friseursalons, Barbershops und Kosmetiksalons mehr Google-Bewertungen sammeln. Wann Sie um eine Bewertung bitten, wie Sie mit schwierigen Bewertungen umgehen und wie Sie diese mit Kundentreue verbinden.",
+        category: "Google-Bewertungen",
+        slug: "google-bewertungen-friseursalon-barbershop-mehr-bewertungen-bekommen",
+        keywords: [
+          "google bewertungen friseursalon",
+          "bewertungen bekommen kosmetiksalon",
+          "bewertungen sammeln schönheitssalon",
+          "nfc kosmetiksalon",
+          "nfc plakette salon",
+          "google bewertungen friseur",
+          "bewertungen bekommen friseur",
+          "bewertungssystem barbershop",
+          "nfc barbershop bewertungen",
+          "treuekarte barbershop",
+          "treuekarte friseur",
+          "treueprogramm friseursalon",
+        ],
+      },
+      it: {
+        title: "Recensioni Google per parrucchieri e barbershop: come ottenere più recensioni",
+        description:
+          "Scopri come saloni di parrucchiere, barbershop e centri estetici possono ottenere più recensioni Google. Quando chiedere una recensione, come gestire quelle difficili e come collegarle alla fedeltà dei clienti.",
+        category: "Recensioni Google",
+        slug: "recensioni-google-parrucchiere-barbiere-come-ottenere-piu-recensioni",
+        keywords: [
+          "recensioni google salone estetico",
+          "come ottenere recensioni salone estetico",
+          "raccogliere recensioni centro estetico",
+          "nfc salone estetico",
+          "targhetta nfc salone",
+          "recensioni google parrucchiere",
+          "come ottenere recensioni parrucchiere",
+          "sistema recensioni barbershop",
+          "recensioni nfc barbershop",
+          "tessera fedeltà barbershop",
+          "tessera fedeltà parrucchiere",
+          "programma fedeltà parrucchiere",
+        ],
+      },
+    },
+    faq: [
+      {
+        question: "Czy mogę poprosić klientkę o opinię zaraz po zabiegu, czy lepiej poczekać?",
+        answer:
+          "Najlepiej poprosić od razu, gdy klientka widzi efekt w lustrze i wyraża zadowolenie. To moment najsilniejszych pozytywnych emocji w całej wizycie — czekanie do domu znacznie obniża szansę na wystawienie recenzji.",
+      },
+      {
+        question: "Jak reagować, gdy klientka jest niezadowolona i grozi negatywną opinią?",
+        answer:
+          "Zaproponuj bezpłatną poprawkę jeszcze tego samego dnia lub w najbliższym możliwym terminie. Rozwiązanie problemu przed wystawieniem opinii jest zawsze skuteczniejsze niż odpowiadanie na już opublikowaną, negatywną recenzję.",
+      },
+      {
+        question:
+          "Czy tabliczka NFC sprawdzi się przy stanowisku fryzjerskim, gdzie ręce klienta bywają zajęte?",
+        answer:
+          "Tak. Wystarczy zbliżenie telefonu na ułamek sekundy, dlatego tabliczka najlepiej sprawdza się tuż po zdjęciu peleryny fryzjerskiej, gdy klient ma już wolne ręce i patrzy w lustro na efekt końcowy.",
+      },
+      {
+        question:
+          "Jaki próg nagrody w karcie lojalnościowej najlepiej sprawdza się w salonie fryzjerskim?",
+        answer:
+          "Zwykle piąta wizyta, dopasowana do rytmu wizyt co 3–4 tygodnie. Dla salonów kosmetycznych z rzadszymi zabiegami lepiej sprawdza się próg trzech lub czterech wizyt.",
+      },
+      {
+        question: "Czy program lojalnościowy i zbieranie opinii mogą działać na tej samej tabliczce NFC?",
+        answer:
+          "Tak. Jeden nośnik NFC może jednocześnie kierować zadowolonego klienta do formularza opinii Google i rejestrować jego wizytę w cyfrowej karcie lojalnościowej — bez dodatkowego sprzętu i bez instalowania aplikacji.",
+      },
+    ],
+  },
 ];
 
 export function getLocalizedPost(
