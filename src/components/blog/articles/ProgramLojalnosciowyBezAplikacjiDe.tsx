@@ -271,7 +271,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
       </div>
 
       {/* ── VOLLBREITER NEWSLETTER-BANNER ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="de" />
 
       {/* ── ABSCHNITT 4 ── */}
       <div className={P}>

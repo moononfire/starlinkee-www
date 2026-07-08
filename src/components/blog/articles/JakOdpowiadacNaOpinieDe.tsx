@@ -281,7 +281,7 @@ export default function JakOdpowiadacNaOpinieDe() {
       </div>
 
       {/* ── NEWSLETTER-BANNER IN VOLLER BREITE ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="de" />
 
       {/* ── ABSCHNITT 4 ── */}
       <div className={P}>

@@ -221,7 +221,7 @@ export default function OpinieGoogleSalonFryzjerski() {
       </div>
 
       {/* ── BANER NEWSLETTER — pełna szerokość ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="pl" />
 
       {/* ── SEKCJA 3 ── */}
       <div className={P}>

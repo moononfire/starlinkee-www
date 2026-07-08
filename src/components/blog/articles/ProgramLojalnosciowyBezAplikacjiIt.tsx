@@ -271,7 +271,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
       </div>
 
       {/* ── BANNER NEWSLETTER — LARGHEZZA PIENA ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="it" />
 
       {/* ── SEZIONE 4 ── */}
       <div className={P}>

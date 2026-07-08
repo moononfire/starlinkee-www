@@ -327,7 +327,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
       </div>
 
       {/* ── BANNER NEWSLETTER — larghezza piena ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="it" />
 
       {/* ── SEZIONE 4 ── */}
       <div className={P}>

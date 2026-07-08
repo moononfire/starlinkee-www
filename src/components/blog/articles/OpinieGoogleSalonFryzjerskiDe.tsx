@@ -226,7 +226,7 @@ export default function OpinieGoogleSalonFryzjerskiDe() {
       </div>
 
       {/* ── NEWSLETTER-BANNER ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="de" />
 
       {/* ── ABSCHNITT 3 ── */}
       <div className={P}>

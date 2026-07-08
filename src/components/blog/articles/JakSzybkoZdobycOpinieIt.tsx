@@ -235,7 +235,7 @@ export default function JakSzybkoZdobycOpinieIt() {
       </div>
 
       {/* ── BANNER NEWSLETTER ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="it" />
 
       {/* ── SEZIONE 3 ── */}
       <div className={P}>

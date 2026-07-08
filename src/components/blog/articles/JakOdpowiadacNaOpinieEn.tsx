@@ -278,7 +278,7 @@ export default function JakOdpowiadacNaOpinieEn() {
       </div>
 
       {/* ── FULL-WIDTH NEWSLETTER BANNER ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="en" />
 
       {/* ── SECTION 4 ── */}
       <div className={P}>

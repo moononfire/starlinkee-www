@@ -285,7 +285,7 @@ export default function JakOdpowiadacNaOpinieIt() {
       </div>
 
       {/* ── BANNER NEWSLETTER A LARGHEZZA PIENA ── */}
-      <NewsletterBlogBanner />
+      <NewsletterBlogBanner locale="it" />
 
       {/* ── SEZIONE 4 ── */}
       <div className={P}>
