@@ -169,8 +169,8 @@ export default function JakOdpowiadacNaOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-hero.jpg"
-          alt="Właściciel lokalu czyta i odpowiada na opinie klientów w panelu Google Business Profile na laptopie"
+          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
+          alt="Uśmiechnięty właściciel lokalu serdecznie wita klienta przy ladzie kawiarni, w tle przytulne, rozmyte wnętrze"
         />
       </div>
 
@@ -222,8 +222,8 @@ export default function JakOdpowiadacNaOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-pozytywne.jpg"
-          alt="Ekran smartfona z pięciogwiazdkową opinią klienta i profesjonalną odpowiedzią firmy pod spodem"
+          src="/images/blog/jak-odpowiadac-na-opinie/pozytywne.webp"
+          alt="Zadowolony klient ściska dłoń uśmiechniętemu właścicielowi lokalu przy ladzie, ciepła i szczera atmosfera"
         />
       </div>
 
@@ -272,8 +272,8 @@ export default function JakOdpowiadacNaOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-negatywne.jpg"
-          alt="Osoba odpowiadająca spokojnie i rzeczowo na negatywną opinię klienta na ekranie komputera"
+          src="/images/blog/jak-odpowiadac-na-opinie/negatywne.webp"
+          alt="Spokojny właściciel lokalu uważnie słucha klienta, empatyczna i cierpliwa postawa"
         />
       </div>
 
@@ -327,8 +327,8 @@ export default function JakOdpowiadacNaOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-zgloszenie.jpg"
-          alt="Formularz zgłaszania opinii do usunięcia w panelu Google Business Profile z listą powodów naruszenia regulaminu"
+          src="/images/blog/jak-odpowiadac-na-opinie/zgloszenie.webp"
+          alt="Skupiony właściciel firmy przegląda dokumenty przy biurku, poważny i uważny wyraz twarzy"
         />
       </div>
 
@@ -390,8 +390,8 @@ export default function JakOdpowiadacNaOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-filtr.jpg"
-          alt="Schemat pokazujący klienta skanującego tabliczkę NFC, który trafia na formularz oceny Google lub wewnętrzny formularz feedbacku"
+          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
+          alt="Minimalistyczne wnętrze kawiarni z rozwidleniem dróg — otwarte drzwi i boczny korytarz symbolizujące dwie ścieżki opinii"
         />
       </div>
 

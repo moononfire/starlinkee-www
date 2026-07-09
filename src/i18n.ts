@@ -27,6 +27,9 @@ const translations = {
       sectionTitle: "Kompleksowe narzędzie do reputacji online",
       sectionSubtitle:
         "Jedna tabliczka NFC — i masz pełną kontrolę nad opinią w Google, bazą kontaktów i lojalnością klientów. Bez aplikacji, bez skomplikowanej konfiguracji.",
+      linktreeTitle: "Twoja własna strona z linkami",
+      linktreeDesc:
+        "Po zeskanowaniu tabliczki NFC klient trafia na Twoją własną stronę — Twój dashboard, w którym ma dostęp do wszystkich funkcji aplikacji: ocen, kuponów i karty lojalnościowej. Dodatkowo możesz dodać do 7 własnych linków, np. do social mediów, menu czy strony z rezerwacją.",
       reviewTitle: "Ochrona profilu Google",
       reviewDesc:
         "Klient skanuje tabliczkę NFC i ocenia wizytę. Zadowolony? Jego opinia trafia prosto na Twój profil Google. Niezadowolony? Feedback zostaje u Ciebie — reagujesz zanim negatyw trafi do sieci.",
@@ -117,6 +120,9 @@ const translations = {
       sectionTitle: "Complete online reputation management",
       sectionSubtitle:
         "One NFC plate — full control over your Google reviews, contact database, and customer loyalty. No app needed, no complex setup.",
+      linktreeTitle: "Your own link page",
+      linktreeDesc:
+        "When a customer scans the NFC tag, they land on your own page — your personal dashboard giving access to every feature of the app: reviews, coupons and the loyalty card. On top of that, you can add up to 7 of your own custom links, e.g. to social media, your menu or a booking page.",
       reviewTitle: "Google profile protection",
       reviewDesc:
         "Customer scans the NFC plate and rates their visit. Happy? Their review goes straight to your Google profile. Unhappy? The feedback stays with you — react before a negative review hits the web.",
@@ -207,6 +213,9 @@ const translations = {
       sectionTitle: "Komplettes Online-Reputationsmanagement",
       sectionSubtitle:
         "Ein NFC-Aufsteller — volle Kontrolle über Ihre Google-Bewertungen, Kontaktdatenbank und Kundenbindung. Keine App nötig, kein kompliziertes Setup.",
+      linktreeTitle: "Ihre eigene Link-Seite",
+      linktreeDesc:
+        "Beim Scannen des NFC-Schilds gelangt der Kunde auf Ihre eigene Seite — Ihr persönliches Dashboard mit Zugriff auf alle Funktionen der App: Bewertungen, Gutscheine und die Treuekarte. Zusätzlich können Sie bis zu 7 eigene Links hinzufügen, z. B. zu Social Media, Ihrer Speisekarte oder einer Reservierungsseite.",
       reviewTitle: "Google-Profil-Schutz",
       reviewDesc:
         "Der Gast scannt den NFC-Aufsteller und bewertet seinen Besuch. Zufrieden? Die Bewertung geht direkt auf Ihr Google-Profil. Unzufrieden? Das Feedback bleibt bei Ihnen — reagieren Sie, bevor eine negative Bewertung online geht.",
@@ -297,6 +306,9 @@ const translations = {
       sectionTitle: "Gestione completa della reputazione online",
       sectionSubtitle:
         "Una targa NFC — controllo totale sulle recensioni Google, database contatti e fidelizzazione clienti. Nessuna app necessaria, nessuna configurazione complicata.",
+      linktreeTitle: "La tua pagina di link personale",
+      linktreeDesc:
+        "Quando il cliente scansiona il tag NFC, atterra sulla tua pagina personale — la tua dashboard con accesso a tutte le funzionalità dell'app: recensioni, coupon e carta fedeltà. Inoltre puoi aggiungere fino a 7 link personalizzati, ad esempio ai social media, al menu o alla pagina delle prenotazioni.",
       reviewTitle: "Protezione del profilo Google",
       reviewDesc:
         "Il cliente scansiona la targa NFC e valuta la visita. Soddisfatto? La recensione va direttamente sul tuo profilo Google. Insoddisfatto? Il feedback resta a te — reagisci prima che una recensione negativa finisca online.",

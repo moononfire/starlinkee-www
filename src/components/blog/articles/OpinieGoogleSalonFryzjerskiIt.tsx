@@ -162,7 +162,7 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/opinie-google-salon-recepcja.jpg"
+          src="/images/blog/opinie-google-salon-fryzjerski/recepcja.jpg"
           alt="Una cliente alla reception di un salone di parrucchiere avvicina il telefono a una targhetta NFC"
         />
       </div>
@@ -217,7 +217,7 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/opinie-google-salon-fryzjer-stanowisko.jpg"
+          src="/images/blog/opinie-google-salon-fryzjerski/stanowisko.jpg"
           alt="Una piccola targhetta NFC nera accanto allo specchio di un parrucchiere, vicino agli strumenti"
         />
       </div>

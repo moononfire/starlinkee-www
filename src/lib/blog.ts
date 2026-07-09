@@ -78,7 +78,7 @@ export const blogPosts: BlogPostMeta[] = [
       "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Zarządzanie reputacją",
     categorySlug: "zarzadzanie-reputacja",
-    ogImage: "/images/blog/jak-odpowiadac-na-opinie-hero.jpg",
+    ogImage: "/images/blog/jak-odpowiadac-na-opinie/hero.webp",
     keywords: [
       "jak odpowiadać na opinie w google",
       "jak odpowiedzieć na negatywną opinię google",
@@ -193,7 +193,7 @@ export const blogPosts: BlogPostMeta[] = [
       "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Wizytówka Google",
     categorySlug: "wizytowka-google",
-    ogImage: "/images/blog/wizytowka-google-moja-firma-hero.jpg",
+    ogImage: "/images/blog/wizytowka-google-moja-firma/hero.webp",
     keywords: [
       "wizytówka google moja firma",
       "google business profile",
@@ -303,7 +303,7 @@ export const blogPosts: BlogPostMeta[] = [
       "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Opinie Google",
     categorySlug: "opinie-google",
-    ogImage: "/images/blog/jak-szybko-zdobyc-opinie-hero.jpg",
+    ogImage: "/images/blog/jak-szybko-zdobyc-opinie/hero.webp",
     keywords: [
       "opinie google",
       "jak zdobyć opinie w google",
@@ -395,7 +395,7 @@ export const blogPosts: BlogPostMeta[] = [
       "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Marketing lokalny",
     categorySlug: "marketing-lokalny",
-    ogImage: "/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg",
+    ogImage: "/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp",
     keywords: [
       "karta lojalnościowa bez aplikacji",
       "cyfrowa karta lojalnościowa",
@@ -513,7 +513,7 @@ export const blogPosts: BlogPostMeta[] = [
       "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
     category: "Opinie Google",
     categorySlug: "opinie-google",
-    ogImage: "/images/blog/opinie-google-salon-fryzjerski-hero.jpg",
+    ogImage: "/images/blog/opinie-google-salon-fryzjerski/hero.webp",
     keywords: [
       "opinie google salon kosmetyczny",
       "jak zdobyć opinie salon kosmetyczny",

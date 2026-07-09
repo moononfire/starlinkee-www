@@ -145,7 +145,7 @@ export default function JakSzybkoZdobycOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie-search.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/search.jpg"
           alt="Risultati di ricerca sullo schermo di uno smartphone che mostrano il profilo di un'azienda con cinque stelle"
         />
       </div>
@@ -229,7 +229,7 @@ export default function JakSzybkoZdobycOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie-nfc.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.jpg"
           alt="Smartphone che scansiona una elegante targa NFC nera su un bancone in legno della reception"
         />
       </div>
@@ -349,7 +349,7 @@ export default function JakSzybkoZdobycOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie-restauracja.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.jpg"
           alt="Un adesivo NFC discreto per le recensioni posizionato su un tavolo di ristorante accanto a una tazza di caffè"
         />
       </div>

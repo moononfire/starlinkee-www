@@ -159,7 +159,7 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/opinie-google-salon-recepcja.jpg"
+          src="/images/blog/opinie-google-salon-fryzjerski/recepcja.jpg"
           alt="A customer at a hair salon reception tapping their phone against an NFC plate"
         />
       </div>
@@ -212,7 +212,7 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/opinie-google-salon-fryzjer-stanowisko.jpg"
+          src="/images/blog/opinie-google-salon-fryzjerski/stanowisko.jpg"
           alt="A small black NFC plate by a hairdresser's mirror next to styling tools"
         />
       </div>

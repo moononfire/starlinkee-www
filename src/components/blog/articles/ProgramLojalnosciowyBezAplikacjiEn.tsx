@@ -163,8 +163,8 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg"
-          alt="Customer tapping her phone against an NFC stand on a café counter, adding another visit to her digital loyalty card"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
+          alt="Barista handing a coffee cup to a smiling returning customer over the café counter — a warm moment of loyalty and connection"
         />
       </div>
 
@@ -210,7 +210,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-nfc.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
           alt="Close-up of an NFC stand on a hair salon counter next to a phone displaying a digital loyalty card"
         />
       </div>
@@ -260,7 +260,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-progi.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
           alt="Admin dashboard screen showing reward thresholds and customer visit progress in a digital loyalty program"
         />
       </div>
@@ -317,7 +317,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-sms.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
           alt="Phone displaying an SMS discount coupon next to a notification about a reward earned in a digital loyalty card"
         />
       </div>
@@ -361,7 +361,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-wdrozenie.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
           alt="Restaurant owner setting up an NFC loyalty stand at the till and showing it to the first customer"
         />
       </div>

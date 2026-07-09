@@ -6,6 +6,7 @@ import NewsletterPopup from "@/components/NewsletterPopup";
 import PhoneWidget from "@/components/PhoneWidget";
 import ChatWidget from "@/components/ChatWidget";
 import CookieBanner from "@/components/CookieBanner";
+import GoogleAnalyticsGate from "@/components/GoogleAnalyticsGate";
 import { LOCALES, type Locale } from "@/i18n";
 import { isValidLocale } from "@/lib/locale";
 
@@ -130,6 +131,7 @@ export default async function RootLayout({
         <PhoneWidget locale={locale} />
         <ChatWidget locale={locale} />
         <CookieBanner locale={locale} />
+        <GoogleAnalyticsGate />
       </body>
     </html>
   );

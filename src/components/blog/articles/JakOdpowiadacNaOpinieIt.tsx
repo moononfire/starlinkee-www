@@ -172,8 +172,8 @@ export default function JakOdpowiadacNaOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-hero.jpg"
-          alt="Titolare di un locale che legge e risponde alle recensioni dei clienti nel pannello di Google Business Profile su un laptop"
+          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
+          alt="Titolare di un locale che accoglie con un sorriso un cliente al bancone del bar, con un interno accogliente e sfocato sullo sfondo"
         />
       </div>
 
@@ -227,8 +227,8 @@ export default function JakOdpowiadacNaOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-pozytywne.jpg"
-          alt="Schermo di uno smartphone con una recensione a cinque stelle di un cliente e una risposta professionale dell'attività sotto"
+          src="/images/blog/jak-odpowiadac-na-opinie/pozytywne.webp"
+          alt="Cliente soddisfatto stringe calorosamente la mano al titolare sorridente al bancone"
         />
       </div>
 
@@ -279,8 +279,8 @@ export default function JakOdpowiadacNaOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-negatywne.jpg"
-          alt="Persona che risponde con calma e in modo concreto a una recensione negativa di un cliente sullo schermo di un computer"
+          src="/images/blog/jak-odpowiadac-na-opinie/negatywne.webp"
+          alt="Titolare calmo che ascolta con attenzione e pazienza un cliente"
         />
       </div>
 
@@ -335,8 +335,8 @@ export default function JakOdpowiadacNaOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-zgloszenie.jpg"
-          alt="Modulo per segnalare una recensione nel pannello di Google Business Profile con un elenco di motivi di violazione delle norme"
+          src="/images/blog/jak-odpowiadac-na-opinie/zgloszenie.webp"
+          alt="Titolare concentrato che esamina documenti alla scrivania, espressione seria e attenta"
         />
       </div>
 
@@ -399,8 +399,8 @@ export default function JakOdpowiadacNaOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-filtr.jpg"
-          alt="Schema che mostra un cliente che avvicina il telefono a un supporto NFC, indirizzato al modulo recensioni Google o al modulo di feedback interno"
+          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
+          alt="Interno minimalista di un bar con un bivio — una porta aperta e un corridoio laterale che simboleggiano due percorsi di feedback distinti"
         />
       </div>
 

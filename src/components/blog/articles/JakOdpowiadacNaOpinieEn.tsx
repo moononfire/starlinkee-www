@@ -168,8 +168,8 @@ export default function JakOdpowiadacNaOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-hero.jpg"
-          alt="Business owner reading and replying to customer reviews in the Google Business Profile dashboard on a laptop"
+          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
+          alt="Smiling business owner warmly greeting a customer at a café counter, cozy blurred interior in the background"
         />
       </div>
 
@@ -222,8 +222,8 @@ export default function JakOdpowiadacNaOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-pozytywne.jpg"
-          alt="Smartphone screen showing a five-star customer review with a professional business reply underneath"
+          src="/images/blog/jak-odpowiadac-na-opinie/pozytywne.webp"
+          alt="Delighted customer warmly shaking hands with a smiling business owner across the counter"
         />
       </div>
 
@@ -272,8 +272,8 @@ export default function JakOdpowiadacNaOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-negatywne.jpg"
-          alt="Person calmly and factually replying to a negative customer review on a computer screen"
+          src="/images/blog/jak-odpowiadac-na-opinie/negatywne.webp"
+          alt="Calm business owner attentively and patiently listening to a customer"
         />
       </div>
 
@@ -327,8 +327,8 @@ export default function JakOdpowiadacNaOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-zgloszenie.jpg"
-          alt="Review-reporting form in the Google Business Profile dashboard with a list of policy violation reasons"
+          src="/images/blog/jak-odpowiadac-na-opinie/zgloszenie.webp"
+          alt="Focused business owner reviewing documents at a desk, serious and attentive expression"
         />
       </div>
 
@@ -390,8 +390,8 @@ export default function JakOdpowiadacNaOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie-filtr.jpg"
-          alt="Diagram showing a customer tapping an NFC stand, routed to a Google review form or an internal feedback form"
+          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
+          alt="Minimalist café interior with a fork in the path — an open door and a side corridor symbolizing two separate feedback routes"
         />
       </div>
 

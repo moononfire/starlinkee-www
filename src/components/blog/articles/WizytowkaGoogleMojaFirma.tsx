@@ -174,7 +174,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma-local-pack.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/local-pack.jpg"
           alt="Ekran smartfona z wynikami Google Maps pokazującymi trzy firmy w Local Pack z gwiazdkami i adresami"
         />
       </div>
@@ -240,7 +240,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma-panel.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/panel.jpg"
           alt="Panel administracyjny Google Business Profile widoczny na laptopie z wypełnionymi sekcjami profilu firmy"
         />
       </div>
@@ -318,7 +318,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma-zdjecia.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/zdjecia.jpg"
           alt="Galeria zdjęć w wizytówce Google restauracji pokazująca wnętrze lokalu, dania i uśmiechniętą obsługę"
         />
       </div>
@@ -449,7 +449,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma-posty.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/posty.jpg"
           alt="Ekran smartfona z widokiem aktualnego posta w Google Business Profile restauracji z promocją tygodniową"
         />
       </div>

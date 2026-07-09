@@ -166,8 +166,8 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg"
-          alt="Cliente che avvicina il telefono a un totem NFC sul bancone di un caffè, registrando un&rsquo;altra visita nella sua tessera fedeltà digitale"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
+          alt="Un barista porge una tazza di caffè a un cliente abituale sorridente al bancone — un caldo momento di fedeltà e connessione"
         />
       </div>
 
@@ -214,7 +214,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-nfc.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
           alt="Primo piano di un totem NFC sul bancone di un salone di parrucchiere accanto a un telefono che mostra una tessera fedeltà digitale"
         />
       </div>
@@ -265,7 +265,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-progi.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
           alt="Schermata del pannello amministrativo che mostra le soglie premio e l&rsquo;avanzamento delle visite dei clienti in un programma fedeltà digitale"
         />
       </div>
@@ -325,7 +325,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-sms.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
           alt="Telefono che mostra un coupon sconto via SMS accanto a una notifica di un premio ottenuto nella tessera fedeltà digitale"
         />
       </div>
@@ -369,7 +369,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-wdrozenie.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
           alt="Titolare di un ristorante che installa un totem fedeltà NFC alla cassa e lo mostra al primo cliente"
         />
       </div>

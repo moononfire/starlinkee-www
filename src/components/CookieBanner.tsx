@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n";
 
 const STORAGE_KEY = "cookie_consent";
 const CONSENT_EXPIRY_DAYS = 365;
+export const CONSENT_CHANGE_EVENT = "cookie-consent-changed";
 
 const cookieUi = {
   pl: {
@@ -72,6 +73,7 @@ function saveConsent(analytics: boolean, marketing: boolean) {
     decidedAt: new Date().toISOString(),
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+  window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: consent }));
 }
 
 export function getConsent(): ConsentState | null {

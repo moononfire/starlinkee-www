@@ -164,8 +164,8 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg"
-          alt="Klientka przykłada telefon do tabliczki NFC na ladzie kawiarni, zbierając kolejną wizytę w cyfrowej karcie lojalnościowej"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
+          alt="Barysta podaje kawę uśmiechniętemu, stałemu klientowi przy barze kawiarni — ciepły moment budowania lojalności"
         />
       </div>
 
@@ -212,7 +212,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-nfc.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
           alt="Zbliżenie tabliczki NFC na ladzie salonu fryzjerskiego obok telefonu wyświetlającego cyfrową kartę lojalnościową"
         />
       </div>
@@ -261,7 +261,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-progi.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
           alt="Ekran panelu administracyjnego pokazujący progi nagród i postęp wizyt klientów w cyfrowym programie lojalnościowym"
         />
       </div>
@@ -318,7 +318,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-sms.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
           alt="Telefon wyświetlający wiadomość SMS z kuponem rabatowym obok powiadomienia o zdobytej nagrodzie w karcie lojalnościowej"
         />
       </div>
@@ -362,7 +362,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-wdrozenie.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
           alt="Właściciel restauracji ustawia tabliczkę NFC z programem lojalnościowym przy kasie i pokazuje ją pierwszemu klientowi"
         />
       </div>

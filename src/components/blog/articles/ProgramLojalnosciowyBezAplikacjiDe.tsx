@@ -166,8 +166,8 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-hero.jpg"
-          alt="Kundin hält ihr Smartphone an eine NFC-Theke in einem Café und sammelt so einen weiteren Besuch auf ihrer digitalen Treuekarte"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
+          alt="Barista reicht einem lächelnden Stammkunden über die Theke einen Kaffee — ein herzlicher Moment der Kundenbindung"
         />
       </div>
 
@@ -214,7 +214,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-nfc.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
           alt="Nahaufnahme einer NFC-Theke im Friseursalon neben einem Telefon, das eine digitale Treuekarte anzeigt"
         />
       </div>
@@ -265,7 +265,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-progi.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
           alt="Bildschirm des Admin-Panels mit Belohnungsschwellen und Besuchsfortschritt von Kunden in einem digitalen Treueprogramm"
         />
       </div>
@@ -325,7 +325,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-sms.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
           alt="Telefon mit SMS-Rabattgutschein neben einer Benachrichtigung über eine erhaltene Belohnung in der digitalen Treuekarte"
         />
       </div>
@@ -369,7 +369,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji-wdrozenie.jpg"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
           alt="Restaurantbesitzer richtet eine NFC-Treuetheke an der Kasse ein und zeigt sie dem ersten Kunden"
         />
       </div>
