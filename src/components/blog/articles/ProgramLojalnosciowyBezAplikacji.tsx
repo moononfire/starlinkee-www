@@ -164,8 +164,8 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
-          alt="Barysta podaje kawę uśmiechniętemu, stałemu klientowi przy barze kawiarni — ciepły moment budowania lojalności"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/papierowa-karta.webp"
+          alt="Znoszona, poplamiona papierowa karta lojalnościowa zgnieciona na dnie portfela wśród paragonów"
         />
       </div>
 
@@ -212,8 +212,8 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
-          alt="Zbliżenie tabliczki NFC na ladzie salonu fryzjerskiego obok telefonu wyświetlającego cyfrową kartę lojalnościową"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.webp"
+          alt="Dłoń klienta trzymająca telefon przy nowoczesnej ladzie recepcyjnej w salonie fryzjerskim, naturalny gest, ekran poza kadrem"
         />
       </div>
 
@@ -261,8 +261,8 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
-          alt="Ekran panelu administracyjnego pokazujący progi nagród i postęp wizyt klientów w cyfrowym programie lojalnościowym"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.webp"
+          alt="Tablica kredowa przy ladzie kawiarni z odręcznym napisem o nagrodzie w programie lojalnościowym"
         />
       </div>
 
@@ -299,7 +299,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
           chętniej poświęci dziesięć sekund na wystawienie opinii niż osoba odwiedzająca lokal
           jednorazowo. To dlatego warto łączyć moment zbierania wizyty z prośbą o ocenę — na
           przykład przy okazji odbioru nagrody. Dokładnie tak działa{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             tabliczka NFC Starlinkee
           </Link>
           : jedno urządzenie obsługuje jednocześnie kartę lojalnościową, formularz oceny Google
@@ -318,8 +318,8 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
-          alt="Telefon wyświetlający wiadomość SMS z kuponem rabatowym obok powiadomienia o zdobytej nagrodzie w karcie lojalnościowej"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.webp"
+          alt="Uśmiechnięta klientka wraca do kawiarni, trzymając telefon przy boku, ekran niewidoczny"
         />
       </div>
 
@@ -362,8 +362,8 @@ export default function ProgramLojalnosciowyBezAplikacji() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
-          alt="Właściciel restauracji ustawia tabliczkę NFC z programem lojalnościowym przy kasie i pokazuje ją pierwszemu klientowi"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.webp"
+          alt="Właściciel restauracji z entuzjazmem opowiada uśmiechniętemu klientowi o nowości przy ladzie"
         />
       </div>
 
@@ -384,7 +384,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
             instalacji, pełna widoczność w panelu administracyjnym. Jeśli chcesz połączyć
             zbieranie wizyt z opiniami Google i kuponami SMS w jednym systemie, sprawdź, jak
             działa{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               tabliczka NFC Starlinkee
             </Link>
             {" "}z wbudowaną cyfrową kartą lojalnościową.

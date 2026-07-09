@@ -1,21 +1,19 @@
-import type { Translations } from "@/i18n";
+import type { Locale, Translations } from "@/i18n";
 import Image from "next/image";
 
-const featureImages = [
-  null,
-  "/features/reviews.png",
-  "/features/promos.png",
-  "/features/loyalty.png",
-  "/features/dashboard.png",
-];
+export default function Features({ t, locale }: { t: Translations; locale: Locale }) {
+  const featureImages = [
+    `/features/${locale}/linktree.webp`,
+    `/features/${locale}/reviews.webp`,
+    `/features/${locale}/promos.webp`,
+    `/features/${locale}/loyalty.webp`,
+  ];
 
-export default function Features({ t }: { t: Translations }) {
   const features = [
-    { title: t.features.linktreeTitle, desc: t.features.linktreeDesc, img: featureImages[0], aspect: "aspect-[4/3]" },
+    { title: t.features.linktreeTitle, desc: t.features.linktreeDesc, img: featureImages[0], aspect: "aspect-[3/4]" },
     { title: t.features.reviewTitle, desc: t.features.reviewDesc, img: featureImages[1], aspect: "aspect-[3/4]" },
-    { title: t.features.promoTitle, desc: t.features.promoDesc, img: featureImages[2], aspect: "aspect-[4/3]" },
-    { title: t.features.loyaltyTitle, desc: t.features.loyaltyDesc, img: featureImages[3], aspect: "aspect-[4/3]" },
-    { title: t.features.dashboardTitle, desc: t.features.dashboardDesc, img: featureImages[4], aspect: "aspect-[4/3]" },
+    { title: t.features.promoTitle, desc: t.features.promoDesc, img: featureImages[2], aspect: "aspect-[500/591]" },
+    { title: t.features.loyaltyTitle, desc: t.features.loyaltyDesc, img: featureImages[3], aspect: "aspect-[509/620]" },
   ];
 
   return (
@@ -36,15 +34,17 @@ export default function Features({ t }: { t: Translations }) {
               key={f.title}
               className={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-8 md:gap-12`}
             >
-              <div className={`w-full md:w-1/2 ${f.aspect} relative rounded-2xl overflow-hidden bg-white border border-gray-100`}>
-                {f.img && (
-                  <Image
-                    src={f.img}
-                    alt={f.title}
-                    fill
-                    className="object-cover"
-                  />
-                )}
+              <div className={`w-full md:w-1/2 flex justify-center`}>
+                <div className={`w-full ${i === 0 ? "max-w-[420px]" : ""} ${f.aspect} relative rounded-2xl overflow-hidden bg-white border border-gray-100`}>
+                  {f.img && (
+                    <Image
+                      src={f.img}
+                      alt={f.title}
+                      fill
+                      className="object-cover"
+                    />
+                  )}
+                </div>
               </div>
               <div className="w-full md:w-1/2">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">

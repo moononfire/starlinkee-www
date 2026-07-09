@@ -68,7 +68,7 @@ export default function Pricing({
         <div className="flex flex-col md:flex-row items-center gap-10 bg-white rounded-3xl border-2 border-brand-600 p-8 sm:p-10 shadow-xl shadow-brand-600/10">
           <div className="w-full md:w-2/5 aspect-square relative rounded-2xl overflow-hidden bg-gray-50 shrink-0">
             <Image
-              src="/product.webp"
+              src={`/product/${locale}.webp`}
               alt={t.pricing.planName}
               fill
               className="object-cover"

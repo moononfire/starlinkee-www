@@ -145,7 +145,7 @@ export default function JakSzybkoZdobycOpinieDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/search.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/search.webp"
           alt="Suchergebnisse auf einem Smartphone-Bildschirm mit einem Unternehmensprofil und fünf Sternen"
         />
       </div>
@@ -229,7 +229,7 @@ export default function JakSzybkoZdobycOpinieDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.webp"
           alt="Smartphone scannt einen eleganten schwarzen NFC-Aufsteller auf einer hölzernen Empfangstheke"
         />
       </div>
@@ -312,7 +312,7 @@ export default function JakSzybkoZdobycOpinieDe() {
         <p className="text-gray-700 leading-relaxed mb-6">
           Für den Empfang wählt man vor allem Elemente, die ins Auge fallen und die Interaktion
           direkt nach der Zahlung erleichtern. Steht auf der Theke ein ansprechender{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             NFC-Aufsteller für Google-Bewertungen
           </Link>
           , weiß der Kunde sofort, was zu tun ist. Empfehlenswert sind schlichte Ausführungen, die
@@ -329,7 +329,7 @@ export default function JakSzybkoZdobycOpinieDe() {
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
           In der Gastronomie funktionieren diskrete Formate am besten. Kompakte{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             NFC-Aufkleber und -Aufsteller
           </Link>
           , die direkt auf Tischen oder in Rechnungsmappen platziert werden können, sind eine gute
@@ -350,7 +350,7 @@ export default function JakSzybkoZdobycOpinieDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.webp"
           alt="Ein diskreter NFC-Bewertungsaufkleber auf einem Restauranttisch neben einer Kaffeetasse"
         />
       </div>

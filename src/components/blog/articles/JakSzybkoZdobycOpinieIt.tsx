@@ -145,7 +145,7 @@ export default function JakSzybkoZdobycOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/search.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/search.webp"
           alt="Risultati di ricerca sullo schermo di uno smartphone che mostrano il profilo di un'azienda con cinque stelle"
         />
       </div>
@@ -229,7 +229,7 @@ export default function JakSzybkoZdobycOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.webp"
           alt="Smartphone che scansiona una elegante targa NFC nera su un bancone in legno della reception"
         />
       </div>
@@ -312,7 +312,7 @@ export default function JakSzybkoZdobycOpinieIt() {
         <p className="text-gray-700 leading-relaxed mb-6">
           Per la reception scegli soprattutto elementi che catturano l&apos;attenzione e facilitano
           l&apos;interazione subito dopo il pagamento. Se sul bancone è posizionato un elegante{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             espositore NFC per le recensioni Google
           </Link>
           , il cliente sa subito cosa fare. Conviene scegliere finiture semplici che si adattino
@@ -328,7 +328,7 @@ export default function JakSzybkoZdobycOpinieIt() {
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
           In ristorazione funzionano meglio i formati discreti. I{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             adesivi e le targhe NFC
           </Link>{" "}
           compatti, da posizionare direttamente sui tavoli o nelle buste del conto, sono una buona
@@ -349,7 +349,7 @@ export default function JakSzybkoZdobycOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.webp"
           alt="Un adesivo NFC discreto per le recensioni posizionato su un tavolo di ristorante accanto a una tazza di caffè"
         />
       </div>

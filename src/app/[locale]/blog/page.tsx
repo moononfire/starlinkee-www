@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import OpenLinksInNewTab from "@/components/blog/OpenLinksInNewTab";
 import {
@@ -167,8 +168,8 @@ export default async function BlogPage({ params }: Props) {
       />
       <main className="min-h-screen bg-white">
        <OpenLinksInNewTab>
-        <div className="max-w-4xl mx-auto px-4 py-16">
-          <header className="mb-12">
+        <div className="max-w-6xl mx-auto px-4 py-16">
+          <header className="mb-12 max-w-3xl">
             <nav aria-label="Breadcrumb" className="mb-6">
               <ol className="flex items-center gap-2 text-sm text-gray-500">
                 <li>
@@ -196,49 +197,64 @@ export default async function BlogPage({ params }: Props) {
             </nav>
           </header>
 
-          <div className="grid gap-8">
-            {posts.map((post) => {
+          <div className="grid gap-8 sm:grid-cols-2">
+            {posts.map((post, index) => {
               const locPost = getLocalizedPost(post, locale);
               const cat = getBlogCategory(post.categorySlug);
               const catHref = cat ? getLocalizedCategorySlug(cat, locale) : post.categorySlug;
               return (
                 <article
                   key={post.slug}
-                  className="border border-gray-200 rounded-2xl p-6 hover:border-gray-300 hover:shadow-sm transition-all"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200/60"
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <Link
-                      href={`/${locale}/blog/${catHref}`}
-                      className="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full transition-colors"
-                    >
-                      {locPost.category}
-                    </Link>
-                    <time
-                      dateTime={post.publishedAt}
-                      className="text-sm text-gray-500"
-                    >
-                      {new Date(post.publishedAt).toLocaleDateString(
-                        locale === "pl" ? "pl-PL" : locale === "de" ? "de-DE" : locale === "it" ? "it-IT" : "en-GB",
-                        { day: "2-digit", month: "long", year: "numeric" },
-                      )}
-                    </time>
-                  </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-2">
-                    <Link
-                      href={`/${locale}/blog/${locPost.slug}`}
-                      className="hover:text-blue-600 transition-colors"
-                    >
-                      {locPost.title}
-                    </Link>
-                  </h2>
-                  <p className="text-gray-600 leading-relaxed mb-4">{locPost.description}</p>
                   <Link
                     href={`/${locale}/blog/${locPost.slug}`}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
+                    className="relative block aspect-[16/9] w-full overflow-hidden bg-gray-100"
                   >
-                    {t.readMore}
-                    <span aria-hidden="true">→</span>
+                    <Image
+                      src={post.ogImage}
+                      alt={locPost.title}
+                      fill
+                      priority={index < 2}
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
                   </Link>
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Link
+                        href={`/${locale}/blog/${catHref}`}
+                        className="text-xs font-semibold text-blue-600 bg-blue-50 hover:bg-blue-100 px-3 py-1 rounded-full transition-colors"
+                      >
+                        {locPost.category}
+                      </Link>
+                      <time
+                        dateTime={post.publishedAt}
+                        className="text-sm text-gray-500"
+                      >
+                        {new Date(post.publishedAt).toLocaleDateString(
+                          locale === "pl" ? "pl-PL" : locale === "de" ? "de-DE" : locale === "it" ? "it-IT" : "en-GB",
+                          { day: "2-digit", month: "long", year: "numeric" },
+                        )}
+                      </time>
+                    </div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-2">
+                      <Link
+                        href={`/${locale}/blog/${locPost.slug}`}
+                        className="hover:text-blue-600 transition-colors"
+                      >
+                        {locPost.title}
+                      </Link>
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed mb-4">{locPost.description}</p>
+                    <Link
+                      href={`/${locale}/blog/${locPost.slug}`}
+                      className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
+                    >
+                      {t.readMore}
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
                 </article>
               );
             })}

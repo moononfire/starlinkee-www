@@ -47,7 +47,7 @@ export async function generateMetadata({
       title: titles[locale],
       description: descriptions[locale],
       locale: ogLocales[locale],
-      images: [{ url: "/product.webp", width: 800, height: 800, alt: "Tabliczka NFC Starlinkee" }],
+      images: [{ url: `/product/${locale}.webp`, width: 800, height: 800, alt: "Tabliczka NFC Starlinkee" }],
     },
   };
 }

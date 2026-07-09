@@ -166,8 +166,8 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
-          alt="Un barista porge una tazza di caffè a un cliente abituale sorridente al bancone — un caldo momento di fedeltà e connessione"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/papierowa-karta.webp"
+          alt="Una tessera fedeltà cartacea consumata e sbiadita, spiegazzata in fondo a un portafoglio tra gli scontrini"
         />
       </div>
 
@@ -214,8 +214,8 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
-          alt="Primo piano di un totem NFC sul bancone di un salone di parrucchiere accanto a un telefono che mostra una tessera fedeltà digitale"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.webp"
+          alt="Mano di un cliente che tiene con naturalezza il telefono vicino al bancone reception moderno di un salone di parrucchiere, gesto naturale, schermo fuori inquadratura"
         />
       </div>
 
@@ -265,8 +265,8 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
-          alt="Schermata del pannello amministrativo che mostra le soglie premio e l&rsquo;avanzamento delle visite dei clienti in un programma fedeltà digitale"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.webp"
+          alt="Una lavagna in gesso al bancone del bar con un messaggio scritto a mano sulla ricompensa fedeltà"
         />
       </div>
 
@@ -305,7 +305,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
           una sola volta. Per questo conviene collegare il momento della registrazione della visita
           a una richiesta di valutazione — ad esempio al ritiro di un premio. Funziona esattamente
           così il{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             totem NFC Starlinkee
           </Link>
           : un unico dispositivo gestisce contemporaneamente la tessera fedeltà, il modulo di
@@ -325,8 +325,8 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
-          alt="Telefono che mostra un coupon sconto via SMS accanto a una notifica di un premio ottenuto nella tessera fedeltà digitale"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.webp"
+          alt="Cliente sorridente che rientra in un bar, con il telefono tenuto rilassato al fianco, schermo non visibile"
         />
       </div>
 
@@ -369,8 +369,8 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
-          alt="Titolare di un ristorante che installa un totem fedeltà NFC alla cassa e lo mostra al primo cliente"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.webp"
+          alt="Titolare del ristorante che spiega con entusiasmo qualcosa a un cliente sorridente al bancone"
         />
       </div>
 
@@ -391,7 +391,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
             elimina questo ostacolo: un solo tocco del telefono, zero installazioni, piena
             visibilità nel pannello amministrativo. Se vuoi unire in un unico sistema la raccolta
             delle visite, le recensioni Google e i coupon SMS, scopri come funziona il{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               totem NFC Starlinkee
             </Link>{" "}
             con tessera fedeltà digitale integrata.

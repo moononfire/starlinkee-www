@@ -169,8 +169,8 @@ export default function JakOdpowiadacNaOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
-          alt="Uśmiechnięty właściciel lokalu serdecznie wita klienta przy ladzie kawiarni, w tle przytulne, rozmyte wnętrze"
+          src="/images/blog/jak-odpowiadac-na-opinie/zaufanie.webp"
+          alt="Potencjalny klient przygląda się z zaciekawieniem przytulnemu wnętrzu kawiarni przez okno, zanim zdecyduje się wejść"
         />
       </div>
 
@@ -372,7 +372,7 @@ export default function JakOdpowiadacNaOpinie() {
         </p>
         <p className="text-gray-700 leading-relaxed mb-6">
           Dokładnie tak działa filtr opinii wbudowany w{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             tabliczkę NFC Starlinkee
           </Link>
           . Klient przykłada telefon i najpierw ocenia doświadczenie jednym kliknięciem. Zadowolony
@@ -412,7 +412,7 @@ export default function JakOdpowiadacNaOpinie() {
             ograniczenie liczby niesprawiedliwych opinii u źródła — zanim klient w ogóle sięgnie
             po telefon, żeby wystawić ocenę. Jeśli chcesz zobaczyć, jak wygląda to w praktyce,
             sprawdź, jak działa{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               tabliczka NFC Starlinkee
             </Link>
             {" "}z wbudowanym, zgodnym z regulaminem Google filtrem opinii.

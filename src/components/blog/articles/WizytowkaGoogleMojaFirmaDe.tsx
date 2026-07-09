@@ -176,7 +176,7 @@ export default function WizytowkaGoogleMojaFirmaDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/local-pack.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/local-pack.webp"
           alt="Smartphone-Bildschirm mit Google Maps-Ergebnissen, die drei Unternehmen im Local Pack mit Sternebewertungen und Adressen zeigen"
         />
       </div>
@@ -243,7 +243,7 @@ export default function WizytowkaGoogleMojaFirmaDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/panel.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/panel.webp"
           alt="Google Business Profile-Verwaltungspanel auf einem Laptop mit ausgefüllten Unternehmensprofilabschnitten"
         />
       </div>
@@ -324,7 +324,7 @@ export default function WizytowkaGoogleMojaFirmaDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/zdjecia.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/zdjecia.webp"
           alt="Fotogalerie im Google-Eintrag eines Restaurants mit Innenaufnahmen, Gerichten und lächelndem Personal"
         />
       </div>
@@ -459,7 +459,7 @@ export default function WizytowkaGoogleMojaFirmaDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/posty.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/posty.webp"
           alt="Smartphone-Bildschirm mit einem aktuellen Beitrag im Google Business Profile eines Restaurants mit einer Wochenaktion"
         />
       </div>
@@ -482,7 +482,7 @@ export default function WizytowkaGoogleMojaFirmaDe() {
             zu sammeln ist ein untrennbarer Teil dieser Arbeit — je mehr aktuelle Rezensionen du
             hast, desto stärker das Bekanntheitssignal für den Algorithmus. Wenn du das
             automatisieren möchtest, schau dir an, wie der{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee NFC-Ständer
             </Link>
             {" "}funktioniert — der Kunde tippt sein Handy an und landet direkt auf dem

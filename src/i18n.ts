@@ -39,9 +39,6 @@ const translations = {
       loyaltyTitle: "Karta lojalnościowa bez aplikacji",
       loyaltyDesc:
         "Cyfrowa karta stałego klienta, która działa przez sam skan NFC. Klient zbiera wizyty, a po osiągnięciu progu — dostaje nagrodę. Budujesz nawyk powracania bez żadnych dodatkowych aplikacji.",
-      dashboardTitle: "Wszystko w jednym panelu",
-      dashboardDesc:
-        "Opinie, skany, kupony, lojalność, dane kontaktowe — wszystko w jednym miejscu. Zarządzaj wieloma lokalizacjami z jednego konta i miej pełen obraz swojego marketingu lokalnego.",
     },
     pricing: {
       sectionTitle: "Prosty cennik",
@@ -132,9 +129,6 @@ const translations = {
       loyaltyTitle: "Loyalty card without an app",
       loyaltyDesc:
         "A digital loyalty card that works with a simple NFC scan. Customers collect visits and earn a reward after reaching the threshold — no extra apps required.",
-      dashboardTitle: "Everything in one dashboard",
-      dashboardDesc:
-        "Reviews, scans, coupons, loyalty, contact data — all in one place. Manage multiple locations from a single account and get a full picture of your local marketing.",
     },
     pricing: {
       sectionTitle: "Simple pricing",
@@ -225,9 +219,6 @@ const translations = {
       loyaltyTitle: "Treuekarte ohne App",
       loyaltyDesc:
         "Eine digitale Treuekarte, die per NFC-Scan funktioniert. Gäste sammeln Besuche und erhalten nach Erreichen der Schwelle eine Belohnung — keine zusätzlichen Apps nötig.",
-      dashboardTitle: "Alles in einem Dashboard",
-      dashboardDesc:
-        "Bewertungen, Scans, Gutscheine, Treue, Kontaktdaten — alles an einem Ort. Verwalten Sie mehrere Standorte von einem Konto aus und behalten Sie Ihr lokales Marketing im Blick.",
     },
     pricing: {
       sectionTitle: "Einfache Preise",
@@ -318,9 +309,6 @@ const translations = {
       loyaltyTitle: "Carta fedeltà senza app",
       loyaltyDesc:
         "Una carta fedeltà digitale che funziona con un semplice scan NFC. I clienti accumulano visite e ricevono un premio al raggiungimento della soglia — nessuna app aggiuntiva necessaria.",
-      dashboardTitle: "Tutto in un unico pannello",
-      dashboardDesc:
-        "Recensioni, scansioni, coupon, fedeltà, dati di contatto — tutto in un unico posto. Gestisci più sedi da un solo account e tieni sotto controllo tutto il tuo marketing locale.",
     },
     pricing: {
       sectionTitle: "Prezzi semplici",

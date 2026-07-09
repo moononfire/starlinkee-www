@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import OpenLinksInNewTab from "@/components/blog/OpenLinksInNewTab";
 import { notFound } from "next/navigation";
@@ -248,8 +249,8 @@ export default async function BlogSlugPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
         <main className="min-h-screen bg-white">
          <OpenLinksInNewTab>
-          <div className="max-w-4xl mx-auto px-4 py-16">
-            <header className="mb-12">
+          <div className="max-w-6xl mx-auto px-4 py-16">
+            <header className="mb-12 max-w-3xl">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex items-center gap-2 text-sm text-gray-500">
                   <li><Link href={`/${requestedLocale}`} className="hover:text-gray-700">{ui.home}</Link></li>
@@ -269,24 +270,36 @@ export default async function BlogSlugPage({ params }: Props) {
                 <Link href={`/${requestedLocale}/blog`} className="mt-4 inline-block text-sm text-blue-600 hover:underline">{ui.backToBlog}</Link>
               </div>
             ) : (
-              <div className="grid gap-8">
-                {posts.map((post) => {
+              <div className="grid gap-8 sm:grid-cols-2">
+                {posts.map((post, index) => {
                   const locPost = getLocalizedPost(post, requestedLocale);
                   return (
-                    <article key={post.slug} className="border border-gray-200 rounded-2xl p-6 hover:border-gray-300 hover:shadow-sm transition-all">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">{locPost.category}</span>
-                        <time dateTime={post.publishedAt} className="text-sm text-gray-500">
-                          {new Date(post.publishedAt).toLocaleDateString(dateLocales[requestedLocale], { day: "2-digit", month: "long", year: "numeric" })}
-                        </time>
-                      </div>
-                      <h2 className="text-xl font-bold text-gray-900 mb-2">
-                        <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="hover:text-blue-600 transition-colors">{locPost.title}</Link>
-                      </h2>
-                      <p className="text-gray-600 leading-relaxed mb-4">{locPost.description}</p>
-                      <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700">
-                        {ui.readMore} <span aria-hidden="true">→</span>
+                    <article key={post.slug} className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200/60">
+                      <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="relative block aspect-[16/9] w-full overflow-hidden bg-gray-100">
+                        <Image
+                          src={post.ogImage}
+                          alt={locPost.title}
+                          fill
+                          priority={index < 2}
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                        />
                       </Link>
+                      <div className="flex flex-1 flex-col p-6">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">{locPost.category}</span>
+                          <time dateTime={post.publishedAt} className="text-sm text-gray-500">
+                            {new Date(post.publishedAt).toLocaleDateString(dateLocales[requestedLocale], { day: "2-digit", month: "long", year: "numeric" })}
+                          </time>
+                        </div>
+                        <h2 className="text-xl font-bold text-gray-900 mb-2">
+                          <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="hover:text-blue-600 transition-colors">{locPost.title}</Link>
+                        </h2>
+                        <p className="text-gray-600 leading-relaxed mb-4">{locPost.description}</p>
+                        <Link href={`/${requestedLocale}/blog/${locPost.slug}`} className="mt-auto inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700">
+                          {ui.readMore} <span aria-hidden="true">→</span>
+                        </Link>
+                      </div>
                     </article>
                   );
                 })}

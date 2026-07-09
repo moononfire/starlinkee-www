@@ -39,7 +39,7 @@ export default function Hero({ t, locale }: { t: Translations; locale: Locale })
         <div className="absolute -inset-4 bg-gradient-to-b from-brand-100/40 to-transparent rounded-3xl blur-2xl" />
         <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/15 border border-gray-200/80">
           <Image
-            src="/hero.png"
+            src={`/hero/${locale}.webp`}
             alt="Starlinkee — panel zarządzania opiniami dla restauracji"
             width={1200}
             height={675}

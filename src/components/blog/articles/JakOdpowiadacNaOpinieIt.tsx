@@ -172,8 +172,8 @@ export default function JakOdpowiadacNaOpinieIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
-          alt="Titolare di un locale che accoglie con un sorriso un cliente al bancone del bar, con un interno accogliente e sfocato sullo sfondo"
+          src="/images/blog/jak-odpowiadac-na-opinie/zaufanie.webp"
+          alt="Un potenziale cliente osserva con curiosità l'accogliente interno di un bar attraverso la vetrina, prima di decidere se entrare"
         />
       </div>
 
@@ -380,7 +380,7 @@ export default function JakOdpowiadacNaOpinieIt() {
         </p>
         <p className="text-gray-700 leading-relaxed mb-6">
           È esattamente così che funziona il filtro recensioni integrato nel{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             supporto NFC di Starlinkee
           </Link>
           . Il cliente avvicina il telefono e valuta prima l&apos;esperienza con un solo tocco. Un
@@ -421,7 +421,7 @@ export default function JakOdpowiadacNaOpinieIt() {
             Google. La strategia più efficace resta però ridurre le recensioni ingiuste alla fonte
             — prima ancora che il cliente prenda il telefono per lasciare una valutazione. Se vuoi
             vedere come funziona nella pratica, scopri il{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               supporto NFC di Starlinkee
             </Link>{" "}
             con un filtro recensioni integrato e conforme alle norme di Google.

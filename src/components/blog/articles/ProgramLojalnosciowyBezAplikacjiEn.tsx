@@ -163,8 +163,8 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
-          alt="Barista handing a coffee cup to a smiling returning customer over the café counter — a warm moment of loyalty and connection"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/papierowa-karta.webp"
+          alt="A worn, faded paper loyalty punch card crumpled at the bottom of a wallet among receipts"
         />
       </div>
 
@@ -210,8 +210,8 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
-          alt="Close-up of an NFC stand on a hair salon counter next to a phone displaying a digital loyalty card"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.webp"
+          alt="Customer's hand casually holding a phone near a modern salon reception counter, natural gesture, screen out of frame"
         />
       </div>
 
@@ -260,8 +260,8 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
-          alt="Admin dashboard screen showing reward thresholds and customer visit progress in a digital loyalty program"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.webp"
+          alt="A chalkboard sign at a café counter with a handwritten loyalty reward message"
         />
       </div>
 
@@ -297,7 +297,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
           willing to spend ten seconds leaving a review than someone visiting once. That&apos;s why
           it&apos;s worth pairing the moment a visit is logged with a request for a rating — for
           example, when a reward is collected. That&apos;s exactly how the{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             Starlinkee NFC stand
           </Link>{" "}
           works: one device handles the loyalty card, the Google review form, and a filter that
@@ -317,8 +317,8 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
-          alt="Phone displaying an SMS discount coupon next to a notification about a reward earned in a digital loyalty card"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.webp"
+          alt="Smiling customer stepping back into a café, holding her phone loosely at her side, screen not visible"
         />
       </div>
 
@@ -361,8 +361,8 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
-          alt="Restaurant owner setting up an NFC loyalty stand at the till and showing it to the first customer"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.webp"
+          alt="Restaurant owner enthusiastically explaining something to a smiling first customer at the counter"
         />
       </div>
 
@@ -382,7 +382,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
             back. A digital NFC-based card removes that barrier: a single tap, zero installs, full
             visibility in the admin dashboard. If you want to combine visit tracking with Google
             reviews and SMS coupons in one system, see how the{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee NFC stand
             </Link>{" "}
             works, with a built-in digital loyalty card.

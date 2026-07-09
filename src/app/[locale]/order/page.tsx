@@ -221,7 +221,12 @@ const pricing: Record<Locale, { subPrice: number; platePrice: number; currency: 
   it: { subPrice: 49, platePrice: 9, currency: "€" },
 };
 
-const galleryImages = ["/product.webp"];
+const galleryImages: Record<Locale, string[]> = {
+  pl: ["/product/pl.webp"],
+  en: ["/product/en.webp"],
+  de: ["/product/de.webp"],
+  it: ["/product/it.webp"],
+};
 
 const MAX_PLATES = 50;
 const ALL_LOCALES = Object.keys(pricing) as Locale[];
@@ -309,16 +314,16 @@ export default function OrderPage() {
           <div>
             <div className="aspect-square relative rounded-2xl overflow-hidden bg-white border border-gray-100">
               <Image
-                src={galleryImages[activeImage]}
+                src={galleryImages[locale][activeImage]}
                 alt={l.productName}
                 fill
                 priority
                 className="object-cover"
               />
             </div>
-            {galleryImages.length > 1 && (
+            {galleryImages[locale].length > 1 && (
               <div className="flex gap-3 mt-4">
-                {galleryImages.map((src, i) => (
+                {galleryImages[locale].map((src, i) => (
                   <button
                     key={src}
                     type="button"

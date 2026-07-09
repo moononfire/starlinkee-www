@@ -173,7 +173,7 @@ export default function WizytowkaGoogleMojaFirmaEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/local-pack.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/local-pack.webp"
           alt="Smartphone screen showing Google Maps results with three businesses in the Local Pack with star ratings and addresses"
         />
       </div>
@@ -239,7 +239,7 @@ export default function WizytowkaGoogleMojaFirmaEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/panel.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/panel.webp"
           alt="Google Business Profile admin panel visible on a laptop with completed business profile sections"
         />
       </div>
@@ -317,7 +317,7 @@ export default function WizytowkaGoogleMojaFirmaEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/zdjecia.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/zdjecia.webp"
           alt="Photo gallery in a restaurant's Google listing showing the interior, dishes and smiling staff"
         />
       </div>
@@ -446,7 +446,7 @@ export default function WizytowkaGoogleMojaFirmaEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/posty.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/posty.webp"
           alt="Smartphone screen showing a current post on a restaurant's Google Business Profile with a weekly promotion"
         />
       </div>
@@ -468,7 +468,7 @@ export default function WizytowkaGoogleMojaFirmaEn() {
             local results. Collecting Google reviews is an inseparable part of that work — the more
             recent reviews you have, the stronger the prominence signal for the algorithm. If you
             want to automate this, see how the{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee NFC stand
             </Link>
             {" "}works — the customer taps their phone and lands straight on the review form, no

@@ -168,8 +168,8 @@ export default function JakOdpowiadacNaOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
-          alt="Smiling business owner warmly greeting a customer at a café counter, cozy blurred interior in the background"
+          src="/images/blog/jak-odpowiadac-na-opinie/zaufanie.webp"
+          alt="A prospective customer thoughtfully glancing into a cozy café through the window before deciding to step in"
         />
       </div>
 
@@ -371,7 +371,7 @@ export default function JakOdpowiadacNaOpinieEn() {
         </p>
         <p className="text-gray-700 leading-relaxed mb-6">
           That&apos;s exactly how the review filter built into the{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             Starlinkee NFC stand
           </Link>{" "}
           works. The customer taps their phone and first rates the experience with a single tap. A
@@ -412,7 +412,7 @@ export default function JakOdpowiadacNaOpinieEn() {
             The most effective strategy, though, remains reducing unfair reviews at the source —
             before a customer even reaches for their phone to leave a rating. To see what that
             looks like in practice, check out the{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee NFC stand
             </Link>{" "}
             with a built-in, Google-compliant review filter.

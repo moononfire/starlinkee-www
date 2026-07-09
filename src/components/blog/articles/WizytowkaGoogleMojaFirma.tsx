@@ -174,7 +174,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/local-pack.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/local-pack.webp"
           alt="Ekran smartfona z wynikami Google Maps pokazującymi trzy firmy w Local Pack z gwiazdkami i adresami"
         />
       </div>
@@ -240,7 +240,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/panel.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/panel.webp"
           alt="Panel administracyjny Google Business Profile widoczny na laptopie z wypełnionymi sekcjami profilu firmy"
         />
       </div>
@@ -318,7 +318,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/zdjecia.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/zdjecia.webp"
           alt="Galeria zdjęć w wizytówce Google restauracji pokazująca wnętrze lokalu, dania i uśmiechniętą obsługę"
         />
       </div>
@@ -449,7 +449,7 @@ export default function WizytowkaGoogleMojaFirma() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/posty.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/posty.webp"
           alt="Ekran smartfona z widokiem aktualnego posta w Google Business Profile restauracji z promocją tygodniową"
         />
       </div>
@@ -471,7 +471,7 @@ export default function WizytowkaGoogleMojaFirma() {
             opinii Google jest nieodłączną częścią tej pracy — im więcej aktualnych recenzji, tym
             silniejszy sygnał rozpoznawalności dla algorytmu. Jeśli chcesz to zautomatyzować,
             sprawdź, jak działa{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               tabliczka NFC Starlinkee
             </Link>
             {" "}— klient przykłada telefon i trafia prosto na formularz oceny, bez szukania firmy

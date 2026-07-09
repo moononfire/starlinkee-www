@@ -175,7 +175,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/local-pack.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/local-pack.webp"
           alt="Schermo di smartphone con risultati di Google Maps che mostrano tre attività nel Local Pack con stelle e indirizzi"
         />
       </div>
@@ -242,7 +242,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/panel.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/panel.webp"
           alt="Pannello di amministrazione di Google Business Profile visibile su un laptop con le sezioni del profilo aziendale compilate"
         />
       </div>
@@ -321,7 +321,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/zdjecia.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/zdjecia.webp"
           alt="Galleria fotografica nella scheda Google di un ristorante con foto dell'interno, dei piatti e del personale sorridente"
         />
       </div>
@@ -454,7 +454,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/wizytowka-google-moja-firma/posty.jpg"
+          src="/images/blog/wizytowka-google-moja-firma/posty.webp"
           alt="Schermo di smartphone con un post attuale nel profilo Google Business di un ristorante con una promozione settimanale"
         />
       </div>
@@ -477,7 +477,7 @@ export default function WizytowkaGoogleMojaFirmaIt() {
             parte inscindibile di questo lavoro — più recensioni recenti hai, più forte è il
             segnale di notorietà per l'algoritmo. Se vuoi automatizzare questo processo, scopri
             come funziona il{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               supporto NFC Starlinkee
             </Link>
             {" "}— il cliente avvicina il telefono e accede direttamente al modulo di recensione,

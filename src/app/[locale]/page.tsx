@@ -25,7 +25,7 @@ export default async function Home({
     description:
       "Tabliczka NFC z systemem filtrowania opinii Google, kuponami SMS i cyfrową kartą lojalnościową dla gastronomii.",
     brand: { "@type": "Brand", name: "Starlinkee" },
-    image: `${SITE_URL}/product.webp`,
+    image: `${SITE_URL}/product/${locale}.webp`,
     offers: {
       "@type": "Offer",
       price: "199",
@@ -43,7 +43,7 @@ export default async function Home({
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/hero.png`,
+      url: `${SITE_URL}/hero/${locale}.png`,
       width: 1200,
       height: 675,
     },
@@ -90,7 +90,7 @@ export default async function Home({
       <Navbar t={t} locale={locale} />
       <main>
         <Hero t={t} locale={locale} />
-        <Features t={t} />
+        <Features t={t} locale={locale} />
         <Pricing t={t} locale={locale} />
         <ContactForm t={t} />
       </main>

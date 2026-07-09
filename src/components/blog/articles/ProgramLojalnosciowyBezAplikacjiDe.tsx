@@ -166,8 +166,8 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/hero.webp"
-          alt="Barista reicht einem lächelnden Stammkunden über die Theke einen Kaffee — ein herzlicher Moment der Kundenbindung"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/papierowa-karta.webp"
+          alt="Eine abgenutzte, verblasste Papier-Treuekarte, zerknittert zwischen Quittungen am Boden eines Portemonnaies"
         />
       </div>
 
@@ -214,8 +214,8 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.jpg"
-          alt="Nahaufnahme einer NFC-Theke im Friseursalon neben einem Telefon, das eine digitale Treuekarte anzeigt"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/nfc.webp"
+          alt="Kundenhand hält beiläufig ein Smartphone an einer modernen Rezeptionstheke im Friseursalon, natürliche Geste, Bildschirm außerhalb des Bildausschnitts"
         />
       </div>
 
@@ -265,8 +265,8 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.jpg"
-          alt="Bildschirm des Admin-Panels mit Belohnungsschwellen und Besuchsfortschritt von Kunden in einem digitalen Treueprogramm"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/progi.webp"
+          alt="Eine Kreidetafel an der Café-Theke mit einer handgeschriebenen Treueprämien-Botschaft"
         />
       </div>
 
@@ -306,7 +306,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
           nur einmalig da war. Deshalb lohnt es sich, den Moment der Besuchserfassung mit einer
           Bitte um eine Bewertung zu verbinden — etwa beim Einlösen einer Belohnung. Genau so
           funktioniert die{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             Starlinkee-NFC-Theke
           </Link>
           : Ein Gerät bedient gleichzeitig die Treuekarte, das Google-Bewertungsformular und einen
@@ -325,8 +325,8 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.jpg"
-          alt="Telefon mit SMS-Rabattgutschein neben einer Benachrichtigung über eine erhaltene Belohnung in der digitalen Treuekarte"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/sms.webp"
+          alt="Lächelnde Kundin kehrt in ein Café zurück, hält ihr Smartphone locker an der Seite, Bildschirm nicht sichtbar"
         />
       </div>
 
@@ -369,8 +369,8 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.jpg"
-          alt="Restaurantbesitzer richtet eine NFC-Treuetheke an der Kasse ein und zeigt sie dem ersten Kunden"
+          src="/images/blog/program-lojalnosciowy-bez-aplikacji/wdrozenie.webp"
+          alt="Restaurantbesitzer erklärt einem lächelnden Erstkunden begeistert etwas an der Theke"
         />
       </div>
 
@@ -391,7 +391,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
             ein Antippen des Telefons, keine Installation, volle Übersicht im Admin-Panel. Wenn Sie
             das Sammeln von Besuchen mit Google-Bewertungen und SMS-Gutscheinen in einem System
             verbinden möchten, sehen Sie sich an, wie die{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee-NFC-Theke
             </Link>{" "}
             mit integrierter digitaler Treuekarte funktioniert.

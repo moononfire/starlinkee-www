@@ -170,8 +170,8 @@ export default function JakOdpowiadacNaOpinieDe() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/hero.webp"
-          alt="Lächelnder Geschäftsinhaber begrüßt herzlich einen Kunden an der Café-Theke, im Hintergrund ein gemütliches, unscharfes Interieur"
+          src="/images/blog/jak-odpowiadac-na-opinie/zaufanie.webp"
+          alt="Ein potenzieller Kunde blickt nachdenklich durch das Fenster in ein gemütliches Café, bevor er sich entscheidet einzutreten"
         />
       </div>
 
@@ -377,7 +377,7 @@ export default function JakOdpowiadacNaOpinieDe() {
         </p>
         <p className="text-gray-700 leading-relaxed mb-6">
           Genau so funktioniert der Bewertungsfilter, der im{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             Starlinkee-NFC-Aufsteller
           </Link>{" "}
           integriert ist. Der Kunde tippt mit seinem Handy an und bewertet zunächst die Erfahrung
@@ -419,7 +419,7 @@ export default function JakOdpowiadacNaOpinieDe() {
             wirksamste Strategie bleibt jedoch, die Zahl unfairer Bewertungen an der Quelle zu
             reduzieren — bevor der Kunde überhaupt zum Handy greift, um eine Bewertung abzugeben.
             Wenn Sie sehen möchten, wie das in der Praxis aussieht, schauen Sie sich den{" "}
-            <Link href="/order" className="text-blue-600 hover:underline font-medium">
+            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee-NFC-Aufsteller
             </Link>{" "}
             mit integriertem, Google-konformem Bewertungsfilter an.

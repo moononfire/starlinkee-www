@@ -145,7 +145,7 @@ export default function JakSzybkoZdobycOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/search.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/search.webp"
           alt="Search results on a smartphone screen showing a business listing with five stars"
         />
       </div>
@@ -227,7 +227,7 @@ export default function JakSzybkoZdobycOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.webp"
           alt="Smartphone scanning a sleek black NFC plate on a wooden reception counter"
         />
       </div>
@@ -309,7 +309,7 @@ export default function JakSzybkoZdobycOpinieEn() {
         <p className="text-gray-700 leading-relaxed mb-6">
           For the reception desk, choose elements that catch the eye and facilitate interaction right
           after payment is completed. If an attractive{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             NFC review stand
           </Link>{" "}
           sits on the counter, the customer immediately knows what to do. Opt for clean finishes
@@ -325,7 +325,7 @@ export default function JakSzybkoZdobycOpinieEn() {
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
           In hospitality, discreet formats work best. Compact{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             NFC stickers and plates
           </Link>{" "}
           that can be placed directly on tables or inside bill folders are a great choice. This
@@ -346,7 +346,7 @@ export default function JakSzybkoZdobycOpinieEn() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.webp"
           alt="A discreet NFC review sticker placed on a restaurant table next to a coffee cup"
         />
       </div>

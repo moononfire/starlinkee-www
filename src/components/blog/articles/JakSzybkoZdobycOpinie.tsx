@@ -144,7 +144,7 @@ export default function JakSzybkoZdobycOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/search.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/search.webp"
           alt="Wyniki wyszukiwania na ekranie smartfona pokazujące wizytówkę firmy z pięcioma gwiazdkami"
         />
       </div>
@@ -224,7 +224,7 @@ export default function JakSzybkoZdobycOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/nfc.webp"
           alt="Smartfon skanujący nowoczesną czarną płytkę NFC na drewnianej ladzie recepcyjnej"
         />
       </div>
@@ -304,7 +304,7 @@ export default function JakSzybkoZdobycOpinie() {
         <p className="text-gray-700 leading-relaxed mb-6">
           Na recepcję dobierz przede wszystkim elementy, które rzucają się w oczy i ułatwiają kontakt
           zaraz po sfinalizowaniu płatności. Jeśli na ladzie stoi estetyczny{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             stojak NFC do opinii Google
           </Link>
           , klient od razu wie, co zrobić. Warto wybierać proste wykończenia, które pasują do
@@ -320,7 +320,7 @@ export default function JakSzybkoZdobycOpinie() {
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
           W gastronomii najlepiej działają dyskretne formaty. Dobrym kierunkiem są kompaktowe{" "}
-          <Link href="/order" className="text-blue-600 hover:underline font-medium">
+          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             naklejki i płytki NFC
           </Link>
           , które można umieścić bezpośrednio na stołach lub w etui z rachunkiem. Dzięki temu gość
@@ -340,7 +340,7 @@ export default function JakSzybkoZdobycOpinie() {
 
       <div className={P}>
         <BlogImage
-          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.jpg"
+          src="/images/blog/jak-szybko-zdobyc-opinie/restauracja.webp"
           alt="Dyskretna naklejka NFC do zbierania opinii umieszczona na stoliku w restauracji obok filiżanki kawy"
         />
       </div>
