@@ -435,14 +435,24 @@ export default async function BlogSlugPage({ params }: Props) {
           </div>
 
           {/* CTA */}
-          <aside className="mt-14 bg-gradient-to-br from-blue-600 to-blue-800 py-14 text-white text-center">
-            <div className="max-w-2xl mx-auto px-4 sm:px-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">Starlinkee</p>
-              <h2 className="text-3xl font-bold mb-4">{ui.ctaHeading}</h2>
-              <p className="text-blue-100 mb-8 leading-relaxed text-lg">{ui.ctaBody}</p>
-              <Link href={`/${requestedLocale}/order`} className="inline-block bg-white text-blue-700 font-bold px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors text-base shadow-lg">
-                {ui.ctaButton}
-              </Link>
+          <aside className="mt-14 bg-gradient-to-br from-blue-600 to-blue-800 py-14 text-white">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12 text-center md:text-left">
+              <div className="w-full max-w-[240px] md:max-w-none md:w-2/5 aspect-square relative rounded-2xl overflow-hidden bg-white/10 shrink-0">
+                <Image
+                  src={`/product/${requestedLocale}.webp`}
+                  alt="Tabliczka NFC Starlinkee"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="w-full md:w-3/5">
+                <p className="text-xs font-semibold uppercase tracking-widest text-blue-300 mb-3">Starlinkee</p>
+                <h2 className="text-3xl font-bold mb-4">{ui.ctaHeading}</h2>
+                <p className="text-blue-100 mb-8 leading-relaxed text-lg">{ui.ctaBody}</p>
+                <Link href={`/${requestedLocale}/order`} className="inline-block bg-white text-blue-700 font-bold px-10 py-4 rounded-xl hover:bg-blue-50 transition-colors text-base shadow-lg">
+                  {ui.ctaButton}
+                </Link>
+              </div>
             </div>
           </aside>
 
