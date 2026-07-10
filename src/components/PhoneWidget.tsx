@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n";
 
-const PHONE_NUMBER = "+48 123 456 789";
-const PHONE_HREF = PHONE_NUMBER.replace(/\s/g, "");
+const PHONE_PL = process.env.NEXT_PUBLIC_PHONE_PL ?? "+48 123 456 789";
+const PHONE_AT = process.env.NEXT_PUBLIC_PHONE_AT ?? "+43 123 456 789";
 const FOOTER_HEIGHT = 180;
 const BASE_BOTTOM = 24;
 
@@ -17,6 +17,8 @@ const callUs: Record<Locale, string> = {
 
 export default function PhoneWidget({ locale }: { locale: Locale }) {
   const label = callUs[locale] ?? callUs.pl;
+  const phoneNumber = locale === "pl" ? PHONE_PL : PHONE_AT;
+  const phoneHref = phoneNumber.replace(/\s/g, "");
 
   const [bottom, setBottom] = useState(BASE_BOTTOM);
 
@@ -34,8 +36,8 @@ export default function PhoneWidget({ locale }: { locale: Locale }) {
 
   return (
     <a
-      href={`tel:${PHONE_HREF}`}
-      aria-label={`${label}: ${PHONE_NUMBER}`}
+      href={`tel:${phoneHref}`}
+      aria-label={`${label}: ${phoneNumber}`}
       className="fixed left-5 z-40 flex items-center gap-2.5 rounded-full px-4 py-3 select-none transition-[bottom] duration-200"
       style={{
         bottom: `${bottom}px`,
@@ -59,7 +61,7 @@ export default function PhoneWidget({ locale }: { locale: Locale }) {
       </svg>
       <div className="flex flex-col leading-tight">
         <span className="text-xs font-semibold text-amber-900 opacity-80">{label}</span>
-        <span className="text-sm font-bold text-amber-900">{PHONE_NUMBER}</span>
+        <span className="text-sm font-bold text-amber-900">{phoneNumber}</span>
       </div>
     </a>
   );

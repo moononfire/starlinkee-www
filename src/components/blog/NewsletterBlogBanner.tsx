@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { Locale } from "@/i18n";
 
 const bannerUi = {
@@ -22,7 +23,6 @@ const bannerUi = {
     sending: "Wysyłanie…",
     submit: "Odbierz kurs →",
     disclaimer: "Bez spamu. Możesz się wypisać w dowolnym momencie.",
-    graphicPlaceholder: "Grafika\n(zastąp plikiem)",
   },
   en: {
     ariaLabel: "Free course — Google Business Profile optimization",
@@ -42,7 +42,6 @@ const bannerUi = {
     sending: "Sending…",
     submit: "Get the course →",
     disclaimer: "No spam. Unsubscribe anytime.",
-    graphicPlaceholder: "Graphic\n(replace with file)",
   },
   de: {
     ariaLabel: "Kostenloser Kurs — Optimierung des Google Unternehmensprofils",
@@ -62,7 +61,6 @@ const bannerUi = {
     sending: "Wird gesendet…",
     submit: "Kurs erhalten →",
     disclaimer: "Kein Spam. Jederzeit abbestellbar.",
-    graphicPlaceholder: "Grafik\n(durch Datei ersetzen)",
   },
   it: {
     ariaLabel: "Corso gratuito — ottimizzazione della scheda Google",
@@ -82,7 +80,6 @@ const bannerUi = {
     sending: "Invio…",
     submit: "Ricevi il corso →",
     disclaimer: "Niente spam. Puoi disiscriverti in qualsiasi momento.",
-    graphicPlaceholder: "Immagine\n(sostituisci con il file)",
   },
 } satisfies Record<Locale, Record<string, unknown>>;
 
@@ -108,7 +105,7 @@ export default function NewsletterBlogBanner({ locale }: { locale: Locale }) {
 
   return (
     <section
-      className="w-full bg-gradient-to-br from-emerald-700 via-green-700 to-teal-800 py-14 my-14"
+      className="w-full bg-gradient-to-br from-emerald-700 via-green-700 to-teal-800 py-14 my-14 overflow-visible"
       aria-label={b.ariaLabel}
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 grid sm:grid-cols-[1fr_auto] gap-10 items-center">
@@ -165,31 +162,14 @@ export default function NewsletterBlogBanner({ locale }: { locale: Locale }) {
           )}
         </div>
 
-        {/* Prawa strona — grafika placeholder */}
-        <div className="hidden sm:flex flex-col items-center justify-center w-56 h-56 shrink-0">
-          {/*
-            Zamień ten blok na:
-            <Image src="/images/newsletter-kurs-wizytowka.png" alt="Kurs optymalizacji wizytówki Google" width={224} height={224} />
-          */}
-          <div className="w-full h-full rounded-2xl bg-white/10 border-2 border-dashed border-white/30 flex flex-col items-center justify-center gap-4 p-6">
-            {/* Dekoracyjna grafika SVG */}
-            <svg viewBox="0 0 80 80" className="w-20 h-20" aria-hidden="true">
-              {/* Karta wizytówki */}
-              <rect x="6" y="16" width="68" height="48" rx="6" fill="white" fillOpacity="0.15" />
-              <rect x="12" y="22" width="56" height="6" rx="3" fill="white" fillOpacity="0.5" />
-              {/* 5 gwiazdek */}
-              <text x="12" y="40" fontSize="10" fill="#fbbf24">★★★★★</text>
-              <rect x="12" y="43" width="36" height="3" rx="1.5" fill="white" fillOpacity="0.3" />
-              <rect x="12" y="49" width="28" height="3" rx="1.5" fill="white" fillOpacity="0.3" />
-              {/* Strzałka w górę */}
-              <circle cx="62" cy="58" r="10" fill="#4ade80" fillOpacity="0.9" />
-              <path d="M62 63 L62 53 M58.5 56.5 L62 53 L65.5 56.5"
-                stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-            </svg>
-            <p className="text-white/50 text-xs text-center leading-tight whitespace-pre-line">
-              {b.graphicPlaceholder}
-            </p>
-          </div>
+        {/* Prawa strona — grafika (naklejka na przeźroczystym tle, wersja per język, przycięta do treści ~778x1025) */}
+        <div className="hidden sm:flex items-center justify-center w-48 md:w-60 lg:w-72 aspect-[778/1025] shrink-0 relative">
+          <Image
+            src={`/newsletter/${locale}.webp`}
+            alt={b.badge}
+            fill
+            className="object-contain"
+          />
         </div>
 
       </div>
