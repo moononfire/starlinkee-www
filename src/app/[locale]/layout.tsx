@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import NewsletterPopup from "@/components/NewsletterPopup";
-import PhoneWidget from "@/components/PhoneWidget";
-import ChatWidget from "@/components/ChatWidget";
-import CookieBanner from "@/components/CookieBanner";
+import GlobalWidgets from "@/components/GlobalWidgets";
 import GoogleAnalyticsGate from "@/components/GoogleAnalyticsGate";
 import { LOCALES, type Locale } from "@/i18n";
 import { isValidLocale } from "@/lib/locale";
@@ -127,10 +124,7 @@ export default async function RootLayout({
     >
       <body className="min-h-screen bg-white text-gray-900">
         {children}
-        <NewsletterPopup locale={locale} />
-        <PhoneWidget locale={locale} />
-        <ChatWidget locale={locale} />
-        <CookieBanner locale={locale} />
+        <GlobalWidgets locale={locale} />
         <GoogleAnalyticsGate />
       </body>
     </html>

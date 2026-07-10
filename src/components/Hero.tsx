@@ -35,18 +35,15 @@ export default function Hero({ t, locale }: { t: Translations; locale: Locale })
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto mt-16 relative">
-        <div className="absolute -inset-4 bg-gradient-to-b from-brand-100/40 to-transparent rounded-3xl blur-2xl" />
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-gray-900/15 border border-gray-200/80">
-          <Image
-            src={`/hero/${locale}.webp`}
-            alt="Starlinkee — panel zarządzania opiniami dla restauracji"
-            width={1200}
-            height={675}
-            priority
-            className="w-full h-auto object-cover"
-          />
-        </div>
+      <div className="max-w-5xl mx-auto mt-6">
+        <Image
+          src={`/hero/${locale}.webp`}
+          alt="Starlinkee — panel zarządzania opiniami dla restauracji"
+          width={1200}
+          height={675}
+          priority
+          className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-gray-900/15"
+        />
       </div>
     </section>
   );

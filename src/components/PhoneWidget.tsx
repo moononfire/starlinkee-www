@@ -15,12 +15,32 @@ const callUs: Record<Locale, string> = {
   it: "Chiamaci",
 };
 
+const copied: Record<Locale, string> = {
+  pl: "Skopiowano!",
+  en: "Copied!",
+  de: "Kopiert!",
+  it: "Copiato!",
+};
+
 export default function PhoneWidget({ locale }: { locale: Locale }) {
   const label = callUs[locale] ?? callUs.pl;
   const phoneNumber = locale === "pl" ? PHONE_PL : PHONE_AT;
   const phoneHref = phoneNumber.replace(/\s/g, "");
 
   const [bottom, setBottom] = useState(BASE_BOTTOM);
+  const [isCopied, setIsCopied] = useState(false);
+
+  function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    const isDesktop =
+      typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
+    if (!isDesktop) return;
+
+    e.preventDefault();
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 1800);
+    });
+  }
 
   useEffect(() => {
     function update() {
@@ -37,6 +57,7 @@ export default function PhoneWidget({ locale }: { locale: Locale }) {
   return (
     <a
       href={`tel:${phoneHref}`}
+      onClick={handleClick}
       aria-label={`${label}: ${phoneNumber}`}
       className="fixed left-5 z-40 flex items-center gap-2.5 rounded-full px-4 py-3 select-none transition-[bottom] duration-200"
       style={{
@@ -60,7 +81,9 @@ export default function PhoneWidget({ locale }: { locale: Locale }) {
         />
       </svg>
       <div className="flex flex-col leading-tight">
-        <span className="text-xs font-semibold text-amber-900 opacity-80">{label}</span>
+        <span className="text-xs font-semibold text-amber-900 opacity-80">
+          {isCopied ? copied[locale] ?? copied.pl : label}
+        </span>
         <span className="text-sm font-bold text-amber-900">{phoneNumber}</span>
       </div>
     </a>

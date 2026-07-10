@@ -2,6 +2,7 @@ import { getTranslations } from "@/i18n";
 import { resolveLocale } from "@/lib/locale";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import LiveDemo from "@/components/LiveDemo";
 import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import ContactForm from "@/components/ContactForm";
@@ -90,6 +91,7 @@ export default async function Home({
       <Navbar t={t} locale={locale} />
       <main>
         <Hero t={t} locale={locale} />
+        <LiveDemo t={t} locale={locale} />
         <Features t={t} locale={locale} />
         <Pricing t={t} locale={locale} />
         <ContactForm t={t} />

@@ -64,6 +64,30 @@ const translations = {
       annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
       comingSoon: "Wkrótce dostępne",
     },
+    liveDemo: {
+      sectionTitle: "Zobacz to na żywo",
+      sectionSubtitle:
+        "To prawdziwa strona, którą widzi klient po zeskanowaniu tabliczki NFC — bez montażu, bez czekania.",
+      iframeTitle: "Podgląd na żywo strony po zeskanowaniu tabliczki Starlinkee",
+      cta: "Otwórz podgląd na pełnym ekranie",
+      expandCta: "Zobacz, jak to działa",
+      collapseCta: "Schowaj podgląd",
+      mobileCta: "Otwórz w swoim telefonie",
+      tourIdle: "👉 Kliknij w telefon i przejdź przez proces tak, jak zrobiłby to Twój klient.",
+      tourLinktree:
+        "To strona, na którą trafia klient po zeskanowaniu tabliczki — masz tu wszystkie swoje linki i zarządzasz nimi z panelu.",
+      tourFilter:
+        "To filtr opinii: klient najpierw ocenia wizytę u Ciebie, zanim cokolwiek trafi do internetu.",
+      tourHighRating:
+        "Przy wysokiej ocenie klient trafia prosto na Twój profil Google — tam zostawia publiczną opinię.",
+      tourLowRating:
+        "Przy niskiej ocenie klient zostaje z Tobą — pisze wiadomość, która trafia tylko do właściciela, i nie może już wrócić do wystawienia publicznej opinii.",
+      tourLoyalty:
+        "Cyfrowa karta lojalnościowa — klient zbiera wizyty samym skanem, bez instalowania żadnej aplikacji.",
+      tourPromo:
+        "Tu klient odbiera aktualną promocję — kod lub kupon, który sam ustawiasz w panelu.",
+      tourRestart: "Zacznij pokaz od nowa",
+    },
     contact: {
       sectionTitle: "Porozmawiajmy",
       sectionSubtitle:
@@ -153,6 +177,30 @@ const translations = {
       annualSavingsBadge: "2 months free",
       annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
       comingSoon: "Coming soon",
+    },
+    liveDemo: {
+      sectionTitle: "See it live",
+      sectionSubtitle:
+        "This is the real page your customers see after scanning the NFC plate — no install, no waiting.",
+      iframeTitle: "Live preview of the page shown after scanning a Starlinkee plate",
+      cta: "Open the full-screen preview",
+      expandCta: "See how it works",
+      collapseCta: "Hide preview",
+      mobileCta: "Open on your phone",
+      tourIdle: "👉 Tap the phone and walk through the flow just like your customer would.",
+      tourLinktree:
+        "This is the page a customer lands on after scanning the plate — all your links live here, managed from your dashboard.",
+      tourFilter:
+        "This is the review filter: the customer rates their visit with you first, before anything goes public.",
+      tourHighRating:
+        "A high rating sends the customer straight to your Google profile to leave a public review.",
+      tourLowRating:
+        "A low rating keeps the customer with you — they write a message that only reaches the owner, and can't go back to leave a public review.",
+      tourLoyalty:
+        "A digital loyalty card — customers collect visits with a simple scan, no app install required.",
+      tourPromo:
+        "This is where the customer claims the current promotion — a code or coupon you set up in your dashboard.",
+      tourRestart: "Restart the demo",
     },
     contact: {
       sectionTitle: "Let's talk",
@@ -244,6 +292,30 @@ const translations = {
       annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
       comingSoon: "Demnächst verfügbar",
     },
+    liveDemo: {
+      sectionTitle: "Live erleben",
+      sectionSubtitle:
+        "Das ist die echte Seite, die Ihre Gäste nach dem Scannen des NFC-Aufstellers sehen — ohne Installation, ohne Wartezeit.",
+      iframeTitle: "Live-Vorschau der Seite nach dem Scannen eines Starlinkee-Aufstellers",
+      cta: "Vorschau im Vollbild öffnen",
+      expandCta: "Sehen, wie es funktioniert",
+      collapseCta: "Vorschau ausblenden",
+      mobileCta: "Auf Ihrem Handy öffnen",
+      tourIdle: "👉 Tippen Sie auf das Telefon und durchlaufen Sie den Ablauf wie Ihr Gast.",
+      tourLinktree:
+        "Das ist die Seite, auf der der Gast nach dem Scannen landet — hier liegen alle Ihre Links, verwaltet über Ihr Dashboard.",
+      tourFilter:
+        "Das ist der Bewertungsfilter: Der Gast bewertet den Besuch zuerst bei Ihnen, bevor irgendetwas öffentlich wird.",
+      tourHighRating:
+        "Bei einer hohen Bewertung gelangt der Gast direkt zu Ihrem Google-Profil, um eine öffentliche Bewertung zu hinterlassen.",
+      tourLowRating:
+        "Bei einer niedrigen Bewertung bleibt der Gast bei Ihnen — er schreibt eine Nachricht, die nur der Inhaber sieht, und kann nicht mehr zu einer öffentlichen Bewertung zurückkehren.",
+      tourLoyalty:
+        "Eine digitale Treuekarte — Gäste sammeln Besuche per Scan, ganz ohne App-Installation.",
+      tourPromo:
+        "Hier löst der Gast die aktuelle Aktion ein — einen Code oder Gutschein, den Sie in Ihrem Dashboard festlegen.",
+      tourRestart: "Demo neu starten",
+    },
     contact: {
       sectionTitle: "Lassen Sie uns sprechen",
       sectionSubtitle:
@@ -333,6 +405,30 @@ const translations = {
       annualSavingsBadge: "2 mesi gratis",
       annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
       comingSoon: "Prossimamente",
+    },
+    liveDemo: {
+      sectionTitle: "Guardalo dal vivo",
+      sectionSubtitle:
+        "Questa è la vera pagina che i tuoi clienti vedono dopo aver scansionato la targa NFC — senza installazione, senza attesa.",
+      iframeTitle: "Anteprima dal vivo della pagina mostrata dopo la scansione di una targa Starlinkee",
+      cta: "Apri l'anteprima a schermo intero",
+      expandCta: "Guarda come funziona",
+      collapseCta: "Nascondi anteprima",
+      mobileCta: "Apri sul tuo telefono",
+      tourIdle: "👉 Tocca il telefono e segui il percorso proprio come farebbe il tuo cliente.",
+      tourLinktree:
+        "Questa è la pagina su cui atterra il cliente dopo la scansione — qui trovi tutti i tuoi link, gestiti dalla tua dashboard.",
+      tourFilter:
+        "Questo è il filtro delle recensioni: il cliente valuta prima la visita con te, prima che qualcosa diventi pubblico.",
+      tourHighRating:
+        "Con una valutazione alta il cliente va direttamente al tuo profilo Google per lasciare una recensione pubblica.",
+      tourLowRating:
+        "Con una valutazione bassa il cliente resta con te — scrive un messaggio che arriva solo al titolare e non può più tornare a lasciare una recensione pubblica.",
+      tourLoyalty:
+        "Una carta fedeltà digitale — i clienti accumulano visite con una semplice scansione, senza installare app.",
+      tourPromo:
+        "Qui il cliente riscatta la promozione attuale — un codice o coupon che imposti tu dal pannello.",
+      tourRestart: "Ricomincia la demo",
     },
     contact: {
       sectionTitle: "Parliamone",
