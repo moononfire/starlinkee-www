@@ -80,6 +80,11 @@ export default function Pricing({
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {t.pricing.planName}
               </h3>
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
+                <span className="inline-block rounded-full bg-brand-50 text-brand-600 text-xs font-semibold px-2.5 py-1">
+                  {t.pricing.trialTeaser}
+                </span>
+              </div>
               <div className="flex items-baseline justify-center md:justify-start gap-1">
                 <span className="text-5xl sm:text-6xl font-bold text-gray-900">
                   {billing === "annual" ? annualPrice : t.pricing.price}

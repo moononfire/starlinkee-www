@@ -275,6 +275,54 @@ const discountOrderCta: Record<Locale, string> = {
   it: "Ordina la targa NFC →",
 };
 
+// ─── Sekwencja "order" (po zamówieniu / rozpoczęciu triala) ─────────────────
+
+interface OrderStep {
+  subject: string;
+  title: string;
+  body: string;
+  cta?: { label: string; url: string };
+}
+
+const ORDER_STEPS: Record<Locale, Record<number, OrderStep>> = {
+  pl: {
+    1: {
+      subject: "Witaj w Starlinkee — jak zacząć korzystać",
+      title: "Witaj w Starlinkee!",
+      body: `<p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;">Dziękujemy za dołączenie! Zanim tabliczka NFC do Ciebie dotrze, oto jak najlepiej wykorzystać pierwszy miesiąc:</p>
+       <p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;"><strong>1. Skonfiguruj panel</strong> — dodaj godziny otwarcia, opis i pierwsze kupony SMS.</p>
+       <p style="margin:0 0 24px;color:#6b7280;font-size:15px;line-height:1.7;"><strong>2. Umieść tabliczkę</strong> przy kasie lub na stoliku — im więcej klientów ją zeskanuje, tym szybciej zobaczysz efekty.</p>`,
+    },
+  },
+  en: {
+    1: {
+      subject: "Welcome to Starlinkee — how to get started",
+      title: "Welcome to Starlinkee!",
+      body: `<p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;">Thanks for joining! Before your NFC plate arrives, here's how to make the most of your first month:</p>
+       <p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;"><strong>1. Set up your dashboard</strong> — add opening hours, a description, and your first SMS coupons.</p>
+       <p style="margin:0 0 24px;color:#6b7280;font-size:15px;line-height:1.7;"><strong>2. Place the plate</strong> at the register or on the table — the more customers scan it, the sooner you'll see results.</p>`,
+    },
+  },
+  de: {
+    1: {
+      subject: "Willkommen bei Starlinkee — so legen Sie los",
+      title: "Willkommen bei Starlinkee!",
+      body: `<p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;">Vielen Dank, dass Sie dabei sind! Bevor Ihr NFC-Aufsteller ankommt, hier die besten Tipps für Ihren ersten Monat:</p>
+       <p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;"><strong>1. Richten Sie Ihr Dashboard ein</strong> — Öffnungszeiten, Beschreibung und erste SMS-Gutscheine hinzufügen.</p>
+       <p style="margin:0 0 24px;color:#6b7280;font-size:15px;line-height:1.7;"><strong>2. Platzieren Sie den Aufsteller</strong> an der Kasse oder auf dem Tisch — je mehr Kunden scannen, desto schneller sehen Sie Ergebnisse.</p>`,
+    },
+  },
+  it: {
+    1: {
+      subject: "Benvenuto in Starlinkee — come iniziare",
+      title: "Benvenuto in Starlinkee!",
+      body: `<p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;">Grazie per esserti unito! Prima che arrivi la tua targa NFC, ecco come sfruttare al meglio il primo mese:</p>
+       <p style="margin:0 0 16px;color:#374151;font-size:16px;line-height:1.6;"><strong>1. Configura il pannello</strong> — aggiungi orari di apertura, descrizione e i primi coupon SMS.</p>
+       <p style="margin:0 0 24px;color:#6b7280;font-size:15px;line-height:1.7;"><strong>2. Posiziona la targa</strong> alla cassa o sul tavolo — più clienti la scansionano, prima vedrai i risultati.</p>`,
+    },
+  },
+};
+
 // ─── Exports ─────────────────────────────────────────────────────────────────
 
 export function getSequenceEmail(source: string, step: number, locale: Locale): SequenceEmail | null {
@@ -283,13 +331,19 @@ export function getSequenceEmail(source: string, step: number, locale: Locale): 
     if (!s) return null;
     return { subject: s.subject, html: buildDiscountEmail(locale, s.title, s.body) };
   }
+  if (source === "order") {
+    const s = ORDER_STEPS[locale]?.[step] ?? ORDER_STEPS.pl[step];
+    if (!s) return null;
+    return { subject: s.subject, html: buildCourseEmail(locale, s.title, s.body, s.cta) };
+  }
   const s = COURSE_STEPS[locale]?.[step] ?? COURSE_STEPS.pl[step];
   if (!s) return null;
   return { subject: s.subject, html: buildCourseEmail(locale, s.title, s.body, s.cta) };
 }
 
 export function getMaxStep(source: string): number {
-  const seq = source === "discount" ? DISCOUNT_STEPS.pl : COURSE_STEPS.pl;
+  const seq =
+    source === "discount" ? DISCOUNT_STEPS.pl : source === "order" ? ORDER_STEPS.pl : COURSE_STEPS.pl;
   return Math.max(...Object.keys(seq).map(Number));
 }
 

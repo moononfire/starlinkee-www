@@ -1,10 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { PRICING, annualSubPrice as computeAnnualSubPrice } from "@/lib/pricing";
+import TrialCardVerification, {
+  type TrialCardVerificationCopy,
+} from "@/components/TrialCardVerification";
 
 type Locale = "pl" | "en" | "de" | "it";
+type Step = "plates" | "plan" | "account" | "checkout" | "trial-verify";
+type BillingPlan = "monthly" | "annual" | "trial";
 
 const t: Record<Locale, {
   productName: string;
@@ -39,6 +45,54 @@ const t: Record<Locale, {
   annualNote: string;
   subscriptionNoteAnnual: string;
   periodAnnual: string;
+  planStepTitle: string;
+  planStepSubtitle: string;
+  planMonthlyTitle: string;
+  planMonthlyDesc: string;
+  planAnnualTitle: string;
+  planAnnualDesc: string;
+  planTrialTitle: string;
+  planTrialDesc: string;
+  planTrialBadge: string;
+  planTrialToday: string;
+  selectPlan: string;
+  changePlan: string;
+  next: string;
+  backToPlatesLabel: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  accountStepTitle: string;
+  accountStepSubtitle: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  passwordLabel: string;
+  passwordConfirmLabel: string;
+  passwordTooShort: string;
+  passwordMismatch: string;
+  addressLine1Label: string;
+  addressLine1Placeholder: string;
+  addressCityLabel: string;
+  addressCityPlaceholder: string;
+  addressPostalCodeLabel: string;
+  addressCountryLabel: string;
+  addressCountryPlaceholder: string;
+  accountSubmitLabel: string;
+  accountSubmittingLabel: string;
+  accountGenericError: string;
+  trialFinePrintBefore: string;
+  trialFinePrintAfter: string;
+  trialTodayLabel: string;
+  trialAfterLabel: string;
+  startTrialCta: string;
+  trialVerifyTitle: string;
+  trialVerifyFinePrintBefore: string;
+  trialVerifyFinePrintAfter: string;
+  trialLoadingLabel: string;
+  trialSubmitLabel: string;
+  trialSubmittingLabel: string;
+  trialBackLabel: string;
+  trialGenericError: string;
+  trialInitError: string;
 }> = {
   pl: {
     productName: "Starlinkee Pro + tabliczka NFC",
@@ -82,6 +136,54 @@ const t: Record<Locale, {
     annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
     subscriptionNoteAnnual: "Abonament 1990 zł/rok — płatność cykliczna",
     periodAnnual: "/rok",
+    planStepTitle: "Dołącz do Starlinkee Pro",
+    planStepSubtitle: "Wybierz sposób płatności, który Ci odpowiada.",
+    planMonthlyTitle: "Miesięcznie",
+    planMonthlyDesc: "Elastyczna płatność co miesiąc.",
+    planAnnualTitle: "Rocznie",
+    planAnnualDesc: "Zapłać raz w roku i oszczędzaj.",
+    planTrialTitle: "Wypróbuj za darmo",
+    planTrialDesc: "30 dni na sprawdzenie, bez zobowiązań.",
+    planTrialBadge: "30 dni za darmo",
+    planTrialToday: "0 zł dziś",
+    selectPlan: "Wybierz",
+    changePlan: "Zmień plan",
+    next: "Dalej",
+    backToPlatesLabel: "Wróć do wyboru tabliczek",
+    emailLabel: "Adres e-mail",
+    emailPlaceholder: "ty@twojafirma.pl",
+    accountStepTitle: "Załóż konto",
+    accountStepSubtitle: "Będziesz mieć dostęp do panelu administracyjnego Starlinkee.",
+    nameLabel: "Imię i nazwisko / nazwa firmy",
+    namePlaceholder: "Jan Kowalski",
+    passwordLabel: "Hasło",
+    passwordConfirmLabel: "Potwierdź hasło",
+    passwordTooShort: "Hasło musi mieć co najmniej 8 znaków.",
+    passwordMismatch: "Hasła nie są identyczne.",
+    addressLine1Label: "Adres (ulica i numer)",
+    addressLine1Placeholder: "ul. Przykładowa 1",
+    addressCityLabel: "Miasto",
+    addressCityPlaceholder: "Warszawa",
+    addressPostalCodeLabel: "Kod pocztowy",
+    addressCountryLabel: "Kraj",
+    addressCountryPlaceholder: "Polska",
+    accountSubmitLabel: "Dalej",
+    accountSubmittingLabel: "Zakładanie konta...",
+    accountGenericError: "Nie udało się założyć konta. Sprawdź dane i spróbuj ponownie.",
+    trialFinePrintBefore: "Wymagana karta do weryfikacji. Po 30 dniach naliczymy ",
+    trialFinePrintAfter: " — chyba że zrezygnujesz wcześniej. Obowiązuje Regulamin.",
+    trialTodayLabel: "Dziś (trial)",
+    trialAfterLabel: "Po 30 dniach",
+    startTrialCta: "Kontynuuj",
+    trialVerifyTitle: "Dane karty",
+    trialVerifyFinePrintBefore: "Tymczasowo zablokujemy na karcie ",
+    trialVerifyFinePrintAfter: " w celu weryfikacji — to nie jest pobranie środków, blokada zniknie natychmiast po potwierdzeniu.",
+    trialLoadingLabel: "Przygotowywanie weryfikacji karty...",
+    trialSubmitLabel: "Potwierdź",
+    trialSubmittingLabel: "Weryfikacja karty...",
+    trialBackLabel: "Wróć do wyboru planu",
+    trialGenericError: "Nie udało się zweryfikować karty. Spróbuj ponownie lub wybierz inny plan.",
+    trialInitError: "Nie udało się przygotować weryfikacji karty. Spróbuj ponownie.",
   },
   en: {
     productName: "Starlinkee Pro + NFC plate",
@@ -125,6 +227,54 @@ const t: Record<Locale, {
     annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
     subscriptionNoteAnnual: "Subscription €490/yr — recurring billing",
     periodAnnual: "/yr",
+    planStepTitle: "Join Starlinkee Pro",
+    planStepSubtitle: "Choose the billing option that works for you.",
+    planMonthlyTitle: "Monthly",
+    planMonthlyDesc: "Flexible billing every month.",
+    planAnnualTitle: "Annual",
+    planAnnualDesc: "Pay once a year and save.",
+    planTrialTitle: "Try it for free",
+    planTrialDesc: "30 days to try it out, no commitment.",
+    planTrialBadge: "30 days free",
+    planTrialToday: "$0 today",
+    selectPlan: "Select",
+    changePlan: "Change plan",
+    next: "Next",
+    backToPlatesLabel: "Back to plate selection",
+    emailLabel: "Email address",
+    emailPlaceholder: "you@yourcompany.com",
+    accountStepTitle: "Create your account",
+    accountStepSubtitle: "You'll get access to the Starlinkee admin dashboard.",
+    nameLabel: "Full name / company name",
+    namePlaceholder: "John Smith",
+    passwordLabel: "Password",
+    passwordConfirmLabel: "Confirm password",
+    passwordTooShort: "Password must be at least 8 characters.",
+    passwordMismatch: "Passwords do not match.",
+    addressLine1Label: "Address (street and number)",
+    addressLine1Placeholder: "123 Main St",
+    addressCityLabel: "City",
+    addressCityPlaceholder: "New York",
+    addressPostalCodeLabel: "Postal code",
+    addressCountryLabel: "Country",
+    addressCountryPlaceholder: "United States",
+    accountSubmitLabel: "Next",
+    accountSubmittingLabel: "Creating account...",
+    accountGenericError: "We couldn't create your account. Please check your details and try again.",
+    trialFinePrintBefore: "Card required for verification. After 30 days we'll charge ",
+    trialFinePrintAfter: " — unless you cancel first. Terms of Service apply.",
+    trialTodayLabel: "Today (trial)",
+    trialAfterLabel: "After 30 days",
+    startTrialCta: "Continue",
+    trialVerifyTitle: "Card details",
+    trialVerifyFinePrintBefore: "We'll temporarily hold ",
+    trialVerifyFinePrintAfter: " on your card for verification — this is not a charge, the hold is released immediately after confirmation.",
+    trialLoadingLabel: "Preparing card verification...",
+    trialSubmitLabel: "Confirm",
+    trialSubmittingLabel: "Verifying card...",
+    trialBackLabel: "Back to plan selection",
+    trialGenericError: "We couldn't verify your card. Please try again or choose a different plan.",
+    trialInitError: "We couldn't prepare card verification. Please try again.",
   },
   de: {
     productName: "Starlinkee Pro + NFC-Aufsteller",
@@ -168,6 +318,54 @@ const t: Record<Locale, {
     annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
     subscriptionNoteAnnual: "Abo 490 €/Jahr — wiederkehrende Zahlung",
     periodAnnual: "/Jahr",
+    planStepTitle: "Starlinkee Pro beitreten",
+    planStepSubtitle: "Wählen Sie die für Sie passende Zahlungsoption.",
+    planMonthlyTitle: "Monatlich",
+    planMonthlyDesc: "Flexible Zahlung jeden Monat.",
+    planAnnualTitle: "Jährlich",
+    planAnnualDesc: "Einmal im Jahr zahlen und sparen.",
+    planTrialTitle: "Kostenlos testen",
+    planTrialDesc: "30 Tage testen, unverbindlich.",
+    planTrialBadge: "30 Tage gratis",
+    planTrialToday: "0 € heute",
+    selectPlan: "Auswählen",
+    changePlan: "Plan ändern",
+    next: "Weiter",
+    backToPlatesLabel: "Zurück zur Aufstellerauswahl",
+    emailLabel: "E-Mail-Adresse",
+    emailPlaceholder: "sie@ihrefirma.de",
+    accountStepTitle: "Konto erstellen",
+    accountStepSubtitle: "Sie erhalten Zugang zum Starlinkee Admin-Dashboard.",
+    nameLabel: "Name / Firmenname",
+    namePlaceholder: "Max Mustermann",
+    passwordLabel: "Passwort",
+    passwordConfirmLabel: "Passwort bestätigen",
+    passwordTooShort: "Das Passwort muss mindestens 8 Zeichen lang sein.",
+    passwordMismatch: "Die Passwörter stimmen nicht überein.",
+    addressLine1Label: "Adresse (Straße und Hausnummer)",
+    addressLine1Placeholder: "Musterstraße 1",
+    addressCityLabel: "Stadt",
+    addressCityPlaceholder: "Berlin",
+    addressPostalCodeLabel: "Postleitzahl",
+    addressCountryLabel: "Land",
+    addressCountryPlaceholder: "Deutschland",
+    accountSubmitLabel: "Weiter",
+    accountSubmittingLabel: "Konto wird erstellt...",
+    accountGenericError: "Ihr Konto konnte nicht erstellt werden. Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut.",
+    trialFinePrintBefore: "Karte zur Verifizierung erforderlich. Nach 30 Tagen berechnen wir ",
+    trialFinePrintAfter: " — außer Sie kündigen vorher. Es gelten die AGB.",
+    trialTodayLabel: "Heute (Test)",
+    trialAfterLabel: "Nach 30 Tagen",
+    startTrialCta: "Weiter",
+    trialVerifyTitle: "Kartendaten",
+    trialVerifyFinePrintBefore: "Wir blockieren vorübergehend ",
+    trialVerifyFinePrintAfter: " auf Ihrer Karte zur Verifizierung — das ist keine Abbuchung, die Blockierung wird nach der Bestätigung sofort aufgehoben.",
+    trialLoadingLabel: "Kartenverifizierung wird vorbereitet...",
+    trialSubmitLabel: "Bestätigen",
+    trialSubmittingLabel: "Karte wird verifiziert...",
+    trialBackLabel: "Zurück zur Planauswahl",
+    trialGenericError: "Ihre Karte konnte nicht verifiziert werden. Bitte versuchen Sie es erneut oder wählen Sie einen anderen Plan.",
+    trialInitError: "Die Kartenverifizierung konnte nicht vorbereitet werden. Bitte versuchen Sie es erneut.",
   },
   it: {
     productName: "Starlinkee Pro + targa NFC",
@@ -211,14 +409,55 @@ const t: Record<Locale, {
     annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
     subscriptionNoteAnnual: "Abbonamento 490 €/anno — pagamento ricorrente",
     periodAnnual: "/anno",
+    planStepTitle: "Iscriviti a Starlinkee Pro",
+    planStepSubtitle: "Scegli l'opzione di pagamento più adatta a te.",
+    planMonthlyTitle: "Mensile",
+    planMonthlyDesc: "Pagamento flessibile ogni mese.",
+    planAnnualTitle: "Annuale",
+    planAnnualDesc: "Paga una volta all'anno e risparmia.",
+    planTrialTitle: "Prova gratis",
+    planTrialDesc: "30 giorni di prova, senza impegno.",
+    planTrialBadge: "30 giorni gratis",
+    planTrialToday: "0 € oggi",
+    selectPlan: "Seleziona",
+    changePlan: "Cambia piano",
+    next: "Avanti",
+    backToPlatesLabel: "Torna alla selezione delle targhe",
+    emailLabel: "Indirizzo e-mail",
+    emailPlaceholder: "tu@tuaazienda.it",
+    accountStepTitle: "Crea il tuo account",
+    accountStepSubtitle: "Avrai accesso al pannello di controllo Starlinkee.",
+    nameLabel: "Nome e cognome / ragione sociale",
+    namePlaceholder: "Mario Rossi",
+    passwordLabel: "Password",
+    passwordConfirmLabel: "Conferma password",
+    passwordTooShort: "La password deve avere almeno 8 caratteri.",
+    passwordMismatch: "Le password non coincidono.",
+    addressLine1Label: "Indirizzo (via e numero civico)",
+    addressLine1Placeholder: "Via Roma 1",
+    addressCityLabel: "Città",
+    addressCityPlaceholder: "Milano",
+    addressPostalCodeLabel: "CAP",
+    addressCountryLabel: "Paese",
+    addressCountryPlaceholder: "Italia",
+    accountSubmitLabel: "Avanti",
+    accountSubmittingLabel: "Creazione dell'account...",
+    accountGenericError: "Non siamo riusciti a creare il tuo account. Controlla i dati e riprova.",
+    trialFinePrintBefore: "Carta richiesta per la verifica. Dopo 30 giorni addebiteremo ",
+    trialFinePrintAfter: " — a meno che tu non cancelli prima. Si applicano i Termini di Servizio.",
+    trialTodayLabel: "Oggi (prova)",
+    trialAfterLabel: "Dopo 30 giorni",
+    startTrialCta: "Continua",
+    trialVerifyTitle: "Dati della carta",
+    trialVerifyFinePrintBefore: "Bloccheremo temporaneamente ",
+    trialVerifyFinePrintAfter: " sulla tua carta per la verifica — non è un addebito, il blocco viene rilasciato subito dopo la conferma.",
+    trialLoadingLabel: "Preparazione della verifica della carta...",
+    trialSubmitLabel: "Conferma",
+    trialSubmittingLabel: "Verifica della carta...",
+    trialBackLabel: "Torna alla selezione del piano",
+    trialGenericError: "Non siamo riusciti a verificare la tua carta. Riprova o scegli un piano diverso.",
+    trialInitError: "Non siamo riusciti a preparare la verifica della carta. Riprova.",
   },
-};
-
-const pricing: Record<Locale, { subPrice: number; platePrice: number; currency: string }> = {
-  pl: { subPrice: 199, platePrice: 29, currency: "zł" },
-  en: { subPrice: 49, platePrice: 9, currency: "€" },
-  de: { subPrice: 49, platePrice: 9, currency: "€" },
-  it: { subPrice: 49, platePrice: 9, currency: "€" },
 };
 
 const galleryImages: Record<Locale, string[]> = {
@@ -229,32 +468,53 @@ const galleryImages: Record<Locale, string[]> = {
 };
 
 const MAX_PLATES = 50;
-const ALL_LOCALES = Object.keys(pricing) as Locale[];
+const ALL_LOCALES = Object.keys(PRICING) as Locale[];
+
+function isValidEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 
 export default function OrderPage() {
   const pathname = usePathname();
+  const router = useRouter();
   const pathLocale = pathname.split("/")[1] as Locale | undefined;
   const locale: Locale = pathLocale && pathLocale in t ? pathLocale : "pl";
   const l = t[locale];
-  const p = pricing[locale];
+  const p = PRICING[locale];
+
+  const [step, setStep] = useState<Step>("plates");
+  const [billing, setBilling] = useState<BillingPlan>("monthly");
+  const [planPreset, setPlanPreset] = useState(false);
+  const [email, setEmail] = useState("");
+  const [newsletterSent, setNewsletterSent] = useState(false);
+
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [addressLine1, setAddressLine1] = useState("");
+  const [addressCity, setAddressCity] = useState("");
+  const [addressPostalCode, setAddressPostalCode] = useState("");
+  const [addressCountry, setAddressCountry] = useState("");
+  const [accountError, setAccountError] = useState<string | null>(null);
+  const [accountSubmitting, setAccountSubmitting] = useState(false);
 
   const [langRows, setLangRows] = useState<{ lang: Locale; qty: number }[]>([
     { lang: locale, qty: 1 },
   ]);
   const [loading, setLoading] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
-  const [billing, setBilling] = useState<"monthly" | "annual">("monthly");
 
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("billing") === "annual") {
       setBilling("annual");
+      setPlanPreset(true);
     }
   }, []);
 
   const totalPlates = langRows.reduce((sum, o) => sum + o.qty, 0);
   const extraPlates = Math.max(0, totalPlates - 1);
   const platesCost = extraPlates * p.platePrice;
-  const annualSubPrice = p.subPrice * 10;
+  const annualSubPrice = computeAnnualSubPrice(locale);
   const totalNow = (billing === "annual" ? annualSubPrice : p.subPrice) + platesCost;
 
   const availableLangs = ALL_LOCALES.filter(
@@ -274,6 +534,79 @@ export default function OrderPage() {
     setLangRows((prev) => (prev.length > 1 ? prev.filter((o) => o.lang !== lang) : prev));
   }
 
+  function subscribeNewsletter() {
+    if (newsletterSent || !isValidEmail(email)) return;
+    setNewsletterSent(true);
+    fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, source: "order", locale }),
+    }).catch(() => {});
+  }
+
+  function goToPlanOrCheckout() {
+    setStep(planPreset ? "account" : "plan");
+  }
+
+  function selectPlan(plan: BillingPlan) {
+    setBilling(plan);
+    setStep("account");
+  }
+
+  const address = {
+    name,
+    line1: addressLine1,
+    city: addressCity,
+    postalCode: addressPostalCode,
+    country: addressCountry,
+  };
+
+  function isAccountFormValid(): boolean {
+    return (
+      isValidEmail(email) &&
+      name.trim().length > 0 &&
+      password.length >= 8 &&
+      addressLine1.trim().length > 0 &&
+      addressCity.trim().length > 0 &&
+      addressPostalCode.trim().length > 0 &&
+      addressCountry.trim().length > 0
+    );
+  }
+
+  async function handleCreateAccount() {
+    setAccountError(null);
+    if (password.length < 8) {
+      setAccountError(l.passwordTooShort);
+      return;
+    }
+    if (password !== passwordConfirm) {
+      setAccountError(l.passwordMismatch);
+      return;
+    }
+    if (!isAccountFormValid()) return;
+
+    setAccountSubmitting(true);
+    try {
+      const res = await fetch("/api/account", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password, name, address, locale }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAccountError(data.error ?? l.accountGenericError);
+        setAccountSubmitting(false);
+        return;
+      }
+      subscribeNewsletter();
+      setAccountSubmitting(false);
+      setStep("checkout");
+    } catch {
+      setAccountError(l.accountGenericError);
+      setAccountSubmitting(false);
+    }
+  }
+
   async function handleCheckout() {
     setLoading(true);
     try {
@@ -283,7 +616,14 @@ export default function OrderPage() {
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plates: totalPlates, plateLanguages, billing, locale }),
+        body: JSON.stringify({
+          plates: totalPlates,
+          plateLanguages,
+          billing,
+          locale,
+          email,
+          address,
+        }),
       });
       const data = await res.json();
       if (data.url) {
@@ -295,6 +635,27 @@ export default function OrderPage() {
       setLoading(false);
     }
   }
+
+  function handleStartTrial() {
+    setStep("trial-verify");
+  }
+
+  function handleTrialSuccess() {
+    router.push(`/${locale}/order/success?mode=trial`);
+  }
+
+  const trialVerifyCopy: TrialCardVerificationCopy = {
+    loading: l.trialLoadingLabel,
+    submitLabel: l.trialSubmitLabel,
+    submittingLabel: l.trialSubmittingLabel,
+    backLabel: l.trialBackLabel,
+    finePrint: `${l.trialVerifyFinePrintBefore}${annualSubPrice} ${p.currency}${l.trialVerifyFinePrintAfter}`,
+    genericError: l.trialGenericError,
+    initError: l.trialInitError,
+  };
+
+  const plateLanguagesForTrial: Record<string, number> = {};
+  for (const o of langRows) plateLanguagesForTrial[o.lang] = o.qty;
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6">
@@ -309,247 +670,546 @@ export default function OrderPage() {
           {l.back}
         </a>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-          {/* Gallery */}
-          <div>
-            <div className="aspect-square relative rounded-2xl overflow-hidden bg-white border border-gray-100">
-              <Image
-                src={galleryImages[locale][activeImage]}
-                alt={l.productName}
-                fill
-                priority
-                className="object-cover"
-              />
+        {step === "plan" && (
+          <div className="max-w-3xl mx-auto">
+            <button
+              type="button"
+              onClick={() => setStep("plates")}
+              className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-3 inline-flex items-center gap-1 cursor-pointer"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              {l.backToPlatesLabel}
+            </button>
+            <div className="text-center mb-10">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                {l.planStepTitle}
+              </h1>
+              <p className="text-gray-500">{l.planStepSubtitle}</p>
             </div>
-            {galleryImages[locale].length > 1 && (
-              <div className="flex gap-3 mt-4">
-                {galleryImages[locale].map((src, i) => (
-                  <button
-                    key={src}
-                    type="button"
-                    onClick={() => setActiveImage(i)}
-                    className={`w-20 h-20 relative rounded-xl overflow-hidden bg-white border-2 transition-colors cursor-pointer ${
-                      i === activeImage ? "border-brand-600" : "border-gray-100 hover:border-gray-200"
-                    }`}
-                  >
-                    <Image src={src} alt="" fill className="object-cover" />
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
 
-          {/* Details + purchase */}
-          <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{l.productName}</h1>
-
-            <div className="inline-flex items-center rounded-xl border border-gray-200 bg-white p-1 mb-4">
+            <div className="grid sm:grid-cols-3 gap-4">
               <button
                 type="button"
-                onClick={() => setBilling("monthly")}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-                  billing === "monthly"
-                    ? "bg-brand-600 text-white"
-                    : "text-gray-500 hover:text-gray-900"
-                }`}
+                onClick={() => selectPlan("monthly")}
+                className="text-left bg-white rounded-2xl border border-gray-200 p-6 hover:border-brand-600 transition-colors cursor-pointer"
               >
-                {l.billingMonthly}
+                <h3 className="font-semibold text-gray-900 mb-1">{l.planMonthlyTitle}</h3>
+                <p className="text-sm text-gray-500 mb-4">{l.planMonthlyDesc}</p>
+                <div className="flex items-baseline gap-1 mb-4">
+                  <span className="text-2xl font-bold text-gray-900">{p.subPrice}</span>
+                  <span className="text-gray-400 text-sm">
+                    {p.currency}
+                    {l.perMonth}
+                  </span>
+                </div>
+                <span className="inline-block w-full text-center bg-gray-100 text-gray-900 font-medium rounded-lg py-2.5 text-sm">
+                  {l.selectPlan}
+                </span>
               </button>
+
               <button
                 type="button"
-                onClick={() => setBilling("annual")}
-                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
-                  billing === "annual"
-                    ? "bg-brand-600 text-white"
-                    : "text-gray-500 hover:text-gray-900"
-                }`}
+                onClick={() => selectPlan("annual")}
+                className="text-left bg-white rounded-2xl border border-gray-200 p-6 hover:border-brand-600 transition-colors cursor-pointer"
               >
-                {l.billingAnnual}
-                <span className="ml-2 inline-block rounded-full bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5 align-middle">
-                  {l.annualSavingsBadge}
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-semibold text-gray-900">{l.planAnnualTitle}</h3>
+                  <span className="inline-block rounded-full bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-0.5">
+                    {l.annualSavingsBadge}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500 mb-4">{l.planAnnualDesc}</p>
+                <div className="flex items-baseline gap-1 mb-4">
+                  <span className="text-2xl font-bold text-gray-900">{annualSubPrice}</span>
+                  <span className="text-gray-400 text-sm">
+                    {p.currency}
+                    {l.periodAnnual}
+                  </span>
+                </div>
+                <span className="inline-block w-full text-center bg-gray-100 text-gray-900 font-medium rounded-lg py-2.5 text-sm">
+                  {l.selectPlan}
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => selectPlan("trial")}
+                className="text-left bg-white rounded-2xl border-2 border-brand-600 p-6 relative shadow-lg shadow-brand-600/10 cursor-pointer"
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-semibold text-gray-900">{l.planTrialTitle}</h3>
+                  <span className="inline-block rounded-full bg-brand-50 text-brand-600 text-xs font-semibold px-2 py-0.5">
+                    {l.planTrialBadge}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-500 mb-4">{l.planTrialDesc}</p>
+                <div className="flex items-baseline gap-1 mb-4">
+                  <span className="text-2xl font-bold text-gray-900">{l.planTrialToday}</span>
+                </div>
+                <span className="inline-block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-2.5 text-sm">
+                  {l.selectPlan}
                 </span>
               </button>
             </div>
+          </div>
+        )}
+
+        {step === "plates" && (
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
+            {/* Gallery */}
+            <div>
+              <div className="aspect-square relative rounded-2xl overflow-hidden bg-white border border-gray-100">
+                <Image
+                  src={galleryImages[locale][activeImage]}
+                  alt={l.productName}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+              {galleryImages[locale].length > 1 && (
+                <div className="flex gap-3 mt-4">
+                  {galleryImages[locale].map((src, i) => (
+                    <button
+                      key={src}
+                      type="button"
+                      onClick={() => setActiveImage(i)}
+                      className={`w-20 h-20 relative rounded-xl overflow-hidden bg-white border-2 transition-colors cursor-pointer ${
+                        i === activeImage ? "border-brand-600" : "border-gray-100 hover:border-gray-200"
+                      }`}
+                    >
+                      <Image src={src} alt="" fill className="object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Details + configuration */}
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">{l.productName}</h1>
+              <p className="text-gray-500 mb-6">{l.subtitle}</p>
+
+              <p className="text-gray-600 leading-relaxed mb-6">{l.description}</p>
+
+              {/* Includes */}
+              <div className="mb-6">
+                <p className="text-sm font-medium text-gray-900 mb-3 uppercase tracking-wide">
+                  {l.includes}
+                </p>
+                <ul className="space-y-2">
+                  {l.features.map((f) => (
+                    <li key={f} className="flex items-center gap-3">
+                      <svg
+                        className="w-5 h-5 text-brand-600 shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                      <span className="text-gray-700 text-sm">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border-t border-gray-200 my-6" />
+
+              {/* Quantity */}
+              <div className="mb-6">
+                <label className="block text-sm font-medium text-gray-900 mb-2">
+                  {l.quantity}
+                </label>
+                <p className="text-xs text-gray-400 mb-3">{l.platesDesc}</p>
+
+                <div className="space-y-2">
+                  {langRows.map((o) => (
+                    <div
+                      key={o.lang}
+                      className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-2.5"
+                    >
+                      <span className="text-sm font-medium text-gray-900">
+                        {l.languageNames[o.lang]}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <div className="inline-flex items-center rounded-lg border border-gray-300 overflow-hidden">
+                          <button
+                            type="button"
+                            onClick={() => setLangQty(o.lang, Math.max(1, o.qty - 1))}
+                            className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
+                          >
+                            -
+                          </button>
+                          <span className="w-11 text-center text-base font-semibold border-x border-gray-300 h-10 flex items-center justify-center">
+                            {o.qty}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => totalPlates < MAX_PLATES && setLangQty(o.lang, o.qty + 1)}
+                            className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
+                          >
+                            +
+                          </button>
+                        </div>
+                        {langRows.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => removeLanguage(o.lang)}
+                            aria-label={l.removeLanguage}
+                            title={l.removeLanguage}
+                            className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M6 18L18 6M6 6l12 12"
+                              />
+                            </svg>
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Add language */}
+                {availableLangs.length > 0 && (
+                  <div className="mt-3">
+                    <p className="text-xs text-gray-400 mb-2">{l.addLanguageHint}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {availableLangs.map((lang) => (
+                        <button
+                          key={lang}
+                          type="button"
+                          onClick={() => addLanguage(lang)}
+                          className="inline-flex items-center gap-1 rounded-full border border-dashed border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition-colors cursor-pointer"
+                        >
+                          + {l.languageNames[lang]}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {totalPlates > 1 ? (
+                  <div className="mt-3 text-sm text-gray-500">
+                    <span className="text-brand-600 font-medium">{l.firstFree}</span>
+                    {" + "}
+                    {extraPlates} {l.additional} × {p.platePrice} {p.currency} ={" "}
+                    <span className="font-semibold text-gray-900">
+                      {platesCost} {p.currency}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="mt-3 text-sm text-brand-600 font-medium">{l.free}</div>
+                )}
+              </div>
+
+              <button
+                type="button"
+                onClick={goToPlanOrCheckout}
+                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 cursor-pointer"
+              >
+                {l.next}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {step === "account" && (
+          <div className="max-w-md mx-auto bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
+            <button
+              type="button"
+              onClick={() => setStep(planPreset ? "plates" : "plan")}
+              className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-3 inline-flex items-center gap-1 cursor-pointer"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              {planPreset ? l.backToPlatesLabel : l.changePlan}
+            </button>
+
+            <h1 className="text-xl font-bold text-gray-900 mb-1">{l.accountStepTitle}</h1>
+            <p className="text-sm text-gray-500 mb-6">{l.accountStepSubtitle}</p>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleCreateAccount();
+              }}
+              className="space-y-4"
+            >
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                  {l.emailLabel}
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={l.emailPlaceholder}
+                  className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                  {l.nameLabel}
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder={l.namePlaceholder}
+                  className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                    {l.passwordLabel}
+                  </label>
+                  <input
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                    {l.passwordConfirmLabel}
+                  </label>
+                  <input
+                    type="password"
+                    required
+                    value={passwordConfirm}
+                    onChange={(e) => setPasswordConfirm(e.target.value)}
+                    className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                  />
+                </div>
+              </div>
+
+              <div className="border-t border-gray-200 pt-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                    {l.addressLine1Label}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={addressLine1}
+                    onChange={(e) => setAddressLine1(e.target.value)}
+                    placeholder={l.addressLine1Placeholder}
+                    className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 mt-3">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                      {l.addressCityLabel}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={addressCity}
+                      onChange={(e) => setAddressCity(e.target.value)}
+                      placeholder={l.addressCityPlaceholder}
+                      className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                      {l.addressPostalCodeLabel}
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={addressPostalCode}
+                      onChange={(e) => setAddressPostalCode(e.target.value)}
+                      className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-3">
+                  <label className="block text-sm font-medium text-gray-900 mb-1.5">
+                    {l.addressCountryLabel}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={addressCountry}
+                    onChange={(e) => setAddressCountry(e.target.value)}
+                    placeholder={l.addressCountryPlaceholder}
+                    className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
+                  />
+                </div>
+              </div>
+
+              {accountError && <p className="text-sm text-red-600">{accountError}</p>}
+
+              <button
+                type="submit"
+                disabled={accountSubmitting}
+                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+              >
+                {accountSubmitting ? l.accountSubmittingLabel : l.accountSubmitLabel}
+              </button>
+            </form>
+          </div>
+        )}
+
+        {step === "checkout" && (
+          <div className="max-w-md mx-auto">
+            <button
+              type="button"
+              onClick={() => setStep("account")}
+              className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-3 inline-flex items-center gap-1 cursor-pointer"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              {l.changePlan}
+            </button>
+
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{l.productName}</h1>
 
             <div className="flex items-baseline gap-2 mb-1">
-              <span className="text-3xl font-bold text-gray-900">
-                {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
-              </span>
-              <span className="text-gray-400">
-                {billing === "annual" ? l.periodAnnual : l.perMonth}
-              </span>
+              {billing === "trial" ? (
+                <span className="text-3xl font-bold text-gray-900">{l.planTrialToday}</span>
+              ) : (
+                <>
+                  <span className="text-3xl font-bold text-gray-900">
+                    {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
+                  </span>
+                  <span className="text-gray-400">
+                    {billing === "annual" ? l.periodAnnual : l.perMonth}
+                  </span>
+                </>
+              )}
             </div>
             {billing === "annual" && (
               <p className="text-xs text-gray-400 mb-5">{l.annualNote}</p>
             )}
-            {billing === "monthly" && <div className="mb-5" />}
-
-            <p className="text-gray-600 leading-relaxed mb-6">{l.description}</p>
-
-            {/* Includes */}
-            <div className="mb-6">
-              <p className="text-sm font-medium text-gray-900 mb-3 uppercase tracking-wide">
-                {l.includes}
+            {billing === "trial" && (
+              <p className="text-xs text-gray-400 mb-5">
+                {l.trialFinePrintBefore}
+                <strong>
+                  {annualSubPrice} {p.currency}
+                  {l.periodAnnual}
+                </strong>
+                {l.trialFinePrintAfter}
               </p>
-              <ul className="space-y-2">
-                {l.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3">
-                    <svg
-                      className="w-5 h-5 text-brand-600 shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="text-gray-700 text-sm">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="border-t border-gray-200 my-6" />
-
-            {/* Quantity */}
-            <div className="mb-2">
-              <label className="block text-sm font-medium text-gray-900 mb-2">
-                {l.quantity}
-              </label>
-              <p className="text-xs text-gray-400 mb-3">{l.platesDesc}</p>
-
-              <div className="space-y-2">
-                {langRows.map((o) => (
-                  <div
-                    key={o.lang}
-                    className="flex items-center justify-between gap-3 rounded-xl border border-gray-200 bg-white px-4 py-2.5"
-                  >
-                    <span className="text-sm font-medium text-gray-900">
-                      {l.languageNames[o.lang]}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <div className="inline-flex items-center rounded-lg border border-gray-300 overflow-hidden">
-                        <button
-                          type="button"
-                          onClick={() => setLangQty(o.lang, Math.max(1, o.qty - 1))}
-                          className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-                        >
-                          -
-                        </button>
-                        <span className="w-11 text-center text-base font-semibold border-x border-gray-300 h-10 flex items-center justify-center">
-                          {o.qty}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => totalPlates < MAX_PLATES && setLangQty(o.lang, o.qty + 1)}
-                          className="w-10 h-10 flex items-center justify-center text-lg font-medium text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer"
-                        >
-                          +
-                        </button>
-                      </div>
-                      {langRows.length > 1 && (
-                        <button
-                          type="button"
-                          onClick={() => removeLanguage(o.lang)}
-                          aria-label={l.removeLanguage}
-                          title={l.removeLanguage}
-                          className="w-10 h-10 flex items-center justify-center rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 transition-colors cursor-pointer"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M6 18L18 6M6 6l12 12"
-                            />
-                          </svg>
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Add language */}
-              {availableLangs.length > 0 && (
-                <div className="mt-3">
-                  <p className="text-xs text-gray-400 mb-2">{l.addLanguageHint}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {availableLangs.map((lang) => (
-                      <button
-                        key={lang}
-                        type="button"
-                        onClick={() => addLanguage(lang)}
-                        className="inline-flex items-center gap-1 rounded-full border border-dashed border-gray-300 px-3 py-1.5 text-sm text-gray-600 hover:border-brand-600 hover:text-brand-600 transition-colors cursor-pointer"
-                      >
-                        + {l.languageNames[lang]}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {totalPlates > 1 ? (
-                <div className="mt-3 text-sm text-gray-500">
-                  <span className="text-brand-600 font-medium">{l.firstFree}</span>
-                  {" + "}
-                  {extraPlates} {l.additional} × {p.platePrice} {p.currency} ={" "}
-                  <span className="font-semibold text-gray-900">
-                    {platesCost} {p.currency}
-                  </span>
-                </div>
-              ) : (
-                <div className="mt-3 text-sm text-brand-600 font-medium">{l.free}</div>
-              )}
-            </div>
+            )}
+            {billing === "monthly" && <div className="mb-5" />}
 
             <div className="border-t border-gray-200 my-6" />
 
             {/* Order summary */}
             <div className="space-y-2 text-sm mb-6">
-              <div className="flex justify-between">
-                <span className="text-gray-500">
-                  {billing === "annual" ? l.billingAnnual : l.monthlyFee}
-                </span>
-                <span className="font-medium text-gray-900">
-                  {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
-                </span>
-              </div>
-              {platesCost > 0 && (
-                <div className="flex justify-between">
-                  <span className="text-gray-500">
-                    {l.platesOnetime} ({extraPlates}×)
-                  </span>
-                  <span className="font-medium text-gray-900">
-                    {platesCost} {p.currency}
-                  </span>
-                </div>
+              {billing === "trial" ? (
+                <>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">{l.trialTodayLabel}</span>
+                    <span className="font-medium text-gray-900">
+                      {platesCost} {p.currency}
+                    </span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">{l.trialAfterLabel}</span>
+                    <span className="font-medium text-gray-900">
+                      {annualSubPrice} {p.currency}
+                      {l.periodAnnual}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex justify-between">
+                    <span className="text-gray-500">
+                      {billing === "annual" ? l.billingAnnual : l.monthlyFee}
+                    </span>
+                    <span className="font-medium text-gray-900">
+                      {billing === "annual" ? annualSubPrice : p.subPrice} {p.currency}
+                    </span>
+                  </div>
+                  {platesCost > 0 && (
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">
+                        {l.platesOnetime} ({extraPlates}×)
+                      </span>
+                      <span className="font-medium text-gray-900">
+                        {platesCost} {p.currency}
+                      </span>
+                    </div>
+                  )}
+                  <div className="border-t border-gray-100 pt-2 flex justify-between">
+                    <span className="font-semibold text-gray-900">{l.total}</span>
+                    <span className="text-xl font-bold text-gray-900">
+                      {totalNow} {p.currency}
+                    </span>
+                  </div>
+                </>
               )}
-              <div className="border-t border-gray-100 pt-2 flex justify-between">
-                <span className="font-semibold text-gray-900">{l.total}</span>
-                <span className="text-xl font-bold text-gray-900">
-                  {totalNow} {p.currency}
-                </span>
-              </div>
             </div>
 
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-            >
-              {loading ? l.loading : l.checkout}
-            </button>
+            {billing === "trial" ? (
+              <button
+                onClick={handleStartTrial}
+                disabled={!isValidEmail(email)}
+                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+              >
+                {l.startTrialCta}
+              </button>
+            ) : (
+              <button
+                onClick={handleCheckout}
+                disabled={loading}
+                className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+              >
+                {loading ? l.loading : l.checkout}
+              </button>
+            )}
 
-            <p className="text-xs text-gray-400 mt-3 text-center">
-              {billing === "annual" ? l.subscriptionNoteAnnual : l.subscriptionNote}
-            </p>
+            {billing !== "trial" && (
+              <p className="text-xs text-gray-400 mt-3 text-center">
+                {billing === "annual" ? l.subscriptionNoteAnnual : l.subscriptionNote}
+              </p>
+            )}
           </div>
-        </div>
+        )}
+
+        {step === "trial-verify" && (
+          <div className="max-w-md mx-auto bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
+            <h1 className="text-xl font-bold text-gray-900 mb-6">{l.trialVerifyTitle}</h1>
+            <TrialCardVerification
+              locale={locale}
+              email={email}
+              plates={totalPlates}
+              plateLanguages={plateLanguagesForTrial}
+              address={address}
+              copy={trialVerifyCopy}
+              onSuccess={handleTrialSuccess}
+              onBack={() => setStep("checkout")}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

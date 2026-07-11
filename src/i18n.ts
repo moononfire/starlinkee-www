@@ -12,7 +12,7 @@ const translations = {
       features: "Funkcje",
       pricing: "Cennik",
       contact: "Kontakt",
-      getStarted: "Kup teraz",
+      getStarted: "Dołącz teraz",
     },
     hero: {
       badge: "System opinii & lojalności dla gastronomii",
@@ -20,7 +20,7 @@ const translations = {
       titleHighlight: "Więcej powracających klientów.",
       subtitle:
         "Tabliczki NFC, które automatycznie filtrują negatywne opinie, wysyłają kupony promocyjne i budują lojalność — bez aplikacji dla Twoich klientów.",
-      cta: "Kup teraz",
+      cta: "Dołącz teraz",
       ctaSecondary: "Zamów bezpłatną prezentację",
     },
     features: {
@@ -55,7 +55,7 @@ const translations = {
       feature5: "Panel administracyjny",
       feature6: "200 SMS-ów/mies. w cenie",
       feature7: "Wsparcie techniczne",
-      cta: "Kup teraz",
+      cta: "Dołącz teraz",
       plates: "Pierwsza tabliczka NFC gratis, każda kolejna 29 zł",
       periodAnnual: "/rok",
       billingMonthly: "Płatność miesięczna",
@@ -63,6 +63,7 @@ const translations = {
       annualSavingsBadge: "2 miesiące gratis",
       annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
       comingSoon: "Wkrótce dostępne",
+      trialTeaser: "30 dni za darmo",
     },
     liveDemo: {
       sectionTitle: "Zobacz to na żywo",
@@ -120,13 +121,22 @@ const translations = {
       placeholder: "Napisz wiadomość...",
       sendAria: "Wyślij",
     },
+    orderSuccess: {
+      title: "Zamówienie przyjęte!",
+      bodyPaid1: "Dziękujemy za zakup. Na podany adres e-mail wysłaliśmy potwierdzenie zamówienia oraz link do aktywacji panelu.",
+      bodyPaid2: "Tabliczki NFC wyślemy na podany adres w ciągu 3-5 dni roboczych.",
+      titleTrial: "Trial rozpoczęty!",
+      bodyTrial1: "Masz 30 dni na sprawdzenie Starlinkee Pro bez żadnych opłat. Potwierdzenie i instrukcje wysłaliśmy na podany adres e-mail.",
+      bodyTrial2: "Jeśli nic nie zrobisz, po 30 dniach naliczymy opłatę roczną zgodnie z Regulaminem — możesz zrezygnować w dowolnym momencie wcześniej.",
+      back: "Wróć na stronę główną",
+    },
   },
   en: {
     nav: {
       features: "Features",
       pricing: "Pricing",
       contact: "Contact",
-      getStarted: "Buy now",
+      getStarted: "Join now",
     },
     hero: {
       badge: "Review & loyalty system for restaurants",
@@ -134,7 +144,7 @@ const translations = {
       titleHighlight: "More returning customers.",
       subtitle:
         "NFC plates that automatically filter negative reviews, send promo coupons, and build loyalty — no app install needed for your customers.",
-      cta: "Buy now",
+      cta: "Join now",
       ctaSecondary: "Book a free demo",
     },
     features: {
@@ -169,7 +179,7 @@ const translations = {
       feature5: "Admin dashboard",
       feature6: "200 SMS/mo included",
       feature7: "Technical support",
-      cta: "Buy now",
+      cta: "Join now",
       plates: "First NFC plate free, additional plates €9 each",
       periodAnnual: "/yr",
       billingMonthly: "Monthly billing",
@@ -177,6 +187,7 @@ const translations = {
       annualSavingsBadge: "2 months free",
       annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
       comingSoon: "Coming soon",
+      trialTeaser: "30 days free",
     },
     liveDemo: {
       sectionTitle: "See it live",
@@ -234,13 +245,22 @@ const translations = {
       placeholder: "Type a message...",
       sendAria: "Send",
     },
+    orderSuccess: {
+      title: "Order confirmed!",
+      bodyPaid1: "Thanks for your purchase. We've sent an order confirmation and a panel activation link to your email.",
+      bodyPaid2: "We'll ship your NFC plates within 3-5 business days.",
+      titleTrial: "Trial started!",
+      bodyTrial1: "You have 30 days to try Starlinkee Pro, free of charge. We've sent a confirmation and instructions to your email.",
+      bodyTrial2: "If you do nothing, we'll charge the annual price after 30 days per our Terms of Service — you can cancel anytime before then.",
+      back: "Back to homepage",
+    },
   },
   de: {
     nav: {
       features: "Funktionen",
       pricing: "Preise",
       contact: "Kontakt",
-      getStarted: "Jetzt kaufen",
+      getStarted: "Jetzt beitreten",
     },
     hero: {
       badge: "Bewertungs- & Treueprogramm für Gastronomie",
@@ -248,7 +268,7 @@ const translations = {
       titleHighlight: "Mehr wiederkehrende Gäste.",
       subtitle:
         "NFC-Aufsteller, die negative Bewertungen automatisch filtern, Rabattgutscheine per SMS versenden und Kundentreue aufbauen — ohne App für Ihre Gäste.",
-      cta: "Jetzt kaufen",
+      cta: "Jetzt beitreten",
       ctaSecondary: "Kostenlose Demo buchen",
     },
     features: {
@@ -283,7 +303,7 @@ const translations = {
       feature5: "Admin-Dashboard",
       feature6: "200 SMS/Monat inklusive",
       feature7: "Technischer Support",
-      cta: "Jetzt kaufen",
+      cta: "Jetzt beitreten",
       plates: "Erster NFC-Aufsteller gratis, weitere je 9 €",
       periodAnnual: "/Jahr",
       billingMonthly: "Monatliche Zahlung",
@@ -291,6 +311,7 @@ const translations = {
       annualSavingsBadge: "2 Monate gratis",
       annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
       comingSoon: "Demnächst verfügbar",
+      trialTeaser: "30 Tage gratis",
     },
     liveDemo: {
       sectionTitle: "Live erleben",
@@ -348,13 +369,22 @@ const translations = {
       placeholder: "Nachricht schreiben...",
       sendAria: "Senden",
     },
+    orderSuccess: {
+      title: "Bestellung eingegangen!",
+      bodyPaid1: "Vielen Dank für Ihren Kauf. Wir haben eine Bestellbestätigung und einen Link zur Aktivierung des Panels an Ihre E-Mail-Adresse gesendet.",
+      bodyPaid2: "Die NFC-Aufsteller versenden wir innerhalb von 3-5 Werktagen.",
+      titleTrial: "Testphase gestartet!",
+      bodyTrial1: "Sie haben 30 Tage Zeit, Starlinkee Pro kostenlos zu testen. Bestätigung und Anleitung haben wir an Ihre E-Mail-Adresse gesendet.",
+      bodyTrial2: "Wenn Sie nichts unternehmen, berechnen wir nach 30 Tagen den Jahrespreis gemäß unseren AGB — Sie können vorher jederzeit kündigen.",
+      back: "Zurück zur Startseite",
+    },
   },
   it: {
     nav: {
       features: "Funzionalità",
       pricing: "Prezzi",
       contact: "Contatti",
-      getStarted: "Acquista ora",
+      getStarted: "Iscriviti ora",
     },
     hero: {
       badge: "Sistema di recensioni e fedeltà per la ristorazione",
@@ -362,7 +392,7 @@ const translations = {
       titleHighlight: "Più clienti che ritornano.",
       subtitle:
         "Targhe NFC che filtrano automaticamente le recensioni negative, inviano coupon promozionali via SMS e costruiscono la fedeltà — senza app per i tuoi clienti.",
-      cta: "Acquista ora",
+      cta: "Iscriviti ora",
       ctaSecondary: "Prenota una demo gratuita",
     },
     features: {
@@ -397,7 +427,7 @@ const translations = {
       feature5: "Pannello di controllo",
       feature6: "200 SMS/mese inclusi",
       feature7: "Supporto tecnico",
-      cta: "Acquista ora",
+      cta: "Iscriviti ora",
       plates: "Prima targa NFC gratis, ogni altra 9 €",
       periodAnnual: "/anno",
       billingMonthly: "Pagamento mensile",
@@ -405,6 +435,7 @@ const translations = {
       annualSavingsBadge: "2 mesi gratis",
       annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
       comingSoon: "Prossimamente",
+      trialTeaser: "30 giorni gratis",
     },
     liveDemo: {
       sectionTitle: "Guardalo dal vivo",
@@ -461,6 +492,15 @@ const translations = {
       greeting: "Ciao! 👋 Come posso aiutarti?",
       placeholder: "Scrivi un messaggio...",
       sendAria: "Invia",
+    },
+    orderSuccess: {
+      title: "Ordine confermato!",
+      bodyPaid1: "Grazie per il tuo acquisto. Abbiamo inviato la conferma dell'ordine e il link di attivazione del pannello al tuo indirizzo e-mail.",
+      bodyPaid2: "Spediremo le targhe NFC all'indirizzo indicato entro 3-5 giorni lavorativi.",
+      titleTrial: "Prova avviata!",
+      bodyTrial1: "Hai 30 giorni per provare Starlinkee Pro senza alcun costo. Abbiamo inviato conferma e istruzioni al tuo indirizzo e-mail.",
+      bodyTrial2: "Se non fai nulla, dopo 30 giorni addebiteremo il prezzo annuale secondo i Termini di Servizio — puoi annullare in qualsiasi momento prima.",
+      back: "Torna alla homepage",
     },
   },
 };

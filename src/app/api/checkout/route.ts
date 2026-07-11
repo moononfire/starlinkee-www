@@ -8,7 +8,14 @@ function getStripe() {
 const VALID_LOCALES = ["pl", "en", "de", "it"] as const;
 
 export async function POST(request: NextRequest) {
-  const { plates, plateLanguages, billing: rawBilling, locale: rawLocale } = await request.json();
+  const {
+    plates,
+    plateLanguages,
+    billing: rawBilling,
+    locale: rawLocale,
+    email,
+    address,
+  } = await request.json();
   const locale = VALID_LOCALES.includes(rawLocale) ? rawLocale : "pl";
   const billing = rawBilling === "annual" ? "annual" : "monthly";
 
@@ -55,17 +62,20 @@ export async function POST(request: NextRequest) {
       lineItems.push({ price: platePriceId, quantity: extraPlates });
     }
 
+    const shippingRateId = process.env.STRIPE_SHIPPING_RATE_ID;
+
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       currency,
       line_items: lineItems,
       payment_method_types: ["card"],
       billing_address_collection: "required",
-      shipping_address_collection: {
-        allowed_countries: ["PL", "DE", "AT", "CZ", "SK", "GB", "US", "NL", "FR", "ES", "IT"],
-      },
+      ...(shippingRateId
+        ? { shipping_options: [{ shipping_rate: shippingRateId }] }
+        : {}),
       tax_id_collection: { enabled: true },
       locale,
+      ...(email ? { customer_email: email } : {}),
       success_url: `${appUrl}/${locale}/order/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/${locale}/order`,
       metadata: {
@@ -73,6 +83,14 @@ export async function POST(request: NextRequest) {
         billing,
         ...(platesByLanguage
           ? { plates_by_language: JSON.stringify(platesByLanguage) }
+          : {}),
+        ...(address
+          ? {
+              shipping_address_line1: String(address.line1 ?? ""),
+              shipping_address_city: String(address.city ?? ""),
+              shipping_address_postal_code: String(address.postalCode ?? ""),
+              shipping_address_country: String(address.country ?? ""),
+            }
           : {}),
       },
     });

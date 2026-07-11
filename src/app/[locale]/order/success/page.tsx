@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations, LOCALES, type Locale } from "@/i18n";
 
 export const metadata: Metadata = {
   title: "Zamówienie przyjęte | Starlinkee",
@@ -7,10 +8,17 @@ export const metadata: Metadata = {
 
 export default async function OrderSuccess({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }) {
-  const { locale } = await params;
+  const { locale: rawLocale } = await params;
+  const { mode } = await searchParams;
+  const locale: Locale = LOCALES.includes(rawLocale as Locale) ? (rawLocale as Locale) : "pl";
+  const t = getTranslations(locale).orderSuccess;
+  const isTrial = mode === "trial";
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md text-center">
@@ -30,20 +38,15 @@ export default async function OrderSuccess({
           </svg>
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">
-          Zamówienie przyjęte!
+          {isTrial ? t.titleTrial : t.title}
         </h1>
-        <p className="text-gray-500 mb-2">
-          Dziękujemy za zakup. Na podany adres e-mail wysłaliśmy potwierdzenie
-          zamówienia oraz link do aktywacji panelu.
-        </p>
-        <p className="text-gray-500 mb-8">
-          Tabliczki NFC wyślemy na podany adres w ciągu 3-5 dni roboczych.
-        </p>
+        <p className="text-gray-500 mb-2">{isTrial ? t.bodyTrial1 : t.bodyPaid1}</p>
+        <p className="text-gray-500 mb-8">{isTrial ? t.bodyTrial2 : t.bodyPaid2}</p>
         <a
           href={`/${locale}`}
           className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-xl px-6 py-3 hover:bg-brand-700 transition-colors"
         >
-          Wróć na stronę główną
+          {t.back}
         </a>
       </div>
     </div>
