@@ -59,6 +59,7 @@ export default function TrialCardVerification({
 }: Props) {
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [paymentIntentId, setPaymentIntentId] = useState<string | null>(null);
+  const [customerId, setCustomerId] = useState<string | null>(null);
   const [initError, setInitError] = useState(false);
 
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function TrialCardVerification({
     fetch("/api/checkout/trial/init", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ locale, plates, plateLanguages }),
+      body: JSON.stringify({ locale, plates, plateLanguages, email, address }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -74,6 +75,7 @@ export default function TrialCardVerification({
         if (data.clientSecret) {
           setClientSecret(data.clientSecret);
           setPaymentIntentId(data.paymentIntentId);
+          setCustomerId(data.customerId);
         } else {
           setInitError(true);
         }
@@ -102,7 +104,7 @@ export default function TrialCardVerification({
     );
   }
 
-  if (!clientSecret || !paymentIntentId) {
+  if (!clientSecret || !paymentIntentId || !customerId) {
     return <div className="py-10 text-center text-sm text-gray-400">{copy.loading}</div>;
   }
 
@@ -113,11 +115,10 @@ export default function TrialCardVerification({
     >
       <TrialForm
         locale={locale}
-        email={email}
         plates={plates}
         plateLanguages={plateLanguages}
-        address={address}
         paymentIntentId={paymentIntentId}
+        customerId={customerId}
         copy={copy}
         onSuccess={onSuccess}
         onBack={onBack}
@@ -128,21 +129,19 @@ export default function TrialCardVerification({
 
 function TrialForm({
   locale,
-  email,
   plates,
   plateLanguages,
-  address,
   paymentIntentId,
+  customerId,
   copy,
   onSuccess,
   onBack,
 }: {
   locale: Locale;
-  email: string;
   plates: number;
   plateLanguages: Record<string, number>;
-  address: TrialAddress;
   paymentIntentId: string;
+  customerId: string;
   copy: TrialCardVerificationCopy;
   onSuccess: (subscriptionId: string) => void;
   onBack: () => void;
@@ -178,7 +177,7 @@ function TrialForm({
       const res = await fetch("/api/checkout/trial/complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ paymentIntentId, email, locale, plates, plateLanguages, address }),
+        body: JSON.stringify({ paymentIntentId, customerId, locale, plates, plateLanguages }),
       });
       const data = await res.json();
       if (data.ok) {

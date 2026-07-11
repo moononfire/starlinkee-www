@@ -8,8 +8,12 @@ function getStripe() {
 }
 
 export async function POST(request: NextRequest) {
-  const { plates, plateLanguages, locale: rawLocale } = await request.json();
+  const { plates, plateLanguages, locale: rawLocale, email, address } = await request.json();
   const locale: Locale = LOCALES.includes(rawLocale) ? rawLocale : "pl";
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  }
 
   let platesByLanguage: Record<string, number> | null = null;
   if (plateLanguages && typeof plateLanguages === "object" && !Array.isArray(plateLanguages)) {
@@ -35,9 +39,33 @@ export async function POST(request: NextRequest) {
 
   try {
     const stripe = getStripe();
+
+    // Klienta tworzymy przed pre-autoryzacją i podpinamy go do PaymentIntent
+    // z setup_future_usage — inaczej Stripe odrzuci ponowne użycie tej metody
+    // płatności (subskrypcja po triali, dopłata za dodatkowe tabliczki).
+    const customer = await stripe.customers.create({
+      email,
+      metadata: { locale },
+      ...(address
+        ? {
+            shipping: {
+              name: String(address.name ?? email),
+              address: {
+                line1: String(address.line1 ?? ""),
+                city: String(address.city ?? ""),
+                postal_code: String(address.postalCode ?? ""),
+                country: String(address.country ?? ""),
+              },
+            },
+          }
+        : {}),
+    });
+
     const paymentIntent = await stripe.paymentIntents.create({
       amount: amountMinor,
       currency,
+      customer: customer.id,
+      setup_future_usage: "off_session",
       capture_method: "manual",
       automatic_payment_methods: { enabled: true, allow_redirects: "never" },
       metadata: {
@@ -52,6 +80,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       clientSecret: paymentIntent.client_secret,
       paymentIntentId: paymentIntent.id,
+      customerId: customer.id,
       annualAmount,
       currency,
     });

@@ -10,11 +10,10 @@ function getStripe() {
 export async function POST(request: NextRequest) {
   const {
     paymentIntentId,
-    email,
+    customerId,
     locale: rawLocale,
     plates,
     plateLanguages,
-    address,
   } = await request.json();
 
   const locale: Locale = LOCALES.includes(rawLocale) ? rawLocale : "pl";
@@ -22,8 +21,8 @@ export async function POST(request: NextRequest) {
   if (!paymentIntentId || typeof paymentIntentId !== "string") {
     return NextResponse.json({ error: "Missing paymentIntentId" }, { status: 400 });
   }
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+  if (!customerId || typeof customerId !== "string") {
+    return NextResponse.json({ error: "Missing customerId" }, { status: 400 });
   }
 
   const subscriptionPriceId = process.env.STRIPE_PRICE_ID_SUBSCRIPTION_YEARLY;
@@ -61,6 +60,9 @@ export async function POST(request: NextRequest) {
     if (paymentIntent.metadata?.purpose !== "trial_preauth") {
       return NextResponse.json({ error: "Invalid verification" }, { status: 400 });
     }
+    if (paymentIntent.customer !== customerId) {
+      return NextResponse.json({ error: "Customer mismatch" }, { status: 400 });
+    }
     const expectedAmount = Math.round(annualSubPrice(locale) * 100);
     if (paymentIntent.amount !== expectedAmount) {
       return NextResponse.json({ error: "Amount mismatch" }, { status: 400 });
@@ -75,26 +77,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Zwolnienie blokady — pieniądze nigdy nie zostały pobrane, to była tylko weryfikacja.
+    // Metoda płatności została już zapisana do klienta dzięki setup_future_usage w trial/init.
     await stripe.paymentIntents.cancel(paymentIntentId);
 
-    const customer = await stripe.customers.create({
-      email,
-      payment_method: paymentMethodId,
+    const customer = await stripe.customers.update(customerId, {
       invoice_settings: { default_payment_method: paymentMethodId },
-      metadata: { locale },
-      ...(address
-        ? {
-            shipping: {
-              name: String(address.name ?? email),
-              address: {
-                line1: String(address.line1 ?? ""),
-                city: String(address.city ?? ""),
-                postal_code: String(address.postalCode ?? ""),
-                country: String(address.country ?? ""),
-              },
-            },
-          }
-        : {}),
     });
 
     const subscription = await stripe.subscriptions.create({
