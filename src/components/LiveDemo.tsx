@@ -12,6 +12,7 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState<DemoStep | "idle">("idle");
   const [iframeKey, setIframeKey] = useState(0);
+  const [shouldLoadIframe, setShouldLoadIframe] = useState(false);
 
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
@@ -22,6 +23,15 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
     }
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
+  // Preload the demo iframe in the background on desktop only, a couple
+  // seconds after page load, so it's already warm by the time the user
+  // clicks the expand button (avoids a white flash while it loads).
+  useEffect(() => {
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
+    const timer = setTimeout(() => setShouldLoadIframe(true), 2000);
+    return () => clearTimeout(timer);
   }, []);
 
   function restart() {
@@ -57,17 +67,20 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
         <div className="hidden md:block text-center">
           <button
             type="button"
-            onClick={() => setIsOpen((v) => !v)}
+            onClick={() => {
+              setShouldLoadIframe(true);
+              setIsOpen((v) => !v);
+            }}
             className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium rounded-xl px-8 py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
           >
             {isOpen ? t.liveDemo.collapseCta : t.liveDemo.expandCta}
           </button>
 
-          {isOpen && (
-            <>
+          {(isOpen || shouldLoadIframe) && (
+            <div className={isOpen ? "" : "hidden"}>
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mt-10">
                 <div
-                  className="relative w-[300px] sm:w-[320px] aspect-[9/19.5] rounded-[3.2rem] p-[14px] shrink-0"
+                  className="relative w-[360px] sm:w-[384px] aspect-[9/19.5] rounded-[3.2rem] p-[14px] shrink-0"
                   style={{
                     background: "linear-gradient(160deg, #60a5fa 0%, #2563eb 45%, #1e40af 100%)",
                     boxShadow:
@@ -103,7 +116,6 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
                       key={iframeKey}
                       src={DEMO_URL}
                       title={t.liveDemo.iframeTitle}
-                      loading="lazy"
                       className="relative h-full w-full border-0"
                     />
 
@@ -131,7 +143,7 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
                   {t.liveDemo.cta} →
                 </a>
               </div>
-            </>
+            </div>
           )}
         </div>
       </div>
