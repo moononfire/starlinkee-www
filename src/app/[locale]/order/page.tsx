@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { PRICING, annualSubPrice as computeAnnualSubPrice } from "@/lib/pricing";
 import TrialCardVerification, {
   type TrialCardVerificationCopy,
@@ -64,6 +65,7 @@ const t: Record<Locale, {
   emailPlaceholder: string;
   accountStepTitle: string;
   accountStepSubtitle: string;
+  accountNewsletterNotePrefix: string;
   nameLabel: string;
   namePlaceholder: string;
   passwordLabel: string;
@@ -77,6 +79,11 @@ const t: Record<Locale, {
   addressPostalCodeLabel: string;
   addressCountryLabel: string;
   addressCountryPlaceholder: string;
+  countryGermanyLabel: string;
+  countryItalyLabel: string;
+  countryAustriaLabel: string;
+  countryPolandLabel: string;
+  countrySwitzerlandLabel: string;
   accountSubmitLabel: string;
   accountSubmittingLabel: string;
   accountGenericError: string;
@@ -87,6 +94,15 @@ const t: Record<Locale, {
   stepCheckoutLabel: string;
   trialFinePrintBefore: string;
   trialFinePrintAfter: string;
+  trialFinePrintTermsLabel: string;
+  trialFinePrintTermsSuffix: string;
+  planTrialLegalNoteBefore: string;
+  planTrialLegalNoteMid: string;
+  planTrialLegalNoteAfter: string;
+  planTrialLegalNoteConsentPrefix: string;
+  planTrialLegalNoteTermsLabel: string;
+  planTrialLegalNoteAnd: string;
+  planTrialLegalNotePrivacyLabel: string;
   trialTodayLabel: string;
   trialAfterLabel: string;
   startTrialCta: string;
@@ -161,6 +177,8 @@ const t: Record<Locale, {
     emailPlaceholder: "ty@twojafirma.pl",
     accountStepTitle: "Załóż konto",
     accountStepSubtitle: "Będziesz mieć dostęp do panelu administracyjnego Starlinkee.",
+    accountNewsletterNotePrefix:
+      "Zakładając konto, zapisujesz się na nasz newsletter o Twoim koncie i subskrypcji (możesz zrezygnować w każdej chwili) oraz akceptujesz",
     nameLabel: "Imię i nazwisko / nazwa firmy",
     namePlaceholder: "Jan Kowalski",
     passwordLabel: "Hasło",
@@ -173,7 +191,12 @@ const t: Record<Locale, {
     addressCityPlaceholder: "Warszawa",
     addressPostalCodeLabel: "Kod pocztowy",
     addressCountryLabel: "Kraj",
-    addressCountryPlaceholder: "Polska",
+    addressCountryPlaceholder: "Wybierz kraj",
+    countryGermanyLabel: "Niemcy",
+    countryItalyLabel: "Włochy",
+    countryAustriaLabel: "Austria",
+    countryPolandLabel: "Polska",
+    countrySwitzerlandLabel: "Szwajcaria",
     accountSubmitLabel: "Dalej",
     accountSubmittingLabel: "Zakładanie konta...",
     accountGenericError: "Nie udało się założyć konta. Sprawdź dane i spróbuj ponownie.",
@@ -183,7 +206,18 @@ const t: Record<Locale, {
     stepAccountLabel: "Konto",
     stepCheckoutLabel: "Płatność",
     trialFinePrintBefore: "Wymagana karta do weryfikacji. Po 30 dniach naliczymy ",
-    trialFinePrintAfter: " — chyba że zrezygnujesz wcześniej. Obowiązuje Regulamin.",
+    trialFinePrintAfter: " — chyba że zrezygnujesz wcześniej. Obowiązuje ",
+    trialFinePrintTermsLabel: "Regulamin",
+    trialFinePrintTermsSuffix: ".",
+    planTrialLegalNoteBefore:
+      "Do rozpoczęcia okresu próbnego wymagana jest karta płatnicza. Jeśli nie zrezygnujesz w ciągu 30 dni, po zakończeniu okresu próbnego automatycznie obciążymy Twoją kartę opłatą roczną w wysokości ",
+    planTrialLegalNoteMid:
+      ". Możesz też wcześniej, w ustawieniach konta, zmienić rozliczenie na miesięczne — wtedy zamiast tego pobierzemy opłatę miesięczną w wysokości ",
+    planTrialLegalNoteAfter: ".",
+    planTrialLegalNoteConsentPrefix: "Korzystając z okresu próbnego, akceptujesz",
+    planTrialLegalNoteTermsLabel: "Regulamin",
+    planTrialLegalNoteAnd: "i",
+    planTrialLegalNotePrivacyLabel: "Politykę Prywatności",
     trialTodayLabel: "Dziś (trial)",
     trialAfterLabel: "Po 30 dniach",
     startTrialCta: "Kontynuuj",
@@ -258,6 +292,8 @@ const t: Record<Locale, {
     emailPlaceholder: "you@yourcompany.com",
     accountStepTitle: "Create your account",
     accountStepSubtitle: "You'll get access to the Starlinkee admin dashboard.",
+    accountNewsletterNotePrefix:
+      "By creating an account, you'll be signed up to our newsletter about your account and subscription (you can unsubscribe at any time), and you agree to the",
     nameLabel: "Full name / company name",
     namePlaceholder: "John Smith",
     passwordLabel: "Password",
@@ -270,7 +306,12 @@ const t: Record<Locale, {
     addressCityPlaceholder: "New York",
     addressPostalCodeLabel: "Postal code",
     addressCountryLabel: "Country",
-    addressCountryPlaceholder: "United States",
+    addressCountryPlaceholder: "Select a country",
+    countryGermanyLabel: "Germany",
+    countryItalyLabel: "Italy",
+    countryAustriaLabel: "Austria",
+    countryPolandLabel: "Poland",
+    countrySwitzerlandLabel: "Switzerland",
     accountSubmitLabel: "Next",
     accountSubmittingLabel: "Creating account...",
     accountGenericError: "We couldn't create your account. Please check your details and try again.",
@@ -280,7 +321,18 @@ const t: Record<Locale, {
     stepAccountLabel: "Account",
     stepCheckoutLabel: "Payment",
     trialFinePrintBefore: "Card required for verification. After 30 days we'll charge ",
-    trialFinePrintAfter: " — unless you cancel first. Terms of Service apply.",
+    trialFinePrintAfter: " — unless you cancel first. Our ",
+    trialFinePrintTermsLabel: "Terms of Service",
+    trialFinePrintTermsSuffix: " apply.",
+    planTrialLegalNoteBefore:
+      "A payment card is required to start the trial. If you don't cancel within 30 days, once the trial ends we'll automatically charge your card the annual fee of ",
+    planTrialLegalNoteMid:
+      ". You can also switch to monthly billing beforehand in your account settings — in that case we'll charge the monthly fee of ",
+    planTrialLegalNoteAfter: " instead.",
+    planTrialLegalNoteConsentPrefix: "By starting the trial you agree to the",
+    planTrialLegalNoteTermsLabel: "Terms of Service",
+    planTrialLegalNoteAnd: "and",
+    planTrialLegalNotePrivacyLabel: "Privacy Policy",
     trialTodayLabel: "Today (trial)",
     trialAfterLabel: "After 30 days",
     startTrialCta: "Continue",
@@ -355,6 +407,8 @@ const t: Record<Locale, {
     emailPlaceholder: "sie@ihrefirma.de",
     accountStepTitle: "Konto erstellen",
     accountStepSubtitle: "Sie erhalten Zugang zum Starlinkee Admin-Dashboard.",
+    accountNewsletterNotePrefix:
+      "Mit der Kontoerstellung werden Sie für unseren Newsletter zu Ihrem Konto und Abonnement angemeldet (jederzeit abbestellbar) und akzeptieren die",
     nameLabel: "Name / Firmenname",
     namePlaceholder: "Max Mustermann",
     passwordLabel: "Passwort",
@@ -367,7 +421,12 @@ const t: Record<Locale, {
     addressCityPlaceholder: "Berlin",
     addressPostalCodeLabel: "Postleitzahl",
     addressCountryLabel: "Land",
-    addressCountryPlaceholder: "Deutschland",
+    addressCountryPlaceholder: "Land auswählen",
+    countryGermanyLabel: "Deutschland",
+    countryItalyLabel: "Italien",
+    countryAustriaLabel: "Österreich",
+    countryPolandLabel: "Polen",
+    countrySwitzerlandLabel: "Schweiz",
     accountSubmitLabel: "Weiter",
     accountSubmittingLabel: "Konto wird erstellt...",
     accountGenericError: "Ihr Konto konnte nicht erstellt werden. Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut.",
@@ -377,7 +436,18 @@ const t: Record<Locale, {
     stepAccountLabel: "Konto",
     stepCheckoutLabel: "Zahlung",
     trialFinePrintBefore: "Karte zur Verifizierung erforderlich. Nach 30 Tagen berechnen wir ",
-    trialFinePrintAfter: " — außer Sie kündigen vorher. Es gelten die AGB.",
+    trialFinePrintAfter: " — außer Sie kündigen vorher. Es gelten die ",
+    trialFinePrintTermsLabel: "AGB",
+    trialFinePrintTermsSuffix: ".",
+    planTrialLegalNoteBefore:
+      "Für den Start der Testphase ist eine Zahlungskarte erforderlich. Wenn Sie nicht innerhalb von 30 Tagen kündigen, berechnen wir nach Ablauf der Testphase automatisch den Jahrespreis von ",
+    planTrialLegalNoteMid:
+      " auf Ihre Karte. Sie können in den Kontoeinstellungen auch vorher auf monatliche Abrechnung umstellen — dann berechnen wir stattdessen den Monatspreis von ",
+    planTrialLegalNoteAfter: ".",
+    planTrialLegalNoteConsentPrefix: "Mit dem Start der Testphase akzeptieren Sie die",
+    planTrialLegalNoteTermsLabel: "AGB",
+    planTrialLegalNoteAnd: "und die",
+    planTrialLegalNotePrivacyLabel: "Datenschutzerklärung",
     trialTodayLabel: "Heute (Test)",
     trialAfterLabel: "Nach 30 Tagen",
     startTrialCta: "Weiter",
@@ -452,6 +522,8 @@ const t: Record<Locale, {
     emailPlaceholder: "tu@tuaazienda.it",
     accountStepTitle: "Crea il tuo account",
     accountStepSubtitle: "Avrai accesso al pannello di controllo Starlinkee.",
+    accountNewsletterNotePrefix:
+      "Creando un account verrai iscritto/a alla nostra newsletter relativa al tuo account e al tuo abbonamento (puoi annullare l'iscrizione in qualsiasi momento) e accetti i",
     nameLabel: "Nome e cognome / ragione sociale",
     namePlaceholder: "Mario Rossi",
     passwordLabel: "Password",
@@ -464,7 +536,12 @@ const t: Record<Locale, {
     addressCityPlaceholder: "Milano",
     addressPostalCodeLabel: "CAP",
     addressCountryLabel: "Paese",
-    addressCountryPlaceholder: "Italia",
+    addressCountryPlaceholder: "Seleziona un paese",
+    countryGermanyLabel: "Germania",
+    countryItalyLabel: "Italia",
+    countryAustriaLabel: "Austria",
+    countryPolandLabel: "Polonia",
+    countrySwitzerlandLabel: "Svizzera",
     accountSubmitLabel: "Avanti",
     accountSubmittingLabel: "Creazione dell'account...",
     accountGenericError: "Non siamo riusciti a creare il tuo account. Controlla i dati e riprova.",
@@ -474,7 +551,18 @@ const t: Record<Locale, {
     stepAccountLabel: "Account",
     stepCheckoutLabel: "Pagamento",
     trialFinePrintBefore: "Carta richiesta per la verifica. Dopo 30 giorni addebiteremo ",
-    trialFinePrintAfter: " — a meno che tu non cancelli prima. Si applicano i Termini di Servizio.",
+    trialFinePrintAfter: " — a meno che tu non cancelli prima. Si applicano i ",
+    trialFinePrintTermsLabel: "Termini di Servizio",
+    trialFinePrintTermsSuffix: ".",
+    planTrialLegalNoteBefore:
+      "Per avviare la prova è richiesta una carta di pagamento. Se non annulli entro 30 giorni, al termine della prova addebiteremo automaticamente sulla tua carta il canone annuale di ",
+    planTrialLegalNoteMid:
+      ". Puoi anche passare in anticipo alla fatturazione mensile nelle impostazioni dell'account — in tal caso addebiteremo invece il canone mensile di ",
+    planTrialLegalNoteAfter: ".",
+    planTrialLegalNoteConsentPrefix: "Avviando la prova accetti i",
+    planTrialLegalNoteTermsLabel: "Termini di Servizio",
+    planTrialLegalNoteAnd: "e l'",
+    planTrialLegalNotePrivacyLabel: "Informativa sulla Privacy",
     trialTodayLabel: "Oggi (prova)",
     trialAfterLabel: "Dopo 30 giorni",
     startTrialCta: "Continua",
@@ -885,6 +973,25 @@ export default function OrderPage() {
                 {l.selectPlan}
               </span>
             </button>
+
+            <p className="text-xs text-gray-500 mt-3 leading-relaxed">
+              {l.planTrialLegalNoteBefore}
+              {annualSubPrice} {p.currency}
+              {l.periodAnnual}
+              {l.planTrialLegalNoteMid}
+              {p.subPrice} {p.currency}
+              {l.perMonth}
+              {l.planTrialLegalNoteAfter}{" "}
+              {l.planTrialLegalNoteConsentPrefix}{" "}
+              <Link href={`/${locale}/regulamin`} className="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+                {l.planTrialLegalNoteTermsLabel}
+              </Link>{" "}
+              {l.planTrialLegalNoteAnd}{" "}
+              <Link href={`/${locale}/polityka-prywatnosci`} className="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+                {l.planTrialLegalNotePrivacyLabel}
+              </Link>
+              .
+            </p>
           </div>
         )}
 
@@ -1172,18 +1279,37 @@ export default function OrderPage() {
                   <label className="block text-sm font-medium text-gray-900 mb-1.5">
                     {l.addressCountryLabel}
                   </label>
-                  <input
-                    type="text"
+                  <select
                     required
                     value={addressCountry}
                     onChange={(e) => setAddressCountry(e.target.value)}
-                    placeholder={l.addressCountryPlaceholder}
-                    className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600"
-                  />
+                    className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600 bg-white"
+                  >
+                    <option value="" disabled>
+                      {l.addressCountryPlaceholder}
+                    </option>
+                    <option value="DE">{l.countryGermanyLabel}</option>
+                    <option value="IT">{l.countryItalyLabel}</option>
+                    <option value="AT">{l.countryAustriaLabel}</option>
+                    <option value="PL">{l.countryPolandLabel}</option>
+                    <option value="CH">{l.countrySwitzerlandLabel}</option>
+                  </select>
                 </div>
               </div>
 
               {accountError && <p className="text-sm text-red-600">{accountError}</p>}
+
+              <p className="text-xs text-gray-500 leading-relaxed">
+                {l.accountNewsletterNotePrefix}{" "}
+                <Link href={`/${locale}/regulamin`} className="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+                  {l.planTrialLegalNoteTermsLabel}
+                </Link>{" "}
+                {l.planTrialLegalNoteAnd}{" "}
+                <Link href={`/${locale}/polityka-prywatnosci`} className="underline hover:text-gray-700" target="_blank" rel="noopener noreferrer">
+                  {l.planTrialLegalNotePrivacyLabel}
+                </Link>
+                .
+              </p>
 
               <button
                 type="submit"
@@ -1225,6 +1351,10 @@ export default function OrderPage() {
                   {l.periodAnnual}
                 </strong>
                 {l.trialFinePrintAfter}
+                <Link href={`/${locale}/regulamin`} className="underline hover:text-gray-600" target="_blank" rel="noopener noreferrer">
+                  {l.trialFinePrintTermsLabel}
+                </Link>
+                {l.trialFinePrintTermsSuffix}
               </p>
             )}
             {billing === "monthly" && <div className="mb-5" />}
