@@ -79,6 +79,11 @@ const t: Record<Locale, {
   accountSubmitLabel: string;
   accountSubmittingLabel: string;
   accountGenericError: string;
+  backToAccountLabel: string;
+  stepPlatesLabel: string;
+  stepPlanLabel: string;
+  stepAccountLabel: string;
+  stepCheckoutLabel: string;
   trialFinePrintBefore: string;
   trialFinePrintAfter: string;
   trialTodayLabel: string;
@@ -170,6 +175,11 @@ const t: Record<Locale, {
     accountSubmitLabel: "Dalej",
     accountSubmittingLabel: "Zakładanie konta...",
     accountGenericError: "Nie udało się założyć konta. Sprawdź dane i spróbuj ponownie.",
+    backToAccountLabel: "Wróć do edycji konta",
+    stepPlatesLabel: "Tabliczki",
+    stepPlanLabel: "Plan",
+    stepAccountLabel: "Konto",
+    stepCheckoutLabel: "Płatność",
     trialFinePrintBefore: "Wymagana karta do weryfikacji. Po 30 dniach naliczymy ",
     trialFinePrintAfter: " — chyba że zrezygnujesz wcześniej. Obowiązuje Regulamin.",
     trialTodayLabel: "Dziś (trial)",
@@ -181,7 +191,7 @@ const t: Record<Locale, {
     trialLoadingLabel: "Przygotowywanie weryfikacji karty...",
     trialSubmitLabel: "Potwierdź",
     trialSubmittingLabel: "Weryfikacja karty...",
-    trialBackLabel: "Wróć do wyboru planu",
+    trialBackLabel: "Wróć do podsumowania",
     trialGenericError: "Nie udało się zweryfikować karty. Spróbuj ponownie lub wybierz inny plan.",
     trialInitError: "Nie udało się przygotować weryfikacji karty. Spróbuj ponownie.",
   },
@@ -261,6 +271,11 @@ const t: Record<Locale, {
     accountSubmitLabel: "Next",
     accountSubmittingLabel: "Creating account...",
     accountGenericError: "We couldn't create your account. Please check your details and try again.",
+    backToAccountLabel: "Back to account details",
+    stepPlatesLabel: "Plates",
+    stepPlanLabel: "Plan",
+    stepAccountLabel: "Account",
+    stepCheckoutLabel: "Payment",
     trialFinePrintBefore: "Card required for verification. After 30 days we'll charge ",
     trialFinePrintAfter: " — unless you cancel first. Terms of Service apply.",
     trialTodayLabel: "Today (trial)",
@@ -272,7 +287,7 @@ const t: Record<Locale, {
     trialLoadingLabel: "Preparing card verification...",
     trialSubmitLabel: "Confirm",
     trialSubmittingLabel: "Verifying card...",
-    trialBackLabel: "Back to plan selection",
+    trialBackLabel: "Back to summary",
     trialGenericError: "We couldn't verify your card. Please try again or choose a different plan.",
     trialInitError: "We couldn't prepare card verification. Please try again.",
   },
@@ -352,6 +367,11 @@ const t: Record<Locale, {
     accountSubmitLabel: "Weiter",
     accountSubmittingLabel: "Konto wird erstellt...",
     accountGenericError: "Ihr Konto konnte nicht erstellt werden. Bitte überprüfen Sie Ihre Angaben und versuchen Sie es erneut.",
+    backToAccountLabel: "Zurück zu den Kontodaten",
+    stepPlatesLabel: "Aufsteller",
+    stepPlanLabel: "Plan",
+    stepAccountLabel: "Konto",
+    stepCheckoutLabel: "Zahlung",
     trialFinePrintBefore: "Karte zur Verifizierung erforderlich. Nach 30 Tagen berechnen wir ",
     trialFinePrintAfter: " — außer Sie kündigen vorher. Es gelten die AGB.",
     trialTodayLabel: "Heute (Test)",
@@ -363,7 +383,7 @@ const t: Record<Locale, {
     trialLoadingLabel: "Kartenverifizierung wird vorbereitet...",
     trialSubmitLabel: "Bestätigen",
     trialSubmittingLabel: "Karte wird verifiziert...",
-    trialBackLabel: "Zurück zur Planauswahl",
+    trialBackLabel: "Zurück zur Zusammenfassung",
     trialGenericError: "Ihre Karte konnte nicht verifiziert werden. Bitte versuchen Sie es erneut oder wählen Sie einen anderen Plan.",
     trialInitError: "Die Kartenverifizierung konnte nicht vorbereitet werden. Bitte versuchen Sie es erneut.",
   },
@@ -443,6 +463,11 @@ const t: Record<Locale, {
     accountSubmitLabel: "Avanti",
     accountSubmittingLabel: "Creazione dell'account...",
     accountGenericError: "Non siamo riusciti a creare il tuo account. Controlla i dati e riprova.",
+    backToAccountLabel: "Torna ai dati dell'account",
+    stepPlatesLabel: "Targhe",
+    stepPlanLabel: "Piano",
+    stepAccountLabel: "Account",
+    stepCheckoutLabel: "Pagamento",
     trialFinePrintBefore: "Carta richiesta per la verifica. Dopo 30 giorni addebiteremo ",
     trialFinePrintAfter: " — a meno che tu non cancelli prima. Si applicano i Termini di Servizio.",
     trialTodayLabel: "Oggi (prova)",
@@ -454,7 +479,7 @@ const t: Record<Locale, {
     trialLoadingLabel: "Preparazione della verifica della carta...",
     trialSubmitLabel: "Conferma",
     trialSubmittingLabel: "Verifica della carta...",
-    trialBackLabel: "Torna alla selezione del piano",
+    trialBackLabel: "Torna al riepilogo",
     trialGenericError: "Non siamo riusciti a verificare la tua carta. Riprova o scegli un piano diverso.",
     trialInitError: "Non siamo riusciti a preparare la verifica della carta. Riprova.",
   },
@@ -474,6 +499,12 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+const MAIN_STEPS: Step[] = ["plates", "plan", "account", "checkout"];
+
+function stepIndex(s: Step): number {
+  return s === "trial-verify" ? 3 : MAIN_STEPS.indexOf(s);
+}
+
 export default function OrderPage() {
   const pathname = usePathname();
   const router = useRouter();
@@ -483,6 +514,7 @@ export default function OrderPage() {
   const p = PRICING[locale];
 
   const [step, setStep] = useState<Step>("plates");
+  const [maxStepIndex, setMaxStepIndex] = useState(0);
   const [billing, setBilling] = useState<BillingPlan>("monthly");
   const [planPreset, setPlanPreset] = useState(false);
   const [email, setEmail] = useState("");
@@ -510,6 +542,50 @@ export default function OrderPage() {
       setPlanPreset(true);
     }
   }, []);
+
+  useEffect(() => {
+    setMaxStepIndex((prev) => Math.max(prev, stepIndex(step)));
+  }, [step]);
+
+  function prevStep(): Step | "home" {
+    switch (step) {
+      case "plates":
+        return "home";
+      case "plan":
+        return "plates";
+      case "account":
+        return planPreset ? "plates" : "plan";
+      case "checkout":
+        return "account";
+      case "trial-verify":
+        return "checkout";
+    }
+  }
+
+  function backLabel(): string {
+    switch (step) {
+      case "plates":
+        return l.back;
+      case "plan":
+        return l.backToPlatesLabel;
+      case "account":
+        return planPreset ? l.backToPlatesLabel : l.changePlan;
+      case "checkout":
+        return l.backToAccountLabel;
+      case "trial-verify":
+        return l.trialBackLabel;
+    }
+  }
+
+  function handleBackClick() {
+    const target = prevStep();
+    if (target !== "home") setStep(target);
+  }
+
+  function goToStepIndex(index: number) {
+    if (index > maxStepIndex) return;
+    setStep(MAIN_STEPS[index]);
+  }
 
   const totalPlates = langRows.reduce((sum, o) => sum + o.qty, 0);
   const extraPlates = Math.max(0, totalPlates - 1);
@@ -657,31 +733,74 @@ export default function OrderPage() {
   const plateLanguagesForTrial: Record<string, number> = {};
   for (const o of langRows) plateLanguagesForTrial[o.lang] = o.qty;
 
+  const stepLabels = [l.stepPlatesLabel, l.stepPlanLabel, l.stepAccountLabel, l.stepCheckoutLabel];
+  const currentStepIndex = stepIndex(step);
+
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <a
-          href={`/${locale}`}
-          className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-8 inline-flex items-center gap-1"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          {l.back}
-        </a>
+        {step === "plates" ? (
+          <a
+            href={`/${locale}`}
+            className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-6 inline-flex items-center gap-1"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            {l.back}
+          </a>
+        ) : (
+          <button
+            type="button"
+            onClick={handleBackClick}
+            className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-6 inline-flex items-center gap-1 cursor-pointer"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            {backLabel()}
+          </button>
+        )}
+
+        <div className="flex items-center justify-center max-w-md mx-auto mb-10">
+          {MAIN_STEPS.map((s, idx) => (
+            <div key={s} className="flex items-center flex-1 last:flex-none">
+              <div className="flex flex-col items-center">
+                <button
+                  type="button"
+                  onClick={() => goToStepIndex(idx)}
+                  disabled={idx > maxStepIndex}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold shrink-0 transition-colors ${
+                    idx === currentStepIndex
+                      ? "bg-brand-600 text-white"
+                      : idx <= maxStepIndex
+                      ? "bg-white border-2 border-brand-600 text-brand-600 cursor-pointer"
+                      : "bg-gray-100 border border-gray-300 text-gray-400"
+                  }`}
+                >
+                  {idx + 1}
+                </button>
+                <span
+                  className={`mt-1.5 text-[11px] whitespace-nowrap ${
+                    idx === currentStepIndex ? "text-brand-600 font-medium" : "text-gray-400"
+                  }`}
+                >
+                  {stepLabels[idx]}
+                </span>
+              </div>
+              {idx < MAIN_STEPS.length - 1 && (
+                <div
+                  className={`flex-1 h-0.5 mx-1 mb-5 ${
+                    idx < maxStepIndex ? "bg-brand-600" : "bg-gray-200"
+                  }`}
+                />
+              )}
+            </div>
+          ))}
+        </div>
 
         {step === "plan" && (
           <div className="max-w-3xl mx-auto">
-            <button
-              type="button"
-              onClick={() => setStep("plates")}
-              className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-3 inline-flex items-center gap-1 cursor-pointer"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              {l.backToPlatesLabel}
-            </button>
             <div className="text-center mb-10">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                 {l.planStepTitle}
@@ -928,17 +1047,6 @@ export default function OrderPage() {
 
         {step === "account" && (
           <div className="max-w-md mx-auto bg-white rounded-2xl border border-gray-200 p-6 sm:p-8">
-            <button
-              type="button"
-              onClick={() => setStep(planPreset ? "plates" : "plan")}
-              className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-3 inline-flex items-center gap-1 cursor-pointer"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              {planPreset ? l.backToPlatesLabel : l.changePlan}
-            </button>
-
             <h1 className="text-xl font-bold text-gray-900 mb-1">{l.accountStepTitle}</h1>
             <p className="text-sm text-gray-500 mb-6">{l.accountStepSubtitle}</p>
 
@@ -1077,17 +1185,6 @@ export default function OrderPage() {
 
         {step === "checkout" && (
           <div className="max-w-md mx-auto">
-            <button
-              type="button"
-              onClick={() => setStep("account")}
-              className="text-sm text-gray-400 hover:text-gray-600 transition-colors mb-3 inline-flex items-center gap-1 cursor-pointer"
-            >
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              {l.changePlan}
-            </button>
-
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">{l.productName}</h1>
 
             <div className="flex items-baseline gap-2 mb-1">
