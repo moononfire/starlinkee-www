@@ -54,6 +54,7 @@ const t: Record<Locale, {
   planTrialTitle: string;
   planTrialDesc: string;
   planTrialBadge: string;
+  planTrialSectionTitle: string;
   planTrialToday: string;
   selectPlan: string;
   changePlan: string;
@@ -150,6 +151,7 @@ const t: Record<Locale, {
     planTrialTitle: "Wypróbuj za darmo",
     planTrialDesc: "30 dni na sprawdzenie, bez zobowiązań.",
     planTrialBadge: "30 dni za darmo",
+    planTrialSectionTitle: "Lub odbierz za darmo",
     planTrialToday: "0 zł dziś",
     selectPlan: "Wybierz",
     changePlan: "Zmień plan",
@@ -246,6 +248,7 @@ const t: Record<Locale, {
     planTrialTitle: "Try it for free",
     planTrialDesc: "30 days to try it out, no commitment.",
     planTrialBadge: "30 days free",
+    planTrialSectionTitle: "Or try it for free",
     planTrialToday: "$0 today",
     selectPlan: "Select",
     changePlan: "Change plan",
@@ -342,6 +345,7 @@ const t: Record<Locale, {
     planTrialTitle: "Kostenlos testen",
     planTrialDesc: "30 Tage testen, unverbindlich.",
     planTrialBadge: "30 Tage gratis",
+    planTrialSectionTitle: "Oder kostenlos testen",
     planTrialToday: "0 € heute",
     selectPlan: "Auswählen",
     changePlan: "Plan ändern",
@@ -438,6 +442,7 @@ const t: Record<Locale, {
     planTrialTitle: "Prova gratis",
     planTrialDesc: "30 giorni di prova, senza impegno.",
     planTrialBadge: "30 giorni gratis",
+    planTrialSectionTitle: "Oppure provalo gratis",
     planTrialToday: "0 € oggi",
     selectPlan: "Seleziona",
     changePlan: "Cambia piano",
@@ -808,7 +813,7 @@ export default function OrderPage() {
               <p className="text-gray-500">{l.planStepSubtitle}</p>
             </div>
 
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               <button
                 type="button"
                 onClick={() => selectPlan("monthly")}
@@ -851,27 +856,35 @@ export default function OrderPage() {
                   {l.selectPlan}
                 </span>
               </button>
-
-              <button
-                type="button"
-                onClick={() => selectPlan("trial")}
-                className="text-left bg-white rounded-2xl border-2 border-brand-600 p-6 relative shadow-lg shadow-brand-600/10 cursor-pointer"
-              >
-                <div className="flex items-center gap-2 mb-1">
-                  <h3 className="font-semibold text-gray-900">{l.planTrialTitle}</h3>
-                  <span className="inline-block rounded-full bg-brand-50 text-brand-600 text-xs font-semibold px-2 py-0.5">
-                    {l.planTrialBadge}
-                  </span>
-                </div>
-                <p className="text-sm text-gray-500 mb-4">{l.planTrialDesc}</p>
-                <div className="flex items-baseline gap-1 mb-4">
-                  <span className="text-2xl font-bold text-gray-900">{l.planTrialToday}</span>
-                </div>
-                <span className="inline-block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-2.5 text-sm">
-                  {l.selectPlan}
-                </span>
-              </button>
             </div>
+
+            <div className="flex items-center gap-4 my-8">
+              <div className="flex-1 border-t border-gray-200" />
+              <span className="text-sm font-medium text-gray-500 whitespace-nowrap">
+                {l.planTrialSectionTitle}
+              </span>
+              <div className="flex-1 border-t border-gray-200" />
+            </div>
+
+            <button
+              type="button"
+              onClick={() => selectPlan("trial")}
+              className="block w-full text-left bg-white rounded-2xl border-2 border-brand-600 p-6 relative shadow-lg shadow-brand-600/10 cursor-pointer"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <h3 className="font-semibold text-gray-900">{l.planTrialTitle}</h3>
+                <span className="inline-block rounded-full bg-brand-50 text-brand-600 text-xs font-semibold px-2 py-0.5">
+                  {l.planTrialBadge}
+                </span>
+              </div>
+              <p className="text-sm text-gray-500 mb-4">{l.planTrialDesc}</p>
+              <div className="flex items-baseline gap-1 mb-4">
+                <span className="text-2xl font-bold text-gray-900">{l.planTrialToday}</span>
+              </div>
+              <span className="inline-block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-2.5 text-sm sm:w-auto sm:px-8">
+                {l.selectPlan}
+              </span>
+            </button>
           </div>
         )}
 
