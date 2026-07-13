@@ -4,7 +4,7 @@ import { LOCALES, type Locale } from "@/i18n";
 import { isValidLocale } from "@/lib/locale";
 
 const SITE_URL = "https://starlinkee.com";
-const contactEmail = "[EMAIL KONTAKTOWY]";
+const contactEmail = "vikbobinski@gmail.com";
 
 type CookieRow = { category: string; nameProvider: string; purpose: string; duration: string; consent: string; required: boolean };
 

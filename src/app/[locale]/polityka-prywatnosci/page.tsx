@@ -4,7 +4,7 @@ import { LOCALES, type Locale } from "@/i18n";
 import { isValidLocale } from "@/lib/locale";
 
 const SITE_URL = "https://starlinkee.com";
-const contactEmail = "[EMAIL KONTAKTOWY]";
+const contactEmail = "vikbobinski@gmail.com";
 
 type TableRow = { purpose: string; categories: string; basis: string; retention: string };
 
@@ -71,7 +71,7 @@ const copy: Record<Locale, Copy> = {
 
     s2Title: "2. Dane kontaktowe Inspektora Ochrony Danych",
     s2Body1: "Jeśli powołałeś/powołałaś Inspektora Ochrony Danych, podaj jego dane tutaj. W przeciwnym razie usuń tę sekcję lub zaznacz, że nie powołano IOD (dopuszczalne dla małych firm, które nie przetwarzają danych na dużą skalę).",
-    s2Body2: "IOD: [IMIĘ I NAZWISKO IOD lub „Nie powołano Inspektora Ochrony Danych”]",
+    s2Body2: "IOD: Nie powołano Inspektora Ochrony Danych.",
 
     s3Title: "3. Jakie dane zbieramy i w jakim celu",
     tableHeaders: { purpose: "Cel przetwarzania", categories: "Kategorie danych", basis: "Podstawa prawna (RODO)", retention: "Okres przechowywania" },
@@ -89,9 +89,9 @@ const copy: Record<Locale, Copy> = {
     s4Title: "4. Odbiorcy danych",
     s4Intro: "Twoje dane mogą być przekazywane następującym kategoriom odbiorców:",
     recipients: [
-      "Dostawcy usług płatniczych obsługujący płatności kartą oraz weryfikację/autoryzację karty na potrzeby okresu próbnego (np. [NAZWA OPERATORA PŁATNOŚCI, np. Stripe, PayU, Przelewy24])",
+      "Dostawcy usług płatniczych obsługujący płatności kartą oraz weryfikację/autoryzację karty na potrzeby okresu próbnego (Stripe)",
       "Dostawcy usług hostingowych i infrastruktury IT",
-      "Dostawcy usług e-mail i newslettera (np. Resend oraz inni [NAZWA DOSTAWCY])",
+      "Dostawcy usług e-mail i newslettera (Resend)",
       "Dostawcy usług SMS obsługujący kod weryfikacyjny w aplikacji mobilnej (np. httpsms.com)",
       "Biuro rachunkowe / księgowe",
       "Podmioty świadczące usługi kurierskie i pocztowe (przy wysyłce tabliczek NFC)",
@@ -144,7 +144,7 @@ const copy: Record<Locale, Copy> = {
 
     s2Title: "2. Data Protection Officer contact details",
     s2Body1: "If you have appointed a Data Protection Officer, add their details here. Otherwise remove this section or state that no DPO has been appointed (permitted for small businesses that do not process data on a large scale).",
-    s2Body2: "DPO: [DPO NAME or “No Data Protection Officer has been appointed”]",
+    s2Body2: "DPO: No Data Protection Officer has been appointed.",
 
     s3Title: "3. What data we collect and why",
     tableHeaders: { purpose: "Processing purpose", categories: "Categories of data", basis: "Legal basis (GDPR)", retention: "Retention period" },
@@ -162,9 +162,9 @@ const copy: Record<Locale, Copy> = {
     s4Title: "4. Recipients of your data",
     s4Intro: "Your data may be shared with the following categories of recipients:",
     recipients: [
-      "Payment service providers handling card payments and card verification/authorization for the free trial (e.g. [PAYMENT PROVIDER, e.g. Stripe, PayU, Przelewy24])",
+      "Payment service providers handling card payments and card verification/authorization for the free trial (Stripe)",
       "Hosting and IT infrastructure providers",
-      "Email and newsletter providers (e.g. Resend and others [PROVIDER NAME])",
+      "Email and newsletter providers (Resend)",
       "SMS providers handling the verification code in the mobile app (e.g. httpsms.com)",
       "Our accounting office",
       "Courier and postal service providers (for shipping NFC plates)",
@@ -217,7 +217,7 @@ const copy: Record<Locale, Copy> = {
 
     s2Title: "2. Kontaktdaten des Datenschutzbeauftragten",
     s2Body1: "Wenn Sie einen Datenschutzbeauftragten bestellt haben, geben Sie hier dessen Kontaktdaten an. Andernfalls entfernen Sie diesen Abschnitt oder vermerken Sie, dass kein Datenschutzbeauftragter bestellt wurde (zulässig für kleine Unternehmen, die keine umfangreiche Datenverarbeitung durchführen).",
-    s2Body2: "Datenschutzbeauftragter: [NAME oder „Es wurde kein Datenschutzbeauftragter bestellt“]",
+    s2Body2: "Datenschutzbeauftragter: Es wurde kein Datenschutzbeauftragter bestellt.",
 
     s3Title: "3. Welche Daten wir erheben und wofür",
     tableHeaders: { purpose: "Verarbeitungszweck", categories: "Datenkategorien", basis: "Rechtsgrundlage (DSGVO)", retention: "Speicherdauer" },
@@ -235,9 +235,9 @@ const copy: Record<Locale, Copy> = {
     s4Title: "4. Empfänger der Daten",
     s4Intro: "Ihre Daten können an folgende Kategorien von Empfängern weitergegeben werden:",
     recipients: [
-      "Zahlungsdienstleister, die Kartenzahlungen sowie die Kartenprüfung/-autorisierung für die Testphase abwickeln (z. B. [ZAHLUNGSANBIETER, z. B. Stripe, PayU, Przelewy24])",
+      "Zahlungsdienstleister, die Kartenzahlungen sowie die Kartenprüfung/-autorisierung für die Testphase abwickeln (Stripe)",
       "Hosting- und IT-Infrastrukturanbieter",
-      "Anbieter von E-Mail- und Newsletter-Diensten (z. B. Resend sowie weitere [ANBIETERNAME])",
+      "Anbieter von E-Mail- und Newsletter-Diensten (Resend)",
       "SMS-Anbieter für den Verifizierungscode in der mobilen App (z. B. httpsms.com)",
       "Steuerberatungs-/Buchhaltungsbüro",
       "Kurier- und Postdienstleister (beim Versand der NFC-Aufsteller)",
@@ -290,7 +290,7 @@ const copy: Record<Locale, Copy> = {
 
     s2Title: "2. Contatti del Responsabile della Protezione dei Dati",
     s2Body1: "Se hai nominato un Responsabile della Protezione dei Dati (DPO), inserisci qui i suoi dati. In caso contrario, rimuovi questa sezione o indica che non è stato nominato alcun DPO (ammesso per le piccole imprese che non trattano dati su larga scala).",
-    s2Body2: "DPO: [NOME DEL DPO oppure “Non è stato nominato un Responsabile della Protezione dei Dati”]",
+    s2Body2: "DPO: Non è stato nominato un Responsabile della Protezione dei Dati.",
 
     s3Title: "3. Quali dati raccogliamo e per quale finalità",
     tableHeaders: { purpose: "Finalità del trattamento", categories: "Categorie di dati", basis: "Base giuridica (GDPR)", retention: "Periodo di conservazione" },
@@ -308,9 +308,9 @@ const copy: Record<Locale, Copy> = {
     s4Title: "4. Destinatari dei dati",
     s4Intro: "I tuoi dati possono essere comunicati alle seguenti categorie di destinatari:",
     recipients: [
-      "Fornitori di servizi di pagamento che gestiscono i pagamenti con carta e la verifica/autorizzazione della carta per la prova gratuita (es. [FORNITORE DI PAGAMENTO, es. Stripe, PayU, Przelewy24])",
+      "Fornitori di servizi di pagamento che gestiscono i pagamenti con carta e la verifica/autorizzazione della carta per la prova gratuita (Stripe)",
       "Fornitori di servizi di hosting e infrastruttura IT",
-      "Fornitori di servizi e-mail e newsletter (es. Resend e altri [NOME FORNITORE])",
+      "Fornitori di servizi e-mail e newsletter (Resend)",
       "Fornitori di servizi SMS per il codice di verifica nell'app mobile (es. httpsms.com)",
       "Studio di contabilità",
       "Corrieri e servizi postali (per la spedizione delle targhe NFC)",
@@ -400,10 +400,9 @@ export default async function PolitykaPrywatnosci({
             <h2 className="text-xl font-semibold text-gray-900 mb-3">{c.s1Title}</h2>
             <p>
               {c.s1Intro}<br />
-              <strong>[NAZWA FIRMY / IMIĘ I NAZWISKO]</strong><br />
-              [ADRES REJESTROWY]<br />
-              NIP: [NIP]<br />
-              REGON: [REGON] (jeśli dotyczy)<br />
+              <strong>Viktor Bobiński</strong><br />
+              Lubostroń 15A/38, 30-383 Kraków, Polska<br />
+              (osoba fizyczna, działalność niezarejestrowana jako firma)<br />
               e-mail: <a href={`mailto:${contactEmail}`} className="text-blue-600 hover:underline">{contactEmail}</a>
             </p>
           </section>
