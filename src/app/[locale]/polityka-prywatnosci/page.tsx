@@ -81,6 +81,7 @@ const copy: Record<Locale, Copy> = {
       { purpose: "Newsletter — w tym zapis następujący automatycznie przy zakładaniu konta w procesie zamówienia", categories: "adres e-mail", basis: "Art. 6 ust. 1 lit. a RODO oraz art. 10 ustawy o świadczeniu usług drogą elektroniczną – zgoda", retention: "Do wycofania zgody" },
       { purpose: "Analityka i cookies", categories: "dane o aktywności, adres IP", basis: "Art. 6 ust. 1 lit. a – zgoda", retention: "Zgodnie z Polityką Cookies" },
       { purpose: "Obowiązki księgowe i podatkowe", categories: "dane z faktury", basis: "Art. 6 ust. 1 lit. c – obowiązek prawny", retention: "5 lat od końca roku podatkowego" },
+      { purpose: "Program lojalnościowy w aplikacji mobilnej Starlinkee (weryfikacja wizyty kodem SMS, bicie pieczątek)", categories: "numer telefonu, adres IP, dane o wizytach w lokalu", basis: "Art. 6 ust. 1 lit. b – wykonanie umowy (świadczenie usługi programu lojalnościowego)", retention: "24 miesiące od ostatniej wizyty" },
     ],
     s3NewsletterNote:
       "Zakładając konto w czwartym kroku procesu zamówienia (podając adres e-mail i hasło), zapisujesz się jednocześnie na nasz newsletter — o czym informujemy Cię w tym miejscu, a stosowna informacja pojawia się także w Regulaminie. Newsletter zawiera informacje o Twoim koncie, subskrypcji oraz nowościach w usłudze Starlinkee. Możesz zrezygnować w każdej chwili, klikając link „wypisz się” w stopce dowolnej wiadomości lub pisząc na adres:",
@@ -91,6 +92,7 @@ const copy: Record<Locale, Copy> = {
       "Dostawcy usług płatniczych obsługujący płatności kartą oraz weryfikację/autoryzację karty na potrzeby okresu próbnego (np. [NAZWA OPERATORA PŁATNOŚCI, np. Stripe, PayU, Przelewy24])",
       "Dostawcy usług hostingowych i infrastruktury IT",
       "Dostawcy usług e-mail i newslettera (np. Resend oraz inni [NAZWA DOSTAWCY])",
+      "Dostawcy usług SMS obsługujący kod weryfikacyjny w aplikacji mobilnej (np. httpsms.com)",
       "Biuro rachunkowe / księgowe",
       "Podmioty świadczące usługi kurierskie i pocztowe (przy wysyłce tabliczek NFC)",
     ],
@@ -152,6 +154,7 @@ const copy: Record<Locale, Copy> = {
       { purpose: "Newsletter — including sign-up that happens automatically when an account is created during checkout", categories: "email address", basis: "Art. 6(1)(a) GDPR and applicable national e-privacy/e-commerce rules – consent", retention: "Until consent is withdrawn" },
       { purpose: "Analytics and cookies", categories: "activity data, IP address", basis: "Art. 6(1)(a) – consent", retention: "As per the Cookie Policy" },
       { purpose: "Accounting and tax obligations", categories: "invoice data", basis: "Art. 6(1)(c) – legal obligation", retention: "5 years from the end of the tax year" },
+      { purpose: "Starlinkee mobile app loyalty programme (visit verification via SMS code, stamp collection)", categories: "phone number, IP address, visit data at the venue", basis: "Art. 6(1)(b) – performance of a contract (providing the loyalty programme)", retention: "24 months from the last visit" },
     ],
     s3NewsletterNote:
       "When you create an account in step four of the order process (by entering your email address and password), you are simultaneously signed up to our newsletter — which we disclose here, with corresponding information also given in the Terms & Conditions. The newsletter includes information about your account, your subscription, and updates to the Starlinkee service. You can unsubscribe at any time via the “unsubscribe” link in any email, or by writing to:",
@@ -162,6 +165,7 @@ const copy: Record<Locale, Copy> = {
       "Payment service providers handling card payments and card verification/authorization for the free trial (e.g. [PAYMENT PROVIDER, e.g. Stripe, PayU, Przelewy24])",
       "Hosting and IT infrastructure providers",
       "Email and newsletter providers (e.g. Resend and others [PROVIDER NAME])",
+      "SMS providers handling the verification code in the mobile app (e.g. httpsms.com)",
       "Our accounting office",
       "Courier and postal service providers (for shipping NFC plates)",
     ],
@@ -223,6 +227,7 @@ const copy: Record<Locale, Copy> = {
       { purpose: "Newsletter — einschließlich der Anmeldung, die automatisch bei der Kontoerstellung im Bestellvorgang erfolgt", categories: "E-Mail-Adresse", basis: "Art. 6 Abs. 1 lit. a DSGVO sowie einschlägige nationale Vorschriften zu elektronischer Kommunikation – Einwilligung", retention: "Bis zum Widerruf der Einwilligung" },
       { purpose: "Analyse und Cookies", categories: "Nutzungsdaten, IP-Adresse", basis: "Art. 6 Abs. 1 lit. a – Einwilligung", retention: "Gemäß Cookie-Richtlinie" },
       { purpose: "Buchhaltungs- und steuerliche Pflichten", categories: "Rechnungsdaten", basis: "Art. 6 Abs. 1 lit. c – rechtliche Verpflichtung", retention: "5 Jahre ab Ende des Steuerjahres" },
+      { purpose: "Treueprogramm der mobilen Starlinkee-App (Besuchsverifizierung per SMS-Code, Sammeln von Stempeln)", categories: "Telefonnummer, IP-Adresse, Besuchsdaten am Standort", basis: "Art. 6 Abs. 1 lit. b – Vertragserfüllung (Bereitstellung des Treueprogramms)", retention: "24 Monate ab dem letzten Besuch" },
     ],
     s3NewsletterNote:
       "Wenn Sie im vierten Schritt des Bestellvorgangs ein Konto erstellen (durch Eingabe Ihrer E-Mail-Adresse und Ihres Passworts), werden Sie gleichzeitig für unseren Newsletter angemeldet — worüber wir Sie hiermit informieren; ein entsprechender Hinweis findet sich auch in unseren AGB. Der Newsletter enthält Informationen zu Ihrem Konto, Ihrem Abonnement sowie Neuigkeiten zum Starlinkee-Dienst. Sie können sich jederzeit über den „Abmelden“-Link in jeder E-Mail oder durch eine Nachricht an folgende Adresse abmelden:",
@@ -233,6 +238,7 @@ const copy: Record<Locale, Copy> = {
       "Zahlungsdienstleister, die Kartenzahlungen sowie die Kartenprüfung/-autorisierung für die Testphase abwickeln (z. B. [ZAHLUNGSANBIETER, z. B. Stripe, PayU, Przelewy24])",
       "Hosting- und IT-Infrastrukturanbieter",
       "Anbieter von E-Mail- und Newsletter-Diensten (z. B. Resend sowie weitere [ANBIETERNAME])",
+      "SMS-Anbieter für den Verifizierungscode in der mobilen App (z. B. httpsms.com)",
       "Steuerberatungs-/Buchhaltungsbüro",
       "Kurier- und Postdienstleister (beim Versand der NFC-Aufsteller)",
     ],
@@ -294,6 +300,7 @@ const copy: Record<Locale, Copy> = {
       { purpose: "Newsletter — inclusa l'iscrizione automatica al momento della creazione dell'account durante il checkout", categories: "indirizzo e-mail", basis: "Art. 6(1)(a) GDPR e normativa nazionale applicabile in materia di comunicazioni elettroniche – consenso", retention: "Fino alla revoca del consenso" },
       { purpose: "Analisi e cookie", categories: "dati di attività, indirizzo IP", basis: "Art. 6(1)(a) – consenso", retention: "Come da Informativa sui Cookie" },
       { purpose: "Obblighi contabili e fiscali", categories: "dati di fatturazione", basis: "Art. 6(1)(c) – obbligo legale", retention: "5 anni dalla fine dell'anno fiscale" },
+      { purpose: "Programma fedeltà dell'app mobile Starlinkee (verifica della visita tramite codice SMS, raccolta timbri)", categories: "numero di telefono, indirizzo IP, dati sulle visite presso il locale", basis: "Art. 6(1)(b) – esecuzione del contratto (fornitura del programma fedeltà)", retention: "24 mesi dall'ultima visita" },
     ],
     s3NewsletterNote:
       "Creando un account nel quarto passaggio del processo d'ordine (inserendo indirizzo e-mail e password), vieni contestualmente iscritto/a alla nostra newsletter — cosa che ti comunichiamo qui, con una nota corrispondente presente anche nei Termini e Condizioni. La newsletter contiene informazioni sul tuo account, sul tuo abbonamento e sulle novità del servizio Starlinkee. Puoi annullare l'iscrizione in qualsiasi momento tramite il link “annulla iscrizione” presente in ogni e-mail, oppure scrivendo a:",
@@ -304,6 +311,7 @@ const copy: Record<Locale, Copy> = {
       "Fornitori di servizi di pagamento che gestiscono i pagamenti con carta e la verifica/autorizzazione della carta per la prova gratuita (es. [FORNITORE DI PAGAMENTO, es. Stripe, PayU, Przelewy24])",
       "Fornitori di servizi di hosting e infrastruttura IT",
       "Fornitori di servizi e-mail e newsletter (es. Resend e altri [NOME FORNITORE])",
+      "Fornitori di servizi SMS per il codice di verifica nell'app mobile (es. httpsms.com)",
       "Studio di contabilità",
       "Corrieri e servizi postali (per la spedizione delle targhe NFC)",
     ],

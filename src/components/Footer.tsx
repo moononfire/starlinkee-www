@@ -7,6 +7,7 @@ const footerUi = {
     legal: "Dokumenty prawne",
     order: "Zamów",
     blog: "Blog",
+    app: "Aplikacja mobilna",
     terms: "Regulamin",
     privacy: "Polityka Prywatności",
     cookies: "Polityka Cookies",
@@ -16,6 +17,7 @@ const footerUi = {
     legal: "Legal documents",
     order: "Order",
     blog: "Blog",
+    app: "Mobile app",
     terms: "Terms & Conditions",
     privacy: "Privacy Policy",
     cookies: "Cookie Policy",
@@ -25,6 +27,7 @@ const footerUi = {
     legal: "Rechtliche Dokumente",
     order: "Bestellen",
     blog: "Blog",
+    app: "Mobile App",
     terms: "AGB",
     privacy: "Datenschutzerklärung",
     cookies: "Cookie-Richtlinie",
@@ -34,6 +37,7 @@ const footerUi = {
     legal: "Documenti legali",
     order: "Ordina",
     blog: "Blog",
+    app: "App mobile",
     terms: "Termini e Condizioni",
     privacy: "Informativa sulla Privacy",
     cookies: "Politica dei Cookie",
@@ -50,6 +54,7 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
     { href: "/#contact", label: t.nav.contact },
     { href: "/order", label: fu.order },
     { href: "/blog", label: fu.blog },
+    { href: "/pobierz-aplikacje", label: fu.app },
   ];
 
   const legalLinks = [
