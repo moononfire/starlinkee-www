@@ -106,12 +106,18 @@ export default function NewsletterLanding({ locale }: { locale: Locale }) {
 
   return (
     <main
-      className="h-dvh overflow-hidden bg-gradient-to-br from-emerald-700 via-green-700 to-teal-800 flex flex-col"
+      className="h-dvh overflow-hidden bg-gradient-to-br from-blue-700 via-brand-600 to-blue-900 flex flex-col"
       aria-label={t.ariaLabel}
     >
       <div className="shrink-0 pt-6 sm:pt-8 text-center">
-        <Link href={`/${locale}`} className="text-lg font-bold text-white">
-          Starlinkee
+        <Link href={`/${locale}`} className="inline-block">
+          <Image
+            src="/logo-white.webp"
+            alt="Starlinkee"
+            width={1624}
+            height={432}
+            className="h-[52px] w-auto mx-auto"
+          />
         </Link>
       </div>
 
@@ -125,10 +131,10 @@ export default function NewsletterLanding({ locale }: { locale: Locale }) {
             <h1 className="text-2xl sm:text-4xl font-black text-white leading-tight mb-3 sm:mb-4">
               {t.headingLine1}
               <br />
-              <span className="text-emerald-200">{t.headingLine2}</span>
+              <span className="text-blue-200">{t.headingLine2}</span>
             </h1>
 
-            <p className="text-green-100 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
+            <p className="text-blue-100 text-sm sm:text-base leading-relaxed mb-6 sm:mb-8">
               {t.body}
             </p>
 
@@ -136,7 +142,7 @@ export default function NewsletterLanding({ locale }: { locale: Locale }) {
               <div className="bg-white/10 rounded-2xl px-6 py-6 text-center border border-white/20">
                 <div className="text-4xl mb-3">🎉</div>
                 <p className="text-lg font-bold text-white">{t.successTitle}</p>
-                <p className="text-green-100 text-sm mt-1">{t.successBody}</p>
+                <p className="text-blue-100 text-sm mt-1">{t.successBody}</p>
               </div>
             ) : (
               <>
@@ -155,12 +161,12 @@ export default function NewsletterLanding({ locale }: { locale: Locale }) {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="rounded-xl px-7 py-4 text-sm font-bold bg-white text-green-700 hover:bg-green-50 transition-colors disabled:opacity-60 whitespace-nowrap shadow-md"
+                    className="rounded-xl px-7 py-4 text-sm font-bold bg-white text-brand-700 hover:bg-blue-50 transition-colors disabled:opacity-60 whitespace-nowrap shadow-md"
                   >
                     {loading ? t.sending : t.submit}
                   </button>
                 </form>
-                <p className="text-green-200/70 text-xs mt-3">{t.disclaimer}</p>
+                <p className="text-blue-200/70 text-xs mt-3">{t.disclaimer}</p>
               </>
             )}
           </div>

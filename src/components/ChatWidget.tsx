@@ -5,6 +5,9 @@ import { getTranslations, type Locale } from "@/i18n";
 
 type Message = { id: string; sender: "user" | "owner"; text: string; ts: number };
 
+const PHONE_PL = process.env.NEXT_PUBLIC_PHONE_PL ?? "+48 123 456 789";
+const PHONE_AT = process.env.NEXT_PUBLIC_PHONE_AT ?? "+43 123 456 789";
+
 function getOrCreateSessionId(): string {
   const key = "chat_session_id";
   let id = localStorage.getItem(key);
@@ -18,6 +21,8 @@ function getOrCreateSessionId(): string {
 export default function ChatWidget({ locale }: { locale: Locale }) {
   const lang = locale;
   const t = getTranslations(lang).chat;
+  const phoneNumber = locale === "pl" ? PHONE_PL : PHONE_AT;
+  const phoneHref = phoneNumber.replace(/\s/g, "");
 
   const greeting: Message = {
     id: "greeting",
@@ -32,7 +37,7 @@ export default function ChatWidget({ locale }: { locale: Locale }) {
   const [sending, setSending] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [hasUnread, setHasUnread] = useState(false);
-  const [triggerBottom, setTriggerBottom] = useState(24);
+  const [isCopied, setIsCopied] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const lastCountRef = useRef(0);
@@ -40,19 +45,6 @@ export default function ChatWidget({ locale }: { locale: Locale }) {
   useEffect(() => {
     setMessages((prev) => [greeting, ...prev.slice(1)]);
   }, [lang]);
-
-  useEffect(() => {
-    const FOOTER_HEIGHT = 180;
-    const BASE = 24;
-    function update() {
-      const dist =
-        document.documentElement.scrollHeight - window.scrollY - window.innerHeight;
-      setTriggerBottom(BASE + Math.max(0, FOOTER_HEIGHT - dist));
-    }
-    window.addEventListener("scroll", update, { passive: true });
-    update();
-    return () => window.removeEventListener("scroll", update);
-  }, []);
 
   useEffect(() => {
     setSessionId(getOrCreateSessionId());
@@ -132,12 +124,24 @@ export default function ChatWidget({ locale }: { locale: Locale }) {
     setSending(false);
   }
 
+  function handlePhoneClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    const isDesktop =
+      typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
+    if (!isDesktop) return;
+
+    e.preventDefault();
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 1800);
+    });
+  }
+
   return (
     <>
       {open && (
         <div
-          className="fixed right-5 z-50 w-80 flex flex-col rounded-2xl shadow-2xl overflow-hidden transition-[bottom] duration-200"
-          style={{ height: "420px", background: "#fff", bottom: `${triggerBottom + 60}px` }}
+          className="fixed bottom-24 right-5 z-50 w-80 flex flex-col rounded-2xl shadow-2xl overflow-hidden"
+          style={{ height: "460px", background: "#fff" }}
         >
           {/* Header */}
           <div
@@ -161,6 +165,34 @@ export default function ChatWidget({ locale }: { locale: Locale }) {
               </svg>
             </button>
           </div>
+
+          {/* Phone bar */}
+          <a
+            href={`tel:${phoneHref}`}
+            onClick={handlePhoneClick}
+            aria-label={`${t.callAria}: ${phoneNumber}`}
+            className="flex items-center gap-2.5 px-4 py-2.5 border-b border-amber-200 select-none transition-colors hover:brightness-95"
+            style={{ background: "linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%)" }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4 shrink-0 text-amber-800"
+            >
+              <path
+                fillRule="evenodd"
+                d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <div className="flex flex-col leading-tight min-w-0">
+              <span className="text-sm font-bold text-amber-900 truncate">
+                {isCopied ? t.copied : phoneNumber}
+              </span>
+              <span className="text-[11px] text-amber-800 opacity-80 truncate">{t.phoneHours}</span>
+            </div>
+          </a>
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-3 py-3 space-y-2 bg-gray-50">
@@ -221,11 +253,10 @@ export default function ChatWidget({ locale }: { locale: Locale }) {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? t.closeAria : t.openAria}
-        className={`fixed right-5 z-50 flex items-center justify-center text-amber-900 shadow-lg transition-[bottom,transform] duration-200 hover:scale-105 active:scale-95 ${
+        className={`fixed bottom-5 right-5 z-50 flex items-center justify-center text-amber-900 shadow-lg transition-transform duration-200 hover:scale-105 active:scale-95 ${
           open ? "w-14 h-14 rounded-full" : "h-12 px-4 gap-2 rounded-full"
         }`}
         style={{
-          bottom: `${triggerBottom}px`,
           background: "linear-gradient(135deg, #FEF3C7 0%, #FDE68A 35%, #FBBF24 70%, #F59E0B 100%)",
           boxShadow: "0 4px 20px rgba(251,191,36,0.5)",
         }}

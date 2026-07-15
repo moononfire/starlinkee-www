@@ -19,24 +19,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes phone-glow-pulse {
-  0%, 100% {
-    box-shadow:
-      0 0 8px 2px rgba(251, 191, 36, 0.6),
-      0 0 20px 6px rgba(180, 83, 9, 0.35);
-  }
-  50% {
-    box-shadow:
-      0 0 18px 6px rgba(251, 191, 36, 0.9),
-      0 0 38px 14px rgba(180, 83, 9, 0.55);
-  }
-}
-
-@keyframes phone-flash {
-  0%, 85%, 100% { opacity: 1; }
-  90%, 95% { opacity: 0.45; }
-}
-
 @keyframes popup-fadein {
   from { opacity: 0; transform: translateY(20px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0)   scale(1); }

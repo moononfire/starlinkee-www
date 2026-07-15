@@ -1,5 +1,6 @@
 import type { Locale, Translations } from "@/i18n";
 import Link from "next/link";
+import Image from "next/image";
 
 const footerUi = {
   pl: {
@@ -69,8 +70,14 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
         {/* Górna część: brand + nawigacja */}
         <div className="flex flex-col sm:flex-row justify-between gap-8">
           <div>
-            <Link href={`/${locale}`} className="text-lg font-bold text-brand-600">
-              Starlinkee
+            <Link href={`/${locale}`} className="inline-block">
+              <Image
+                src="/logo-blue.webp"
+                alt="Starlinkee"
+                width={1624}
+                height={432}
+                className="h-[52px] w-auto"
+              />
             </Link>
             <p className="text-sm text-gray-500 mt-1 max-w-xs">{t.footer.tagline}</p>
           </div>

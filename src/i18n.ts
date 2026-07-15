@@ -112,7 +112,7 @@ const translations = {
       rights: "Wszelkie prawa zastrzeżone.",
     },
     chat: {
-      triggerLabel: "Napisz do nas",
+      triggerLabel: "Skontaktuj się z nami",
       openAria: "Otwórz czat",
       closeAria: "Zamknij czat",
       headerName: "Starlinkee",
@@ -120,6 +120,9 @@ const translations = {
       greeting: "Cześć! 👋 W czym mogę pomóc?",
       placeholder: "Napisz wiadomość...",
       sendAria: "Wyślij",
+      phoneHours: "Infolinia czynna 10:00–16:00, codziennie",
+      copied: "Skopiowano numer!",
+      callAria: "Zadzwoń do nas",
     },
     orderSuccess: {
       title: "Zamówienie przyjęte!",
@@ -236,7 +239,7 @@ const translations = {
       rights: "All rights reserved.",
     },
     chat: {
-      triggerLabel: "Message us",
+      triggerLabel: "Contact us",
       openAria: "Open chat",
       closeAria: "Close chat",
       headerName: "Starlinkee",
@@ -244,6 +247,9 @@ const translations = {
       greeting: "Hi! 👋 How can I help?",
       placeholder: "Type a message...",
       sendAria: "Send",
+      phoneHours: "Helpline available 10am–4pm, every day",
+      copied: "Number copied!",
+      callAria: "Call us",
     },
     orderSuccess: {
       title: "Order confirmed!",
@@ -360,7 +366,7 @@ const translations = {
       rights: "Alle Rechte vorbehalten.",
     },
     chat: {
-      triggerLabel: "Schreiben Sie uns",
+      triggerLabel: "Kontaktieren Sie uns",
       openAria: "Chat öffnen",
       closeAria: "Chat schließen",
       headerName: "Starlinkee",
@@ -368,6 +374,9 @@ const translations = {
       greeting: "Hallo! 👋 Wie kann ich helfen?",
       placeholder: "Nachricht schreiben...",
       sendAria: "Senden",
+      phoneHours: "Hotline erreichbar 10–16 Uhr, täglich",
+      copied: "Nummer kopiert!",
+      callAria: "Rufen Sie uns an",
     },
     orderSuccess: {
       title: "Bestellung eingegangen!",
@@ -484,7 +493,7 @@ const translations = {
       rights: "Tutti i diritti riservati.",
     },
     chat: {
-      triggerLabel: "Scrivici",
+      triggerLabel: "Contattaci",
       openAria: "Apri chat",
       closeAria: "Chiudi chat",
       headerName: "Starlinkee",
@@ -492,6 +501,9 @@ const translations = {
       greeting: "Ciao! 👋 Come posso aiutarti?",
       placeholder: "Scrivi un messaggio...",
       sendAria: "Invia",
+      phoneHours: "Assistenza telefonica 10:00–16:00, tutti i giorni",
+      copied: "Numero copiato!",
+      callAria: "Chiamaci",
     },
     orderSuccess: {
       title: "Ordine confermato!",

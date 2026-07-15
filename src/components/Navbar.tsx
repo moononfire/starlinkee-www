@@ -3,6 +3,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { type Locale, type Translations } from "@/i18n";
 import {
   findPostByLocalizedSlug,
@@ -97,9 +98,16 @@ export default function Navbar({
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <Link href={`/${locale}`} className="text-xl font-bold text-brand-600">
-          Starlinkee
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <Link href={`/${locale}`} className="shrink-0">
+          <Image
+            src="/logo-blue.webp"
+            alt="Starlinkee"
+            width={1624}
+            height={432}
+            priority
+            className="h-[60px] w-auto"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
