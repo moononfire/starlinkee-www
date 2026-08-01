@@ -17,6 +17,7 @@ export default function ContactForm({ t }: { t: Translations }) {
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       business: (form.elements.namedItem("business") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
     };
 
     try {
@@ -47,6 +48,7 @@ export default function ContactForm({ t }: { t: Translations }) {
           onSubmit={handleSubmit}
           className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm space-y-5"
         >
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" style={{ display: "none" }} aria-hidden="true" />
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">

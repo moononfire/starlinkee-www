@@ -84,6 +84,7 @@ function shouldShow(): boolean {
 export default function NewsletterPopup({ locale }: { locale: Locale }) {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const p = popupUi[locale];
@@ -129,7 +130,7 @@ export default function NewsletterPopup({ locale }: { locale: Locale }) {
     const res = await fetch("/api/newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source: "discount", locale }),
+      body: JSON.stringify({ email, source: "discount", locale, website }),
     });
     setLoading(false);
     if (!res.ok) return;
@@ -189,6 +190,16 @@ export default function NewsletterPopup({ locale }: { locale: Locale }) {
               </div>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  style={{ display: "none" }}
+                  aria-hidden="true"
+                />
                 <input
                   type="email"
                   required

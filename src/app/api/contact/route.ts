@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const { name, email, phone, business, message } = await request.json();
+  const { name, email, phone, business, message, website } = await request.json();
+
+  // Honeypot check
+  if (website) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (!name || !email) {
     return NextResponse.json({ error: "Name and email are required" }, { status: 400 });

@@ -5,7 +5,11 @@ import { getSequenceEmail, sendTrackedEmail } from "@/lib/sequence-emails";
 import { LOCALES, type Locale } from "@/i18n";
 
 export async function POST(request: NextRequest) {
-  const { email, source, locale } = await request.json();
+  const { email, source, locale, website } = await request.json();
+
+  if (website) {
+    return NextResponse.json({ ok: true });
+  }
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Nieprawidłowy adres e-mail" }, { status: 400 });
