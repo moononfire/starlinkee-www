@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(request: NextRequest) {
-  const { name, email, phone, business, message, website } = await request.json();
+  const { name, email, phone, business, message, website, _challenge } = await request.json();
 
   // Honeypot check
-  if (website) {
+  if (website || _challenge !== "slk-2026") {
     return NextResponse.json({ ok: true });
   }
 

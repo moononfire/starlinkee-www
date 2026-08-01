@@ -97,7 +97,7 @@ export default function NewsletterBlogBanner({ locale }: { locale: Locale }) {
     const res = await fetch("/api/newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source: "course", locale, website }),
+      body: JSON.stringify({ email, source: "course", locale, website, _challenge: "slk-2026" }),
     });
     setLoading(false);
     if (!res.ok) return;

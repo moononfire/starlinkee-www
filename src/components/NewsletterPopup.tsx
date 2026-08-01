@@ -130,7 +130,7 @@ export default function NewsletterPopup({ locale }: { locale: Locale }) {
     const res = await fetch("/api/newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, source: "discount", locale, website }),
+      body: JSON.stringify({ email, source: "discount", locale, website, _challenge: "slk-2026" }),
     });
     setLoading(false);
     if (!res.ok) return;

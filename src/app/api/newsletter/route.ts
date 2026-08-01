@@ -5,9 +5,9 @@ import { getSequenceEmail, sendTrackedEmail } from "@/lib/sequence-emails";
 import { LOCALES, type Locale } from "@/i18n";
 
 export async function POST(request: NextRequest) {
-  const { email, source, locale, website } = await request.json();
+  const { email, source, locale, website, _challenge } = await request.json();
 
-  if (website) {
+  if (website || _challenge !== "slk-2026") {
     return NextResponse.json({ ok: true });
   }
 

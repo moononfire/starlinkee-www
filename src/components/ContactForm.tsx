@@ -18,6 +18,7 @@ export default function ContactForm({ t }: { t: Translations }) {
       business: (form.elements.namedItem("business") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       website: (form.elements.namedItem("website") as HTMLInputElement).value,
+      _challenge: "slk-2026",
     };
 
     try {
