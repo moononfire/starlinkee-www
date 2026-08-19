@@ -87,17 +87,20 @@ export default function Pricing({
               </div>
               <div className="flex items-baseline justify-center md:justify-start gap-1">
                 <span className="text-5xl sm:text-6xl font-bold text-gray-900">
-                  {billing === "annual" ? annualPrice : t.pricing.price}
+                  0
                 </span>
                 <span className="text-2xl font-medium text-gray-500">
                   {t.pricing.currency}
                 </span>
                 <span className="text-lg text-gray-500 ml-1">
-                  {billing === "annual" ? t.pricing.periodAnnual : t.pricing.period}
+                  {t.pricing.period}
                 </span>
               </div>
+              <p className="text-sm text-gray-500 mt-2">
+                {t.pricing.afterTrialNote} {billing === "annual" ? annualPrice : t.pricing.price} {t.pricing.currency} {billing === "annual" ? t.pricing.periodAnnual : t.pricing.period}
+              </p>
               {billing === "annual" && (
-                <p className="text-sm text-gray-500 mt-2">{t.pricing.annualNote}</p>
+                <p className="text-sm text-gray-500 mt-1">{t.pricing.annualNote}</p>
               )}
             </div>
 

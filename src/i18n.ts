@@ -12,7 +12,7 @@ const translations = {
       features: "Funkcje",
       pricing: "Cennik",
       contact: "Kontakt",
-      getStarted: "Dołącz teraz",
+      getStarted: "Dołącz za darmo",
     },
     hero: {
       badge: "System opinii & lojalności dla gastronomii",
@@ -20,7 +20,7 @@ const translations = {
       titleHighlight: "Więcej powracających klientów.",
       subtitle:
         "Tabliczki NFC, które automatycznie filtrują negatywne opinie, wysyłają kupony promocyjne i budują lojalność — bez aplikacji dla Twoich klientów.",
-      cta: "Dołącz teraz",
+      cta: "Dołącz za darmo",
       ctaSecondary: "Zamów bezpłatną prezentację",
     },
     features: {
@@ -55,7 +55,7 @@ const translations = {
       feature5: "Panel administracyjny",
       feature6: "200 SMS-ów/mies. w cenie",
       feature7: "Wsparcie techniczne",
-      cta: "Dołącz teraz",
+      cta: "Dołącz za darmo",
       plates: "Pierwsza tabliczka NFC gratis, każda kolejna 29 zł",
       periodAnnual: "/rok",
       billingMonthly: "Płatność miesięczna",
@@ -64,6 +64,7 @@ const translations = {
       annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
       comingSoon: "Wkrótce dostępne",
       trialTeaser: "30 dni za darmo",
+      afterTrialNote: "Po 30-dniowym okresie próbnym:",
     },
     liveDemo: {
       sectionTitle: "Zobacz to na żywo",
@@ -139,7 +140,7 @@ const translations = {
       features: "Features",
       pricing: "Pricing",
       contact: "Contact",
-      getStarted: "Join now",
+      getStarted: "Join for free",
     },
     hero: {
       badge: "Review & loyalty system for restaurants",
@@ -147,7 +148,7 @@ const translations = {
       titleHighlight: "More returning customers.",
       subtitle:
         "NFC plates that automatically filter negative reviews, send promo coupons, and build loyalty — no app install needed for your customers.",
-      cta: "Join now",
+      cta: "Join for free",
       ctaSecondary: "Book a free demo",
     },
     features: {
@@ -182,7 +183,7 @@ const translations = {
       feature5: "Admin dashboard",
       feature6: "200 SMS/mo included",
       feature7: "Technical support",
-      cta: "Join now",
+      cta: "Join for free",
       plates: "First NFC plate free, additional plates €9 each",
       periodAnnual: "/yr",
       billingMonthly: "Monthly billing",
@@ -191,6 +192,7 @@ const translations = {
       annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
       comingSoon: "Coming soon",
       trialTeaser: "30 days free",
+      afterTrialNote: "After 30-day trial:",
     },
     liveDemo: {
       sectionTitle: "See it live",
@@ -266,7 +268,7 @@ const translations = {
       features: "Funktionen",
       pricing: "Preise",
       contact: "Kontakt",
-      getStarted: "Jetzt starten",
+      getStarted: "Kostenlos beitreten",
     },
     hero: {
       badge: "Bewertungs- & Treueprogramm für die Gastronomie",
@@ -274,7 +276,7 @@ const translations = {
       titleHighlight: "Mehr wiederkehrende Gäste.",
       subtitle:
         "NFC-Aufsteller, die negative Bewertungen automatisch filtern, Rabattgutscheine per SMS versenden und Kundentreue aufbauen — ohne App für Ihre Gäste.",
-      cta: "Jetzt starten",
+      cta: "Kostenlos beitreten",
       ctaSecondary: "Kostenlose Demo buchen",
     },
     features: {
@@ -309,7 +311,7 @@ const translations = {
       feature5: "Admin-Dashboard",
       feature6: "200 SMS/Monat inklusive",
       feature7: "Technischer Support",
-      cta: "Jetzt starten",
+      cta: "Kostenlos beitreten",
       plates: "Erster NFC-Aufsteller gratis, weitere je 9 €",
       periodAnnual: "/Jahr",
       billingMonthly: "Monatliche Zahlung",
@@ -318,6 +320,7 @@ const translations = {
       annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
       comingSoon: "Demnächst verfügbar",
       trialTeaser: "30 Tage gratis",
+      afterTrialNote: "Nach der 30-tägigen Testphase:",
     },
     liveDemo: {
       sectionTitle: "Live erleben",
@@ -393,7 +396,7 @@ const translations = {
       features: "Funzionalità",
       pricing: "Prezzi",
       contact: "Contatti",
-      getStarted: "Iscriviti ora",
+      getStarted: "Iscriviti gratis",
     },
     hero: {
       badge: "Sistema di recensioni e fedeltà per la ristorazione",
@@ -401,7 +404,7 @@ const translations = {
       titleHighlight: "Più clienti che ritornano.",
       subtitle:
         "Targhe NFC che filtrano automaticamente le recensioni negative, inviano coupon promozionali via SMS e costruiscono la fedeltà — senza app per i tuoi clienti.",
-      cta: "Iscriviti ora",
+      cta: "Iscriviti gratis",
       ctaSecondary: "Prenota una demo gratuita",
     },
     features: {
@@ -436,7 +439,7 @@ const translations = {
       feature5: "Pannello di controllo",
       feature6: "200 SMS/mese inclusi",
       feature7: "Supporto tecnico",
-      cta: "Iscriviti ora",
+      cta: "Iscriviti gratis",
       plates: "Prima targa NFC gratis, ogni altra 9 €",
       periodAnnual: "/anno",
       billingMonthly: "Pagamento mensile",
@@ -445,6 +448,7 @@ const translations = {
       annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
       comingSoon: "Prossimamente",
       trialTeaser: "30 giorni gratis",
+      afterTrialNote: "Dopo la prova di 30 giorni:",
     },
     liveDemo: {
       sectionTitle: "Guardalo dal vivo",
