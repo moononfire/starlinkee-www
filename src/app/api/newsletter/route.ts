@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { after } from "next/server";
 import { upsertSubscriber } from "@/lib/db";
 import { sendMail } from "@/lib/email";
 import { getSequenceEmail, sendTrackedEmail } from "@/lib/sequence-emails";
@@ -20,28 +21,32 @@ export async function POST(request: NextRequest) {
   const src = source ?? "course";
   const loc: Locale = LOCALES.includes(locale) ? locale : "pl";
 
-  // 2. Zapisz do bazy — sekwencja (kolejne emaile co 3 dni od kroku 2)
-  await upsertSubscriber(email, src, loc);
-
-  // 3. Powiadomienie dla właściciela (bez trackingu)
-  sendMail(
-    notifyEmail,
-    src === "discount" ? `📬 Nowy zapis na zniżkę: ${email}` : `📬 Nowy zapis na kurs: ${email}`,
-    `<p>Nowy adres e-mail:<br><strong>${escapeHtml(email)}</strong></p>
-     <p>Lista: <em>${src === "discount" ? "Newsletter — Zniżka Powitalna" : "Newsletter — Kurs Wizytówka Google"}</em></p>
-     <p>Język: <em>${loc}</em></p>`
-  ).catch(() => {});
-
-  // 4. Email powitalny (krok 1) — ze śledzeniem otwarć i kliknięć
+  // 4. Sprawdź szablon powitalny (krok 1)
   const welcome = getSequenceEmail(src, 1, loc);
   if (!welcome) {
     return NextResponse.json({ error: "Brak szablonu powitalnego" }, { status: 500 });
   }
 
-  const ok = await sendTrackedEmail(email, src, 1, welcome.subject, welcome.html);
-  if (!ok) {
-    return NextResponse.json({ error: "Błąd wysyłki" }, { status: 500 });
-  }
+  after(async () => {
+    try {
+      // 2. Zapisz do bazy — sekwencja (kolejne emaile co 3 dni od kroku 2)
+      await upsertSubscriber(email, src, loc);
+
+      // 3. Powiadomienie dla właściciela (bez trackingu)
+      sendMail(
+        notifyEmail,
+        src === "discount" ? `📬 Nowy zapis na zniżkę: ${email}` : `📬 Nowy zapis na kurs: ${email}`,
+        `<p>Nowy adres e-mail:<br><strong>${escapeHtml(email)}</strong></p>
+         <p>Lista: <em>${src === "discount" ? "Newsletter — Zniżka Powitalna" : "Newsletter — Kurs Wizytówka Google"}</em></p>
+         <p>Język: <em>${loc}</em></p>`
+      ).catch(() => {});
+
+      // 4. Email powitalny (krok 1) — ze śledzeniem otwarć i kliknięć
+      await sendTrackedEmail(email, src, 1, welcome.subject, welcome.html);
+    } catch (error) {
+      console.error("Background task error in newsletter:", error);
+    }
+  });
 
   return NextResponse.json({ ok: true });
 }
