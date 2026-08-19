@@ -53,7 +53,7 @@ export default async function Home({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "kontakt@starlinkee.com",
+      email: "contact@starlinkee.com",
       availableLanguage: ["Polish", "English", "German", "Italian"],
     },
     sameAs: [],
