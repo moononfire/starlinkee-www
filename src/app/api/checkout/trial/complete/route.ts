@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { LOCALES, type Locale } from "@/i18n";
-import { PRICING, currencyCode, annualSubPrice } from "@/lib/pricing";
+import { PRICING, currencyCode, annualSubPrice, getShippingCost } from "@/lib/pricing";
 
 function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!);
@@ -97,21 +97,32 @@ export async function POST(request: NextRequest) {
     });
 
     let platesChargeStatus: "not_applicable" | "succeeded" | "failed" = "not_applicable";
-    if (extraPlates > 0) {
-      const platesCost = extraPlates * PRICING[locale].platePrice;
+    const currency = currencyCode(locale);
+    const shippingCountry = customer.shipping?.address?.country ?? "";
+    const shipping = getShippingCost(shippingCountry, currency);
+    const platesCost = extraPlates * PRICING[locale].platePrice * 100;
+    const totalAmount = Math.round(platesCost + shipping.amount);
+
+    if (totalAmount > 0) {
       try {
         await stripe.paymentIntents.create({
-          amount: Math.round(platesCost * 100),
-          currency: currencyCode(locale),
+          amount: totalAmount,
+          currency: currency,
           customer: customer.id,
           payment_method: paymentMethodId,
           off_session: true,
           confirm: true,
-          metadata: { purpose: "extra_plates", locale, plates: String(extraPlates) },
+          metadata: { 
+            purpose: "extra_plates_and_shipping", 
+            locale, 
+            plates: String(extraPlates),
+            shipping_name: shipping.name,
+            shipping_cost: String(shipping.amount)
+          },
         });
         platesChargeStatus = "succeeded";
       } catch (err) {
-        console.error("[checkout/trial/complete] extra plates charge failed", err);
+        console.error("[checkout/trial/complete] upfront charge failed", err);
         platesChargeStatus = "failed";
       }
     }

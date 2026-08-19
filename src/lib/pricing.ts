@@ -14,3 +14,22 @@ export function currencyCode(locale: Locale): "pln" | "eur" {
 export function annualSubPrice(locale: Locale): number {
   return PRICING[locale].subPrice * 10;
 }
+
+export function getShippingCost(country: string, currency: "pln" | "eur"): { amount: number; name: string } {
+  let amount = 0;
+  let name = "Shipping";
+  const c = country.toUpperCase();
+  
+  if (c === "AT") {
+    amount = currency === "pln" ? 2150 : 500; // 21.50 PLN / 5 EUR
+    name = "Österreich Shipping";
+  } else if (c === "PL") {
+    amount = currency === "pln" ? 1000 : 250; // 10 PLN / 2.50 EUR
+    name = "Polska Wysyłka";
+  } else {
+    amount = currency === "pln" ? 4300 : 1000; // 43 PLN / 10 EUR
+    name = "EU Shipping";
+  }
+  
+  return { amount, name };
+}

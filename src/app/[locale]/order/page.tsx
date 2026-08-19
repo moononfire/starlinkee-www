@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { PRICING, annualSubPrice as computeAnnualSubPrice } from "@/lib/pricing";
+import { PRICING, annualSubPrice as computeAnnualSubPrice, getShippingCost, currencyCode } from "@/lib/pricing";
 import TrialCardVerification, {
   type TrialCardVerificationCopy,
 } from "@/components/TrialCardVerification";
@@ -587,6 +587,7 @@ const galleryImages: Record<Locale, string[]> = {
 
 const MAX_PLATES = 50;
 const ALL_LOCALES = Object.keys(PRICING) as Locale[];
+const EU_COUNTRIES = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","CH"];
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -684,7 +685,10 @@ export default function OrderPage() {
   const extraPlates = Math.max(0, totalPlates - 1);
   const platesCost = extraPlates * p.platePrice;
   const annualSubPrice = computeAnnualSubPrice(locale);
-  const totalNow = (billing === "annual" ? annualSubPrice : p.subPrice) + platesCost;
+  const shippingInfo = getShippingCost(addressCountry || "", currencyCode(locale));
+  const shippingCostUI = shippingInfo.amount / 100; // in minor units from getShippingCost
+  const baseCost = billing === "annual" ? annualSubPrice : p.subPrice;
+  const totalNow = billing === "trial" ? (platesCost + shippingCostUI) : (baseCost + platesCost + shippingCostUI);
 
   const availableLangs = ALL_LOCALES.filter(
     (lang) => !langRows.some((o) => o.lang === lang)
@@ -1288,11 +1292,17 @@ export default function OrderPage() {
                     <option value="" disabled>
                       {l.addressCountryPlaceholder}
                     </option>
-                    <option value="DE">{l.countryGermanyLabel}</option>
-                    <option value="IT">{l.countryItalyLabel}</option>
-                    <option value="AT">{l.countryAustriaLabel}</option>
-                    <option value="PL">{l.countryPolandLabel}</option>
-                    <option value="CH">{l.countrySwitzerlandLabel}</option>
+                    {EU_COUNTRIES.map((code) => {
+                      const displayNames = typeof Intl !== "undefined" && Intl.DisplayNames 
+                        ? new Intl.DisplayNames([locale], { type: "region" })
+                        : null;
+                      const name = displayNames ? displayNames.of(code) : code;
+                      return (
+                        <option key={code} value={code}>
+                          {name}
+                        </option>
+                      );
+                    })}
                   </select>
                 </div>
               </div>
@@ -1368,10 +1378,28 @@ export default function OrderPage() {
                   <div className="flex justify-between">
                     <span className="text-gray-500">{l.trialTodayLabel}</span>
                     <span className="font-medium text-gray-900">
-                      {platesCost} {p.currency}
+                      {totalNow} {p.currency}
                     </span>
                   </div>
-                  <div className="flex justify-between">
+                  {platesCost > 0 && (
+                    <div className="flex justify-between pl-4 text-xs">
+                      <span className="text-gray-500">
+                        {l.platesOnetime} ({extraPlates}×)
+                      </span>
+                      <span className="text-gray-700">
+                        {platesCost} {p.currency}
+                      </span>
+                    </div>
+                  )}
+                  {shippingCostUI > 0 && (
+                    <div className="flex justify-between pl-4 text-xs">
+                      <span className="text-gray-500">{shippingInfo.name}</span>
+                      <span className="text-gray-700">
+                        {shippingCostUI} {p.currency}
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex justify-between mt-2">
                     <span className="text-gray-500">{l.trialAfterLabel}</span>
                     <span className="font-medium text-gray-900">
                       {annualSubPrice} {p.currency}
@@ -1396,6 +1424,14 @@ export default function OrderPage() {
                       </span>
                       <span className="font-medium text-gray-900">
                         {platesCost} {p.currency}
+                      </span>
+                    </div>
+                  )}
+                  {shippingCostUI > 0 && (
+                    <div className="flex justify-between">
+                      <span className="text-gray-500">{shippingInfo.name}</span>
+                      <span className="font-medium text-gray-900">
+                        {shippingCostUI} {p.currency}
                       </span>
                     </div>
                   )}

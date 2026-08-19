@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { getShippingCost } from "@/lib/pricing";
 
 function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!);
@@ -62,7 +63,8 @@ export async function POST(request: NextRequest) {
       lineItems.push({ price: platePriceId, quantity: extraPlates });
     }
 
-    const shippingRateId = process.env.STRIPE_SHIPPING_RATE_ID;
+    const shippingCountry = String(address?.country ?? "");
+    const shipping = getShippingCost(shippingCountry, currency);
 
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
@@ -70,9 +72,18 @@ export async function POST(request: NextRequest) {
       line_items: lineItems,
       payment_method_types: ["card"],
       billing_address_collection: "required",
-      ...(shippingRateId
-        ? { shipping_options: [{ shipping_rate: shippingRateId }] }
-        : {}),
+      shipping_options: [
+        {
+          shipping_rate_data: {
+            type: "fixed_amount",
+            fixed_amount: {
+              amount: shipping.amount,
+              currency: currency,
+            },
+            display_name: shipping.name,
+          },
+        },
+      ],
       tax_id_collection: { enabled: true },
       locale,
       ...(email ? { customer_email: email } : {}),
