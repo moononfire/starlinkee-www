@@ -19,7 +19,11 @@ export async function POST(request: NextRequest) {
 
   await addMessage(sessionId, { sender: "user", text: text.trim() });
 
-  const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL ?? "vikbobinski@gmail.com";
+  const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL;
+  if (!notifyEmail) {
+    console.error("CONTACT_NOTIFY_EMAIL is not set");
+    return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
+  }
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://starlinkee.com";
   const adminToken = process.env.CHAT_ADMIN_TOKEN ?? "changeme";
 

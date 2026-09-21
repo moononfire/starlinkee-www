@@ -14,7 +14,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
   }
 
-  const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL ?? "vikbobinski@gmail.com";
+  const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL;
+  if (!notifyEmail) {
+    console.error("CONTACT_NOTIFY_EMAIL is not set");
+    return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
+  }
 
   after(async () => {
     try {

@@ -4,7 +4,7 @@ import { LOCALES, type Locale } from "@/i18n";
 import { isValidLocale } from "@/lib/locale";
 
 const SITE_URL = "https://starlinkee.com";
-const contactEmail = "vikbobinski@gmail.com";
+const contactEmail = "contact@starlinkee.com";
 
 type TableRow = { purpose: string; categories: string; basis: string; retention: string };
 

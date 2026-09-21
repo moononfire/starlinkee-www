@@ -16,7 +16,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Nieprawidłowy adres e-mail" }, { status: 400 });
   }
 
-  const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL ?? "vikbobinski@gmail.com";
+  const notifyEmail = process.env.CONTACT_NOTIFY_EMAIL;
+  if (!notifyEmail) {
+    console.error("CONTACT_NOTIFY_EMAIL is not set");
+    return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
+  }
 
   const src = source ?? "course";
   const loc: Locale = LOCALES.includes(locale) ? locale : "pl";

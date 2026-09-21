@@ -78,7 +78,7 @@ type Copy = {
   annexNote: string;
 };
 
-const contactEmail = "vikbobinski@gmail.com";
+const contactEmail = "contact@starlinkee.com";
 
 const copy: Record<Locale, Copy> = {
   pl: {
@@ -199,7 +199,7 @@ const copy: Record<Locale, Copy> = {
 
     annexTitle: "Załącznik nr 1 — Wzór formularza odstąpienia od umowy",
     annexIntro: "(wypełnij i odeślij tylko w przypadku chęci odstąpienia od umowy)",
-    annexAddressee: "Adresat: Viktor Bobiński, Lubostroń 15A/38, 30-383 Kraków, vikbobinski@gmail.com",
+    annexAddressee: "Adresat: Viktor Bobiński, Lubostroń 15A/38, 30-383 Kraków, contact@starlinkee.com",
     annexBody:
       "Ja/My (*) niniejszym informuję/informujemy (*) o moim/naszym (*) odstąpieniu od umowy sprzedaży następujących towarów (*) / umowy o dostarczenie następujących treści cyfrowych (*) / umowy o świadczenie następującej usługi (*):",
     annexContractDate: "Data zawarcia umowy (*) / odbioru (*): .........................................................",
@@ -329,7 +329,7 @@ const copy: Record<Locale, Copy> = {
 
     annexTitle: "Annex 1 — Model withdrawal form",
     annexIntro: "(complete and return this form only if you wish to withdraw from the Contract)",
-    annexAddressee: "Addressee: Viktor Bobiński, Lubostroń 15A/38, 30-383 Kraków, Poland, vikbobinski@gmail.com",
+    annexAddressee: "Addressee: Viktor Bobiński, Lubostroń 15A/38, 30-383 Kraków, Poland, contact@starlinkee.com",
     annexBody:
       "I/We (*) hereby give notice that I/we (*) withdraw from my/our (*) contract of sale of the following goods (*) / contract for the supply of the following digital content (*) / contract for the provision of the following service (*):",
     annexContractDate: "Date of conclusion of the contract (*) / receipt (*): .........................................................",
@@ -459,7 +459,7 @@ const copy: Record<Locale, Copy> = {
 
     annexTitle: "Anlage 1 — Muster-Widerrufsformular",
     annexIntro: "(nur ausfüllen und zurücksenden, wenn Sie den Vertrag widerrufen möchten)",
-    annexAddressee: "Empfänger: Viktor Bobiński, Lubostroń 15A/38, 30-383 Kraków, Polen, vikbobinski@gmail.com",
+    annexAddressee: "Empfänger: Viktor Bobiński, Lubostroń 15A/38, 30-383 Kraków, Polen, contact@starlinkee.com",
     annexBody:
       "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)/die Lieferung der folgenden digitalen Inhalte (*):",
     annexContractDate: "Bestellt am (*)/erhalten am (*): .........................................................",
@@ -589,7 +589,7 @@ const copy: Record<Locale, Copy> = {
 
     annexTitle: "Allegato 1 — Modulo tipo di recesso",
     annexIntro: "(compilare e restituire solo in caso di volontà di recedere dal Contratto)",
-    annexAddressee: "Destinatario: Viktor Bobiński, Lubostroń 15A/38, 30-383 Cracovia, Polonia, vikbobinski@gmail.com",
+    annexAddressee: "Destinatario: Viktor Bobiński, Lubostroń 15A/38, 30-383 Cracovia, Polonia, contact@starlinkee.com",
     annexBody:
       "Con la presente io/noi (*) notifichiamo il recesso dal mio/nostro (*) contratto di vendita dei seguenti beni (*) / contratto di fornitura dei seguenti contenuti digitali (*) / contratto di prestazione del seguente servizio (*):",
     annexContractDate: "Data di conclusione del contratto (*) / ricezione (*): .........................................................",
