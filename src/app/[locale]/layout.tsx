@@ -122,6 +122,13 @@ export default async function RootLayout({
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+      <head>
+        <script
+          defer
+          src="http://localhost:3000/static/pulse/tracker.js"
+          data-site="56e7bdce12"
+        ></script>
+      </head>
       <body className="min-h-screen bg-white text-gray-900">
         {children}
         <GlobalWidgets locale={locale} />
