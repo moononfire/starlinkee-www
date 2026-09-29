@@ -125,7 +125,7 @@ export default async function RootLayout({
       <head>
         <script
           defer
-          src="http://localhost:3000/static/pulse/tracker.js"
+          src="https://pulse.viktorbobinski.com/static/pulse/tracker.js"
           data-site="56e7bdce12"
         ></script>
       </head>
