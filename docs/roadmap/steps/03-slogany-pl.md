@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 03: Slogany na stronie głównej, wersja polska
 
