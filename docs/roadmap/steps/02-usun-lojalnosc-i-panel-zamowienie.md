@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 02: Usuń kartę lojalnościową i panel admina ze ścieżki zamówienia
 
