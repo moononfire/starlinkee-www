@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 01: Usuń kartę lojalnościową i panel admina ze strony głównej
 
