@@ -7,7 +7,7 @@ status: todo
 Polska strona główna mówi to samo co dziś, ale bardzo krótkimi, chwytliwymi sloganami, które grają na uczuciach (spokój, duma, kontrola) i wynikach (więcej 5★, więcej powracających gości). Ta wersja jest wzorcem przekazu dla kroków 04–06.
 
 ## Zakres
-- `src/i18n.ts`, blok `pl`, klucze strony głównej: `hero`, `features`, `liveDemo` (`sectionTitle`, `sectionSubtitle`, `tour*`), `pricing` (`sectionTitle`, `sectionSubtitle`, `feature*`, `plates`, `annualNote`), `contact` (`sectionTitle`, `sectionSubtitle`), `footer.tagline`.
+- `src/i18n.ts`, blok `pl`, klucze strony głównej: `hero`, `features`, `liveDemo` (`sectionTitle`, `sectionSubtitle`, `tour*`), `pricing` (`sectionTitle`, `sectionSubtitle`, `feature*` oprócz pozycji o SMS-ach i wsparciu technicznym, `plates`, `annualNote`), `contact` (`sectionTitle`, `sectionSubtitle`), `footer.tagline`.
 - Przekaz, który ma zostać zachowany:
   - tabliczka NFC, klient nie potrzebuje aplikacji
   - dobra ocena trafia do Google, zła zostaje u właściciela
@@ -24,7 +24,8 @@ Polska strona główna mówi to samo co dziś, ale bardzo krótkimi, chwytliwymi
 
 ## Poza zakresem
 - Języki en/de/it (kroki 04–06).
-- Ceny, waluty i liczby (199, 29 zł, 200 SMS, 30 dni zostają bez zmian).
+- Ceny, waluty i liczby (199, 29 zł, 30 dni zostają bez zmian).
+- Pozycje cennika o SMS-ach i wsparciu technicznym, które obsługuje krok 08.
 - Etykiety pól formularza kontaktowego, czat, `orderSuccess`, `nav`.
 - Zmiany układu i komponentów (poza drobną poprawką, jeśli krótszy tekst coś psuje).
 - Ponowne dodawanie lojalności lub panelu admina.

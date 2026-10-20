@@ -15,6 +15,7 @@
 
 **Konwencje:**
 - Typ `Translations` powstaje z `pl`. Klucz usuwasz lub dodajesz we wszystkich 4 językach naraz.
+- Oferta SMS to **100 SMS-ów marketingowych miesięcznie** (nie 200), a wsparcie techniczne opisujemy jako **błyskawiczne**, bo obsługuje je osobiście właściciel. Szczegóły w kroku 08.
 - Nie zmieniaj cen, logiki checkoutu, Stripe ani formularzy (etykiet pól).
 - Weryfikacja: `DATABASE_URL=postgresql://u:p@localhost:5432/db npm run build`. Lint ma ponad 200 starych błędów, więc go nie naprawiamy. Nie dodawaj tylko nowych błędów w plikach, które ruszasz.
 - Commity po polsku lub angielsku, krótko, z prefiksem (`feat:`, `copy:`, `fix:`).
