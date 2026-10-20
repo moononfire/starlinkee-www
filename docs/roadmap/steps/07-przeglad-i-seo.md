@@ -1,5 +1,5 @@
 ---
-status: blocked
+status: todo
 ---
 # Krok 07: Przegląd wszystkich języków i SEO strony głównej
 
@@ -23,6 +23,3 @@ Cztery wersje strony głównej są spójne: ta sama długość, ten sam ton, nic
 - Grep `lojal|loyal|treue|fedelt|panel|pannello|admin` po plikach strony głównej i `/order` daje 0 trafień w tekstach widocznych dla użytkownika.
 - Tytuły i opisy SEO mieszczą się w limitach dla wszystkich 4 języków.
 - `DATABASE_URL=postgresql://u:p@localhost:5432/db npm run build` przechodzi.
-
-## Zablokowane (2026-10-20)
-BLOCKED: brak wizualnego przeglądu 375/1280 px — Chromium dla Playwright nie startuje (brak libnspr4.so, wymaga sudo apt/playwright install-deps); SEO i grep zrobione i zacommitowane
