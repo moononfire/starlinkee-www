@@ -25,3 +25,19 @@
 
 - Decyzje: „gość” zamiast „klient” (ton gastronomii); pozycje cennika 1–3 skrócone do „Tabliczka NFC w cenie”, „Filtr opinii Google”, „Kupony SMS”; opis linktree nie wspomina już o „do 7 linkach” (liczba nie jest ceną ani limitem checkoutu); `liveDemo.cta` skrócone do 4 słów.
 - Odłożono: en/de/it (kroki 04–06), SMS i wsparcie w cenniku (krok 08). Build przechodzi; `/pl` nie sprawdzano wizualnie na 375/1280 px (tylko build).
+
+## Krok 04: Slogany na stronie głównej, wersja angielska (en)
+- Powstało: skrócone teksty `en` (hero, features, liveDemo, pricing bez SMS i wsparcia, contact, footer.tagline) w limitach z kroku 03, w tonie wzorca `pl`.
+
+  | Klucz | Przed | Po |
+  |---|---|---|
+  | hero.title | More positive reviews. | More 5★ reviews. |
+  | hero.titleHighlight | More returning customers. | More returning guests. |
+  | hero.subtitle | NFC plates that automatically filter negative reviews… (24 słowa) | One tap: great reviews go to Google, bad ones stay with you. |
+  | features.sectionTitle | Complete online reputation management | Peace of mind. Full control. |
+  | linktreeTitle | Your own link page | Your own link page |
+  | reviewTitle | Google profile protection | Only great reviews |
+  | promoTitle | Collect consent & contact data | Guests come back |
+
+- Decyzje: „guests” zamiast „customers”; opis linktree bez „up to 7 links” (jak w pl); `annualNote` poprawione z mylącego „10 months for the price of 10” na „10 months instead of 12”; `pricing.feature4/5` (SMS, wsparcie) nietknięte (krok 08).
+- Odłożono: de/it (kroki 05–06), SMS i wsparcie w cenniku (krok 08). Build przechodzi (ostrzeżenie o pobraniu fontu ★ dla OG image to sprawa sieci); `/en` nie sprawdzano wizualnie na 375/1280 px.

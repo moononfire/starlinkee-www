@@ -140,47 +140,47 @@ const translations = {
     },
     hero: {
       badge: "Review system for restaurants",
-      title: "More positive reviews.",
-      titleHighlight: "More returning customers.",
+      title: "More 5★ reviews.",
+      titleHighlight: "More returning guests.",
       subtitle:
-        "NFC plates that automatically filter negative reviews, send promo coupons, and bring guests back — no app install needed for your customers.",
+        "One tap: great reviews go to Google, bad ones stay with you.",
       cta: "Start for free",
       ctaSecondary: "Book a demo",
     },
     features: {
-      sectionTitle: "Complete online reputation management",
+      sectionTitle: "Peace of mind. Full control.",
       sectionSubtitle:
-        "One NFC plate — full control over your Google reviews and contact database. No app needed, no complex setup.",
+        "One NFC plate. Zero apps for your guests.",
       linktreeTitle: "Your own link page",
       linktreeDesc:
-        "When a customer scans the NFC tag, they land on your own page — where they rate their visit and claim coupons. On top of that, you can add up to 7 of your own custom links, e.g. to social media, your menu or a booking page.",
-      reviewTitle: "Google profile protection",
+        "Guests scan and see rating, coupon, menu and your socials.",
+      reviewTitle: "Only great reviews",
       reviewDesc:
-        "Customer scans the NFC plate and rates their visit. Happy? Their review goes straight to your Google profile. Unhappy? The feedback stays with you — react before a negative review hits the web.",
-      promoTitle: "Collect consent & contact data",
+        "Happy guests go to Google. Unhappy ones write to you.",
+      promoTitle: "Guests come back",
       promoDesc:
-        "With every scan you can capture a phone number and marketing consent. Send SMS coupons, announce promotions — build a customer base you can reach again with offers.",
+        "Collect phone numbers and consent, send SMS coupons. Build a base of regulars.",
     },
     pricing: {
       sectionTitle: "Simple pricing",
-      sectionSubtitle: "No hidden fees. No long-term contracts.",
+      sectionSubtitle: "Start free. No contracts, no hidden fees.",
       planName: "Starlinkee Pro",
       price: "49",
       currency: "€",
       period: "/mo",
       includes: "Includes:",
-      feature1: "1 NFC plate included",
-      feature2: "Google review filtering",
-      feature3: "SMS coupon system",
+      feature1: "NFC plate included",
+      feature2: "Google review filter",
+      feature3: "SMS coupons",
       feature4: "200 SMS/mo included",
       feature5: "Technical support",
       cta: "Start for free",
-      plates: "First NFC plate free, additional plates €9 each",
+      plates: "First plate free, extras €9 each",
       periodAnnual: "/yr",
       billingMonthly: "Monthly billing",
       billingAnnual: "Annual billing",
       annualSavingsBadge: "2 months free",
-      annualNote: "Pay once a year and get 10 months for the price of 10 instead of 12.",
+      annualNote: "Pay yearly: 10 months instead of 12.",
       comingSoon: "Coming soon",
       trialTeaser: "30 days free",
       afterTrialNote: "After 30-day trial:",
@@ -188,29 +188,29 @@ const translations = {
     liveDemo: {
       sectionTitle: "See it live",
       sectionSubtitle:
-        "This is the real page your customers see after scanning the NFC plate — no install, no waiting.",
+        "This is what your guest sees after scanning.",
       iframeTitle: "Live preview of the page shown after scanning a Starlinkee plate",
-      cta: "Open the full-screen preview",
+      cta: "Open full-screen preview",
       expandCta: "See how it works",
       collapseCta: "Hide preview",
       mobileCta: "Open on your phone",
-      tourIdle: "👉 Tap the phone and walk through the flow just like your customer would.",
+      tourIdle: "👉 Tap the phone and walk through it as your guest.",
       tourLinktree:
-        "This is the page a customer lands on after scanning the plate — all your links live here, and you can change them any time.",
+        "Guests land here after scanning. Your links, always current.",
       tourFilter:
-        "This is the review filter: the customer rates their visit with you first, before anything goes public.",
+        "Review filter: guests rate their visit with you first, not online.",
       tourHighRating:
-        "A high rating sends the customer straight to your Google profile to leave a public review.",
+        "High rating? Guest goes straight to your Google profile.",
       tourLowRating:
-        "A low rating keeps the customer with you — they write a message that only reaches the owner, and can't go back to leave a public review.",
+        "Low rating? The message reaches only you. Resolve it calmly.",
       tourPromo:
-        "This is where the customer claims the current promotion — a code or coupon you set up yourself.",
+        "Here guests claim the coupon you set up.",
       tourRestart: "Restart the demo",
     },
     contact: {
       sectionTitle: "Let's talk",
       sectionSubtitle:
-        "Leave your details — we'll get back to you within 24 hours and show you how Starlinkee can help your business.",
+        "Leave your details — we reply within 24 hours.",
       nameLabel: "Full name",
       namePlaceholder: "John Smith",
       emailLabel: "Email",
@@ -226,7 +226,7 @@ const translations = {
       error: "Something went wrong. Please try again.",
     },
     footer: {
-      tagline: "Review system for restaurants.",
+      tagline: "More 5★. More regulars.",
       rights: "All rights reserved.",
     },
     chat: {
