@@ -306,3 +306,18 @@ were handed and what counts as done. If you are setting up a world pack for your
 
 
 Zadania z docs/roadmap/steps/ wykonuj zgodnie z docs/roadmap/PROTOCOL.md.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
