@@ -382,47 +382,47 @@ const translations = {
     },
     hero: {
       badge: "Sistema di recensioni per la ristorazione",
-      title: "Più recensioni positive.",
-      titleHighlight: "Più clienti che ritornano.",
+      title: "Più recensioni 5★.",
+      titleHighlight: "Più clienti che tornano.",
       subtitle:
-        "Targhe NFC che filtrano automaticamente le recensioni negative, inviano coupon promozionali via SMS e riportano i clienti da te — senza app per i tuoi clienti.",
+        "Un tocco: le belle recensioni su Google, le brutte restano da te.",
       cta: "Inizia gratis",
       ctaSecondary: "Prenota una demo",
     },
     features: {
-      sectionTitle: "Gestione completa della reputazione online",
+      sectionTitle: "Serenità. Controllo totale.",
       sectionSubtitle:
-        "Una targa NFC — controllo totale sulle recensioni Google, database contatti. Nessuna app necessaria, nessuna configurazione complicata.",
-      linktreeTitle: "La tua pagina di link personale",
+        "Una targa NFC, nessuna app per i tuoi clienti.",
+      linktreeTitle: "La tua pagina link",
       linktreeDesc:
-        "Quando il cliente scansiona il tag NFC, atterra sulla tua pagina personale — dove valuta la visita e riscatta i coupon. Inoltre puoi aggiungere fino a 7 link personalizzati, ad esempio ai social media, al menu o alla pagina delle prenotazioni.",
-      reviewTitle: "Protezione del profilo Google",
+        "Il cliente scansiona e vede voto, coupon, menu e i tuoi social.",
+      reviewTitle: "Solo recensioni top",
       reviewDesc:
-        "Il cliente scansiona la targa NFC e valuta la visita. Soddisfatto? La recensione va direttamente sul tuo profilo Google. Insoddisfatto? Il feedback resta a te — reagisci prima che una recensione negativa finisca online.",
-      promoTitle: "Raccogli consensi e dati di contatto",
+        "Chi è soddisfatto va su Google, chi no scrive a te.",
+      promoTitle: "I clienti tornano",
       promoDesc:
-        "Ad ogni scansione puoi raccogliere un numero di telefono e il consenso marketing. Invia coupon SMS, comunica promozioni — costruisci una base clienti da ricontattare con le tue offerte.",
+        "Raccogli numeri e consensi, invia coupon SMS. Una base di clienti fedeli.",
     },
     pricing: {
       sectionTitle: "Prezzi semplici",
-      sectionSubtitle: "Nessun costo nascosto. Nessun contratto a lungo termine.",
+      sectionSubtitle: "Parti gratis. Niente contratti né costi nascosti.",
       planName: "Starlinkee Pro",
       price: "49",
       currency: "€",
       period: "/mese",
       includes: "Include:",
-      feature1: "1 targa NFC inclusa",
+      feature1: "Targa NFC inclusa",
       feature2: "Filtro recensioni Google",
-      feature3: "Sistema coupon SMS",
+      feature3: "Coupon SMS",
       feature4: "200 SMS/mese inclusi",
       feature5: "Supporto tecnico",
       cta: "Inizia gratis",
-      plates: "Prima targa NFC gratis, ogni altra 9 €",
+      plates: "Prima targa gratis, le altre 9 €",
       periodAnnual: "/anno",
       billingMonthly: "Pagamento mensile",
       billingAnnual: "Pagamento annuale",
       annualSavingsBadge: "2 mesi gratis",
-      annualNote: "Paga una volta all'anno e paga per 10 mesi invece di 12.",
+      annualNote: "Paghi una volta l'anno: 10 mesi invece di 12.",
       comingSoon: "Prossimamente",
       trialTeaser: "30 giorni gratis",
       afterTrialNote: "Dopo la prova di 30 giorni:",
@@ -430,29 +430,29 @@ const translations = {
     liveDemo: {
       sectionTitle: "Guardalo dal vivo",
       sectionSubtitle:
-        "Questa è la vera pagina che i tuoi clienti vedono dopo aver scansionato la targa NFC — senza installazione, senza attesa.",
+        "Così il tuo cliente vede la pagina dopo la scansione.",
       iframeTitle: "Anteprima dal vivo della pagina mostrata dopo la scansione di una targa Starlinkee",
-      cta: "Apri l'anteprima a schermo intero",
+      cta: "Anteprima a schermo intero",
       expandCta: "Guarda come funziona",
       collapseCta: "Nascondi anteprima",
       mobileCta: "Apri sul tuo telefono",
-      tourIdle: "👉 Tocca il telefono e segui il percorso proprio come farebbe il tuo cliente.",
+      tourIdle: "👉 Tocca il telefono e vivi il percorso come il tuo cliente.",
       tourLinktree:
-        "Questa è la pagina su cui atterra il cliente dopo la scansione — qui trovi tutti i tuoi link, che puoi cambiare quando vuoi.",
+        "Qui arriva il cliente dopo la scansione. I tuoi link, sempre aggiornati.",
       tourFilter:
-        "Questo è il filtro delle recensioni: il cliente valuta prima la visita con te, prima che qualcosa diventi pubblico.",
+        "Filtro recensioni: il cliente valuta prima con te, non online.",
       tourHighRating:
-        "Con una valutazione alta il cliente va direttamente al tuo profilo Google per lasciare una recensione pubblica.",
+        "Voto alto? Il cliente va dritto al tuo profilo Google.",
       tourLowRating:
-        "Con una valutazione bassa il cliente resta con te — scrive un messaggio che arriva solo al titolare e non può più tornare a lasciare una recensione pubblica.",
+        "Voto basso? Il messaggio arriva solo a te. Lo risolvi con calma.",
       tourPromo:
-        "Qui il cliente riscatta la promozione attuale — un codice o coupon che imposti tu.",
+        "Qui il cliente riscatta il coupon che imposti tu.",
       tourRestart: "Ricomincia la demo",
     },
     contact: {
       sectionTitle: "Parliamone",
       sectionSubtitle:
-        "Lascia i tuoi dati — ti ricontatteremo entro 24 ore e ti mostreremo come Starlinkee può aiutare la tua attività.",
+        "Lascia i tuoi dati — ti rispondiamo entro 24 ore.",
       nameLabel: "Nome completo",
       namePlaceholder: "Mario Rossi",
       emailLabel: "Email",
@@ -468,7 +468,7 @@ const translations = {
       error: "Qualcosa è andato storto. Riprova.",
     },
     footer: {
-      tagline: "Sistema di recensioni per la ristorazione.",
+      tagline: "Più 5★. Più clienti fedeli.",
       rights: "Tutti i diritti riservati.",
     },
     chat: {

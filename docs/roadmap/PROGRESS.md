@@ -57,3 +57,19 @@
 
 - Decyzje: „Gast/Stammgäste” zamiast „Kunde”; krótkie złożenia; opis linktree bez „bis zu 7 Links”; `annualNote` „10 Monate statt 12”; `feature1` bez „1” (liczba pakietu nie jest ceną); SMS i wsparcie (`feature4/5`) nietknięte (krok 08).
 - Odłożono: it (krok 06), SMS i wsparcie w cenniku (krok 08). Build przechodzi; `/de` nie sprawdzano wizualnie na 375/1280 px.
+
+## Krok 06: Slogany na stronie głównej, wersja włoska (it)
+- Powstało: skrócone teksty `it` (hero, features, liveDemo, pricing bez SMS i wsparcia, contact, footer.tagline) w limitach z kroku 03, w formie „tu” (jak reszta strony).
+
+  | Klucz | Przed | Po |
+  |---|---|---|
+  | hero.title | Più recensioni positive. | Più recensioni 5★. |
+  | hero.titleHighlight | Più clienti che ritornano. | Più clienti che tornano. |
+  | hero.subtitle | Targhe NFC che filtrano automaticamente… (24 słowa) | Un tocco: le belle recensioni su Google, le brutte restano da te. |
+  | features.sectionTitle | Gestione completa della reputazione online | Serenità. Controllo totale. |
+  | linktreeTitle | La tua pagina di link personale | La tua pagina link |
+  | reviewTitle | Protezione del profilo Google | Solo recensioni top |
+  | promoTitle | Raccogli consensi e dati di contatto | I clienti tornano |
+
+- Decyzje: zostaje „clienti” (naturalne we włoskim, w odróżnieniu od „ospiti”); `linktreeTitle` skrócone do 4 słów; opis linktree bez „fino a 7 link”; `annualNote` „10 mesi invece di 12”; `feature1` bez „1”; SMS i wsparcie (`feature4/5`) nietknięte (krok 08).
+- Odłożono: SMS i wsparcie w cenniku (krok 08). Build przechodzi; `/it` nie sprawdzano wizualnie na 375/1280 px.
