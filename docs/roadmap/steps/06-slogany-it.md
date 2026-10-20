@@ -1,0 +1,25 @@
+---
+status: todo
+---
+# Krok 06: Slogany na stronie głównej, wersja włoska (it)
+
+## Cel
+Strona `/it` ma tak samo krótkie, emocjonalne i nastawione na wyniki slogany jak wersja polska z kroku 03. Teksty brzmią naturalnie dla native speakera (Italiano), a nie jak dosłowne tłumaczenie.
+
+## Zakres
+- `src/i18n.ts`, blok `it`: te same klucze co w kroku 03 (`hero`, `features`, `liveDemo` sectionTitle/sectionSubtitle/tour*, `pricing` sectionTitle/sectionSubtitle/feature*/plates/annualNote, `contact` sectionTitle/sectionSubtitle, `footer.tagline`).
+- Przekaz i zasady tonu bierz z wersji `pl` i komentarza z kroku 03. Limity słów są te same.
+- Zastosuj lokalne konwencje rynku (np. ton bezpośredni i ciepły, „tu” albo „Lei” zgodnie z resztą strony).
+
+## Poza zakresem
+- Pozostałe języki.
+- Ceny, liczby, formularze, czat, `orderSuccess`, `nav`.
+- Zmiany komponentów (poza drobną poprawką, jeśli krótszy tekst coś psuje).
+
+## Kryteria akceptacji
+- Wszystkie wymienione klucze `it` mieszczą się w limitach z kroku 03.
+- Każdy punkt przekazu z kroku 03 jest obecny na `/it`.
+- Brak słów o lojalności i panelu admina.
+- `/it` renderuje się poprawnie na 375 px i 1280 px, bez łamania pojedynczych długich słów.
+- W PROGRESS.md jest tabela „przed → po” dla hero i tytułów funkcji.
+- `DATABASE_URL=postgresql://u:p@localhost:5432/db npm run build` przechodzi.

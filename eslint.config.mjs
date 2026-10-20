@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // OpenRig agent files, not app code.
+    "rigs/**",
   ]),
 ]);
 
