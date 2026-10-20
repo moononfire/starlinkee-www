@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 05: Slogany na stronie głównej, wersja niemiecka (de)
 
