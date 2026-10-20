@@ -120,7 +120,7 @@ const translations = {
     },
     orderSuccess: {
       title: "Zamówienie przyjęte!",
-      bodyPaid1: "Dziękujemy za zakup. Na podany adres e-mail wysłaliśmy potwierdzenie zamówienia oraz link do aktywacji panelu.",
+      bodyPaid1: "Dziękujemy za zakup. Na podany adres e-mail wysłaliśmy potwierdzenie zamówienia.",
       bodyPaid2: "Tabliczki NFC wyślemy na podany adres w ciągu 3-5 dni roboczych.",
       titleTrial: "Trial rozpoczęty!",
       bodyTrial1: "Masz 30 dni na sprawdzenie Starlinkee Pro bez żadnych opłat. Potwierdzenie i instrukcje wysłaliśmy na podany adres e-mail.",
@@ -241,7 +241,7 @@ const translations = {
     },
     orderSuccess: {
       title: "Order confirmed!",
-      bodyPaid1: "Thanks for your purchase. We've sent an order confirmation and a panel activation link to your email.",
+      bodyPaid1: "Thanks for your purchase. We've sent an order confirmation to your email.",
       bodyPaid2: "We'll ship your NFC plates within 3-5 business days.",
       titleTrial: "Trial started!",
       bodyTrial1: "You have 30 days to try Starlinkee Pro, free of charge. We've sent a confirmation and instructions to your email.",
@@ -362,7 +362,7 @@ const translations = {
     },
     orderSuccess: {
       title: "Bestellung eingegangen!",
-      bodyPaid1: "Vielen Dank für Ihren Kauf. Wir haben eine Bestellbestätigung und einen Link zur Aktivierung des Panels an Ihre E-Mail-Adresse gesendet.",
+      bodyPaid1: "Vielen Dank für Ihren Kauf. Wir haben eine Bestellbestätigung an Ihre E-Mail-Adresse gesendet.",
       bodyPaid2: "Die NFC-Aufsteller versenden wir innerhalb von 3-5 Werktagen.",
       titleTrial: "Testphase gestartet!",
       bodyTrial1: "Sie haben 30 Tage Zeit, Starlinkee Pro kostenlos zu testen. Bestätigung und Anleitung haben wir an Ihre E-Mail-Adresse gesendet.",
@@ -483,7 +483,7 @@ const translations = {
     },
     orderSuccess: {
       title: "Ordine confermato!",
-      bodyPaid1: "Grazie per il tuo acquisto. Abbiamo inviato la conferma dell'ordine e il link di attivazione del pannello al tuo indirizzo e-mail.",
+      bodyPaid1: "Grazie per il tuo acquisto. Abbiamo inviato la conferma dell'ordine al tuo indirizzo e-mail.",
       bodyPaid2: "Spediremo le targhe NFC all'indirizzo indicato entro 3-5 giorni lavorativi.",
       titleTrial: "Prova avviata!",
       bodyTrial1: "Hai 30 giorni per provare Starlinkee Pro senza alcun costo. Abbiamo inviato conferma e istruzioni al tuo indirizzo e-mail.",
