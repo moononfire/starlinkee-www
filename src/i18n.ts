@@ -7,6 +7,9 @@ export const LOCALES: Locale[] = ["pl", "en", "de", "it"];
 export const LOCALE_COOKIE_NAME = "locale";
 
 const translations = {
+  // Ton PL (wzorzec dla en/de/it): krótko, jedno zdanie, bez żargonu.
+  // Akcent na uczucia (spokój, duma, kontrola) i wyniki (więcej 5★, więcej powracających gości).
+  // Mów do właściciela na „Ty”, konkretem zamiast ogólników; każdy język pisz naturalnie, nie tłumacz dosłownie.
   pl: {
     nav: {
       features: "Funkcje",
@@ -16,47 +19,47 @@ const translations = {
     },
     hero: {
       badge: "System opinii dla gastronomii",
-      title: "Więcej pozytywnych opinii.",
-      titleHighlight: "Więcej powracających klientów.",
+      title: "Więcej gwiazdek 5★.",
+      titleHighlight: "Więcej powracających gości.",
       subtitle:
-        "Tabliczki NFC, które automatycznie filtrują negatywne opinie, wysyłają kupony promocyjne i przyciągają gości z powrotem — bez aplikacji dla Twoich klientów.",
+        "Jedno dotknięcie: dobre opinie lecą do Google, złe zostają u Ciebie.",
       cta: "Zacznij za darmo",
       ctaSecondary: "Zamów prezentację",
     },
     features: {
-      sectionTitle: "Kompleksowe narzędzie do reputacji online",
+      sectionTitle: "Spokojna głowa. Pełna kontrola.",
       sectionSubtitle:
-        "Jedna tabliczka NFC — i masz pełną kontrolę nad opinią w Google i bazą kontaktów. Bez aplikacji, bez skomplikowanej konfiguracji.",
-      linktreeTitle: "Twoja własna strona z linkami",
+        "Jedna tabliczka NFC, zero aplikacji dla Twoich gości.",
+      linktreeTitle: "Twoja strona z linkami",
       linktreeDesc:
-        "Po zeskanowaniu tabliczki NFC klient trafia na Twoją własną stronę — gdzie ocenia wizytę i odbiera kupony. Dodatkowo możesz dodać do 7 własnych linków, np. do social mediów, menu czy strony z rezerwacją.",
-      reviewTitle: "Ochrona profilu Google",
+        "Po skanie gość widzi ocenę, kupon, menu i Twoje social media.",
+      reviewTitle: "Same dobre opinie",
       reviewDesc:
-        "Klient skanuje tabliczkę NFC i ocenia wizytę. Zadowolony? Jego opinia trafia prosto na Twój profil Google. Niezadowolony? Feedback zostaje u Ciebie — reagujesz zanim negatyw trafi do sieci.",
-      promoTitle: "Zbieraj zgody i dane kontaktowe",
+        "Zadowolony gość trafia do Google, niezadowolony pisze do Ciebie.",
+      promoTitle: "Goście wracają",
       promoDesc:
-        "Przy każdym skanowaniu możesz pozyskać numer telefonu i zgodę na kontakt marketingowy. Wysyłaj kupony SMS, informuj o promocjach — buduj bazę klientów, do których wrócisz z ofertą.",
+        "Zbieraj telefony i zgody, wysyłaj kupony SMS. Stała baza gości, do których wracasz.",
     },
     pricing: {
       sectionTitle: "Prosty cennik",
-      sectionSubtitle: "Bez ukrytych kosztów. Bez długoterminowych umów.",
+      sectionSubtitle: "Zaczynasz za darmo, bez umów i ukrytych kosztów.",
       planName: "Starlinkee Pro",
       price: "199",
       currency: "zł",
       period: "/mies.",
       includes: "W cenie:",
-      feature1: "1 tabliczka NFC w cenie",
-      feature2: "Filtrowanie opinii Google",
-      feature3: "System kuponów SMS",
+      feature1: "Tabliczka NFC w cenie",
+      feature2: "Filtr opinii Google",
+      feature3: "Kupony SMS",
       feature4: "200 SMS-ów/mies. w cenie",
       feature5: "Wsparcie techniczne",
       cta: "Zacznij za darmo",
-      plates: "Pierwsza tabliczka NFC gratis, każda kolejna 29 zł",
+      plates: "Pierwsza tabliczka gratis, kolejne po 29 zł",
       periodAnnual: "/rok",
       billingMonthly: "Płatność miesięczna",
       billingAnnual: "Płatność roczna",
       annualSavingsBadge: "2 miesiące gratis",
-      annualNote: "Płać raz w roku i zapłać za 10 miesięcy zamiast 12.",
+      annualNote: "Płać raz w roku — za 10 miesięcy zamiast 12.",
       comingSoon: "Wkrótce dostępne",
       trialTeaser: "30 dni za darmo",
       afterTrialNote: "Po 30-dniowym okresie próbnym:",
@@ -64,29 +67,29 @@ const translations = {
     liveDemo: {
       sectionTitle: "Zobacz to na żywo",
       sectionSubtitle:
-        "To prawdziwa strona, którą widzi klient po zeskanowaniu tabliczki NFC — bez montażu, bez czekania.",
+        "Tak widzi to Twój gość po zeskanowaniu tabliczki.",
       iframeTitle: "Podgląd na żywo strony po zeskanowaniu tabliczki Starlinkee",
-      cta: "Otwórz podgląd na pełnym ekranie",
+      cta: "Podgląd na pełnym ekranie",
       expandCta: "Zobacz, jak to działa",
       collapseCta: "Schowaj podgląd",
       mobileCta: "Otwórz w swoim telefonie",
-      tourIdle: "👉 Kliknij w telefon i przejdź przez proces tak, jak zrobiłby to Twój klient.",
+      tourIdle: "👉 Kliknij w telefon i przejdź ścieżkę oczami gościa.",
       tourLinktree:
-        "To strona, na którą trafia klient po zeskanowaniu tabliczki — masz tu wszystkie swoje linki i możesz je w każdej chwili zmienić.",
+        "Tu trafia gość po skanie. Twoje linki, zawsze aktualne.",
       tourFilter:
-        "To filtr opinii: klient najpierw ocenia wizytę u Ciebie, zanim cokolwiek trafi do internetu.",
+        "Filtr opinii: gość najpierw ocenia wizytę u Ciebie, nie w internecie.",
       tourHighRating:
-        "Przy wysokiej ocenie klient trafia prosto na Twój profil Google — tam zostawia publiczną opinię.",
+        "Wysoka ocena? Gość od razu ląduje na Twoim profilu Google.",
       tourLowRating:
-        "Przy niskiej ocenie klient zostaje z Tobą — pisze wiadomość, która trafia tylko do właściciela, i nie może już wrócić do wystawienia publicznej opinii.",
+        "Niska ocena? Wiadomość trafia tylko do Ciebie. Spokojnie to wyjaśnisz.",
       tourPromo:
-        "Tu klient odbiera aktualną promocję — kod lub kupon, który sam ustawiasz.",
+        "Tu gość odbiera kupon, który sam ustawiasz.",
       tourRestart: "Zacznij pokaz od nowa",
     },
     contact: {
       sectionTitle: "Porozmawiajmy",
       sectionSubtitle:
-        "Zostaw swoje dane — odezwiemy się w ciągu 24 godzin i pokażemy, jak Starlinkee może pomóc Twojemu biznesowi.",
+        "Zostaw dane — odezwiemy się w ciągu 24 godzin.",
       nameLabel: "Imię i nazwisko",
       namePlaceholder: "Jan Kowalski",
       emailLabel: "E-mail",
@@ -102,7 +105,7 @@ const translations = {
       error: "Coś poszło nie tak. Spróbuj ponownie.",
     },
     footer: {
-      tagline: "System opinii dla gastronomii.",
+      tagline: "Więcej 5★. Więcej stałych gości.",
       rights: "Wszelkie prawa zastrzeżone.",
     },
     chat: {
