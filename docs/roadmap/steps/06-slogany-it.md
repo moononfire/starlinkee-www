@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 06: Slogany na stronie głównej, wersja włoska (it)
 
