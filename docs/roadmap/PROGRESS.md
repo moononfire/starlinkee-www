@@ -73,3 +73,8 @@
 
 - Decyzje: zostaje „clienti” (naturalne we włoskim, w odróżnieniu od „ospiti”); `linktreeTitle` skrócone do 4 słów; opis linktree bez „fino a 7 link”; `annualNote` „10 mesi invece di 12”; `feature1` bez „1”; SMS i wsparcie (`feature4/5`) nietknięte (krok 08).
 - Odłożono: SMS i wsparcie w cenniku (krok 08). Build przechodzi; `/it` nie sprawdzano wizualnie na 375/1280 px.
+
+## Krok 07: Przegląd wszystkich języków i SEO strony głównej
+- Powstało: tytuły i opisy SEO w `layout.tsx` w stylu sloganów (tytuły 44–51 znaków, opisy 101–115 znaków, limity 60/155); grep `lojal|loyal|treue|fedelt|panel|pannello|admin` po `i18n.ts`, komponentach strony głównej, `page.tsx`, `layout.tsx` i `/order` daje 0 trafień.
+- Decyzje: opisy JSON-LD w `page.tsx` bez zmian, bo nie wspominają lojalności ani panelu i zgadzają się z przekazem; przegląd długości tekstów pl/en/de/it: wszystkie klucze strony głównej w limitach, najdłuższe wyrazy w de to ≤18 znaków (łamią się na dywizach), bez zmian w komponentach.
+- Odłożono / NIE ZROBIONO: wizualny przegląd 375 px i 1280 px. Playwright w środowisku nie uruchamia Chromium (brak `libnspr4.so`, instalacja wymaga sudo), a innej przeglądarki nie ma. `npm run build` przechodzi, `next start` zwraca 200 dla `/pl`, ale zrzuty nie powstały. Do zrobienia po doinstalowaniu bibliotek (`npx playwright install-deps chromium`).

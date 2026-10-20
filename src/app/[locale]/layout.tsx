@@ -27,17 +27,17 @@ const ogLocales: Record<Locale, string> = {
 };
 
 const titles: Record<Locale, string> = {
-  pl: "Starlinkee — System opinii dla gastronomii",
-  en: "Starlinkee — Review system for restaurants",
-  de: "Starlinkee — Bewertungssystem für die Gastronomie",
-  it: "Starlinkee — Sistema di recensioni per la ristorazione",
+  pl: "Starlinkee — Więcej 5★, więcej stałych gości",
+  en: "Starlinkee — More 5★ reviews, more returning guests",
+  de: "Starlinkee — Mehr 5★-Bewertungen, mehr Stammgäste",
+  it: "Starlinkee — Più recensioni 5★, più clienti fedeli",
 };
 
 const descriptions: Record<Locale, string> = {
-  pl: "Tabliczki NFC, które filtrują negatywne opinie, wysyłają kupony SMS i przyciągają gości z powrotem. Bez aplikacji.",
-  en: "NFC plates that filter negative reviews, send SMS coupons, and bring guests back. No app required.",
-  de: "NFC-Aufsteller, die negative Bewertungen filtern, SMS-Gutscheine versenden und Gäste zurückbringen. Ohne App.",
-  it: "Targhe NFC che filtrano le recensioni negative, inviano coupon SMS e riportano i clienti da te. Senza app.",
+  pl: "Jedno dotknięcie: dobre opinie lecą do Google, złe zostają u Ciebie. Tabliczka NFC, kupony SMS, zero aplikacji.",
+  en: "One tap: great reviews go to Google, bad ones stay with you. NFC plate, SMS coupons, no app for guests.",
+  de: "Ein Tipp: Gute Bewertungen gehen zu Google, schlechte bleiben bei Ihnen. NFC-Aufsteller, SMS-Gutscheine, keine App.",
+  it: "Un tocco: le belle recensioni su Google, le brutte restano da te. Targa NFC, coupon SMS, nessuna app.",
 };
 
 export async function generateStaticParams() {
