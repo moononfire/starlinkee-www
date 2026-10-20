@@ -19,8 +19,6 @@ export default function Pricing({
     t.pricing.feature3,
     t.pricing.feature4,
     t.pricing.feature5,
-    t.pricing.feature6,
-    t.pricing.feature7,
   ];
 
   const annualPrice = Number(t.pricing.price) * 10;

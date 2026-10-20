@@ -4,7 +4,6 @@ import type { Translations } from "@/i18n";
 
 export type DemoStep =
   | "linktree"
-  | "loyalty"
   | "promo"
   | "promo_claim"
   | "plate_scan"
@@ -14,7 +13,6 @@ export type DemoStep =
 
 export const RELEVANT_STEPS = new Set<DemoStep>([
   "linktree",
-  "loyalty",
   "promo",
   "promo_claim",
   "plate_scan",
@@ -36,7 +34,6 @@ export default function DemoAnnotation({
   const copy: Record<DemoStep | "idle", string> = {
     idle: t.liveDemo.tourIdle,
     linktree: t.liveDemo.tourLinktree,
-    loyalty: t.liveDemo.tourLoyalty,
     promo: t.liveDemo.tourPromo,
     promo_claim: t.liveDemo.tourPromo,
     plate_scan: t.liveDemo.tourFilter,

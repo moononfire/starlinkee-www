@@ -15,30 +15,27 @@ const translations = {
       getStarted: "Zacznij za darmo",
     },
     hero: {
-      badge: "System opinii & lojalności dla gastronomii",
+      badge: "System opinii dla gastronomii",
       title: "Więcej pozytywnych opinii.",
       titleHighlight: "Więcej powracających klientów.",
       subtitle:
-        "Tabliczki NFC, które automatycznie filtrują negatywne opinie, wysyłają kupony promocyjne i budują lojalność — bez aplikacji dla Twoich klientów.",
+        "Tabliczki NFC, które automatycznie filtrują negatywne opinie, wysyłają kupony promocyjne i przyciągają gości z powrotem — bez aplikacji dla Twoich klientów.",
       cta: "Zacznij za darmo",
       ctaSecondary: "Zamów prezentację",
     },
     features: {
       sectionTitle: "Kompleksowe narzędzie do reputacji online",
       sectionSubtitle:
-        "Jedna tabliczka NFC — i masz pełną kontrolę nad opinią w Google, bazą kontaktów i lojalnością klientów. Bez aplikacji, bez skomplikowanej konfiguracji.",
+        "Jedna tabliczka NFC — i masz pełną kontrolę nad opinią w Google i bazą kontaktów. Bez aplikacji, bez skomplikowanej konfiguracji.",
       linktreeTitle: "Twoja własna strona z linkami",
       linktreeDesc:
-        "Po zeskanowaniu tabliczki NFC klient trafia na Twoją własną stronę — Twój dashboard, w którym ma dostęp do wszystkich funkcji aplikacji: ocen, kuponów i karty lojalnościowej. Dodatkowo możesz dodać do 7 własnych linków, np. do social mediów, menu czy strony z rezerwacją.",
+        "Po zeskanowaniu tabliczki NFC klient trafia na Twoją własną stronę — gdzie ocenia wizytę i odbiera kupony. Dodatkowo możesz dodać do 7 własnych linków, np. do social mediów, menu czy strony z rezerwacją.",
       reviewTitle: "Ochrona profilu Google",
       reviewDesc:
         "Klient skanuje tabliczkę NFC i ocenia wizytę. Zadowolony? Jego opinia trafia prosto na Twój profil Google. Niezadowolony? Feedback zostaje u Ciebie — reagujesz zanim negatyw trafi do sieci.",
       promoTitle: "Zbieraj zgody i dane kontaktowe",
       promoDesc:
         "Przy każdym skanowaniu możesz pozyskać numer telefonu i zgodę na kontakt marketingowy. Wysyłaj kupony SMS, informuj o promocjach — buduj bazę klientów, do których wrócisz z ofertą.",
-      loyaltyTitle: "Karta lojalnościowa bez aplikacji",
-      loyaltyDesc:
-        "Cyfrowa karta stałego klienta, która działa przez sam skan NFC. Klient zbiera wizyty, a po osiągnięciu progu — dostaje nagrodę. Budujesz nawyk powracania bez żadnych dodatkowych aplikacji.",
     },
     pricing: {
       sectionTitle: "Prosty cennik",
@@ -51,10 +48,8 @@ const translations = {
       feature1: "1 tabliczka NFC w cenie",
       feature2: "Filtrowanie opinii Google",
       feature3: "System kuponów SMS",
-      feature4: "Karta lojalnościowa",
-      feature5: "Panel administracyjny",
-      feature6: "200 SMS-ów/mies. w cenie",
-      feature7: "Wsparcie techniczne",
+      feature4: "200 SMS-ów/mies. w cenie",
+      feature5: "Wsparcie techniczne",
       cta: "Zacznij za darmo",
       plates: "Pierwsza tabliczka NFC gratis, każda kolejna 29 zł",
       periodAnnual: "/rok",
@@ -77,17 +72,15 @@ const translations = {
       mobileCta: "Otwórz w swoim telefonie",
       tourIdle: "👉 Kliknij w telefon i przejdź przez proces tak, jak zrobiłby to Twój klient.",
       tourLinktree:
-        "To strona, na którą trafia klient po zeskanowaniu tabliczki — masz tu wszystkie swoje linki i zarządzasz nimi z panelu.",
+        "To strona, na którą trafia klient po zeskanowaniu tabliczki — masz tu wszystkie swoje linki i możesz je w każdej chwili zmienić.",
       tourFilter:
         "To filtr opinii: klient najpierw ocenia wizytę u Ciebie, zanim cokolwiek trafi do internetu.",
       tourHighRating:
         "Przy wysokiej ocenie klient trafia prosto na Twój profil Google — tam zostawia publiczną opinię.",
       tourLowRating:
         "Przy niskiej ocenie klient zostaje z Tobą — pisze wiadomość, która trafia tylko do właściciela, i nie może już wrócić do wystawienia publicznej opinii.",
-      tourLoyalty:
-        "Cyfrowa karta lojalnościowa — klient zbiera wizyty samym skanem, bez instalowania żadnej aplikacji.",
       tourPromo:
-        "Tu klient odbiera aktualną promocję — kod lub kupon, który sam ustawiasz w panelu.",
+        "Tu klient odbiera aktualną promocję — kod lub kupon, który sam ustawiasz.",
       tourRestart: "Zacznij pokaz od nowa",
     },
     contact: {
@@ -109,7 +102,7 @@ const translations = {
       error: "Coś poszło nie tak. Spróbuj ponownie.",
     },
     footer: {
-      tagline: "System opinii i lojalności dla gastronomii.",
+      tagline: "System opinii dla gastronomii.",
       rights: "Wszelkie prawa zastrzeżone.",
     },
     chat: {
@@ -143,30 +136,27 @@ const translations = {
       getStarted: "Start for free",
     },
     hero: {
-      badge: "Review & loyalty system for restaurants",
+      badge: "Review system for restaurants",
       title: "More positive reviews.",
       titleHighlight: "More returning customers.",
       subtitle:
-        "NFC plates that automatically filter negative reviews, send promo coupons, and build loyalty — no app install needed for your customers.",
+        "NFC plates that automatically filter negative reviews, send promo coupons, and bring guests back — no app install needed for your customers.",
       cta: "Start for free",
       ctaSecondary: "Book a demo",
     },
     features: {
       sectionTitle: "Complete online reputation management",
       sectionSubtitle:
-        "One NFC plate — full control over your Google reviews, contact database, and customer loyalty. No app needed, no complex setup.",
+        "One NFC plate — full control over your Google reviews and contact database. No app needed, no complex setup.",
       linktreeTitle: "Your own link page",
       linktreeDesc:
-        "When a customer scans the NFC tag, they land on your own page — your personal dashboard giving access to every feature of the app: reviews, coupons and the loyalty card. On top of that, you can add up to 7 of your own custom links, e.g. to social media, your menu or a booking page.",
+        "When a customer scans the NFC tag, they land on your own page — where they rate their visit and claim coupons. On top of that, you can add up to 7 of your own custom links, e.g. to social media, your menu or a booking page.",
       reviewTitle: "Google profile protection",
       reviewDesc:
         "Customer scans the NFC plate and rates their visit. Happy? Their review goes straight to your Google profile. Unhappy? The feedback stays with you — react before a negative review hits the web.",
       promoTitle: "Collect consent & contact data",
       promoDesc:
         "With every scan you can capture a phone number and marketing consent. Send SMS coupons, announce promotions — build a customer base you can reach again with offers.",
-      loyaltyTitle: "Loyalty card without an app",
-      loyaltyDesc:
-        "A digital loyalty card that works with a simple NFC scan. Customers collect visits and earn a reward after reaching the threshold — no extra apps required.",
     },
     pricing: {
       sectionTitle: "Simple pricing",
@@ -179,10 +169,8 @@ const translations = {
       feature1: "1 NFC plate included",
       feature2: "Google review filtering",
       feature3: "SMS coupon system",
-      feature4: "Loyalty card",
-      feature5: "Admin dashboard",
-      feature6: "200 SMS/mo included",
-      feature7: "Technical support",
+      feature4: "200 SMS/mo included",
+      feature5: "Technical support",
       cta: "Start for free",
       plates: "First NFC plate free, additional plates €9 each",
       periodAnnual: "/yr",
@@ -205,17 +193,15 @@ const translations = {
       mobileCta: "Open on your phone",
       tourIdle: "👉 Tap the phone and walk through the flow just like your customer would.",
       tourLinktree:
-        "This is the page a customer lands on after scanning the plate — all your links live here, managed from your dashboard.",
+        "This is the page a customer lands on after scanning the plate — all your links live here, and you can change them any time.",
       tourFilter:
         "This is the review filter: the customer rates their visit with you first, before anything goes public.",
       tourHighRating:
         "A high rating sends the customer straight to your Google profile to leave a public review.",
       tourLowRating:
         "A low rating keeps the customer with you — they write a message that only reaches the owner, and can't go back to leave a public review.",
-      tourLoyalty:
-        "A digital loyalty card — customers collect visits with a simple scan, no app install required.",
       tourPromo:
-        "This is where the customer claims the current promotion — a code or coupon you set up in your dashboard.",
+        "This is where the customer claims the current promotion — a code or coupon you set up yourself.",
       tourRestart: "Restart the demo",
     },
     contact: {
@@ -237,7 +223,7 @@ const translations = {
       error: "Something went wrong. Please try again.",
     },
     footer: {
-      tagline: "Review & loyalty system for restaurants.",
+      tagline: "Review system for restaurants.",
       rights: "All rights reserved.",
     },
     chat: {
@@ -271,30 +257,27 @@ const translations = {
       getStarted: "Kostenlos starten",
     },
     hero: {
-      badge: "Bewertungs- & Treueprogramm für die Gastronomie",
+      badge: "Bewertungssystem für die Gastronomie",
       title: "Mehr positive Bewertungen.",
       titleHighlight: "Mehr wiederkehrende Gäste.",
       subtitle:
-        "NFC-Aufsteller, die negative Bewertungen automatisch filtern, Rabattgutscheine per SMS versenden und Kundentreue aufbauen — ohne App für Ihre Gäste.",
+        "NFC-Aufsteller, die negative Bewertungen automatisch filtern, Rabattgutscheine per SMS versenden und Gäste zurückbringen — ohne App für Ihre Gäste.",
       cta: "Kostenlos starten",
       ctaSecondary: "Demo buchen",
     },
     features: {
       sectionTitle: "Komplettes Online-Reputationsmanagement",
       sectionSubtitle:
-        "Ein NFC-Aufsteller — volle Kontrolle über Ihre Google-Bewertungen, Kontaktdatenbank und Kundenbindung. Keine App nötig, kein kompliziertes Setup.",
+        "Ein NFC-Aufsteller — volle Kontrolle über Ihre Google-Bewertungen und Ihre Kontaktdatenbank. Keine App nötig, kein kompliziertes Setup.",
       linktreeTitle: "Ihre eigene Link-Seite",
       linktreeDesc:
-        "Beim Scannen des NFC-Aufstellers gelangt der Kunde auf Ihre eigene Seite — Ihr persönliches Dashboard mit Zugriff auf alle Funktionen der App: Bewertungen, Gutscheine und die Treuekarte. Zusätzlich können Sie bis zu 7 eigene Links hinzufügen, z. B. zu Social Media, Ihrer Speisekarte oder einer Reservierungsseite.",
+        "Beim Scannen des NFC-Aufstellers gelangt der Kunde auf Ihre eigene Seite — wo er den Besuch bewertet und Gutscheine einlöst. Zusätzlich können Sie bis zu 7 eigene Links hinzufügen, z. B. zu Social Media, Ihrer Speisekarte oder einer Reservierungsseite.",
       reviewTitle: "Google-Profil-Schutz",
       reviewDesc:
         "Der Gast scannt den NFC-Aufsteller und bewertet seinen Besuch. Zufrieden? Die Bewertung geht direkt auf Ihr Google-Profil. Unzufrieden? Das Feedback bleibt bei Ihnen — reagieren Sie, bevor eine negative Bewertung online geht.",
       promoTitle: "Einwilligungen & Kontaktdaten sammeln",
       promoDesc:
         "Bei jedem Scan können Sie eine Telefonnummer und Marketing-Einwilligung einholen. Senden Sie SMS-Gutscheine, informieren Sie über Aktionen — bauen Sie eine Kundenbasis auf, die Sie erneut erreichen können.",
-      loyaltyTitle: "Treuekarte ohne App",
-      loyaltyDesc:
-        "Eine digitale Treuekarte, die per NFC-Scan funktioniert. Gäste sammeln Besuche und erhalten nach einer bestimmten Anzahl von Besuchen eine Belohnung — keine zusätzlichen Apps nötig.",
     },
     pricing: {
       sectionTitle: "Transparente Preise",
@@ -307,10 +290,8 @@ const translations = {
       feature1: "1 NFC-Aufsteller",
       feature2: "Google-Bewertungsfilter",
       feature3: "SMS-Gutscheinsystem",
-      feature4: "Treuekarte",
-      feature5: "Admin-Dashboard",
-      feature6: "200 SMS/Monat inklusive",
-      feature7: "Technischer Support",
+      feature4: "200 SMS/Monat inklusive",
+      feature5: "Technischer Support",
       cta: "Kostenlos starten",
       plates: "Erster NFC-Aufsteller gratis, weitere je 9 €",
       periodAnnual: "/Jahr",
@@ -333,17 +314,15 @@ const translations = {
       mobileCta: "Auf Ihrem Handy öffnen",
       tourIdle: "👉 Tippen Sie auf das Telefon und durchlaufen Sie den Ablauf wie Ihr Gast.",
       tourLinktree:
-        "Das ist die Seite, auf der der Gast nach dem Scannen landet — hier liegen alle Ihre Links, verwaltet über Ihr Dashboard.",
+        "Das ist die Seite, auf der der Gast nach dem Scannen landet — hier liegen alle Ihre Links, jederzeit von Ihnen anpassbar.",
       tourFilter:
         "Das ist der Bewertungsfilter: Der Gast bewertet den Besuch zuerst bei Ihnen, bevor irgendetwas öffentlich wird.",
       tourHighRating:
         "Bei einer hohen Bewertung gelangt der Gast direkt zu Ihrem Google-Profil, um eine öffentliche Bewertung zu hinterlassen.",
       tourLowRating:
         "Bei einer niedrigen Bewertung bleibt der Gast bei Ihnen — er schreibt eine Nachricht, die nur der Inhaber sieht, und kann nicht mehr zu einer öffentlichen Bewertung zurückkehren.",
-      tourLoyalty:
-        "Eine digitale Treuekarte — Gäste sammeln Besuche per Scan, ganz ohne App-Installation.",
       tourPromo:
-        "Hier löst der Gast die aktuelle Aktion ein — einen Code oder Gutschein, den Sie in Ihrem Dashboard festlegen.",
+        "Hier löst der Gast die aktuelle Aktion ein — einen Code oder Gutschein, den Sie selbst festlegen.",
       tourRestart: "Demo neu starten",
     },
     contact: {
@@ -365,7 +344,7 @@ const translations = {
       error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     },
     footer: {
-      tagline: "Bewertungs- & Treueprogramm für die Gastronomie.",
+      tagline: "Bewertungssystem für die Gastronomie.",
       rights: "Alle Rechte vorbehalten.",
     },
     chat: {
@@ -399,30 +378,27 @@ const translations = {
       getStarted: "Inizia gratis",
     },
     hero: {
-      badge: "Sistema di recensioni e fedeltà per la ristorazione",
+      badge: "Sistema di recensioni per la ristorazione",
       title: "Più recensioni positive.",
       titleHighlight: "Più clienti che ritornano.",
       subtitle:
-        "Targhe NFC che filtrano automaticamente le recensioni negative, inviano coupon promozionali via SMS e costruiscono la fedeltà — senza app per i tuoi clienti.",
+        "Targhe NFC che filtrano automaticamente le recensioni negative, inviano coupon promozionali via SMS e riportano i clienti da te — senza app per i tuoi clienti.",
       cta: "Inizia gratis",
       ctaSecondary: "Prenota una demo",
     },
     features: {
       sectionTitle: "Gestione completa della reputazione online",
       sectionSubtitle:
-        "Una targa NFC — controllo totale sulle recensioni Google, database contatti e fidelizzazione clienti. Nessuna app necessaria, nessuna configurazione complicata.",
+        "Una targa NFC — controllo totale sulle recensioni Google, database contatti. Nessuna app necessaria, nessuna configurazione complicata.",
       linktreeTitle: "La tua pagina di link personale",
       linktreeDesc:
-        "Quando il cliente scansiona il tag NFC, atterra sulla tua pagina personale — la tua dashboard con accesso a tutte le funzionalità dell'app: recensioni, coupon e carta fedeltà. Inoltre puoi aggiungere fino a 7 link personalizzati, ad esempio ai social media, al menu o alla pagina delle prenotazioni.",
+        "Quando il cliente scansiona il tag NFC, atterra sulla tua pagina personale — dove valuta la visita e riscatta i coupon. Inoltre puoi aggiungere fino a 7 link personalizzati, ad esempio ai social media, al menu o alla pagina delle prenotazioni.",
       reviewTitle: "Protezione del profilo Google",
       reviewDesc:
         "Il cliente scansiona la targa NFC e valuta la visita. Soddisfatto? La recensione va direttamente sul tuo profilo Google. Insoddisfatto? Il feedback resta a te — reagisci prima che una recensione negativa finisca online.",
       promoTitle: "Raccogli consensi e dati di contatto",
       promoDesc:
         "Ad ogni scansione puoi raccogliere un numero di telefono e il consenso marketing. Invia coupon SMS, comunica promozioni — costruisci una base clienti da ricontattare con le tue offerte.",
-      loyaltyTitle: "Carta fedeltà senza app",
-      loyaltyDesc:
-        "Una carta fedeltà digitale che funziona con un semplice scan NFC. I clienti accumulano visite e ricevono un premio al raggiungimento della soglia — nessuna app aggiuntiva necessaria.",
     },
     pricing: {
       sectionTitle: "Prezzi semplici",
@@ -435,10 +411,8 @@ const translations = {
       feature1: "1 targa NFC inclusa",
       feature2: "Filtro recensioni Google",
       feature3: "Sistema coupon SMS",
-      feature4: "Carta fedeltà",
-      feature5: "Pannello di controllo",
-      feature6: "200 SMS/mese inclusi",
-      feature7: "Supporto tecnico",
+      feature4: "200 SMS/mese inclusi",
+      feature5: "Supporto tecnico",
       cta: "Inizia gratis",
       plates: "Prima targa NFC gratis, ogni altra 9 €",
       periodAnnual: "/anno",
@@ -461,17 +435,15 @@ const translations = {
       mobileCta: "Apri sul tuo telefono",
       tourIdle: "👉 Tocca il telefono e segui il percorso proprio come farebbe il tuo cliente.",
       tourLinktree:
-        "Questa è la pagina su cui atterra il cliente dopo la scansione — qui trovi tutti i tuoi link, gestiti dalla tua dashboard.",
+        "Questa è la pagina su cui atterra il cliente dopo la scansione — qui trovi tutti i tuoi link, che puoi cambiare quando vuoi.",
       tourFilter:
         "Questo è il filtro delle recensioni: il cliente valuta prima la visita con te, prima che qualcosa diventi pubblico.",
       tourHighRating:
         "Con una valutazione alta il cliente va direttamente al tuo profilo Google per lasciare una recensione pubblica.",
       tourLowRating:
         "Con una valutazione bassa il cliente resta con te — scrive un messaggio che arriva solo al titolare e non può più tornare a lasciare una recensione pubblica.",
-      tourLoyalty:
-        "Una carta fedeltà digitale — i clienti accumulano visite con una semplice scansione, senza installare app.",
       tourPromo:
-        "Qui il cliente riscatta la promozione attuale — un codice o coupon che imposti tu dal pannello.",
+        "Qui il cliente riscatta la promozione attuale — un codice o coupon che imposti tu.",
       tourRestart: "Ricomincia la demo",
     },
     contact: {
@@ -493,7 +465,7 @@ const translations = {
       error: "Qualcosa è andato storto. Riprova.",
     },
     footer: {
-      tagline: "Sistema di recensioni e fedeltà per la ristorazione.",
+      tagline: "Sistema di recensioni per la ristorazione.",
       rights: "Tutti i diritti riservati.",
     },
     chat: {

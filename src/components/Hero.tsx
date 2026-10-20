@@ -38,7 +38,7 @@ export default function Hero({ t, locale }: { t: Translations; locale: Locale })
       <div className="max-w-5xl mx-auto mt-6">
         <Image
           src={`/hero/${locale}.webp`}
-          alt="Starlinkee — panel zarządzania opiniami dla restauracji"
+          alt="Starlinkee — tabliczka NFC dla restauracji"
           width={1200}
           height={675}
           priority

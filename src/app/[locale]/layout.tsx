@@ -27,17 +27,17 @@ const ogLocales: Record<Locale, string> = {
 };
 
 const titles: Record<Locale, string> = {
-  pl: "Starlinkee — System opinii i lojalności dla gastronomii",
-  en: "Starlinkee — Review & loyalty system for restaurants",
-  de: "Starlinkee — Bewertungs- & Treueprogramm für Gastronomie",
-  it: "Starlinkee — Sistema di recensioni e fedeltà per la ristorazione",
+  pl: "Starlinkee — System opinii dla gastronomii",
+  en: "Starlinkee — Review system for restaurants",
+  de: "Starlinkee — Bewertungssystem für die Gastronomie",
+  it: "Starlinkee — Sistema di recensioni per la ristorazione",
 };
 
 const descriptions: Record<Locale, string> = {
-  pl: "Tabliczki NFC, które filtrują negatywne opinie, wysyłają kupony SMS i budują lojalność klientów. Bez aplikacji.",
-  en: "NFC plates that filter negative reviews, send SMS coupons, and build customer loyalty. No app required.",
-  de: "NFC-Aufsteller, die negative Bewertungen filtern, SMS-Gutscheine versenden und Kundentreue aufbauen. Ohne App.",
-  it: "Targhe NFC che filtrano le recensioni negative, inviano coupon SMS e fidelizzano i clienti. Senza app.",
+  pl: "Tabliczki NFC, które filtrują negatywne opinie, wysyłają kupony SMS i przyciągają gości z powrotem. Bez aplikacji.",
+  en: "NFC plates that filter negative reviews, send SMS coupons, and bring guests back. No app required.",
+  de: "NFC-Aufsteller, die negative Bewertungen filtern, SMS-Gutscheine versenden und Gäste zurückbringen. Ohne App.",
+  it: "Targhe NFC che filtrano le recensioni negative, inviano coupon SMS e riportano i clienti da te. Senza app.",
 };
 
 export async function generateStaticParams() {
@@ -93,7 +93,7 @@ export async function generateMetadata({
           url: "/hero.png",
           width: 1200,
           height: 675,
-          alt: "Starlinkee — panel zarządzania opiniami dla restauracji",
+          alt: "Starlinkee — tabliczka NFC dla restauracji",
         },
       ],
     },

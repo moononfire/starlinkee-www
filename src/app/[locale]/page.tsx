@@ -24,7 +24,7 @@ export default async function Home({
     "@type": "Product",
     name: "Starlinkee Pro",
     description:
-      "Tabliczka NFC z systemem filtrowania opinii Google, kuponami SMS i cyfrową kartą lojalnościową dla gastronomii.",
+      "Tabliczka NFC z systemem filtrowania opinii Google, kuponami SMS dla gastronomii.",
     brand: { "@type": "Brand", name: "Starlinkee" },
     image: `${SITE_URL}/product/${locale}.webp`,
     offers: {
@@ -49,7 +49,7 @@ export default async function Home({
       height: 675,
     },
     description:
-      "System opinii i lojalności dla gastronomii oparty na technologii NFC.",
+      "System opinii dla gastronomii oparty na technologii NFC.",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
@@ -66,7 +66,7 @@ export default async function Home({
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "System zarządzania opiniami i lojalnością klientów dla restauracji i lokali gastronomicznych.",
+      "System zarządzania opiniami dla restauracji i lokali gastronomicznych.",
     offers: {
       "@type": "Offer",
       price: "199",

@@ -6,14 +6,12 @@ export default function Features({ t, locale }: { t: Translations; locale: Local
     `/features/${locale}/linktree.webp`,
     `/features/${locale}/reviews.webp`,
     `/features/${locale}/promos.webp`,
-    `/features/${locale}/loyalty.webp`,
   ];
 
   const features = [
     { title: t.features.linktreeTitle, desc: t.features.linktreeDesc, img: featureImages[0], aspect: "aspect-[3/4]" },
     { title: t.features.reviewTitle, desc: t.features.reviewDesc, img: featureImages[1], aspect: "aspect-[3/4]" },
     { title: t.features.promoTitle, desc: t.features.promoDesc, img: featureImages[2], aspect: "aspect-[500/591]" },
-    { title: t.features.loyaltyTitle, desc: t.features.loyaltyDesc, img: featureImages[3], aspect: "aspect-[509/620]" },
   ];
 
   return (
