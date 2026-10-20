@@ -261,47 +261,47 @@ const translations = {
     },
     hero: {
       badge: "Bewertungssystem für die Gastronomie",
-      title: "Mehr positive Bewertungen.",
-      titleHighlight: "Mehr wiederkehrende Gäste.",
+      title: "Mehr 5★-Bewertungen.",
+      titleHighlight: "Mehr Stammgäste.",
       subtitle:
-        "NFC-Aufsteller, die negative Bewertungen automatisch filtern, Rabattgutscheine per SMS versenden und Gäste zurückbringen — ohne App für Ihre Gäste.",
+        "Ein Tipp: Gute Bewertungen gehen zu Google, schlechte bleiben bei Ihnen.",
       cta: "Kostenlos starten",
       ctaSecondary: "Demo buchen",
     },
     features: {
-      sectionTitle: "Komplettes Online-Reputationsmanagement",
+      sectionTitle: "Gelassenheit. Volle Kontrolle.",
       sectionSubtitle:
-        "Ein NFC-Aufsteller — volle Kontrolle über Ihre Google-Bewertungen und Ihre Kontaktdatenbank. Keine App nötig, kein kompliziertes Setup.",
+        "Ein NFC-Aufsteller. Keine App für Ihre Gäste.",
       linktreeTitle: "Ihre eigene Link-Seite",
       linktreeDesc:
-        "Beim Scannen des NFC-Aufstellers gelangt der Kunde auf Ihre eigene Seite — wo er den Besuch bewertet und Gutscheine einlöst. Zusätzlich können Sie bis zu 7 eigene Links hinzufügen, z. B. zu Social Media, Ihrer Speisekarte oder einer Reservierungsseite.",
-      reviewTitle: "Google-Profil-Schutz",
+        "Der Gast scannt und sieht Bewertung, Gutschein, Speisekarte und Ihre Social-Media-Links.",
+      reviewTitle: "Nur gute Bewertungen",
       reviewDesc:
-        "Der Gast scannt den NFC-Aufsteller und bewertet seinen Besuch. Zufrieden? Die Bewertung geht direkt auf Ihr Google-Profil. Unzufrieden? Das Feedback bleibt bei Ihnen — reagieren Sie, bevor eine negative Bewertung online geht.",
-      promoTitle: "Einwilligungen & Kontaktdaten sammeln",
+        "Zufriedene Gäste gehen zu Google, unzufriedene schreiben Ihnen.",
+      promoTitle: "Gäste kommen wieder",
       promoDesc:
-        "Bei jedem Scan können Sie eine Telefonnummer und Marketing-Einwilligung einholen. Senden Sie SMS-Gutscheine, informieren Sie über Aktionen — bauen Sie eine Kundenbasis auf, die Sie erneut erreichen können.",
+        "Sammeln Sie Nummern und Einwilligungen, senden Sie SMS-Gutscheine. Ihre Stammgäste, jederzeit erreichbar.",
     },
     pricing: {
       sectionTitle: "Transparente Preise",
-      sectionSubtitle: "Keine versteckten Kosten. Keine langfristigen Verträge.",
+      sectionSubtitle: "Gratis starten. Keine Verträge, keine versteckten Kosten.",
       planName: "Starlinkee Pro",
       price: "49",
       currency: "€",
       period: "/Monat",
       includes: "Inklusive:",
-      feature1: "1 NFC-Aufsteller",
+      feature1: "NFC-Aufsteller inklusive",
       feature2: "Google-Bewertungsfilter",
-      feature3: "SMS-Gutscheinsystem",
+      feature3: "SMS-Gutscheine",
       feature4: "200 SMS/Monat inklusive",
       feature5: "Technischer Support",
       cta: "Kostenlos starten",
-      plates: "Erster NFC-Aufsteller gratis, weitere je 9 €",
+      plates: "Erster Aufsteller gratis, weitere je 9 €",
       periodAnnual: "/Jahr",
       billingMonthly: "Monatliche Zahlung",
       billingAnnual: "Jährliche Zahlung",
       annualSavingsBadge: "2 Monate gratis",
-      annualNote: "Einmal im Jahr zahlen und nur für 10 statt 12 Monate bezahlen.",
+      annualNote: "Jährlich zahlen: 10 Monate statt 12.",
       comingSoon: "Demnächst verfügbar",
       trialTeaser: "30 Tage gratis",
       afterTrialNote: "Nach der 30-tägigen Testphase:",
@@ -309,29 +309,29 @@ const translations = {
     liveDemo: {
       sectionTitle: "Live erleben",
       sectionSubtitle:
-        "Das ist die echte Seite, die Ihre Gäste nach dem Scannen des NFC-Aufstellers sehen — ohne Installation, ohne Wartezeit.",
+        "So sieht Ihr Gast die Seite nach dem Scannen.",
       iframeTitle: "Live-Vorschau der Seite nach dem Scannen eines Starlinkee-Aufstellers",
-      cta: "Vorschau im Vollbild öffnen",
+      cta: "Vorschau im Vollbild",
       expandCta: "So funktioniert es",
       collapseCta: "Vorschau ausblenden",
       mobileCta: "Auf Ihrem Handy öffnen",
-      tourIdle: "👉 Tippen Sie auf das Telefon und durchlaufen Sie den Ablauf wie Ihr Gast.",
+      tourIdle: "👉 Tippen Sie aufs Telefon und erleben Sie es wie Ihr Gast.",
       tourLinktree:
-        "Das ist die Seite, auf der der Gast nach dem Scannen landet — hier liegen alle Ihre Links, jederzeit von Ihnen anpassbar.",
+        "Hier landet der Gast nach dem Scan. Ihre Links, immer aktuell.",
       tourFilter:
-        "Das ist der Bewertungsfilter: Der Gast bewertet den Besuch zuerst bei Ihnen, bevor irgendetwas öffentlich wird.",
+        "Bewertungsfilter: Der Gast bewertet zuerst bei Ihnen, nicht öffentlich.",
       tourHighRating:
-        "Bei einer hohen Bewertung gelangt der Gast direkt zu Ihrem Google-Profil, um eine öffentliche Bewertung zu hinterlassen.",
+        "Hohe Bewertung? Der Gast geht direkt zu Ihrem Google-Profil.",
       tourLowRating:
-        "Bei einer niedrigen Bewertung bleibt der Gast bei Ihnen — er schreibt eine Nachricht, die nur der Inhaber sieht, und kann nicht mehr zu einer öffentlichen Bewertung zurückkehren.",
+        "Niedrige Bewertung? Die Nachricht erreicht nur Sie. Klären Sie es in Ruhe.",
       tourPromo:
-        "Hier löst der Gast die aktuelle Aktion ein — einen Code oder Gutschein, den Sie selbst festlegen.",
+        "Hier löst der Gast den Gutschein ein, den Sie festlegen.",
       tourRestart: "Demo neu starten",
     },
     contact: {
       sectionTitle: "Lassen Sie uns sprechen",
       sectionSubtitle:
-        "Hinterlassen Sie Ihre Daten — wir melden uns innerhalb von 24 Stunden und zeigen Ihnen, wie Starlinkee Ihrem Betrieb helfen kann.",
+        "Hinterlassen Sie Ihre Daten — wir melden uns binnen 24 Stunden.",
       nameLabel: "Vollständiger Name",
       namePlaceholder: "Max Mustermann",
       emailLabel: "E-Mail",
@@ -347,7 +347,7 @@ const translations = {
       error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     },
     footer: {
-      tagline: "Bewertungssystem für die Gastronomie.",
+      tagline: "Mehr 5★. Mehr Stammgäste.",
       rights: "Alle Rechte vorbehalten.",
     },
     chat: {

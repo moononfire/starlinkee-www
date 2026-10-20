@@ -41,3 +41,19 @@
 
 - Decyzje: „guests” zamiast „customers”; opis linktree bez „up to 7 links” (jak w pl); `annualNote` poprawione z mylącego „10 months for the price of 10” na „10 months instead of 12”; `pricing.feature4/5` (SMS, wsparcie) nietknięte (krok 08).
 - Odłożono: de/it (kroki 05–06), SMS i wsparcie w cenniku (krok 08). Build przechodzi (ostrzeżenie o pobraniu fontu ★ dla OG image to sprawa sieci); `/en` nie sprawdzano wizualnie na 375/1280 px.
+
+## Krok 05: Slogany na stronie głównej, wersja niemiecka (de)
+- Powstało: skrócone teksty `de` (hero, features, liveDemo, pricing bez SMS i wsparcia, contact, footer.tagline) w limitach z kroku 03, w formie „Sie”.
+
+  | Klucz | Przed | Po |
+  |---|---|---|
+  | hero.title | Mehr positive Bewertungen. | Mehr 5★-Bewertungen. |
+  | hero.titleHighlight | Mehr wiederkehrende Gäste. | Mehr Stammgäste. |
+  | hero.subtitle | NFC-Aufsteller, die negative Bewertungen automatisch filtern… (21 słów) | Ein Tipp: Gute Bewertungen gehen zu Google, schlechte bleiben bei Ihnen. |
+  | features.sectionTitle | Komplettes Online-Reputationsmanagement | Gelassenheit. Volle Kontrolle. |
+  | linktreeTitle | Ihre eigene Link-Seite | Ihre eigene Link-Seite |
+  | reviewTitle | Google-Profil-Schutz | Nur gute Bewertungen |
+  | promoTitle | Einwilligungen & Kontaktdaten sammeln | Gäste kommen wieder |
+
+- Decyzje: „Gast/Stammgäste” zamiast „Kunde”; krótkie złożenia; opis linktree bez „bis zu 7 Links”; `annualNote` „10 Monate statt 12”; `feature1` bez „1” (liczba pakietu nie jest ceną); SMS i wsparcie (`feature4/5`) nietknięte (krok 08).
+- Odłożono: it (krok 06), SMS i wsparcie w cenniku (krok 08). Build przechodzi; `/de` nie sprawdzano wizualnie na 375/1280 px.
