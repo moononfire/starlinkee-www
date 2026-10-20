@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 07: Przegląd wszystkich języków i SEO strony głównej
 
