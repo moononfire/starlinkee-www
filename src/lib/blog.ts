@@ -630,6 +630,124 @@ export const blogPosts: BlogPostMeta[] = [
       },
     ],
   },
+  {
+    slug: "opinie-google-restauracja-kawiarnia-jak-zdobyc-wiecej-opinii",
+    title: "Opinie Google dla restauracji i kawiarni: jak zdobyć więcej opinii",
+    description:
+      "Sprawdź, jak restauracja, kawiarnia i bar mogą zdobywać więcej opinii Google. Dowiedz się, kiedy prosić gości o recenzję, jak reagować na trudne opinie i jak zamienić zadowolonych gości w stałych klientów.",
+    publishedAt: "2026-10-21",
+    author: "Viktor Bobiński",
+    authorBio:
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Opinie Google",
+    categorySlug: "opinie-google",
+    ogImage: "/images/blog/jak-szybko-zdobyc-opinie/restauracja.webp",
+    keywords: [
+      "opinie google restauracja",
+      "jak zdobyć opinie restauracja",
+      "opinie google kawiarnia",
+      "jak zdobyć opinie kawiarnia",
+      "zbieranie opinii w restauracji",
+      "tabliczka nfc restauracja",
+      "nfc kawiarnia opinie",
+      "system opinii gastronomia",
+      "jak prosić gości o opinię",
+      "karta lojalnościowa kawiarnia",
+    ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "Google Reviews for Restaurants and Cafés: How to Get More Reviews",
+        description:
+          "Find out how restaurants, cafés and bars can get more Google reviews. Learn when to ask guests for a review, how to handle difficult reviews, and how to turn satisfied guests into regulars.",
+        category: "Google Reviews",
+        slug: "google-reviews-restaurants-cafes-how-to-get-more-reviews",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
+        keywords: [
+          "google reviews restaurant",
+          "how to get reviews restaurant",
+          "google reviews cafe",
+          "how to get reviews cafe",
+          "collecting reviews in a restaurant",
+          "nfc stand restaurant",
+          "nfc cafe reviews",
+          "review system hospitality",
+          "how to ask guests for a review",
+          "loyalty card cafe",
+        ],
+      },
+      de: {
+        title: "Google-Bewertungen für Restaurants und Cafés: Mehr Bewertungen bekommen",
+        description:
+          "Erfahren Sie, wie Restaurants, Cafés und Bars mehr Google-Bewertungen sammeln. Wann Sie Gäste um eine Bewertung bitten, wie Sie mit schwierigen Bewertungen umgehen und zufriedene Gäste zu Stammkunden machen.",
+        category: "Google-Bewertungen",
+        slug: "google-bewertungen-restaurant-cafe-mehr-bewertungen-bekommen",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
+        keywords: [
+          "google bewertungen restaurant",
+          "bewertungen bekommen restaurant",
+          "google bewertungen café",
+          "bewertungen bekommen café",
+          "bewertungen sammeln restaurant",
+          "nfc aufsteller restaurant",
+          "nfc café bewertungen",
+          "bewertungssystem gastronomie",
+          "gäste um bewertung bitten",
+          "treuekarte café",
+        ],
+      },
+      it: {
+        title: "Recensioni Google per ristoranti e bar: come ottenere più recensioni",
+        description:
+          "Scopri come ristoranti, bar e caffetterie possono ottenere più recensioni Google. Quando chiedere una recensione ai clienti, come gestire quelle difficili e come trasformare i clienti soddisfatti in clienti abituali.",
+        category: "Recensioni Google",
+        slug: "recensioni-google-ristorante-bar-come-ottenere-piu-recensioni",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
+        keywords: [
+          "recensioni google ristorante",
+          "come ottenere recensioni ristorante",
+          "recensioni google bar",
+          "come ottenere recensioni bar",
+          "raccogliere recensioni ristorante",
+          "supporto nfc ristorante",
+          "recensioni nfc bar",
+          "sistema recensioni ristorazione",
+          "come chiedere una recensione ai clienti",
+          "tessera fedeltà bar",
+        ],
+      },
+    },
+    faq: [
+      {
+        question: "Czy kelner powinien osobiście prosić gości o opinię w Google?",
+        answer:
+          "Nie musi. Tabliczka NFC na stoliku lub przy kasie zachęca gościa do oceny bez udziału obsługi, dzięki czemu nikt nie czuje presji, a kelner nie traci czasu w godzinach szczytu.",
+      },
+      {
+        question: "Kiedy najlepiej poprosić o opinię w restauracji lub kawiarni?",
+        answer:
+          "Przy rachunku albo tuż po zapłaceniu, gdy posiłek jest już za gościem, wrażenia są świeże, a telefon jest pod ręką. Prośba w trakcie jedzenia bywa uciążliwa, a poproszony później gość najczęściej o niej zapomina.",
+      },
+      {
+        question: "Czy gość musi pobierać aplikację, żeby wystawić opinię przez tabliczkę NFC?",
+        answer:
+          "Nie. Wystarczy zbliżyć telefon do tabliczki — formularz oceny Google otwiera się w przeglądarce, bez instalacji aplikacji, zakładania konta i wpisywania nazwy lokalu.",
+      },
+      {
+        question: "Co zrobić, jeśli gość jest niezadowolony z dania lub obsługi?",
+        answer:
+          "Zareaguj jeszcze przy stoliku — wymień danie lub zaproponuj rekompensatę. Jeśli negatywna opinia mimo to się pojawi, odpowiedz spokojnie i konkretnie, bez polemiki; kolejni goście ocenią przede wszystkim sposób, w jaki lokal rozwiązuje problemy.",
+      },
+      {
+        question: "Czy ta sama tabliczka NFC może zbierać opinie i obsługiwać kartę lojalnościową?",
+        answer:
+          "Tak. Jeden nośnik NFC może jednocześnie kierować zadowolonego gościa do formularza opinii Google i rejestrować jego wizytę w cyfrowej karcie lojalnościowej — bez dodatkowego sprzętu i bez aplikacji.",
+      },
+    ],
+  },
 ];
 
 export function getLocalizedPost(

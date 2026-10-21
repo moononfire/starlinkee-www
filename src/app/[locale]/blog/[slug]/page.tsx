@@ -39,6 +39,10 @@ import OpinieGoogleSalonFryzjerski from "@/components/blog/articles/OpinieGoogle
 import OpinieGoogleSalonFryzjerskiEn from "@/components/blog/articles/OpinieGoogleSalonFryzjerskiEn";
 import OpinieGoogleSalonFryzjerskiDe from "@/components/blog/articles/OpinieGoogleSalonFryzjerskiDe";
 import OpinieGoogleSalonFryzjerskiIt from "@/components/blog/articles/OpinieGoogleSalonFryzjerskiIt";
+import OpinieGoogleRestauracjaKawiarnia from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarnia";
+import OpinieGoogleRestauracjaKawiarniaEn from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarniaEn";
+import OpinieGoogleRestauracjaKawiarniaDe from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarniaDe";
+import OpinieGoogleRestauracjaKawiarniaIt from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarniaIt";
 
 const SITE_URL = "https://starlinkee.com";
 
@@ -73,6 +77,12 @@ const articleComponents: Record<string, Partial<Record<Locale, React.ComponentTy
     en: OpinieGoogleSalonFryzjerskiEn,
     de: OpinieGoogleSalonFryzjerskiDe,
     it: OpinieGoogleSalonFryzjerskiIt,
+  },
+  "opinie-google-restauracja-kawiarnia-jak-zdobyc-wiecej-opinii": {
+    pl: OpinieGoogleRestauracjaKawiarnia,
+    en: OpinieGoogleRestauracjaKawiarniaEn,
+    de: OpinieGoogleRestauracjaKawiarniaDe,
+    it: OpinieGoogleRestauracjaKawiarniaIt,
   },
 };
 
