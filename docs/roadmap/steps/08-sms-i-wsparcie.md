@@ -1,5 +1,5 @@
 ---
-status: todo
+status: done
 ---
 # Krok 08: 100 SMS-ów marketingowych i błyskawiczne wsparcie
 
