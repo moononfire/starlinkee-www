@@ -79,3 +79,13 @@
 - Decyzje: opisy JSON-LD w `page.tsx` bez zmian, bo nie wspominają lojalności ani panelu i zgadzają się z przekazem; przegląd długości tekstów pl/en/de/it: wszystkie klucze strony głównej w limitach, najdłuższe wyrazy w de to ≤18 znaków (łamią się na dywizach), bez zmian w komponentach.
 - Przegląd wizualny: Playwright + Chromium z `LD_LIBRARY_PATH=~/.local/playwright-libs/usr/lib/x86_64-linux-gnu`, `next start`, `/pl /en /de /it` na 375 i 1280 px. Brak poziomego przewijania (`scrollWidth` = szerokość okna) i brak przepełnionych elementów w 8 widokach; zrzuty de-375 i it-1280 obejrzane: bez ucinania i nachodzenia. Drobiazg: de hero.title łamie się na 375 px po „5★-” („Bewertungen.” w drugiej linii), czytelne, bez zmian.
 - Odłożono: grafika linktree w sekcji funkcji (obrazek, nie tekst) pokazuje przycisk „Loyalty card”; nowe grafiki są poza zakresem, do wymiany osobno. Zakryte banerem cookies fragmenty hero to stan sprzed zmian.
+
+## Krok 08: 100 SMS-ów marketingowych i błyskawiczne wsparcie
+- Powstało: `feature4/5` w cenniku `src/i18n.ts` oraz lista `features`, `description` i `subscriptionDesc` w `/order` (pl/en/de/it) mówią o 100 SMS-ach marketingowych do własnych gości i o błyskawicznym wsparciu; grep „200 SMS” daje 0 trafień, build przechodzi.
+
+  | klucz | przed (pl) | po (pl) |
+  |---|---|---|
+  | feature4 | 200 SMS-ów/mies. w cenie | 100 SMS-ów marketingowych/mies. do Twoich gości |
+  | feature5 | Wsparcie techniczne | Błyskawiczne wsparcie |
+- Decyzje: `features.promoDesc` i `liveDemo.tourPromo` bez zmian (nie podają liczby, mówią o gościach/kuponach, brak sprzeczności); w `description` na `/order` dopisano „marketingowe … do Twoich gości (100/mies. w pakiecie)”.
+- Odłożono: faktyczny limit SMS w aplikacji i billingu, ceny, Stripe, regulamin; brak przeglądu wizualnego `/order` (zmiany tylko tekstowe, nieco dłuższe linie list).
