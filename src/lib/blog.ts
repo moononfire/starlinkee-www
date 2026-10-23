@@ -748,6 +748,124 @@ export const blogPosts: BlogPostMeta[] = [
       },
     ],
   },
+  {
+    slug: "sms-marketing-dla-lokalu-jak-wysylac-kupony-i-przyciagac-gosci",
+    title: "SMS marketing dla lokalu: jak wysyłać kupony, żeby goście wracali",
+    description:
+      "Sprawdź, jak restauracja lub kawiarnia może wysyłać SMS-y z kuponami bez spamu. Dowiedz się, jak zbierać zgody, co pisać w wiadomościach i jak sprawdzić, czy to się opłaca.",
+    publishedAt: "2026-10-23",
+    author: "Viktor Bobiński",
+    authorBio:
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Marketing lokalny",
+    categorySlug: "marketing-lokalny",
+    ogImage: "/images/blog/program-lojalnosciowy-bez-aplikacji/sms.webp",
+    keywords: [
+      "sms marketing restauracja",
+      "sms marketing kawiarnia",
+      "kupony sms gastronomia",
+      "jak wysyłać sms do klientów",
+      "zgoda marketingowa sms rodo",
+      "marketing sms dla małej firmy",
+      "zbieranie numerów telefonów klientów",
+      "kupon rabatowy restauracja",
+      "jak przyciągnąć stałych gości",
+      "sms marketing lokalna firma",
+    ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "SMS Marketing for Restaurants and Cafés: How to Send Coupons That Bring Guests Back",
+        description:
+          "Find out how a restaurant or café can send coupon SMS messages without spamming. Learn how to collect consent, what to write and how to check whether it pays off.",
+        category: "Local Marketing",
+        slug: "sms-marketing-for-restaurants-cafes-how-to-send-coupons",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
+        keywords: [
+          "sms marketing restaurant",
+          "sms marketing cafe",
+          "sms coupons hospitality",
+          "how to send sms to customers",
+          "sms marketing consent gdpr",
+          "sms marketing small business",
+          "collecting customer phone numbers",
+          "restaurant discount coupon",
+          "how to attract regular guests",
+          "sms marketing local business",
+        ],
+      },
+      de: {
+        title: "SMS-Marketing für die Gastronomie: Gutscheine versenden und Gäste zurückholen",
+        description:
+          "Erfahren Sie, wie ein Restaurant oder Café SMS mit Gutscheinen ohne Spam versenden kann. Wie Sie Einwilligungen einholen, was Sie schreiben und wie Sie den Erfolg prüfen.",
+        category: "Lokales Marketing",
+        slug: "sms-marketing-gastronomie-gutscheine-versenden-und-gaeste-zurueckholen",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
+        keywords: [
+          "sms marketing restaurant",
+          "sms marketing café",
+          "sms gutscheine gastronomie",
+          "sms an kunden senden",
+          "sms marketing einwilligung dsgvo",
+          "sms marketing kleines unternehmen",
+          "telefonnummern von kunden sammeln",
+          "rabattgutschein restaurant",
+          "stammgäste gewinnen",
+          "sms marketing lokales unternehmen",
+        ],
+      },
+      it: {
+        title: "SMS marketing per ristoranti e bar: come inviare coupon che riportano i clienti",
+        description:
+          "Scopri come un ristorante o un bar può inviare SMS con coupon senza spam. Come raccogliere i consensi, cosa scrivere e come capire se ripaga.",
+        category: "Marketing locale",
+        slug: "sms-marketing-ristoranti-bar-come-inviare-coupon",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
+        keywords: [
+          "sms marketing ristorante",
+          "sms marketing bar",
+          "coupon sms ristorazione",
+          "come inviare sms ai clienti",
+          "consenso marketing sms gdpr",
+          "sms marketing piccola impresa",
+          "raccogliere numeri di telefono clienti",
+          "coupon sconto ristorante",
+          "come attirare clienti abituali",
+          "sms marketing attività locale",
+        ],
+      },
+    },
+    faq: [
+      {
+        question: "Ile SMS-ów w miesiącu mogę wysłać gościom, żeby ich nie zniechęcić?",
+        answer:
+          "Dla większości lokali wystarcza jedna wiadomość w tygodniu, a często mniej. Ważniejsze od liczby jest to, żeby każdy SMS miał konkretną propozycję i termin ważności.",
+      },
+      {
+        question: "Czy mogę wysyłać SMS-y każdemu, kto kiedyś zostawił numer telefonu?",
+        answer:
+          "Tylko osobom, które wyraziły zgodę marketingową i mogą się z niej wycofać. Numer podany przy innej okazji, na przykład przy rezerwacji, nie jest automatycznie zgodą na reklamę.",
+      },
+      {
+        question: "Jak zbierać numery telefonów bez uciążliwego pytania przy kasie?",
+        answer:
+          "Przez tabliczkę NFC: gość skanuje ją telefonem, zostawia numer i zaznacza zgodę, a obsługa nie musi o nic pytać.",
+      },
+      {
+        question: "Jaki kupon działa najlepiej w restauracji lub kawiarni?",
+        answer:
+          "Prosty i konkretny: deser lub kawa do zamówienia albo rabat na lunch w dzień, kiedy w lokalu jest mniej gości. Dobrze, żeby miał termin ważności.",
+      },
+      {
+        question: "Czy SMS-y zastąpią kartę lojalnościową lub opinie w Google?",
+        answer:
+          "Nie, one się uzupełniają. Opinie przyciągają nowych gości, karta lojalnościowa daje powód do powrotu, a SMS przypomina o lokalu w odpowiednim momencie.",
+      },
+    ],
+  },
 ];
 
 export function getLocalizedPost(

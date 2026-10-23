@@ -43,6 +43,10 @@ import OpinieGoogleRestauracjaKawiarnia from "@/components/blog/articles/OpinieG
 import OpinieGoogleRestauracjaKawiarniaEn from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarniaEn";
 import OpinieGoogleRestauracjaKawiarniaDe from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarniaDe";
 import OpinieGoogleRestauracjaKawiarniaIt from "@/components/blog/articles/OpinieGoogleRestauracjaKawiarniaIt";
+import SmsMarketingDlaLokalu from "@/components/blog/articles/SmsMarketingDlaLokalu";
+import SmsMarketingDlaLokaluEn from "@/components/blog/articles/SmsMarketingDlaLokaluEn";
+import SmsMarketingDlaLokaluDe from "@/components/blog/articles/SmsMarketingDlaLokaluDe";
+import SmsMarketingDlaLokaluIt from "@/components/blog/articles/SmsMarketingDlaLokaluIt";
 
 const SITE_URL = "https://starlinkee.com";
 
@@ -83,6 +87,12 @@ const articleComponents: Record<string, Partial<Record<Locale, React.ComponentTy
     en: OpinieGoogleRestauracjaKawiarniaEn,
     de: OpinieGoogleRestauracjaKawiarniaDe,
     it: OpinieGoogleRestauracjaKawiarniaIt,
+  },
+  "sms-marketing-dla-lokalu-jak-wysylac-kupony-i-przyciagac-gosci": {
+    pl: SmsMarketingDlaLokalu,
+    en: SmsMarketingDlaLokaluEn,
+    de: SmsMarketingDlaLokaluDe,
+    it: SmsMarketingDlaLokaluIt,
   },
 };
 
