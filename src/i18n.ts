@@ -7,7 +7,8 @@ export const LOCALES: Locale[] = ["pl", "en", "de", "it"];
 export const LOCALE_COOKIE_NAME = "locale";
 
 const translations = {
-  // Ton PL (wzorzec dla en/de/it): zwięźle, ale z ciepłem: 1–2 zdania, obrazy i zmysły (uśmiech, dotyk, spokój) zamiast suchych faktów, bez żargonu.
+  // Ton PL (wzorzec dla en/de/it): pisz jak człowiek do człowieka: prosto, konkretnie, 1–2 zdania.
+  // Powiedz, co robi gość i co dostaje właściciel. Bez haseł reklamowych, wykrzykników i na siłę luzackich zwrotów.
   // Akcent na uczucia (spokój, duma, kontrola) i wyniki (więcej 5★, więcej powracających gości).
   // Mów do właściciela na „Ty”, konkretem zamiast ogólników; każdy język pisz naturalnie, nie tłumacz dosłownie.
   pl: {
@@ -22,23 +23,23 @@ const translations = {
       title: "Więcej gwiazdek 5★.",
       titleHighlight: "Więcej powracających gości.",
       subtitle:
-        "Jedno dotknięcie, a uśmiech gościa zamienia się w piątą gwiazdkę. Pochwały lecą do Google, a krytyka trafia cicho do Ciebie.",
+        "Gość przykłada telefon do tabliczki. Dobra opinia trafia do Google, a jeśli coś poszło nie tak, dowiadujesz się o tym pierwszy.",
       cta: "Zacznij za darmo",
       ctaSecondary: "Zamów prezentację",
     },
     features: {
       sectionTitle: "Spokojna głowa. Pełna kontrola.",
       sectionSubtitle:
-        "Jedna dyskretna tabliczka NFC na stoliku. Gość przykłada telefon i gotowe: bez aplikacji, bez logowania, bez zbędnych kroków.",
+        "Tabliczka na stoliku i telefon gościa. Nic nie trzeba pobierać ani zakładać.",
       linktreeTitle: "Twoja strona z linkami",
       linktreeDesc:
-        "Gość przykłada telefon i od razu widzi wszystko, co dobre: ocenę, kupon, menu i Twoje social media. Lekko, ładnie, bez szukania.",
+        "Po przyłożeniu telefonu gość widzi Twoją ocenę, kupon, menu i social media. Wszystko w jednym miejscu.",
       reviewTitle: "Same dobre opinie",
       reviewDesc:
-        "Uśmiechnięty gość trafia prosto do Google, a ten, któremu coś nie pasowało, pisze do Ciebie. Spokojna rozmowa zamiast publicznej burzy.",
+        "Zadowolony gość zostawia opinię w Google. Niezadowolony pisze do Ciebie i możecie to załatwić między sobą.",
       promoTitle: "Goście wracają",
       promoDesc:
-        "Zbieraj telefony i zgody, a potem wyślij kupon na deser w spokojniejszy wtorek. Stali goście, którzy czują, że o nich pamiętasz.",
+        "Zbierasz numery telefonów i zgody, a potem wysyłasz kupony SMS. Na przykład na deser w dzień, gdy w lokalu jest luźniej.",
     },
     pricing: {
       sectionTitle: "Prosty cennik",
@@ -67,7 +68,7 @@ const translations = {
     liveDemo: {
       sectionTitle: "Zobacz to na żywo",
       sectionSubtitle:
-        "Weź telefon do ręki i poczuj to tak, jak Twój gość tuż po zeskanowaniu tabliczki.",
+        "Kliknij i zobacz, co widzi Twój gość po zeskanowaniu tabliczki.",
       iframeTitle: "Podgląd na żywo strony po zeskanowaniu tabliczki Starlinkee",
       cta: "Podgląd na pełnym ekranie",
       expandCta: "Zobacz, jak to działa",
@@ -75,15 +76,15 @@ const translations = {
       mobileCta: "Otwórz w swoim telefonie",
       tourIdle: "👉 Kliknij w telefon i przejdź ścieżkę oczami gościa.",
       tourLinktree:
-        "Tu ląduje gość po skanie: jedno przyjazne miejsce z Twoimi linkami, zawsze świeżymi.",
+        "Tu trafia gość po zeskanowaniu. Twoje linki, zawsze aktualne.",
       tourFilter:
-        "Filtr opinii: gość najpierw dzieli się wrażeniami z Tobą, a nie z całym internetem.",
+        "Filtr opinii: gość najpierw ocenia wizytę u Ciebie, a nie od razu w Google.",
       tourHighRating:
-        "Wysoka ocena? Gość wciąż się uśmiecha i od razu trafia na Twój profil Google.",
+        "Wysoka ocena? Gość od razu przechodzi do Twojego profilu w Google.",
       tourLowRating:
-        "Niższa ocena? Wiadomość trafia tylko do Ciebie, więc możesz wszystko wyjaśnić na spokojnie.",
+        "Niska ocena? Wiadomość dostajesz tylko Ty, więc możesz to spokojnie wyjaśnić.",
       tourPromo:
-        "Tu gość odbiera kupon, który sam ustawiasz: miły powód, żeby wrócić.",
+        "Tu gość odbiera kupon, który sam ustawiasz.",
       tourRestart: "Zacznij pokaz od nowa",
     },
     contact: {
@@ -143,23 +144,23 @@ const translations = {
       title: "More 5★ reviews.",
       titleHighlight: "More returning guests.",
       subtitle:
-        "One tap, and a guest's smile becomes a fifth star. Praise goes to Google, criticism lands quietly with you.",
+        "Guests tap their phone on the plate. Good reviews go to Google, and if something went wrong, you hear about it first.",
       cta: "Start for free",
       ctaSecondary: "Book a demo",
     },
     features: {
       sectionTitle: "Peace of mind. Full control.",
       sectionSubtitle:
-        "One discreet NFC plate on the table. Guests hold up their phone and that's it: no app, no login, no fuss.",
+        "A plate on the table and the guest's own phone. Nothing to download or sign up for.",
       linktreeTitle: "Your own link page",
       linktreeDesc:
-        "Guests tap their phone and see everything good at once: your rating, a coupon, the menu and your socials. Light, tidy, effortless.",
+        "After the tap, guests see your rating, a coupon, the menu and your socials, all in one place.",
       reviewTitle: "Only great reviews",
       reviewDesc:
-        "A delighted guest flows straight to Google. One who felt let down writes to you: a calm conversation instead of a public storm.",
+        "Happy guests leave a review on Google. Unhappy ones message you, so you can sort it out directly.",
       promoTitle: "Guests come back",
       promoDesc:
-        "Collect phone numbers and consent, then send a dessert coupon for a quieter Tuesday. Regulars who feel remembered.",
+        "You collect phone numbers and consent, then send SMS coupons. A dessert on a slow weekday, say.",
     },
     pricing: {
       sectionTitle: "Simple pricing",
@@ -188,7 +189,7 @@ const translations = {
     liveDemo: {
       sectionTitle: "See it live",
       sectionSubtitle:
-        "Pick up your phone and feel it just as your guest does, right after scanning the plate.",
+        "Tap through it and see what your guest sees after scanning the plate.",
       iframeTitle: "Live preview of the page shown after scanning a Starlinkee plate",
       cta: "Open full-screen preview",
       expandCta: "See how it works",
@@ -196,15 +197,15 @@ const translations = {
       mobileCta: "Open on your phone",
       tourIdle: "👉 Tap the phone and walk through it as your guest.",
       tourLinktree:
-        "Guests land here after scanning: one friendly place with your links, always fresh.",
+        "Guests land here after scanning. Your links, always up to date.",
       tourFilter:
-        "Review filter: guests share their impressions with you first, not with the whole internet.",
+        "Review filter: guests rate their visit with you first, not straight on Google.",
       tourHighRating:
-        "High rating? The smile is still on their face, and they land right on your Google profile.",
+        "High rating? The guest goes straight to your Google profile.",
       tourLowRating:
-        "A lower rating? The message reaches only you, so you can set things right calmly.",
+        "Low rating? Only you get the message, so you can sort it out calmly.",
       tourPromo:
-        "Here guests pick up the coupon you set up: a pleasant reason to come back.",
+        "Here the guest picks up the coupon you set up.",
       tourRestart: "Restart the demo",
     },
     contact: {
@@ -264,23 +265,23 @@ const translations = {
       title: "Mehr 5★-Bewertungen.",
       titleHighlight: "Mehr Stammgäste.",
       subtitle:
-        "Ein Tipp, und das Lächeln Ihres Gastes wird zum fünften Stern. Lob geht zu Google, Kritik landet leise bei Ihnen.",
+        "Der Gast hält das Handy an den Aufsteller. Gute Bewertungen gehen zu Google, und wenn etwas schiefgelaufen ist, erfahren Sie es als Erstes.",
       cta: "Kostenlos starten",
       ctaSecondary: "Demo buchen",
     },
     features: {
       sectionTitle: "Gelassenheit. Volle Kontrolle.",
       sectionSubtitle:
-        "Ein dezenter NFC-Aufsteller am Tisch. Der Gast hält das Handy daran, fertig: ohne App, ohne Anmeldung, ohne Umwege.",
+        "Ein Aufsteller auf dem Tisch und das Handy des Gastes. Nichts herunterzuladen, keine Anmeldung.",
       linktreeTitle: "Ihre eigene Link-Seite",
       linktreeDesc:
-        "Der Gast hält das Handy daran und sieht auf einen Blick alles Schöne: Bewertung, Gutschein, Speisekarte und Ihre Social-Media-Links. Leicht und aufgeräumt.",
+        "Nach dem Scannen sieht der Gast Ihre Bewertung, einen Gutschein, die Speisekarte und Ihre Social-Media-Links an einem Ort.",
       reviewTitle: "Nur gute Bewertungen",
       reviewDesc:
-        "Ein begeisterter Gast landet direkt bei Google. Wer sich geärgert hat, schreibt Ihnen: ein ruhiges Gespräch statt öffentlichem Sturm.",
+        "Zufriedene Gäste bewerten Sie bei Google. Unzufriedene schreiben Ihnen, und Sie klären es direkt.",
       promoTitle: "Gäste kommen wieder",
       promoDesc:
-        "Sammeln Sie Nummern und Einwilligungen und schicken Sie einen Dessert-Gutschein für einen ruhigeren Dienstag. Stammgäste, die spüren, dass Sie an sie denken.",
+        "Sie sammeln Telefonnummern und Einwilligungen und verschicken SMS-Gutscheine, zum Beispiel für ein Dessert an einem ruhigen Wochentag.",
     },
     pricing: {
       sectionTitle: "Transparente Preise",
@@ -309,7 +310,7 @@ const translations = {
     liveDemo: {
       sectionTitle: "Live erleben",
       sectionSubtitle:
-        "Nehmen Sie Ihr Handy in die Hand und erleben Sie es so, wie Ihr Gast direkt nach dem Scannen.",
+        "Klicken Sie sich durch und sehen Sie, was Ihr Gast nach dem Scannen sieht.",
       iframeTitle: "Live-Vorschau der Seite nach dem Scannen eines Starlinkee-Aufstellers",
       cta: "Vorschau im Vollbild",
       expandCta: "So funktioniert es",
@@ -317,15 +318,15 @@ const translations = {
       mobileCta: "Auf Ihrem Handy öffnen",
       tourIdle: "👉 Tippen Sie aufs Telefon und erleben Sie es wie Ihr Gast.",
       tourLinktree:
-        "Hier landet der Gast nach dem Scan: ein freundlicher Ort mit Ihren Links, immer frisch.",
+        "Hier landet der Gast nach dem Scannen. Ihre Links, immer aktuell.",
       tourFilter:
-        "Bewertungsfilter: Der Gast teilt seine Eindrücke zuerst mit Ihnen, nicht mit dem ganzen Internet.",
+        "Bewertungsfilter: Der Gast bewertet den Besuch zuerst bei Ihnen, nicht gleich bei Google.",
       tourHighRating:
-        "Hohe Bewertung? Das Lächeln ist noch da, und der Gast landet direkt auf Ihrem Google-Profil.",
+        "Hohe Bewertung? Der Gast geht direkt zu Ihrem Google-Profil.",
       tourLowRating:
-        "Schlechtere Bewertung? Die Nachricht erreicht nur Sie, so klären Sie alles in Ruhe.",
+        "Niedrige Bewertung? Nur Sie bekommen die Nachricht und können es in Ruhe klären.",
       tourPromo:
-        "Hier holt der Gast den Gutschein ab, den Sie festlegen: ein schöner Grund, wiederzukommen.",
+        "Hier holt der Gast den Gutschein ab, den Sie festgelegt haben.",
       tourRestart: "Demo neu starten",
     },
     contact: {
@@ -385,23 +386,23 @@ const translations = {
       title: "Più recensioni 5★.",
       titleHighlight: "Più clienti che tornano.",
       subtitle:
-        "Un tocco, e il sorriso del cliente diventa la quinta stella. Gli elogi vanno su Google, le critiche arrivano piano da te.",
+        "Il cliente avvicina il telefono alla targa. Le recensioni positive vanno su Google e, se qualcosa è andato storto, lo sai tu per primo.",
       cta: "Inizia gratis",
       ctaSecondary: "Prenota una demo",
     },
     features: {
       sectionTitle: "Serenità. Controllo totale.",
       sectionSubtitle:
-        "Una targa NFC discreta sul tavolo. Il cliente avvicina il telefono e basta: niente app, niente accesso, nessun giro.",
+        "Una targa sul tavolo e il telefono del cliente. Niente da scaricare, niente registrazione.",
       linktreeTitle: "La tua pagina link",
       linktreeDesc:
-        "Il cliente avvicina il telefono e vede subito tutto il bello: voto, coupon, menu e i tuoi social. Leggero, ordinato, senza fatica.",
+        "Dopo la scansione il cliente vede il tuo voto, un coupon, il menu e i tuoi social, tutto in un posto.",
       reviewTitle: "Solo recensioni top",
       reviewDesc:
-        "Il cliente entusiasta va dritto su Google. Chi è rimasto deluso scrive a te: una conversazione serena invece di una tempesta pubblica.",
+        "Chi è contento lascia una recensione su Google. Chi non lo è scrive a te, e ve la vedete tra voi.",
       promoTitle: "I clienti tornano",
       promoDesc:
-        "Raccogli numeri e consensi, poi manda un coupon per il dolce in un martedì più tranquillo. Clienti fedeli che si sentono ricordati.",
+        "Raccogli numeri e consensi, poi mandi coupon SMS. Per esempio un dolce in un giorno con meno clienti.",
     },
     pricing: {
       sectionTitle: "Prezzi semplici",
@@ -430,7 +431,7 @@ const translations = {
     liveDemo: {
       sectionTitle: "Guardalo dal vivo",
       sectionSubtitle:
-        "Prendi il telefono e vivilo come il tuo cliente, subito dopo la scansione della targa.",
+        "Prova a cliccare e guarda cosa vede il tuo cliente dopo la scansione.",
       iframeTitle: "Anteprima dal vivo della pagina mostrata dopo la scansione di una targa Starlinkee",
       cta: "Anteprima a schermo intero",
       expandCta: "Guarda come funziona",
@@ -438,15 +439,15 @@ const translations = {
       mobileCta: "Apri sul tuo telefono",
       tourIdle: "👉 Tocca il telefono e vivi il percorso come il tuo cliente.",
       tourLinktree:
-        "Qui arriva il cliente dopo la scansione: un posto accogliente con i tuoi link, sempre freschi.",
+        "Qui arriva il cliente dopo la scansione. I tuoi link, sempre aggiornati.",
       tourFilter:
-        "Filtro recensioni: il cliente condivide prima le sue impressioni con te, non con tutto il web.",
+        "Filtro recensioni: il cliente valuta prima la visita con te, non subito su Google.",
       tourHighRating:
-        "Voto alto? Il sorriso c'è ancora e il cliente va dritto al tuo profilo Google.",
+        "Voto alto? Il cliente va direttamente al tuo profilo Google.",
       tourLowRating:
-        "Voto più basso? Il messaggio arriva solo a te, così sistemi tutto con calma.",
+        "Voto basso? Il messaggio arriva solo a te, così puoi chiarire con calma.",
       tourPromo:
-        "Qui il cliente ritira il coupon che imposti tu: un bel motivo per tornare.",
+        "Qui il cliente ritira il coupon che imposti tu.",
       tourRestart: "Ricomincia la demo",
     },
     contact: {
