@@ -1,10 +1,8 @@
-import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import AdminLogin from "@/components/admin/AdminLogin";
 import { ADMIN_COOKIE, verifyAdminSession } from "@/lib/adminAuth";
 import { getDashboardData } from "@/lib/db";
 
-export const metadata: Metadata = { robots: { index: false, follow: false } };
 
 interface Props {
   searchParams: Promise<{ e?: string }>;
