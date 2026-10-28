@@ -300,8 +300,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
           <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             Starlinkee NFC stand
           </Link>{" "}
-          works: one device handles the loyalty card, the Google review form, and a filter that
-          protects against unfair reviews, all at once. If you want to see how collecting reviews
+          works: one device collects Google reviews and guest contacts, which you can later build a loyalty program on. If you want to see how collecting reviews
           itself works step by step, check out our article on{" "}
           <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
             how to get Google reviews fast
@@ -385,7 +384,7 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
             <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee NFC stand
             </Link>{" "}
-            works, with a built-in digital loyalty card.
+            works for collecting reviews and guest contacts.
           </p>
         </section>
 

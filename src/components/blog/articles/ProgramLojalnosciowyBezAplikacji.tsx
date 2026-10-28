@@ -302,8 +302,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
           <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             tabliczka NFC Starlinkee
           </Link>
-          : jedno urządzenie obsługuje jednocześnie kartę lojalnościową, formularz oceny Google
-          i filtr chroniący przed niesprawiedliwymi opiniami. Jeśli chcesz dowiedzieć się, jak
+          : jedno urządzenie zbiera opinie w Google i kontakty do gości, na których później możesz budować program lojalnościowy. Jeśli chcesz dowiedzieć się, jak
           samo zbieranie recenzji wygląda krok po kroku, sprawdź artykuł o tym,{" "}
           <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
             jak szybko zdobyć opinie w Google
@@ -387,7 +386,7 @@ export default function ProgramLojalnosciowyBezAplikacji() {
             <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               tabliczka NFC Starlinkee
             </Link>
-            {" "}z wbudowaną cyfrową kartą lojalnościową.
+            {" "}do zbierania opinii i kontaktów do gości.
           </p>
         </section>
 

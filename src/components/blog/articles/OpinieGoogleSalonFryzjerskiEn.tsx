@@ -70,7 +70,7 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Why does a review filter protect a salon from an unfair rating?
+                    3.2. What should a salon do when a client has a complaint?
                   </a>
                 </li>
               </ol>
@@ -253,15 +253,10 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Why does a review filter protect a salon from an unfair rating?
+          What should a salon do when a client has a complaint?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          A legal review filter sends happy customers straight to Google, while offering
-          unhappy ones an additional internal form to report the issue — without blocking
-          anyone&apos;s access to the public rating. This is entirely different from the
-          prohibited <strong>&quot;review gating&quot;</strong>, which screens customers before
-          they can leave a review. With such a filter, a salon learns about a customer&apos;s
-          dissatisfaction before it reaches Google, and has time to respond privately.
+          It helps when an unhappy client has a simple way to message the salon privately: you learn about the problem the same day and can fix it. That message should be an addition, not a replacement for a review. You must not choose who gets the link to Google, because selective review collection (so-called <strong>&ldquo;review gating&rdquo;</strong>) is prohibited by Google and may be treated as misleading in the EU. Every client should be able to leave a public review.
         </p>
       </div>
 
@@ -385,12 +380,10 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Can a loyalty program and review collection run on the same NFC plate?
+                Can the same NFC plate collect reviews and customer contacts?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Yes. A single NFC device can send a happy customer to the Google review form and
-                register their visit on a digital loyalty card at the same time — no extra
-                hardware and no app to install.
+                Yes. A single NFC plate can send a customer to the Google review form and, at the same time, collect their phone number with consent to coupon messages — no extra hardware and no app to install.
               </dd>
             </div>
           </dl>

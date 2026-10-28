@@ -106,7 +106,7 @@ export default function JakOdpowiadacNaOpinieDe() {
                 </li>
                 <li>
                   <a href="#legaler-filter" className="text-blue-600 hover:underline">
-                    5.2. Ein legaler Bewertungsfilter — wie funktioniert das in der Praxis?
+                    5.2. Wie löst man Probleme vor Ort und regelkonform?
                   </a>
                 </li>
               </ol>
@@ -346,10 +346,7 @@ export default function JakOdpowiadacNaOpinieDe() {
           Wie man unfairen Bewertungen vorbeugt, bevor sie entstehen
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Das Beantworten schwieriger Bewertungen ist wichtig, aber noch wirkungsvoller ist es,
-          ihre Anzahl direkt an der Quelle zu reduzieren. Es geht darum, dass ein kleiner Vorfall —
-          eine kalte Suppe, fünf Minuten Verspätung — nicht sofort mit einem Stern bei Google endet,
-          sondern zuerst Sie erreicht, bevor er überhaupt im Netz landet.
+          Das Beantworten schwieriger Bewertungen ist wichtig, aber noch wirkungsvoller ist es, das Problem zu lösen, bevor der Gast geht. Es geht darum, dass ein kleiner Vorfall — eine kalte Suppe, fünf Minuten Verspätung — vor Ort geklärt wird und nicht sofort mit einem Stern bei Google endet.
         </p>
 
         <h3 id="review-gating" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
@@ -365,41 +362,11 @@ export default function JakOdpowiadacNaOpinieDe() {
         </p>
 
         <h3 id="legaler-filter" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
-          Ein legaler Bewertungsfilter — wie funktioniert das in der Praxis?
+          Wie löst man Probleme vor Ort und regelkonform?
         </h3>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          Der Unterschied zwischen verbotenem Review-Gating und legitimem Profilschutz ist subtil,
-          aber entscheidend: Ein legales System versperrt niemandem den Weg zu Google — jeder
-          Kunde, ob zufrieden oder nicht, hat Zugang zum öffentlichen Bewertungsformular. Was sich
-          ändert, ist nur die Reihenfolge der Schritte: Ein unzufriedener Kunde erhält zusätzlich
-          die Möglichkeit, das Problem direkt dem Unternehmen zu melden, bevor (oder parallel dazu)
-          er entscheidet, ob er auch eine öffentliche Bewertung schreiben möchte.
-        </p>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Genau so funktioniert der Bewertungsfilter, der im{" "}
-          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-            Starlinkee-NFC-Aufsteller
-          </Link>{" "}
-          integriert ist. Der Kunde tippt mit seinem Handy an und bewertet zunächst die Erfahrung
-          mit einem einzigen Tap. Ein zufriedener Kunde gelangt direkt zum Google-Bewertungsformular.
-          Ein unzufriedener landet auf einem internen Feedback-Formular, wo er das Problem
-          beschreiben kann — und Sie erhalten die Chance, sich zu melden und die Situation zu
-          klären, bevor sonst jemand davon liest. Das ist kein Blockieren des Zugangs zu Google —
-          es ist das Steuern des Moments, in dem der Kunde entscheidet, wohin er sein Feedback
-          richtet. Mehr über den eigentlichen Prozess des Bewertungssammelns erfahren Sie im Artikel
-          darüber,{" "}
-          <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
-            wie man schnell Google-Bewertungen bekommt
-          </Link>
-          .
+          Am sichersten ist es, alle Gäste gleich zu behandeln: Jeder erhält denselben Weg, eine öffentliche Bewertung bei Google zu hinterlassen. Daneben können Sie einen privaten Kanal anbieten, etwa die Telefonnummer oder E-Mail-Adresse des Betriebsleiters, damit ein unzufriedener Gast das Problem schnell schildern kann. Dieser Kontakt ist eine Ergänzung und kein Ersatz für die Bewertung, und oft erfahren Sie so noch am selben Tag von einem Problem. Mehr zum Sammeln von Bewertungen lesen Sie in unserem Artikel darüber, <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">wie man schnell Google-Bewertungen bekommt</Link>.
         </p>
-      </div>
-
-      <div className={P}>
-        <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
-          alt="Minimalistisches Café-Interieur mit einer Weggabelung — eine offene Tür und ein Seitenkorridor symbolisieren zwei getrennte Feedback-Wege"
-        />
       </div>
 
       {/* ── ZUSAMMENFASSUNG ── */}
@@ -415,14 +382,7 @@ export default function JakOdpowiadacNaOpinieDe() {
             Das Beantworten von Bewertungen ist keine Verwaltungspflicht, sondern ein tägliches
             Gespräch mit dem Markt, das jeder potenzielle Kunde sieht. Danken Sie konkret für
             positive Bewertungen, reagieren Sie sachlich auf negative und melden Sie nur solche
-            Bewertungen zur Entfernung, die tatsächlich gegen die Google-Richtlinien verstoßen. Die
-            wirksamste Strategie bleibt jedoch, die Zahl unfairer Bewertungen an der Quelle zu
-            reduzieren — bevor der Kunde überhaupt zum Handy greift, um eine Bewertung abzugeben.
-            Wenn Sie sehen möchten, wie das in der Praxis aussieht, schauen Sie sich den{" "}
-            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-              Starlinkee-NFC-Aufsteller
-            </Link>{" "}
-            mit integriertem, Google-konformem Bewertungsfilter an.
+            Bewertungen zur Entfernung, die tatsächlich gegen die Google-Richtlinien verstoßen. Die wirksamste Strategie bleibt, Probleme vor Ort zu lösen, bevor der Gast geht, mit einem privaten Kontakt neben der öffentlichen Bewertung und nicht anstelle von ihr.
           </p>
         </section>
 
@@ -466,14 +426,10 @@ export default function JakOdpowiadacNaOpinieDe() {
             </div>
             <div className="border-b border-gray-200 pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Worin unterscheidet sich ein Bewertungsfilter vom verbotenen Review-Gating?
+                Darf ich unzufriedenen Kunden einen privaten Kontakt anbieten?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Review-Gating blockiert unzufriedenen Kunden den Zugang zum Google-Bewertungsformular
-                — ein Verstoß gegen die Richtlinien. Ein legaler Bewertungsfilter, wie er bei
-                Starlinkee eingesetzt wird, gewährt jedem Kunden Zugang zu Google und bietet
-                unzufriedenen Kunden lediglich zusätzlich einen separaten Kanal, um ein Problem
-                direkt dem Unternehmen zu melden.
+                Ja, solange er den Zugang zu Google nicht ersetzt. Jeder Kunde sollte eine öffentliche Bewertung abgeben können, und ein privater Kanal (Telefon, E-Mail) ist nur eine Ergänzung, die hilft, das Problem schneller zu lösen.
               </dd>
             </div>
             <div className="pb-6">

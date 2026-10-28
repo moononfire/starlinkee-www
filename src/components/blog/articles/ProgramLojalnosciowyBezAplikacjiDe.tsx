@@ -309,8 +309,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
           <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             Starlinkee-NFC-Theke
           </Link>
-          : Ein Gerät bedient gleichzeitig die Treuekarte, das Google-Bewertungsformular und einen
-          Filter, der vor unfairen Bewertungen schützt. Wie das Sammeln von Bewertungen selbst
+          : Ein Gerät sammelt Google-Bewertungen und Gästekontakte, auf denen Sie später ein Treueprogramm aufbauen können. Wie das Sammeln von Bewertungen selbst
           Schritt für Schritt funktioniert, erfahren Sie in unserem Artikel darüber,{" "}
           <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
             wie man schnell Google-Bewertungen bekommt
@@ -394,7 +393,7 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
             <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               Starlinkee-NFC-Theke
             </Link>{" "}
-            mit integrierter digitaler Treuekarte funktioniert.
+            beim Sammeln von Bewertungen und Gästekontakten funktioniert.
           </p>
         </section>
 

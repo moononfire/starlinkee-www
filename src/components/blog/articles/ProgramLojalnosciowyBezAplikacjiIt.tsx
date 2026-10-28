@@ -308,8 +308,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
           <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
             totem NFC Starlinkee
           </Link>
-          : un unico dispositivo gestisce contemporaneamente la tessera fedeltà, il modulo di
-          recensione Google e un filtro che protegge dalle recensioni ingiuste. Se vuoi scoprire
+          : un unico dispositivo raccoglie recensioni Google e contatti dei clienti, su cui puoi poi costruire un programma fedeltà. Se vuoi scoprire
           come funziona passo dopo passo la raccolta delle recensioni, leggi l&rsquo;articolo su{" "}
           <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
             come ottenere rapidamente recensioni su Google
@@ -394,7 +393,7 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
             <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
               totem NFC Starlinkee
             </Link>{" "}
-            con tessera fedeltà digitale integrata.
+            per raccogliere recensioni e contatti dei clienti.
           </p>
         </section>
 

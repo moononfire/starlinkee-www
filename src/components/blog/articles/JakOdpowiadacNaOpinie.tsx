@@ -106,7 +106,7 @@ export default function JakOdpowiadacNaOpinie() {
                 </li>
                 <li>
                   <a href="#legalny-filtr" className="text-blue-600 hover:underline">
-                    5.2. Legalny filtr opinii — jak to działa w praktyce?
+                    5.2. Jak rozwiązywać problemy na miejscu i zgodnie z zasadami?
                   </a>
                 </li>
               </ol>
@@ -341,10 +341,7 @@ export default function JakOdpowiadacNaOpinie() {
           Jak zapobiegać niesprawiedliwym opiniom, zanim się pojawią?
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Odpowiadanie na trudne opinie jest ważne, ale jeszcze skuteczniejsze jest ograniczenie
-          ich liczby u źródła. Chodzi o to, żeby drobny incydent — zimna zupa, pięć minut
-          opóźnienia — nie kończył się od razu jedną gwiazdką w Google, tylko trafiał najpierw do
-          Ciebie, zanim trafi do sieci.
+          Odpowiadanie na trudne opinie jest ważne, ale jeszcze skuteczniejsze jest rozwiązanie problemu, zanim gość wyjdzie. Chodzi o to, żeby drobny incydent — zimna zupa, pięć minut opóźnienia — został załatwiony na miejscu i nie kończył się od razu jedną gwiazdką w Google.
         </p>
 
         <h3 id="review-gating" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
@@ -360,39 +357,11 @@ export default function JakOdpowiadacNaOpinie() {
         </p>
 
         <h3 id="legalny-filtr" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
-          Legalny filtr opinii — jak to działa w praktyce?
+          Jak rozwiązywać problemy na miejscu i zgodnie z zasadami?
         </h3>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          Różnica między zakazanym review gatingiem a legalną ochroną profilu jest subtelna, ale
-          kluczowa: legalny system nie blokuje nikomu drogi do Google — każdy klient, zadowolony
-          i niezadowolony, ma dostęp do publicznego formularza opinii. Zmienia się tylko kolejność
-          działań: niezadowolony klient dodatkowo otrzymuje możliwość zgłoszenia problemu
-          bezpośrednio do firmy, zanim (lub równolegle z tym, jak) zdecyduje, czy chce też napisać
-          publiczną recenzję.
-        </p>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Dokładnie tak działa filtr opinii wbudowany w{" "}
-          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-            tabliczkę NFC Starlinkee
-          </Link>
-          . Klient przykłada telefon i najpierw ocenia doświadczenie jednym kliknięciem. Zadowolony
-          trafia od razu na formularz oceny Google. Niezadowolony trafia na wewnętrzny formularz
-          feedbacku, gdzie może opisać problem — a Ty dostajesz szansę na kontakt i naprawienie
-          sytuacji, zanim ktokolwiek inny ją przeczyta. To nie jest blokowanie dostępu do Google —
-          to zarządzanie momentem, w którym klient decyduje, gdzie skierować swoją opinię. Więcej
-          o samym procesie zbierania recenzji znajdziesz w artykule o tym,{" "}
-          <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
-            jak szybko zdobyć opinie w Google
-          </Link>
-          .
+          Najbezpieczniej traktować wszystkich gości tak samo: każdy dostaje ten sam sposób na zostawienie publicznej opinii w Google. Obok niego możesz zaproponować prywatny kanał, na przykład numer telefonu lub adres e-mail menedżera, żeby niezadowolony gość mógł szybko opisać problem. Taki kontakt jest dodatkiem, a nie zamiennikiem opinii, i dzięki niemu często dowiadujesz się o kłopocie jeszcze tego samego dnia. Więcej o samym zbieraniu recenzji znajdziesz w artykule o tym, <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">jak szybko zdobyć opinie w Google</Link>.
         </p>
-      </div>
-
-      <div className={P}>
-        <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
-          alt="Minimalistyczne wnętrze kawiarni z rozwidleniem dróg — otwarte drzwi i boczny korytarz symbolizujące dwie ścieżki opinii"
-        />
       </div>
 
       {/* ── PODSUMOWANIE ── */}
@@ -408,14 +377,7 @@ export default function JakOdpowiadacNaOpinie() {
             Odpowiadanie na opinie to nie obowiązek administracyjny, tylko codzienna rozmowa
             z rynkiem, którą widzi każdy potencjalny klient. Dziękuj konkretnie za pozytywne
             recenzje, reaguj rzeczowo na negatywne i zgłaszaj do usunięcia tylko te, które
-            faktycznie naruszają regulamin Google. Najskuteczniejszą strategią pozostaje jednak
-            ograniczenie liczby niesprawiedliwych opinii u źródła — zanim klient w ogóle sięgnie
-            po telefon, żeby wystawić ocenę. Jeśli chcesz zobaczyć, jak wygląda to w praktyce,
-            sprawdź, jak działa{" "}
-            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-              tabliczka NFC Starlinkee
-            </Link>
-            {" "}z wbudowanym, zgodnym z regulaminem Google filtrem opinii.
+            faktycznie naruszają regulamin Google. Najskuteczniejszą strategią pozostaje rozwiązywanie problemów na miejscu, zanim gość wyjdzie, z prywatnym kontaktem oferowanym obok publicznej opinii, a nie zamiast niej.
           </p>
         </section>
 
@@ -459,13 +421,10 @@ export default function JakOdpowiadacNaOpinie() {
             </div>
             <div className="border-b border-gray-200 pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Czym różni się filtr opinii od zakazanego review gatingu?
+                Czy mogę oferować niezadowolonym klientom prywatny kontakt?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Review gating blokuje niezadowolonym klientom dostęp do formularza opinii Google —
-                to naruszenie regulaminu. Legalny filtr opinii, jak ten w systemie Starlinkee, daje
-                dostęp do Google każdemu klientowi, a jedynie dodatkowo oferuje niezadowolonym
-                osobny kanał zgłoszenia problemu bezpośrednio do firmy.
+                Tak, o ile nie zastępuje on dostępu do Google. Każdy klient powinien móc zostawić publiczną opinię, a prywatny kanał (telefon, e-mail) jest tylko dodatkiem, który pozwala szybciej rozwiązać problem.
               </dd>
             </div>
             <div className="pb-6">

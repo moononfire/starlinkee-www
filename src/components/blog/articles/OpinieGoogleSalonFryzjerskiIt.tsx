@@ -71,7 +71,7 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Perché un filtro recensioni protegge il salone da una valutazione ingiusta?
+                    3.2. Cosa fare quando un cliente ha da ridire?
                   </a>
                 </li>
               </ol>
@@ -259,16 +259,10 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Perché un filtro recensioni protegge il salone da una valutazione ingiusta?
+          Cosa fare quando un cliente ha da ridire?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Un filtro recensioni legale indirizza i clienti soddisfatti direttamente a Google,
-          offrendo a quelli insoddisfatti un modulo interno aggiuntivo per segnalare il
-          problema — senza bloccare a nessuno l&apos;accesso alla valutazione pubblica. È
-          qualcosa di completamente diverso dal vietato <strong>&quot;review gating&quot;</strong>,
-          ovvero la selezione dei clienti prima che possano lasciare una recensione. Con un
-          filtro simile, il salone viene a conoscenza dell&apos;insoddisfazione di una cliente
-          prima che arrivi su Google, e ha il tempo di reagire in privato.
+          È utile che un cliente insoddisfatto abbia un modo semplice per scrivere in privato al salone: così vieni a sapere del problema lo stesso giorno e puoi risolverlo. Quel messaggio però deve essere un&apos;aggiunta, non un sostituto della recensione. Non si può scegliere a chi mostrare il link a Google, perché la raccolta selettiva di recensioni (il cosiddetto <strong>&ldquo;review gating&rdquo;</strong>) è vietata da Google e nell&apos;UE può essere considerata ingannevole. Ogni cliente dovrebbe poter lasciare una recensione pubblica.
         </p>
       </div>
 
@@ -398,13 +392,10 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Programma fedeltà e raccolta recensioni possono funzionare sulla stessa
-                targhetta NFC?
+                La stessa targhetta NFC può raccogliere recensioni e contatti dei clienti?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Sì. Un&apos;unica targhetta NFC può contemporaneamente indirizzare un cliente
-                soddisfatto al modulo di recensione Google e registrare la sua visita su una
-                tessera fedeltà digitale — senza hardware aggiuntivo e senza installare app.
+                Sì. Un&apos;unica targhetta NFC può indirizzare un cliente al modulo di recensione Google e raccogliere allo stesso tempo il suo numero di telefono con il consenso ai messaggi con coupon — senza hardware aggiuntivo e senza installare app.
               </dd>
             </div>
           </dl>

@@ -105,7 +105,7 @@ export default function JakOdpowiadacNaOpinieEn() {
                 </li>
                 <li>
                   <a href="#legal-filter" className="text-blue-600 hover:underline">
-                    5.2. A legal review filter — how does it work in practice?
+                    5.2. How do you solve problems on the spot and within the rules?
                   </a>
                 </li>
               </ol>
@@ -341,10 +341,7 @@ export default function JakOdpowiadacNaOpinieEn() {
           How to prevent unfair reviews before they happen
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Responding to difficult reviews matters, but reducing their number at the source is even
-          more effective. The goal is that a minor incident — a cold soup, a five-minute delay —
-          doesn&apos;t immediately end up as one star on Google, but reaches you first, before it
-          ever reaches the web.
+          Responding to difficult reviews matters, but solving the problem before the guest leaves is even more effective. The goal is that a minor incident — a cold soup, a five-minute delay — is handled on the spot and doesn&apos;t immediately end up as one star on Google.
         </p>
 
         <h3 id="review-gating" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
@@ -359,40 +356,11 @@ export default function JakOdpowiadacNaOpinieEn() {
         </p>
 
         <h3 id="legal-filter" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
-          A legal review filter — how does it work in practice?
+          How do you solve problems on the spot and within the rules?
         </h3>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          The difference between banned review gating and legitimate profile protection is subtle
-          but crucial: a legal system never blocks anyone&apos;s path to Google — every customer,
-          satisfied or not, has access to the public review form. What changes is only the order of
-          steps: a dissatisfied customer additionally gets the option to report the problem
-          directly to the business, before (or alongside) deciding whether they also want to write
-          a public review.
-        </p>
         <p className="text-gray-700 leading-relaxed mb-6">
-          That&apos;s exactly how the review filter built into the{" "}
-          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-            Starlinkee NFC stand
-          </Link>{" "}
-          works. The customer taps their phone and first rates the experience with a single tap. A
-          satisfied customer goes straight to the Google review form. A dissatisfied one lands on
-          an internal feedback form where they can describe the issue — giving you a chance to
-          reach out and fix things before anyone else reads about it. This isn&apos;t blocking
-          access to Google — it&apos;s managing the moment at which a customer decides where to
-          direct their feedback. You can read more about the review-collection process itself in
-          our article on{" "}
-          <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
-            how to get Google reviews fast
-          </Link>
-          .
+          The safest approach is to treat every guest the same way: everyone gets the same way to leave a public review on Google. Alongside it you can offer a private channel, such as the manager&apos;s phone number or email, so an unhappy guest can quickly describe the problem. That contact is an addition, not a replacement for the review, and it often lets you hear about a problem the same day. You can read more about the review-collection process itself in our article on <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">how to get Google reviews fast</Link>.
         </p>
-      </div>
-
-      <div className={P}>
-        <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
-          alt="Minimalist café interior with a fork in the path — an open door and a side corridor symbolizing two separate feedback routes"
-        />
       </div>
 
       {/* ── SUMMARY ── */}
@@ -409,13 +377,7 @@ export default function JakOdpowiadacNaOpinieEn() {
             conversation with the market that every prospective customer can see. Thank customers
             specifically for positive reviews, react calmly and factually to negative ones, and
             only report reviews for removal when they genuinely violate Google&apos;s guidelines.
-            The most effective strategy, though, remains reducing unfair reviews at the source —
-            before a customer even reaches for their phone to leave a rating. To see what that
-            looks like in practice, check out the{" "}
-            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-              Starlinkee NFC stand
-            </Link>{" "}
-            with a built-in, Google-compliant review filter.
+            The most effective strategy is solving problems on the spot, before the guest leaves, with a private contact offered alongside the public review, not instead of it.
           </p>
         </section>
 
@@ -457,13 +419,10 @@ export default function JakOdpowiadacNaOpinieEn() {
             </div>
             <div className="border-b border-gray-200 pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                What&apos;s the difference between a review filter and banned review gating?
+                Can I offer unhappy customers a private way to contact me?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Review gating blocks dissatisfied customers from the Google review form — a policy
-                violation. A legal review filter, like the one in Starlinkee, gives every customer
-                access to Google and simply offers dissatisfied ones an additional, separate channel
-                to report a problem directly to the business.
+                Yes, as long as it doesn&apos;t replace access to Google. Every customer should be able to leave a public review, and a private channel (phone, email) is only an addition that helps you solve the problem faster.
               </dd>
             </div>
             <div className="pb-6">

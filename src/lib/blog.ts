@@ -171,9 +171,9 @@ export const blogPosts: BlogPostMeta[] = [
           "Klient może samodzielnie usunąć lub edytować swoją opinię w dowolnym momencie, ale Google nie zrobi tego automatycznie na Twoją prośbę, jeśli treść nie narusza regulaminu. Najskuteczniejsze jest wyjaśnienie sprawy prywatnie i uprzejma prośba o aktualizację, gdy problem zostanie rozwiązany.",
       },
       {
-        question: "Czym różni się filtr opinii od zakazanego review gatingu?",
+        question: "Czy mogę oferować niezadowolonym klientom prywatny kontakt?",
         answer:
-          "Review gating blokuje niezadowolonym klientom dostęp do formularza opinii Google — to naruszenie regulaminu. Legalny filtr opinii, jak ten w systemie Starlinkee, daje dostęp do Google każdemu klientowi, a jedynie dodatkowo oferuje niezadowolonym osobny kanał zgłoszenia problemu bezpośrednio do firmy.",
+          "Tak, o ile nie zastępuje on dostępu do Google. Każdy klient powinien móc zostawić publiczną opinię, a prywatny kanał (telefon, e-mail) jest tylko dodatkiem, który pozwala szybciej rozwiązać problem.",
       },
       {
         question: "Co zrobić, gdy podejrzewam, że opinię napisał konkurent?",
@@ -624,9 +624,9 @@ export const blogPosts: BlogPostMeta[] = [
           "Zwykle piąta wizyta, dopasowana do rytmu wizyt co 3–4 tygodnie. Dla salonów kosmetycznych z rzadszymi zabiegami lepiej sprawdza się próg trzech lub czterech wizyt.",
       },
       {
-        question: "Czy program lojalnościowy i zbieranie opinii mogą działać na tej samej tabliczce NFC?",
+        question: "Czy ta sama tabliczka NFC może zbierać opinie i kontakty do klientów?",
         answer:
-          "Tak. Jeden nośnik NFC może jednocześnie kierować zadowolonego klienta do formularza opinii Google i rejestrować jego wizytę w cyfrowej karcie lojalnościowej — bez dodatkowego sprzętu i bez instalowania aplikacji.",
+          "Tak. Jedna tabliczka NFC może kierować klienta do formularza opinii Google i jednocześnie zbierać jego numer telefonu wraz ze zgodą na wiadomości z kuponami — bez dodatkowego sprzętu i bez instalowania aplikacji.",
       },
     ],
   },

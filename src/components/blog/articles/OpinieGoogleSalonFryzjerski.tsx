@@ -72,7 +72,7 @@ export default function OpinieGoogleSalonFryzjerski() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Dlaczego filtr opinii chroni salon przed niesprawiedliwą oceną?
+                    3.2. Co zrobić, gdy klient ma zastrzeżenia?
                   </a>
                 </li>
               </ol>
@@ -256,15 +256,10 @@ export default function OpinieGoogleSalonFryzjerski() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Dlaczego filtr opinii chroni salon przed niesprawiedliwą oceną?
+          Co zrobić, gdy klient ma zastrzeżenia?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Legalny filtr opinii kieruje zadowolonych klientów wprost do Google, a osobom
-          niezadowolonym proponuje dodatkowo wewnętrzny formularz zgłoszenia problemu — bez
-          blokowania nikomu dostępu do publicznej oceny. To rozwiązanie zupełnie inne niż
-          zabroniony <strong>„review gating&rdquo;</strong>, czyli selekcjonowanie klientów przed
-          wystawieniem opinii. Dzięki takiemu filtrowi salon dowiaduje się o niezadowoleniu
-          klientki zanim trafi ono na Google, i ma czas zareagować prywatnie.
+          Dobrze, gdy niezadowolony klient ma prosty sposób, żeby napisać do salonu prywatnie: dzięki temu o problemie dowiadujesz się jeszcze tego samego dnia i możesz go rozwiązać. Taka wiadomość ma być dodatkiem, a nie zamiennikiem opinii. Nie wolno wybierać, komu pokazać link do Google, bo selektywne zbieranie opinii (tzw. <strong>„review gating&rdquo;</strong>) jest zabronione przez Google, a w UE może być uznane za wprowadzanie w błąd. Każdy klient powinien móc zostawić publiczną opinię.
         </p>
       </div>
 
@@ -391,13 +386,10 @@ export default function OpinieGoogleSalonFryzjerski() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Czy program lojalnościowy i zbieranie opinii mogą działać na tej samej tabliczce
-                NFC?
+                Czy ta sama tabliczka NFC może zbierać opinie i kontakty do klientów?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Tak. Jeden nośnik NFC może jednocześnie kierować zadowolonego klienta do formularza
-                opinii Google i rejestrować jego wizytę w cyfrowej karcie lojalnościowej — bez
-                dodatkowego sprzętu i bez instalowania aplikacji.
+                Tak. Jedna tabliczka NFC może kierować klienta do formularza opinii Google i jednocześnie zbierać jego numer telefonu wraz ze zgodą na wiadomości z kuponami — bez dodatkowego sprzętu i bez instalowania aplikacji.
               </dd>
             </div>
           </dl>

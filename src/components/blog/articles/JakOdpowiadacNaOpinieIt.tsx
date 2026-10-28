@@ -106,7 +106,7 @@ export default function JakOdpowiadacNaOpinieIt() {
                 </li>
                 <li>
                   <a href="#filtro-legale" className="text-blue-600 hover:underline">
-                    5.2. Un filtro recensioni legale — come funziona nella pratica?
+                    5.2. Come risolvere i problemi sul posto e nel rispetto delle regole?
                   </a>
                 </li>
               </ol>
@@ -349,10 +349,7 @@ export default function JakOdpowiadacNaOpinieIt() {
           Come prevenire le recensioni ingiuste prima che accadano
         </h2>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Rispondere alle recensioni difficili è importante, ma ridurne il numero alla fonte è
-          ancora più efficace. L&apos;obiettivo è che un piccolo incidente — una zuppa fredda,
-          cinque minuti di ritardo — non finisca subito con una stella su Google, ma arrivi prima a
-          te, prima ancora di finire online.
+          Rispondere alle recensioni difficili è importante, ma risolvere il problema prima che il cliente se ne vada è ancora più efficace. L&apos;obiettivo è che un piccolo incidente — una zuppa fredda, cinque minuti di ritardo — venga gestito sul posto e non finisca subito con una stella su Google.
         </p>
 
         <h3 id="review-gating" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
@@ -368,40 +365,11 @@ export default function JakOdpowiadacNaOpinieIt() {
         </p>
 
         <h3 id="filtro-legale" className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">
-          Un filtro recensioni legale — come funziona nella pratica?
+          Come risolvere i problemi sul posto e nel rispetto delle regole?
         </h3>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          La differenza tra il review gating vietato e la legittima protezione del profilo è
-          sottile ma cruciale: un sistema legale non blocca mai a nessuno la strada verso Google —
-          ogni cliente, soddisfatto o meno, ha accesso al modulo pubblico delle recensioni. Ciò che
-          cambia è solo l&apos;ordine dei passaggi: un cliente insoddisfatto riceve in più la
-          possibilità di segnalare il problema direttamente all&apos;attività, prima di (o insieme
-          a quando) decide se scrivere anche una recensione pubblica.
-        </p>
         <p className="text-gray-700 leading-relaxed mb-6">
-          È esattamente così che funziona il filtro recensioni integrato nel{" "}
-          <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-            supporto NFC di Starlinkee
-          </Link>
-          . Il cliente avvicina il telefono e valuta prima l&apos;esperienza con un solo tocco. Un
-          cliente soddisfatto va direttamente al modulo delle recensioni Google. Uno insoddisfatto
-          arriva su un modulo di feedback interno dove può descrivere il problema — dandoti la
-          possibilità di contattarlo e risolvere la situazione prima che chiunque altro ne legga.
-          Non si tratta di bloccare l&apos;accesso a Google — si tratta di gestire il momento in
-          cui il cliente decide dove indirizzare il proprio feedback. Puoi approfondire il processo
-          di raccolta delle recensioni nell&apos;articolo su{" "}
-          <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
-            come ottenere rapidamente recensioni su Google
-          </Link>
-          .
+          L&apos;approccio più sicuro è trattare tutti i clienti allo stesso modo: ognuno riceve lo stesso modo per lasciare una recensione pubblica su Google. Accanto a questo puoi offrire un canale privato, per esempio il numero di telefono o l&apos;e-mail del responsabile, così il cliente insoddisfatto può descrivere subito il problema. Quel contatto è un&apos;aggiunta, non un sostituto della recensione, e spesso ti fa scoprire un problema lo stesso giorno. Per saperne di più sulla raccolta delle recensioni leggi l&apos;articolo su <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">come ottenere rapidamente recensioni su Google</Link>.
         </p>
-      </div>
-
-      <div className={P}>
-        <BlogImage
-          src="/images/blog/jak-odpowiadac-na-opinie/filtr.webp"
-          alt="Interno minimalista di un bar con un bivio — una porta aperta e un corridoio laterale che simboleggiano due percorsi di feedback distinti"
-        />
       </div>
 
       {/* ── RIEPILOGO ── */}
@@ -418,13 +386,7 @@ export default function JakOdpowiadacNaOpinieIt() {
             quotidiana con il mercato che ogni potenziale cliente può vedere. Ringrazia in modo
             concreto per le recensioni positive, reagisci con calma e concretezza a quelle
             negative, e segnala per la rimozione solo quelle che violano davvero le norme di
-            Google. La strategia più efficace resta però ridurre le recensioni ingiuste alla fonte
-            — prima ancora che il cliente prenda il telefono per lasciare una valutazione. Se vuoi
-            vedere come funziona nella pratica, scopri il{" "}
-            <Link href="/order" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium">
-              supporto NFC di Starlinkee
-            </Link>{" "}
-            con un filtro recensioni integrato e conforme alle norme di Google.
+            Google. La strategia più efficace resta risolvere i problemi sul posto, prima che il cliente se ne vada, con un contatto privato offerto accanto alla recensione pubblica e non al suo posto.
           </p>
         </section>
 
@@ -468,14 +430,10 @@ export default function JakOdpowiadacNaOpinieIt() {
             </div>
             <div className="border-b border-gray-200 pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                In cosa si differenzia un filtro recensioni dal review gating vietato?
+                Posso offrire ai clienti insoddisfatti un contatto privato?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Il review gating blocca ai clienti insoddisfatti l&apos;accesso al modulo recensioni
-                di Google — una violazione delle norme. Un filtro recensioni legale, come quello di
-                Starlinkee, dà accesso a Google a ogni cliente e offre solo in più a quelli
-                insoddisfatti un canale separato per segnalare un problema direttamente
-                all&apos;attività.
+                Sì, purché non sostituisca l&apos;accesso a Google. Ogni cliente dovrebbe poter lasciare una recensione pubblica, e un canale privato (telefono, e-mail) è solo un&apos;aggiunta che aiuta a risolvere il problema più in fretta.
               </dd>
             </div>
             <div className="pb-6">

@@ -71,7 +71,7 @@ export default function OpinieGoogleSalonFryzjerskiDe() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Warum schützt ein Bewertungsfilter vor einer unfairen Bewertung?
+                    3.2. Was tun, wenn ein Kunde etwas zu beanstanden hat?
                   </a>
                 </li>
               </ol>
@@ -262,16 +262,10 @@ export default function OpinieGoogleSalonFryzjerskiDe() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Warum schützt ein Bewertungsfilter vor einer unfairen Bewertung?
+          Was tun, wenn ein Kunde etwas zu beanstanden hat?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Ein legaler Bewertungsfilter leitet zufriedene Kunden direkt zu Google weiter und
-          bietet unzufriedenen Kunden zusätzlich ein internes Formular, um das Problem zu
-          melden — ohne jemandem den Zugang zur öffentlichen Bewertung zu verwehren. Das ist
-          etwas völlig anderes als das verbotene <strong>„Review Gating&ldquo;</strong>, also das
-          Selektieren von Kunden vor der Bewertungsabgabe. Mit einem solchen Filter erfährt der
-          Salon von der Unzufriedenheit einer Kundin, bevor sie bei Google landet, und hat Zeit,
-          privat zu reagieren.
+          Es hilft, wenn unzufriedene Kunden dem Salon einfach privat schreiben können: So erfahren Sie noch am selben Tag von dem Problem und können es lösen. Diese Nachricht soll aber eine Ergänzung sein und kein Ersatz für die Bewertung. Sie dürfen nicht auswählen, wer den Link zu Google erhält, denn die selektive Sammlung von Bewertungen (sogenanntes <strong>„Review Gating&ldquo;</strong>) ist bei Google verboten und kann in der EU als irreführend gelten. Jeder Kunde sollte eine öffentliche Bewertung abgeben können.
         </p>
       </div>
 
@@ -402,12 +396,10 @@ export default function OpinieGoogleSalonFryzjerskiDe() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Können Treueprogramm und Bewertungssammlung über dieselbe NFC-Plakette laufen?
+                Kann dieselbe NFC-Plakette Bewertungen und Kundenkontakte sammeln?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Ja. Eine einzige NFC-Plakette kann einen zufriedenen Kunden gleichzeitig zum
-                Google-Bewertungsformular schicken und seinen Besuch auf einer digitalen
-                Treuekarte registrieren — ohne zusätzliche Hardware und ohne App-Installation.
+                Ja. Eine einzige NFC-Plakette kann einen Kunden zum Google-Bewertungsformular schicken und zugleich seine Telefonnummer samt Einwilligung für Gutschein-Nachrichten erfassen — ohne zusätzliche Hardware und ohne App-Installation.
               </dd>
             </div>
           </dl>
