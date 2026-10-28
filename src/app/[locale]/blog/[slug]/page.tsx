@@ -47,6 +47,10 @@ import SmsMarketingDlaLokalu from "@/components/blog/articles/SmsMarketingDlaLok
 import SmsMarketingDlaLokaluEn from "@/components/blog/articles/SmsMarketingDlaLokaluEn";
 import SmsMarketingDlaLokaluDe from "@/components/blog/articles/SmsMarketingDlaLokaluDe";
 import SmsMarketingDlaLokaluIt from "@/components/blog/articles/SmsMarketingDlaLokaluIt";
+import NfcCzyKodQr from "@/components/blog/articles/NfcCzyKodQr";
+import NfcCzyKodQrEn from "@/components/blog/articles/NfcCzyKodQrEn";
+import NfcCzyKodQrDe from "@/components/blog/articles/NfcCzyKodQrDe";
+import NfcCzyKodQrIt from "@/components/blog/articles/NfcCzyKodQrIt";
 
 const SITE_URL = "https://starlinkee.com";
 
@@ -87,6 +91,12 @@ const articleComponents: Record<string, Partial<Record<Locale, React.ComponentTy
     en: OpinieGoogleRestauracjaKawiarniaEn,
     de: OpinieGoogleRestauracjaKawiarniaDe,
     it: OpinieGoogleRestauracjaKawiarniaIt,
+  },
+  "tabliczka-nfc-czy-kod-qr-co-wybrac-dla-lokalu": {
+    pl: NfcCzyKodQr,
+    en: NfcCzyKodQrEn,
+    de: NfcCzyKodQrDe,
+    it: NfcCzyKodQrIt,
   },
   "sms-marketing-dla-lokalu-jak-wysylac-kupony-i-przyciagac-gosci": {
     pl: SmsMarketingDlaLokalu,

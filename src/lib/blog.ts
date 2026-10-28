@@ -866,6 +866,124 @@ export const blogPosts: BlogPostMeta[] = [
       },
     ],
   },
+  {
+    slug: "tabliczka-nfc-czy-kod-qr-co-wybrac-dla-lokalu",
+    title: "Tabliczka NFC czy kod QR: co wybrać dla swojego lokalu",
+    description:
+      "Porównanie tabliczki NFC i kodu QR dla restauracji, kawiarni i salonów. Sprawdź, co jest wygodniejsze dla gości, co dla właściciela i dlaczego najlepiej połączyć oba.",
+    publishedAt: "2026-10-28",
+    author: "Viktor Bobiński",
+    authorBio:
+      "Twórca Starlinkee i ekspert marketingu, sprzedaży oraz IT. Specjalizuje się w systemach NFC do zbierania opinii Google oraz strategiach pozycjonowania wizytówek dla firm lokalnych — od restauracji po salony i recepcje.",
+    category: "Opinie Google",
+    categorySlug: "opinie-google",
+    ogImage: "/images/blog/jak-szybko-zdobyc-opinie/restauracja.webp",
+    keywords: [
+      "tabliczka nfc czy kod qr",
+      "nfc a qr różnice",
+      "tabliczka nfc dla restauracji",
+      "kod qr w restauracji",
+      "opinie google nfc",
+      "zbieranie opinii nfc",
+      "tabliczka nfc na stolik",
+      "nfc czy qr co lepsze",
+      "jak zdobyć opinie google nfc",
+      "tabliczka nfc dla salonu",
+    ],
+    availableLocales: ["pl", "en", "de", "it"],
+    localized: {
+      en: {
+        title: "NFC plate or QR code: which to choose for your venue",
+        description:
+          "A comparison of NFC plates and QR codes for restaurants, cafés and salons. See what is easier for guests, what is easier for the owner and why combining both works best.",
+        category: "Google Reviews",
+        slug: "nfc-plate-or-qr-code-which-to-choose-for-your-venue",
+        authorBio:
+          "Founder of Starlinkee and an expert in marketing, sales and IT. He specialises in NFC systems for collecting Google reviews and profile-ranking strategies for local businesses — from restaurants to salons and reception desks.",
+        keywords: [
+          "nfc plate or qr code",
+          "nfc vs qr differences",
+          "nfc plate for restaurants",
+          "qr code in restaurant",
+          "google reviews nfc",
+          "collecting reviews with nfc",
+          "nfc plate for table",
+          "nfc or qr which is better",
+          "how to get google reviews with nfc",
+          "nfc plate for salon",
+        ],
+      },
+      de: {
+        title: "NFC-Tafel oder QR-Code: was für Ihr Lokal wählen",
+        description:
+          "Vergleich von NFC-Tafel und QR-Code für Restaurants, Cafés und Salons. Was ist für Gäste bequemer, was für den Inhaber und warum beides zusammen am besten funktioniert.",
+        category: "Google-Bewertungen",
+        slug: "nfc-tafel-oder-qr-code-was-fuer-ihr-lokal-waehlen",
+        authorBio:
+          "Gründer von Starlinkee und Experte für Marketing, Vertrieb und IT. Er ist spezialisiert auf NFC-Systeme zur Sammlung von Google-Bewertungen sowie auf Strategien zur Profiloptimierung für lokale Unternehmen — von Restaurants bis zu Salons und Empfangsbereichen.",
+        keywords: [
+          "nfc tafel oder qr code",
+          "nfc qr unterschiede",
+          "nfc tafel restaurant",
+          "qr code restaurant",
+          "google bewertungen nfc",
+          "bewertungen sammeln nfc",
+          "nfc tafel für tisch",
+          "nfc oder qr was ist besser",
+          "google bewertungen mit nfc bekommen",
+          "nfc tafel salon",
+        ],
+      },
+      it: {
+        title: "Targhetta NFC o codice QR: cosa scegliere per il tuo locale",
+        description:
+          "Confronto tra targhetta NFC e codice QR per ristoranti, bar e saloni. Scopri cosa è più comodo per gli ospiti, cosa per il titolare e perché conviene unire entrambi.",
+        category: "Recensioni Google",
+        slug: "targhetta-nfc-o-codice-qr-cosa-scegliere-per-il-tuo-locale",
+        authorBio:
+          "Fondatore di Starlinkee ed esperto di marketing, vendite e IT. È specializzato in sistemi NFC per la raccolta di recensioni Google e in strategie di posizionamento dei profili per le attività locali — dai ristoranti ai saloni e alle reception.",
+        keywords: [
+          "targhetta nfc o codice qr",
+          "nfc qr differenze",
+          "targhetta nfc ristorante",
+          "codice qr ristorante",
+          "recensioni google nfc",
+          "raccogliere recensioni nfc",
+          "targhetta nfc per tavolo",
+          "nfc o qr quale è meglio",
+          "ottenere recensioni google con nfc",
+          "targhetta nfc salone",
+        ],
+      },
+    },
+    faq: [
+      {
+        question: "Czy do tabliczki NFC potrzebna jest aplikacja?",
+        answer:
+          "Nie. Gość przykłada telefon, a strona otwiera się w przeglądarce. Nie musi niczego pobierać ani zakładać konta.",
+      },
+      {
+        question: "Czy NFC działa na iPhone'ach?",
+        answer:
+          "Nowsze iPhone'y odczytują tabliczki NFC bez dodatkowych kroków. Na starszych modelach lepiej mieć obok kod QR jako drugą opcję.",
+      },
+      {
+        question: "Co jeśli gość nie ma NFC albo nie wie, jak go użyć?",
+        answer:
+          "Wtedy zeskanuje kod QR. Dlatego tabliczka powinna mieć oba i krótki napis, który podpowiada, co zrobić.",
+      },
+      {
+        question: "Czy kod QR na tabliczce mogę zmienić na inny adres?",
+        answer:
+          "Jeśli tabliczka prowadzi do strony, którą edytujesz, zmieniasz jej treść, a nie sam kod. Sama tabliczka zostaje bez zmian.",
+      },
+      {
+        question: "Gdzie najlepiej postawić tabliczkę w lokalu?",
+        answer:
+          "Tam, gdzie gość ma chwilę wolnego czasu i widzi ją od razu: na stoliku, przy kasie lub na ladzie. Unikaj miejsc, gdzie coś ją zasłoni.",
+      },
+    ],
+  },
 ];
 
 export function getLocalizedPost(
