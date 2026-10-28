@@ -24,17 +24,18 @@ export default function Pricing({
   const annualPrice = Number(t.pricing.price) * 10;
 
   return (
-    <section id="pricing" className="py-20 px-4 sm:px-6">
+    <section id="pricing" className="py-16 sm:py-24 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">{t.nav.pricing}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-4">
             {t.pricing.sectionTitle}
           </h2>
           <p className="text-lg text-gray-500">{t.pricing.sectionSubtitle}</p>
         </div>
 
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center rounded-xl border border-gray-200 bg-white p-1">
+          <div className="inline-flex items-center rounded-lg border border-gray-200 bg-white p-1">
             <button
               type="button"
               onClick={() => setBilling("monthly")}
@@ -63,12 +64,13 @@ export default function Pricing({
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-10 bg-white rounded-3xl border-2 border-brand-600 p-8 sm:p-10 shadow-xl shadow-brand-600/10">
+        <div className="flex flex-col md:flex-row items-center gap-10 bg-white rounded-2xl border border-gray-200 p-8 sm:p-10 shadow-lg ring-2 ring-brand-600/80">
           <div className="w-full md:w-2/5 aspect-square relative rounded-2xl overflow-hidden bg-gray-50 shrink-0">
             <Image
               src={`/product/${locale}.webp`}
               alt={t.pricing.planName}
               fill
+              sizes="(min-width: 768px) 40vw, 100vw"
               className="object-cover"
             />
           </div>
@@ -78,27 +80,24 @@ export default function Pricing({
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {t.pricing.planName}
               </h3>
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-                <span className="inline-block rounded-full bg-brand-50 text-brand-600 text-xs font-semibold px-2.5 py-1">
-                  {t.pricing.trialTeaser}
-                </span>
+              <div className="flex items-baseline justify-center md:justify-start gap-2">
+                <span className="text-5xl sm:text-6xl font-bold text-gray-900">0</span>
+                <span className="text-2xl font-medium text-gray-500">{t.pricing.currency}</span>
               </div>
-              <div className="flex items-baseline justify-center md:justify-start gap-1">
-                <span className="text-5xl sm:text-6xl font-bold text-gray-900">
-                  0
+              <span className="inline-block mt-3 rounded-full bg-brand-50 text-brand-700 text-sm font-semibold px-3 py-1">
+                {t.pricing.trialTeaser}
+              </span>
+              <p className="mt-3 text-gray-600">
+                {t.pricing.afterTrialNote}{" "}
+                <span className="text-lg font-semibold text-gray-900">
+                  {billing === "annual" ? annualPrice : t.pricing.price} {t.pricing.currency}
+                </span>{" "}
+                <span className="text-gray-500">
+                  {billing === "annual" ? t.pricing.periodAnnual : t.pricing.period}
                 </span>
-                <span className="text-2xl font-medium text-gray-500">
-                  {t.pricing.currency}
-                </span>
-                <span className="text-lg text-gray-500 ml-1">
-                  {t.pricing.period}
-                </span>
-              </div>
-              <p className="text-sm text-gray-500 mt-2">
-                {t.pricing.afterTrialNote} {billing === "annual" ? annualPrice : t.pricing.price} {t.pricing.currency} {billing === "annual" ? t.pricing.periodAnnual : t.pricing.period}
               </p>
               {billing === "annual" && (
-                <p className="text-sm text-gray-500 mt-1">{t.pricing.annualNote}</p>
+                <p className="text-sm text-gray-500 mt-2">{t.pricing.annualNote}</p>
               )}
             </div>
 
@@ -130,7 +129,7 @@ export default function Pricing({
 
             <a
               href={`/${locale}/order${billing === "annual" ? "?billing=annual" : ""}`}
-              className="block w-full text-center bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
+              className="block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-3.5 text-base hover:bg-brand-700 transition-colors "
             >
               {t.pricing.cta}
             </a>

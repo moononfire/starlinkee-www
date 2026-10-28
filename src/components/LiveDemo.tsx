@@ -40,10 +40,10 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
   }
 
   return (
-    <section id="live-demo" className="bg-white py-20 px-4 sm:px-6">
+    <section id="live-demo" className="bg-white py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-4">
             {t.liveDemo.sectionTitle}
           </h2>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto">
@@ -57,7 +57,7 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
             href={DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-xl px-8 py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
+            className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-lg px-8 py-3.5 text-base hover:bg-brand-700 transition-colors "
           >
             {t.liveDemo.mobileCta}
           </a>
@@ -71,7 +71,7 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
               setShouldLoadIframe(true);
               setIsOpen((v) => !v);
             }}
-            className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium rounded-xl px-8 py-3.5 text-base hover:bg-brand-700 transition-colors shadow-lg shadow-brand-600/25"
+            className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium rounded-lg px-8 py-3.5 text-base hover:bg-brand-700 transition-colors "
           >
             {isOpen ? t.liveDemo.collapseCta : t.liveDemo.expandCta}
           </button>

@@ -97,7 +97,7 @@ export default function Navbar({
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
         <Link href={`/${locale}`} className="shrink-0">
           <Image
@@ -106,7 +106,7 @@ export default function Navbar({
             width={1624}
             height={432}
             priority
-            className="h-[60px] w-auto"
+            className="h-10 w-auto"
           />
         </Link>
 
@@ -131,7 +131,7 @@ export default function Navbar({
           </a>
           <a
             href={`/${locale}/blog`}
-            className="text-sm text-gray-600 hover:text-gray-700 border border-gray-300 hover:border-gray-400 rounded-lg px-3 py-1.5 transition-colors"
+            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
           >
             Blog
           </a>
@@ -167,7 +167,7 @@ export default function Navbar({
 
           <a
             href={`/${locale}/order`}
-            className="text-sm font-medium bg-brand-600 text-white rounded-lg px-4 py-2 hover:bg-brand-700 transition-colors"
+            className="text-sm font-semibold bg-brand-600 text-white rounded-lg px-4 py-2 hover:bg-brand-700 transition-colors"
           >
             {t.nav.getStarted}
           </a>

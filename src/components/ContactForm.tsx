@@ -36,10 +36,11 @@ export default function ContactForm({ t }: { t: Translations }) {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 bg-gray-50">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <p className="text-sm font-semibold uppercase tracking-wider text-brand-600 mb-3">{t.nav.contact}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-4">
             {t.contact.sectionTitle}
           </h2>
           <p className="text-lg text-gray-500">{t.contact.sectionSubtitle}</p>
@@ -47,7 +48,7 @@ export default function ContactForm({ t }: { t: Translations }) {
 
         <form
           onSubmit={handleSubmit}
-          className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm space-y-5"
+          className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm space-y-5"
         >
           <input type="text" name="website" tabIndex={-1} autoComplete="off" style={{ display: "none" }} aria-hidden="true" />
           <div className="grid sm:grid-cols-2 gap-5">
@@ -122,7 +123,7 @@ export default function ContactForm({ t }: { t: Translations }) {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="w-full bg-brand-600 text-white font-medium rounded-xl py-3.5 text-base hover:bg-brand-700 transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+            className="w-full bg-brand-600 text-white font-medium rounded-lg py-3.5 text-base hover:bg-brand-700 transition-colors disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
           >
             {status === "sending" ? "..." : t.contact.submit}
           </button>

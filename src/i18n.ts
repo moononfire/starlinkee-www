@@ -19,13 +19,16 @@ const translations = {
       getStarted: "Zacznij za darmo",
     },
     hero: {
-      badge: "System opinii dla gastronomii",
+      badge: "Opinie Google i lojalność klientów",
       title: "Więcej gwiazdek 5★.",
       titleHighlight: "Więcej powracających gości.",
       subtitle:
         "Gość przykłada telefon do tabliczki. Dobra opinia trafia do Google, a jeśli coś poszło nie tak, dowiadujesz się o tym pierwszy.",
       cta: "Zacznij za darmo",
       ctaSecondary: "Zamów prezentację",
+      point1: "30 dni za darmo",
+      point2: "Bez umów",
+      point3: "Pierwsza tabliczka gratis",
     },
     features: {
       sectionTitle: "Spokojna głowa. Pełna kontrola.",
@@ -40,6 +43,11 @@ const translations = {
       promoTitle: "Goście wracają",
       promoDesc:
         "Zbierasz numery telefonów i zgody, a potem wysyłasz kupony SMS. Na przykład na deser w dzień, gdy w lokalu jest luźniej.",
+      videoTitle: "Zobacz, jak to działa w praktyce",
+      videoDesc:
+        "Krótki film: od przyłożenia telefonu do opinii w Google.",
+      close: "Zamknij",
+      zoom: "Powiększ",
     },
     pricing: {
       sectionTitle: "Prosty cennik",
@@ -105,6 +113,23 @@ const translations = {
       success: "Dziękujemy! Odezwiemy się wkrótce.",
       error: "Coś poszło nie tak. Spróbuj ponownie.",
     },
+    how: {
+      eyebrow: "Jak to działa",
+      title: "Trzy kroki, zero instalacji",
+      step1Title: "Gość przykłada telefon",
+      step1Desc:
+        "Tabliczka NFC stoi na stoliku. Wystarczy dotknąć jej telefonem, bez aplikacji.",
+      step2Title: "Ocenia wizytę",
+      step2Desc:
+        "Wybiera liczbę gwiazdek na Twojej stronie.",
+      step3Title: "Opinia trafia, gdzie trzeba",
+      step3Desc:
+        "Wysokie oceny lecą do Google. Niższe dostajesz do siebie, jako wiadomość.",
+    },
+    finalCta: {
+      title: "Gotowy na więcej opinii?",
+      subtitle: "Wypróbuj Starlinkee Pro przez 30 dni za darmo.",
+    },
     footer: {
       tagline: "Więcej 5★. Więcej stałych gości.",
       rights: "Wszelkie prawa zastrzeżone.",
@@ -140,13 +165,16 @@ const translations = {
       getStarted: "Start for free",
     },
     hero: {
-      badge: "Review system for restaurants",
+      badge: "Google reviews and customer loyalty",
       title: "More 5★ reviews.",
       titleHighlight: "More returning guests.",
       subtitle:
         "Guests tap their phone on the plate. Good reviews go to Google, and if something went wrong, you hear about it first.",
       cta: "Start for free",
       ctaSecondary: "Book a demo",
+      point1: "30 days free",
+      point2: "No contracts",
+      point3: "First plate free",
     },
     features: {
       sectionTitle: "Peace of mind. Full control.",
@@ -161,6 +189,11 @@ const translations = {
       promoTitle: "Guests come back",
       promoDesc:
         "You collect phone numbers and consent, then send SMS coupons. A dessert on a slow weekday, say.",
+      videoTitle: "See how it works in practice",
+      videoDesc:
+        "A short video: from tapping the phone to a review on Google.",
+      close: "Close",
+      zoom: "Enlarge",
     },
     pricing: {
       sectionTitle: "Simple pricing",
@@ -226,6 +259,23 @@ const translations = {
       success: "Thank you! We'll be in touch soon.",
       error: "Something went wrong. Please try again.",
     },
+    how: {
+      eyebrow: "How it works",
+      title: "Three steps, nothing to install",
+      step1Title: "Guest taps their phone",
+      step1Desc:
+        "The NFC plate sits on the table. One tap with a phone, no app needed.",
+      step2Title: "Rates the visit",
+      step2Desc:
+        "They pick a star rating on your page.",
+      step3Title: "The review goes where it should",
+      step3Desc:
+        "High ratings go to Google. Lower ones come to you as a private message.",
+    },
+    finalCta: {
+      title: "Ready for more reviews?",
+      subtitle: "Try Starlinkee Pro free for 30 days.",
+    },
     footer: {
       tagline: "More 5★. More regulars.",
       rights: "All rights reserved.",
@@ -261,13 +311,16 @@ const translations = {
       getStarted: "Kostenlos starten",
     },
     hero: {
-      badge: "Bewertungssystem für die Gastronomie",
+      badge: "Google-Bewertungen und Kundenbindung",
       title: "Mehr 5★-Bewertungen.",
       titleHighlight: "Mehr Stammgäste.",
       subtitle:
         "Der Gast hält das Handy an den Aufsteller. Gute Bewertungen gehen zu Google, und wenn etwas schiefgelaufen ist, erfahren Sie es als Erstes.",
       cta: "Kostenlos starten",
       ctaSecondary: "Demo buchen",
+      point1: "30 Tage kostenlos",
+      point2: "Keine Verträge",
+      point3: "Erste Tafel gratis",
     },
     features: {
       sectionTitle: "Gelassenheit. Volle Kontrolle.",
@@ -282,6 +335,11 @@ const translations = {
       promoTitle: "Gäste kommen wieder",
       promoDesc:
         "Sie sammeln Telefonnummern und Einwilligungen und verschicken SMS-Gutscheine, zum Beispiel für ein Dessert an einem ruhigen Wochentag.",
+      videoTitle: "So funktioniert es in der Praxis",
+      videoDesc:
+        "Ein kurzes Video: vom Antippen des Handys bis zur Bewertung bei Google.",
+      close: "Schließen",
+      zoom: "Vergrößern",
     },
     pricing: {
       sectionTitle: "Transparente Preise",
@@ -347,6 +405,23 @@ const translations = {
       success: "Vielen Dank! Wir melden uns in Kürze.",
       error: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     },
+    how: {
+      eyebrow: "So funktioniert's",
+      title: "Drei Schritte, nichts zu installieren",
+      step1Title: "Gast hält das Handy dran",
+      step1Desc:
+        "Die NFC-Tafel steht auf dem Tisch. Einmal mit dem Handy antippen, ganz ohne App.",
+      step2Title: "Bewertet den Besuch",
+      step2Desc:
+        "Er wählt auf Ihrer Seite die Anzahl der Sterne.",
+      step3Title: "Die Bewertung landet am richtigen Ort",
+      step3Desc:
+        "Gute Bewertungen gehen zu Google. Schlechtere erhalten Sie als private Nachricht.",
+    },
+    finalCta: {
+      title: "Bereit für mehr Bewertungen?",
+      subtitle: "Testen Sie Starlinkee Pro 30 Tage kostenlos.",
+    },
     footer: {
       tagline: "Mehr 5★. Mehr Stammgäste.",
       rights: "Alle Rechte vorbehalten.",
@@ -382,13 +457,16 @@ const translations = {
       getStarted: "Inizia gratis",
     },
     hero: {
-      badge: "Sistema di recensioni per la ristorazione",
+      badge: "Recensioni Google e fidelizzazione clienti",
       title: "Più recensioni 5★.",
       titleHighlight: "Più clienti che tornano.",
       subtitle:
         "Il cliente avvicina il telefono alla targa. Le recensioni positive vanno su Google e, se qualcosa è andato storto, lo sai tu per primo.",
       cta: "Inizia gratis",
       ctaSecondary: "Prenota una demo",
+      point1: "30 giorni gratis",
+      point2: "Senza contratti",
+      point3: "Prima targhetta gratis",
     },
     features: {
       sectionTitle: "Serenità. Controllo totale.",
@@ -403,6 +481,11 @@ const translations = {
       promoTitle: "I clienti tornano",
       promoDesc:
         "Raccogli numeri e consensi, poi mandi coupon SMS. Per esempio un dolce in un giorno con meno clienti.",
+      videoTitle: "Guarda come funziona in pratica",
+      videoDesc:
+        "Un breve video: dal tocco del telefono alla recensione su Google.",
+      close: "Chiudi",
+      zoom: "Ingrandisci",
     },
     pricing: {
       sectionTitle: "Prezzi semplici",
@@ -467,6 +550,23 @@ const translations = {
       submit: "Invia richiesta",
       success: "Grazie! Ti ricontatteremo presto.",
       error: "Qualcosa è andato storto. Riprova.",
+    },
+    how: {
+      eyebrow: "Come funziona",
+      title: "Tre passi, niente da installare",
+      step1Title: "L'ospite avvicina il telefono",
+      step1Desc:
+        "La targhetta NFC sta sul tavolo. Basta toccarla con il telefono, senza app.",
+      step2Title: "Valuta la visita",
+      step2Desc:
+        "Sceglie il numero di stelle sulla tua pagina.",
+      step3Title: "La recensione va dove deve",
+      step3Desc:
+        "Le valutazioni alte vanno su Google. Quelle più basse arrivano a te come messaggio privato.",
+    },
+    finalCta: {
+      title: "Pronto per avere più recensioni?",
+      subtitle: "Prova Starlinkee Pro gratis per 30 giorni.",
     },
     footer: {
       tagline: "Più 5★. Più clienti fedeli.",

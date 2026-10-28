@@ -8,7 +8,6 @@ const footerUi = {
     legal: "Dokumenty prawne",
     order: "Zamów",
     blog: "Blog",
-    app: "Aplikacja mobilna",
     terms: "Regulamin",
     privacy: "Polityka Prywatności",
     cookies: "Polityka Cookies",
@@ -18,7 +17,6 @@ const footerUi = {
     legal: "Legal documents",
     order: "Order",
     blog: "Blog",
-    app: "Mobile app",
     terms: "Terms & Conditions",
     privacy: "Privacy Policy",
     cookies: "Cookie Policy",
@@ -28,7 +26,6 @@ const footerUi = {
     legal: "Rechtliche Dokumente",
     order: "Bestellen",
     blog: "Blog",
-    app: "Mobile App",
     terms: "AGB",
     privacy: "Datenschutzerklärung",
     cookies: "Cookie-Richtlinie",
@@ -38,7 +35,6 @@ const footerUi = {
     legal: "Documenti legali",
     order: "Ordina",
     blog: "Blog",
-    app: "App mobile",
     terms: "Termini e Condizioni",
     privacy: "Informativa sulla Privacy",
     cookies: "Politica dei Cookie",
@@ -55,7 +51,6 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
     { href: "/#contact", label: t.nav.contact },
     { href: "/order", label: fu.order },
     { href: "/blog", label: fu.blog },
-    { href: "/pobierz-aplikacje", label: fu.app },
   ];
 
   const legalLinks = [
@@ -65,7 +60,7 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
   ];
 
   return (
-    <footer className="border-t border-gray-100 py-12 px-4 sm:px-6">
+    <footer className="bg-white border-t border-gray-200 text-gray-600 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto flex flex-col gap-8">
         {/* Górna część: brand + nawigacja */}
         <div className="flex flex-col sm:flex-row justify-between gap-8">
@@ -76,10 +71,10 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
                 alt="Starlinkee"
                 width={1624}
                 height={432}
-                className="h-[52px] w-auto"
+                className="h-10 w-auto"
               />
             </Link>
-            <p className="text-sm text-gray-500 mt-1 max-w-xs">{t.footer.tagline}</p>
+            <p className="text-sm text-gray-500 mt-3 max-w-xs">{t.footer.tagline}</p>
           </div>
           <nav aria-label={fu.nav} className="flex flex-wrap gap-x-6 gap-y-2">
             {navLinks.map(({ href, label }) => (
@@ -95,8 +90,8 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
         </div>
 
         {/* Dolna część: copyright + dokumenty prawne */}
-        <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400">
+        <div className="border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500">
             &copy; {year} Starlinkee. {t.footer.rights}
           </p>
           <nav aria-label={fu.legal} className="flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2">
@@ -104,7 +99,7 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
               <Link
                 key={href}
                 href={`/${locale}${href}`}
-                className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                className="text-xs text-gray-500 hover:text-gray-800 transition-colors"
               >
                 {label}
               </Link>
