@@ -139,6 +139,8 @@ export default function Navbar({
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
+              aria-expanded={langOpen}
+              aria-haspopup="true"
               className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 border border-gray-200 rounded-md px-2.5 py-1 transition-colors cursor-pointer"
             >
               {flags[locale]}
@@ -177,6 +179,7 @@ export default function Navbar({
           className="md:hidden p-2 cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
+          aria-expanded={mobileOpen}
         >
           <svg
             className="w-6 h-6"

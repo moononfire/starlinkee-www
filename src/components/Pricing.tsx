@@ -89,7 +89,7 @@ export default function Pricing({
               </span>
               <p className="mt-3 text-gray-600">
                 {t.pricing.afterTrialNote}{" "}
-                <span className="text-lg font-semibold text-gray-900">
+                <span className="text-lg font-semibold text-gray-900 whitespace-nowrap">
                   {billing === "annual" ? annualPrice : t.pricing.price} {t.pricing.currency}
                 </span>{" "}
                 <span className="text-gray-500">
