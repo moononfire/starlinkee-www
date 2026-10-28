@@ -136,7 +136,7 @@ export default function JakSzybkoZdobycOpinieIt() {
           ha poche valutazioni o l&apos;ultima risale a un anno fa, si crea una sensazione di
           stagnazione. In pratica, un profilo dovrebbe sembrare quello di un&apos;attività che ogni
           giorno serve clienti soddisfatti. Leggi di più nel nostro articolo sulle{" "}
-          <Link href="/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
             basi dell&apos;ottimizzazione del profilo Google Business
           </Link>
           .
@@ -340,7 +340,7 @@ export default function JakSzybkoZdobycOpinieIt() {
           Lo stesso supporto NFC non deve fermarsi alla raccolta delle recensioni — può gestire
           contemporaneamente una tessera fedeltà digitale, con cui i clienti abituali accumulano
           visite senza installare nulla. Scopri come{" "}
-          <Link href="/blog/programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti" className="text-blue-600 hover:underline">
             costruire un programma fedeltà senza app
           </Link>
           .

@@ -81,7 +81,7 @@ export default function SmsMarketingDlaLokaluIt() {
                 </li>
                 <li>
                   <a href="#sms-opinie-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. Come combinare gli SMS con recensioni e tessera fedeltà?
+                    4.2. Come combinare gli SMS con le recensioni Google?
                   </a>
                 </li>
               </ol>
@@ -159,7 +159,7 @@ export default function SmsMarketingDlaLokaluIt() {
           Come raccogliere il consenso marketing quando il cliente scansiona il supporto NFC?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Il momento più comodo è lo stesso in cui il cliente scansiona il supporto NFC: dopo la scansione può lasciare un numero di telefono e dare il consenso ai messaggi con coupon. Non scarica nulla né crea un account, e tu hai subito un numero legato a un consenso consapevole. Puoi leggere di più su come funziona un supporto simile nella guida su come <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">ottenere recensioni Google in modo rapido</Link>.
+          Il momento più comodo è lo stesso in cui il cliente scansiona il supporto NFC: dopo la scansione può lasciare un numero di telefono e dare il consenso ai messaggi con coupon. Non scarica nulla né crea un account, e tu hai subito un numero legato a un consenso consapevole. Puoi leggere di più su come funziona un supporto simile nella guida su come <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">ottenere recensioni Google in modo rapido</Link>.
         </p>
 
         <h3
@@ -241,10 +241,10 @@ export default function SmsMarketingDlaLokaluIt() {
           id="sms-opinie-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Come combinare gli SMS con recensioni e tessera fedeltà?
+          Come combinare gli SMS con le recensioni Google?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          L&apos;SMS funziona meglio come parte di un insieme: il supporto NFC raccoglie recensioni e numeri, l&apos;SMS ricorda che esisti e una tessera fedeltà digitale dà un motivo per tornare. Come costruire un sistema simile senza app lo descriviamo nell&apos;articolo sul <Link href="/blog/programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti" className="text-blue-600 hover:underline">programma fedeltà senza app</Link>. E se vuoi saperne di più sulle recensioni nella ristorazione, leggi il testo sulle <Link href="/blog/recensioni-google-ristorante-bar-come-ottenere-piu-recensioni" className="text-blue-600 hover:underline">recensioni Google per ristoranti e bar</Link>.
+          L&apos;SMS funziona meglio come parte di un insieme: il supporto NFC raccoglie recensioni e numeri, l&apos;SMS ricorda che esisti e un coupon nel messaggio dà un motivo per tornare. E se vuoi saperne di più sulle recensioni nella ristorazione, leggi il testo sulle <Link href="/it/blog/recensioni-google-ristorante-bar-come-ottenere-piu-recensioni" className="text-blue-600 hover:underline">recensioni Google per ristoranti e bar</Link>.
         </p>
       </div>
 
@@ -257,7 +257,7 @@ export default function SmsMarketingDlaLokaluIt() {
             Riepilogo — come inviare SMS che riportano i clienti?
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            L&apos;SMS marketing funziona nella ristorazione quando è raro, concreto e basato sul consenso. I numeri conviene raccoglierli quando il cliente scansiona il supporto NFC, insieme a un chiaro consenso marketing, e nel messaggio proporre qualcosa che abbia senso per il cliente e per il locale: un dolce, un caffè o uno sconto in un giorno più tranquillo. Per valutare bastano pochi numeri semplici, e l&apos;effetto maggiore si ottiene combinando SMS, recensioni Google e tessera fedeltà.
+            L&apos;SMS marketing funziona nella ristorazione quando è raro, concreto e basato sul consenso. I numeri conviene raccoglierli quando il cliente scansiona il supporto NFC, insieme a un chiaro consenso marketing, e nel messaggio proporre qualcosa che abbia senso per il cliente e per il locale: un dolce, un caffè o uno sconto in un giorno più tranquillo. Per valutare bastano pochi numeri semplici, e l&apos;effetto maggiore si ottiene combinando SMS e recensioni Google.
           </p>
         </section>
 
@@ -300,10 +300,10 @@ export default function SmsMarketingDlaLokaluIt() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Gli SMS sostituiscono la tessera fedeltà o le recensioni Google?
+                Gli SMS sostituiscono le recensioni Google?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                No, si completano. Le recensioni attirano nuovi clienti, la tessera fedeltà dà un motivo per tornare e l&apos;SMS ricorda il locale al momento giusto.
+                No, si completano. Le recensioni attirano nuovi clienti, e l&apos;SMS ricorda il locale al momento giusto.
               </dd>
             </div>
           </dl>

@@ -372,7 +372,7 @@ export default function WizytowkaGoogleMojaFirmaDe() {
           Erwähnungen in lokalen Verzeichnissen (z. B. Tripadvisor, Yelp). Google-Bewertungen
           sind hier der wichtigste direkte Faktor — mehr zum Thema Bewertungen sammeln findest du
           in unserem Artikel darüber,{" "}
-          <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
             wie du schnell Google-Bewertungen sammelst
           </Link>
           .

@@ -311,12 +311,12 @@ export default function ProgramLojalnosciowyBezAplikacjiIt() {
           : un unico dispositivo gestisce contemporaneamente la tessera fedeltà, il modulo di
           recensione Google e un filtro che protegge dalle recensioni ingiuste. Se vuoi scoprire
           come funziona passo dopo passo la raccolta delle recensioni, leggi l&rsquo;articolo su{" "}
-          <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
             come ottenere rapidamente recensioni su Google
           </Link>
           . Abbiamo inoltre spiegato come rispondere a queste recensioni — comprese quelle più
           difficili — nell&rsquo;articolo{" "}
-          <Link href="/blog/come-rispondere-alle-recensioni-google" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/come-rispondere-alle-recensioni-google" className="text-blue-600 hover:underline">
             come rispondere alle recensioni Google
           </Link>
           .

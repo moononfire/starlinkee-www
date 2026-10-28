@@ -169,7 +169,7 @@ export default function NfcCzyKodQrIt() {
           Quando ognuno dei due non funziona?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          L&apos;NFC non funziona se il telefono non ce l&apos;ha o l&apos;ha disattivato, e alcune custodie spesse possono indebolirlo. Il QR non funziona se il codice è graffiato, mal illuminato o stampato troppo piccolo. Per questo è utile dare all&apos;ospite una scelta. Per saperne di più su come invitare gli ospiti a lasciare una recensione, leggi la guida su <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">come ottenere recensioni Google velocemente</Link>.
+          L&apos;NFC non funziona se il telefono non ce l&apos;ha o l&apos;ha disattivato, e alcune custodie spesse possono indebolirlo. Il QR non funziona se il codice è graffiato, mal illuminato o stampato troppo piccolo. Per questo è utile dare all&apos;ospite una scelta. Per saperne di più su come invitare gli ospiti a lasciare una recensione, leggi la guida su <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">come ottenere recensioni Google velocemente</Link>.
         </p>
       </div>
 
@@ -244,7 +244,7 @@ export default function NfcCzyKodQrIt() {
           Dove mettere la targhetta?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Il posto migliore è quello che l&apos;ospite vede senza cercare: sul tavolo, vicino alla cassa o sul bancone, all&apos;altezza degli occhi o a portata di mano. La targhetta deve stare ferma e non dare fastidio mentre si mangia. Su quando chiedere una recensione, leggi l&apos;articolo sulle <Link href="/blog/recensioni-google-ristorante-bar-come-ottenere-piu-recensioni" className="text-blue-600 hover:underline">recensioni Google per ristoranti e bar</Link>.
+          Il posto migliore è quello che l&apos;ospite vede senza cercare: sul tavolo, vicino alla cassa o sul bancone, all&apos;altezza degli occhi o a portata di mano. La targhetta deve stare ferma e non dare fastidio mentre si mangia. Su quando chiedere una recensione, leggi l&apos;articolo sulle <Link href="/it/blog/recensioni-google-ristorante-bar-come-ottenere-piu-recensioni" className="text-blue-600 hover:underline">recensioni Google per ristoranti e bar</Link>.
         </p>
       </div>
 

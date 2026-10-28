@@ -137,7 +137,7 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
           recensioni recenti batte uno con 4,5 stelle e dieci recensioni vecchie di un anno,
           anche a un prezzo peggiore. Scopri di più su come costruire un profilo simile da zero
           nel nostro articolo su come{" "}
-          <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
             ottenere recensioni Google velocemente e legalmente
           </Link>
           .
@@ -318,7 +318,7 @@ export default function OpinieGoogleSalonFryzjerskiIt() {
           costruire un sistema simile, con soglie concrete per diversi settori, nel nostro
           articolo sul{" "}
           <Link
-            href="/blog/programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti"
+            href="/it/blog/programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti"
             className="text-blue-600 hover:underline"
           >
             programma fedeltà senza app

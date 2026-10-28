@@ -81,7 +81,7 @@ export default function SmsMarketingDlaLokaluEn() {
                 </li>
                 <li>
                   <a href="#sms-opinie-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. How do you combine SMS with reviews and a loyalty card?
+                    4.2. How do you combine SMS with Google reviews?
                   </a>
                 </li>
               </ol>
@@ -159,7 +159,7 @@ export default function SmsMarketingDlaLokaluEn() {
           How do you collect marketing consent when a guest scans the NFC stand?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-6">
-          The easiest time is the same moment the guest scans the NFC stand: after scanning they can leave a phone number and tick consent for coupon messages. They do not download anything or create an account, and you immediately have a number tied to informed consent. You can read more about how such a stand works in the guide to <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">getting Google reviews fast</Link>.
+          The easiest time is the same moment the guest scans the NFC stand: after scanning they can leave a phone number and tick consent for coupon messages. They do not download anything or create an account, and you immediately have a number tied to informed consent. You can read more about how such a stand works in the guide to <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">getting Google reviews fast</Link>.
         </p>
 
         <h3
@@ -241,10 +241,10 @@ export default function SmsMarketingDlaLokaluEn() {
           id="sms-opinie-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          How do you combine SMS with reviews and a loyalty card?
+          How do you combine SMS with Google reviews?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          SMS works best as part of a whole: the NFC stand collects reviews and numbers, SMS reminds guests you exist, and a digital loyalty card gives a reason to visit again. How to build such a system without an app is described in the article on a <Link href="/blog/loyalty-program-without-an-app-how-to-build-customer-loyalty" className="text-blue-600 hover:underline">loyalty program without an app</Link>. And if you want to read more about reviews in hospitality, see our text on <Link href="/blog/google-reviews-restaurants-cafes-how-to-get-more-reviews" className="text-blue-600 hover:underline">Google reviews for restaurants and cafés</Link>.
+          SMS works best as part of a whole: the NFC stand collects reviews and numbers, SMS reminds guests you exist, and a coupon in the message gives a reason to visit again. And if you want to read more about reviews in hospitality, see our text on <Link href="/en/blog/google-reviews-restaurants-cafes-how-to-get-more-reviews" className="text-blue-600 hover:underline">Google reviews for restaurants and cafés</Link>.
         </p>
       </div>
 
@@ -257,7 +257,7 @@ export default function SmsMarketingDlaLokaluEn() {
             Summary — how to send SMS messages that bring guests back?
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            SMS marketing works in hospitality when it is rare, specific and based on consent. The best time to collect numbers is when a guest scans the NFC stand, together with clear marketing consent, and the message should offer something that makes sense for both the guest and the venue: a dessert, a coffee or a discount on a quieter day. A few simple numbers are enough to judge it, and the biggest effect comes from combining SMS with Google reviews and a loyalty card.
+            SMS marketing works in hospitality when it is rare, specific and based on consent. The best time to collect numbers is when a guest scans the NFC stand, together with clear marketing consent, and the message should offer something that makes sense for both the guest and the venue: a dessert, a coffee or a discount on a quieter day. A few simple numbers are enough to judge it, and the biggest effect comes from combining SMS with Google reviews.
           </p>
         </section>
 
@@ -300,10 +300,10 @@ export default function SmsMarketingDlaLokaluEn() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Will SMS replace a loyalty card or Google reviews?
+                Will SMS replace Google reviews?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                No, they complement each other. Reviews attract new guests, a loyalty card gives a reason to return, and SMS reminds people of your venue at the right moment.
+                No, they complement each other. Reviews attract new guests, and SMS reminds people of your venue at the right moment.
               </dd>
             </div>
           </dl>

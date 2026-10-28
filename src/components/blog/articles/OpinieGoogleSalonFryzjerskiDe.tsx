@@ -138,7 +138,7 @@ export default function OpinieGoogleSalonFryzjerskiDe() {
           fünfzig aktuellen Bewertungen gewinnt gegen einen Salon mit 4,5 Sternen und zehn
           Bewertungen aus dem letzten Jahr, selbst bei schlechterem Preis. Mehr dazu, wie Sie ein
           solches Profil von Grund auf aufbauen, lesen Sie in unserem Artikel über{" "}
-          <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
             schnelle und legale Google-Bewertungen
           </Link>
           .
@@ -322,7 +322,7 @@ export default function OpinieGoogleSalonFryzjerskiDe() {
           konkreter Schwellenwerte für verschiedene Branchen, finden Sie in unserem Artikel über
           das{" "}
           <Link
-            href="/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen"
+            href="/de/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen"
             className="text-blue-600 hover:underline"
           >
             Treueprogramm ohne App

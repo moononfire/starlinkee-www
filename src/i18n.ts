@@ -23,11 +23,11 @@ const translations = {
       title: "Więcej gwiazdek 5★.",
       titleHighlight: "Więcej powracających gości.",
       subtitle:
-        "Gość przykłada telefon do tabliczki. Dobra opinia trafia do Google, a jeśli coś poszło nie tak, dowiadujesz się o tym pierwszy.",
+        "Gość przykłada telefon do tabliczki i zostawia opinię w Google. Jeśli coś poszło nie tak, możesz dowiedzieć się o tym od razu.",
       cta: "Zacznij za darmo",
       ctaSecondary: "Zamów prezentację",
       point1: "30 dni za darmo",
-      point2: "Bez umów",
+      point2: "Rezygnacja w okresie próbnym bez opłat",
       point3: "Pierwsza tabliczka gratis",
     },
     features: {
@@ -37,9 +37,9 @@ const translations = {
       linktreeTitle: "Twoja strona z linkami",
       linktreeDesc:
         "Po przyłożeniu telefonu gość widzi Twoją ocenę, kupon, menu i social media. Wszystko w jednym miejscu.",
-      reviewTitle: "Same dobre opinie",
+      reviewTitle: "Opinie w Google",
       reviewDesc:
-        "Zadowolony gość zostawia opinię w Google. Niezadowolony pisze do Ciebie i możecie to załatwić między sobą.",
+        "Gość ocenia wizytę i zostawia opinię w Google. Jeśli coś poszło nie tak, może też napisać do Ciebie prywatnie.",
       promoTitle: "Goście wracają",
       promoDesc:
         "Zbierasz numery telefonów i zgody, a potem wysyłasz kupony SMS. Na przykład na deser w dzień, gdy w lokalu jest luźniej.",
@@ -51,14 +51,14 @@ const translations = {
     },
     pricing: {
       sectionTitle: "Prosty cennik",
-      sectionSubtitle: "Zaczynasz za darmo, bez umów i ukrytych kosztów.",
+      sectionSubtitle: "Zaczynasz za darmo, bez ukrytych kosztów.",
       planName: "Starlinkee Pro",
       price: "199",
       currency: "zł",
       period: "/mies.",
       includes: "W cenie:",
       feature1: "Tabliczka NFC w cenie",
-      feature2: "Filtr opinii Google",
+      feature2: "Zbieranie opinii Google",
       feature3: "Kupony SMS",
       feature4: "100 SMS-ów marketingowych/mies. do Twoich gości",
       feature5: "Błyskawiczne wsparcie",
@@ -86,11 +86,11 @@ const translations = {
       tourLinktree:
         "Tu trafia gość po zeskanowaniu. Twoje linki, zawsze aktualne.",
       tourFilter:
-        "Filtr opinii: gość najpierw ocenia wizytę u Ciebie, a nie od razu w Google.",
+        "Gość najpierw ocenia wizytę, a potem przechodzi do opinii w Google.",
       tourHighRating:
         "Wysoka ocena? Gość od razu przechodzi do Twojego profilu w Google.",
       tourLowRating:
-        "Niska ocena? Wiadomość dostajesz tylko Ty, więc możesz to spokojnie wyjaśnić.",
+        "Coś poszło nie tak? Gość może też napisać do Ciebie prywatnie, więc możesz to spokojnie wyjaśnić.",
       tourPromo:
         "Tu gość odbiera kupon, który sam ustawiasz.",
       tourRestart: "Zacznij pokaz od nowa",
@@ -122,9 +122,9 @@ const translations = {
       step2Title: "Ocenia wizytę",
       step2Desc:
         "Wybiera liczbę gwiazdek na Twojej stronie.",
-      step3Title: "Opinia trafia, gdzie trzeba",
+      step3Title: "Opinia trafia do Google",
       step3Desc:
-        "Wysokie oceny lecą do Google. Niższe dostajesz do siebie, jako wiadomość.",
+        "Gość zostawia opinię w Google. Jeśli coś poszło nie tak, może też napisać do Ciebie prywatnie.",
     },
     finalCta: {
       title: "Gotowy na więcej opinii?",
@@ -169,11 +169,11 @@ const translations = {
       title: "More 5★ reviews.",
       titleHighlight: "More returning guests.",
       subtitle:
-        "Guests tap their phone on the plate. Good reviews go to Google, and if something went wrong, you hear about it first.",
+        "Guests tap their phone on the plate and leave a review on Google. If something went wrong, you can hear about it right away.",
       cta: "Start for free",
       ctaSecondary: "Book a demo",
       point1: "30 days free",
-      point2: "No contracts",
+      point2: "Cancel free during the trial",
       point3: "First plate free",
     },
     features: {
@@ -183,9 +183,9 @@ const translations = {
       linktreeTitle: "Your own link page",
       linktreeDesc:
         "After the tap, guests see your rating, a coupon, the menu and your socials, all in one place.",
-      reviewTitle: "Only great reviews",
+      reviewTitle: "Reviews on Google",
       reviewDesc:
-        "Happy guests leave a review on Google. Unhappy ones message you, so you can sort it out directly.",
+        "Guests rate their visit and leave a review on Google. If something went wrong, they can also write to you privately.",
       promoTitle: "Guests come back",
       promoDesc:
         "You collect phone numbers and consent, then send SMS coupons. A dessert on a slow weekday, say.",
@@ -197,14 +197,14 @@ const translations = {
     },
     pricing: {
       sectionTitle: "Simple pricing",
-      sectionSubtitle: "Start free. No contracts, no hidden fees.",
+      sectionSubtitle: "Start free. No hidden fees.",
       planName: "Starlinkee Pro",
       price: "49",
       currency: "€",
       period: "/mo",
       includes: "Includes:",
       feature1: "NFC plate included",
-      feature2: "Google review filter",
+      feature2: "Google review collection",
       feature3: "SMS coupons",
       feature4: "100 marketing SMS/mo to your guests",
       feature5: "Lightning-fast support",
@@ -232,11 +232,11 @@ const translations = {
       tourLinktree:
         "Guests land here after scanning. Your links, always up to date.",
       tourFilter:
-        "Review filter: guests rate their visit with you first, not straight on Google.",
+        "Guests rate their visit first, then move on to leave a review on Google.",
       tourHighRating:
         "High rating? The guest goes straight to your Google profile.",
       tourLowRating:
-        "Low rating? Only you get the message, so you can sort it out calmly.",
+        "Something went wrong? Guests can also message you privately, so you can sort it out calmly.",
       tourPromo:
         "Here the guest picks up the coupon you set up.",
       tourRestart: "Restart the demo",
@@ -268,9 +268,9 @@ const translations = {
       step2Title: "Rates the visit",
       step2Desc:
         "They pick a star rating on your page.",
-      step3Title: "The review goes where it should",
+      step3Title: "The review lands on Google",
       step3Desc:
-        "High ratings go to Google. Lower ones come to you as a private message.",
+        "Guests leave their review on Google. If something went wrong, they can also message you privately.",
     },
     finalCta: {
       title: "Ready for more reviews?",
@@ -315,12 +315,12 @@ const translations = {
       title: "Mehr 5★-Bewertungen.",
       titleHighlight: "Mehr Stammgäste.",
       subtitle:
-        "Der Gast hält das Handy an den Aufsteller. Gute Bewertungen gehen zu Google, und wenn etwas schiefgelaufen ist, erfahren Sie es als Erstes.",
+        "Der Gast hält das Handy an den Aufsteller und hinterlässt eine Bewertung bei Google. Wenn etwas schiefgelaufen ist, können Sie es sofort erfahren.",
       cta: "Kostenlos starten",
       ctaSecondary: "Demo buchen",
       point1: "30 Tage kostenlos",
-      point2: "Keine Verträge",
-      point3: "Erste Tafel gratis",
+      point2: "Im Testzeitraum kostenlos kündbar",
+      point3: "Erster Aufsteller gratis",
     },
     features: {
       sectionTitle: "Gelassenheit. Volle Kontrolle.",
@@ -329,9 +329,9 @@ const translations = {
       linktreeTitle: "Ihre eigene Link-Seite",
       linktreeDesc:
         "Nach dem Scannen sieht der Gast Ihre Bewertung, einen Gutschein, die Speisekarte und Ihre Social-Media-Links an einem Ort.",
-      reviewTitle: "Nur gute Bewertungen",
+      reviewTitle: "Bewertungen bei Google",
       reviewDesc:
-        "Zufriedene Gäste bewerten Sie bei Google. Unzufriedene schreiben Ihnen, und Sie klären es direkt.",
+        "Gäste bewerten den Besuch und hinterlassen eine Bewertung bei Google. Lief etwas schief, können sie Ihnen auch privat schreiben.",
       promoTitle: "Gäste kommen wieder",
       promoDesc:
         "Sie sammeln Telefonnummern und Einwilligungen und verschicken SMS-Gutscheine, zum Beispiel für ein Dessert an einem ruhigen Wochentag.",
@@ -343,14 +343,14 @@ const translations = {
     },
     pricing: {
       sectionTitle: "Transparente Preise",
-      sectionSubtitle: "Gratis starten. Keine Verträge, keine versteckten Kosten.",
+      sectionSubtitle: "Gratis starten. Keine versteckten Kosten.",
       planName: "Starlinkee Pro",
       price: "49",
       currency: "€",
       period: "/Monat",
       includes: "Inklusive:",
       feature1: "NFC-Aufsteller inklusive",
-      feature2: "Google-Bewertungsfilter",
+      feature2: "Google-Bewertungen sammeln",
       feature3: "SMS-Gutscheine",
       feature4: "100 Marketing-SMS/Monat an Ihre Gäste",
       feature5: "Blitzschneller Support",
@@ -378,11 +378,11 @@ const translations = {
       tourLinktree:
         "Hier landet der Gast nach dem Scannen. Ihre Links, immer aktuell.",
       tourFilter:
-        "Bewertungsfilter: Der Gast bewertet den Besuch zuerst bei Ihnen, nicht gleich bei Google.",
+        "Der Gast bewertet zuerst den Besuch und gelangt dann zur Bewertung bei Google.",
       tourHighRating:
         "Hohe Bewertung? Der Gast geht direkt zu Ihrem Google-Profil.",
       tourLowRating:
-        "Niedrige Bewertung? Nur Sie bekommen die Nachricht und können es in Ruhe klären.",
+        "Etwas schiefgelaufen? Der Gast kann Ihnen auch privat schreiben, und Sie klären es in Ruhe.",
       tourPromo:
         "Hier holt der Gast den Gutschein ab, den Sie festgelegt haben.",
       tourRestart: "Demo neu starten",
@@ -410,13 +410,13 @@ const translations = {
       title: "Drei Schritte, nichts zu installieren",
       step1Title: "Gast hält das Handy dran",
       step1Desc:
-        "Die NFC-Tafel steht auf dem Tisch. Einmal mit dem Handy antippen, ganz ohne App.",
+        "Der NFC-Aufsteller steht auf dem Tisch. Einmal mit dem Handy antippen, ganz ohne App.",
       step2Title: "Bewertet den Besuch",
       step2Desc:
         "Er wählt auf Ihrer Seite die Anzahl der Sterne.",
-      step3Title: "Die Bewertung landet am richtigen Ort",
+      step3Title: "Die Bewertung landet bei Google",
       step3Desc:
-        "Gute Bewertungen gehen zu Google. Schlechtere erhalten Sie als private Nachricht.",
+        "Der Gast hinterlässt seine Bewertung bei Google. Lief etwas schief, kann er Ihnen auch privat schreiben.",
     },
     finalCta: {
       title: "Bereit für mehr Bewertungen?",
@@ -461,23 +461,23 @@ const translations = {
       title: "Più recensioni 5★.",
       titleHighlight: "Più clienti che tornano.",
       subtitle:
-        "Il cliente avvicina il telefono alla targa. Le recensioni positive vanno su Google e, se qualcosa è andato storto, lo sai tu per primo.",
+        "Il cliente avvicina il telefono alla targhetta e lascia una recensione su Google. Se qualcosa è andato storto, puoi saperlo subito.",
       cta: "Inizia gratis",
       ctaSecondary: "Prenota una demo",
       point1: "30 giorni gratis",
-      point2: "Senza contratti",
+      point2: "Disdici gratis durante la prova",
       point3: "Prima targhetta gratis",
     },
     features: {
       sectionTitle: "Serenità. Controllo totale.",
       sectionSubtitle:
-        "Una targa sul tavolo e il telefono del cliente. Niente da scaricare, niente registrazione.",
+        "Una targhetta sul tavolo e il telefono del cliente. Niente da scaricare, niente registrazione.",
       linktreeTitle: "La tua pagina link",
       linktreeDesc:
         "Dopo la scansione il cliente vede il tuo voto, un coupon, il menu e i tuoi social, tutto in un posto.",
-      reviewTitle: "Solo recensioni top",
+      reviewTitle: "Recensioni su Google",
       reviewDesc:
-        "Chi è contento lascia una recensione su Google. Chi non lo è scrive a te, e ve la vedete tra voi.",
+        "Gli ospiti valutano la visita e lasciano una recensione su Google. Se qualcosa non è andato, possono anche scriverti in privato.",
       promoTitle: "I clienti tornano",
       promoDesc:
         "Raccogli numeri e consensi, poi mandi coupon SMS. Per esempio un dolce in un giorno con meno clienti.",
@@ -489,19 +489,19 @@ const translations = {
     },
     pricing: {
       sectionTitle: "Prezzi semplici",
-      sectionSubtitle: "Parti gratis. Niente contratti né costi nascosti.",
+      sectionSubtitle: "Parti gratis. Niente costi nascosti.",
       planName: "Starlinkee Pro",
       price: "49",
       currency: "€",
       period: "/mese",
       includes: "Include:",
-      feature1: "Targa NFC inclusa",
-      feature2: "Filtro recensioni Google",
+      feature1: "Targhetta NFC inclusa",
+      feature2: "Raccolta recensioni Google",
       feature3: "Coupon SMS",
       feature4: "100 SMS di marketing/mese ai tuoi clienti",
       feature5: "Supporto rapidissimo",
       cta: "Inizia gratis",
-      plates: "Prima targa gratis, le altre 9 €",
+      plates: "Prima targhetta gratis, le altre 9 €",
       periodAnnual: "/anno",
       billingMonthly: "Pagamento mensile",
       billingAnnual: "Pagamento annuale",
@@ -515,7 +515,7 @@ const translations = {
       sectionTitle: "Guardalo dal vivo",
       sectionSubtitle:
         "Prova a cliccare e guarda cosa vede il tuo cliente dopo la scansione.",
-      iframeTitle: "Anteprima dal vivo della pagina mostrata dopo la scansione di una targa Starlinkee",
+      iframeTitle: "Anteprima dal vivo della pagina mostrata dopo la scansione di una targhetta Starlinkee",
       cta: "Anteprima a schermo intero",
       expandCta: "Guarda come funziona",
       collapseCta: "Nascondi anteprima",
@@ -524,11 +524,11 @@ const translations = {
       tourLinktree:
         "Qui arriva il cliente dopo la scansione. I tuoi link, sempre aggiornati.",
       tourFilter:
-        "Filtro recensioni: il cliente valuta prima la visita con te, non subito su Google.",
+        "Il cliente valuta prima la visita, poi passa a lasciare la recensione su Google.",
       tourHighRating:
         "Voto alto? Il cliente va direttamente al tuo profilo Google.",
       tourLowRating:
-        "Voto basso? Il messaggio arriva solo a te, così puoi chiarire con calma.",
+        "Qualcosa è andato storto? Il cliente può anche scriverti in privato, così puoi chiarire con calma.",
       tourPromo:
         "Qui il cliente ritira il coupon che imposti tu.",
       tourRestart: "Ricomincia la demo",
@@ -554,15 +554,15 @@ const translations = {
     how: {
       eyebrow: "Come funziona",
       title: "Tre passi, niente da installare",
-      step1Title: "L'ospite avvicina il telefono",
+      step1Title: "Il cliente avvicina il telefono",
       step1Desc:
         "La targhetta NFC sta sul tavolo. Basta toccarla con il telefono, senza app.",
       step2Title: "Valuta la visita",
       step2Desc:
         "Sceglie il numero di stelle sulla tua pagina.",
-      step3Title: "La recensione va dove deve",
+      step3Title: "La recensione arriva su Google",
       step3Desc:
-        "Le valutazioni alte vanno su Google. Quelle più basse arrivano a te come messaggio privato.",
+        "Il cliente lascia la recensione su Google. Se qualcosa non è andato, può anche scriverti in privato.",
     },
     finalCta: {
       title: "Pronto per avere più recensioni?",

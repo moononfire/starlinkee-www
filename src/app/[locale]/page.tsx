@@ -26,7 +26,7 @@ export default async function Home({
     "@type": "Product",
     name: "Starlinkee Pro",
     description:
-      "Tabliczka NFC z systemem filtrowania opinii Google, kuponami SMS dla gastronomii.",
+      "Tabliczka NFC do zbierania opinii Google, z kuponami SMS dla lokali usługowych i gastronomii.",
     brand: { "@type": "Brand", name: "Starlinkee" },
     image: `${SITE_URL}/product/${locale}.webp`,
     offers: {

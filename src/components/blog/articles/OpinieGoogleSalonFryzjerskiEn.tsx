@@ -135,7 +135,7 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
           salon with a 4.9 rating and fifty fresh reviews beats one with a 4.5 rating and ten
           year-old reviews, even at a worse price. Read more about building such a profile from
           scratch in our article on{" "}
-          <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
             getting Google reviews fast and legally
           </Link>
           .
@@ -310,7 +310,7 @@ export default function OpinieGoogleSalonFryzjerskiEn() {
           building such a system, plus concrete thresholds for different industries, in our
           article on{" "}
           <Link
-            href="/blog/loyalty-program-without-an-app-how-to-build-customer-loyalty"
+            href="/en/blog/loyalty-program-without-an-app-how-to-build-customer-loyalty"
             className="text-blue-600 hover:underline"
           >
             a loyalty program without an app

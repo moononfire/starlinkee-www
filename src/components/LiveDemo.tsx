@@ -57,7 +57,7 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
             href={DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-lg px-8 py-3.5 text-base hover:bg-brand-700 transition-colors "
+            className="inline-flex items-center justify-center bg-brand-600 text-white font-medium rounded-lg px-8 py-3.5 text-base hover:bg-brand-700 transition-colors"
           >
             {t.liveDemo.mobileCta}
           </a>
@@ -71,7 +71,7 @@ export default function LiveDemo({ t }: { t: Translations; locale: Locale }) {
               setShouldLoadIframe(true);
               setIsOpen((v) => !v);
             }}
-            className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium rounded-lg px-8 py-3.5 text-base hover:bg-brand-700 transition-colors "
+            className="inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium rounded-lg px-8 py-3.5 text-base hover:bg-brand-700 transition-colors"
           >
             {isOpen ? t.liveDemo.collapseCta : t.liveDemo.expandCta}
           </button>

@@ -74,8 +74,7 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Warum schützt ein legaler Bewertungsfilter Ihr Lokal vor unfairen
-                    Bewertungen?
+                    3.2. Was tun, wenn ein Gast etwas zu beanstanden hat?
                   </a>
                 </li>
               </ol>
@@ -92,7 +91,7 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
                 </li>
                 <li>
                   <a href="#kupony-i-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. Wie unterstützen SMS-Gutscheine und eine Treuekarte die Wiederkehr?
+                    4.2. Wie unterstützen SMS-Gutscheine die Wiederkehr?
                   </a>
                 </li>
               </ol>
@@ -141,7 +140,7 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
           letzte Bewertung von vor mehreren Monaten, fragt sich der Gast, ob das Lokal noch genauso
           arbeitet. Mehr darüber, wie Ihr Profil die Sichtbarkeit beeinflusst, lesen Sie im
           Artikel über die{" "}
-          <Link href="/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
             Optimierung des Google-Unternehmensprofils
           </Link>
           .
@@ -161,7 +160,7 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
           den Geschmack der Gerichte, das Servicetempo und die Atmosphäre — statt auf zufällige
           Einträge zu hoffen. Wie das schnell und im Einklang mit den Google-Richtlinien gelingt,
           beschreiben wir im Leitfaden zum{" "}
-          <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
             schnellen und legalen Sammeln von Google-Bewertungen
           </Link>
           .
@@ -262,7 +261,7 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
           konkret, ohne Streit. Andere Gäste lesen solche Antworten genau: Sie beurteilen nicht den
           einzelnen Vorfall, sondern wie das Lokal mit Problemen umgeht. Fertige Antwortvorlagen
           finden Sie im Artikel{" "}
-          <Link href="/blog/wie-auf-google-bewertungen-antworten" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/wie-auf-google-bewertungen-antworten" className="text-blue-600 hover:underline">
             Wie man auf Google-Bewertungen antwortet
           </Link>
           .
@@ -272,16 +271,10 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Warum schützt ein legaler Bewertungsfilter Ihr Lokal vor unfairen Bewertungen?
+          Was tun, wenn ein Gast etwas zu beanstanden hat?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Ein legaler Bewertungsfilter leitet zufriedene Gäste direkt zu Google und bietet
-          unzufriedenen zusätzlich ein internes Formular zur Meldung eines Problems an — ohne
-          jemandem den Zugang zur öffentlichen Bewertung zu versperren. Das ist etwas völlig
-          anderes als das verbotene <strong>„Review Gating&ldquo;</strong>, also die Auswahl von
-          Kunden, bevor sie eine Bewertung abgeben. Dank eines solchen Filters erfährt der
-          Betriebsleiter noch am selben Tag von einem Problem und kann es intern lösen.
-        </p>
+          Es hilft, wenn ein unzufriedener Gast Ihnen einfach privat schreiben kann: So erfahren Sie noch am selben Tag von dem Problem und können es lösen. Diese Nachricht soll aber eine Ergänzung sein und kein Ersatz für die Bewertung. Sie dürfen nicht auswählen, wer den Link zu Google erhält, denn die selektive Sammlung von Bewertungen (sogenanntes <strong>„Review Gating&ldquo;</strong>) ist bei Google verboten und kann in der EU als irreführend gelten. Jeder Gast sollte eine öffentliche Bewertung abgeben können.</p>
       </div>
 
       {/* ── ÜBERGANG 3→4 ── */}
@@ -320,22 +313,10 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
           id="kupony-i-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Wie unterstützen SMS-Gutscheine und eine Treuekarte die Wiederkehr?
+          Wie unterstützen SMS-Gutscheine die Wiederkehr?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Eine kurze SMS mit einem Dessert-Gutschein für einen ruhigeren Wochentag kann Tische
-          genau dann füllen, wenn sie sonst leer sind. Eine digitale Treuekarte — zum Beispiel ein
-          kostenloser Kaffee nach dem fünften Besuch — gibt dem Gast einen Grund, sich für dieses
-          Lokal zu entscheiden. Einen ausführlichen Leitfaden zum Aufbau eines solchen Systems finden
-          Sie im Artikel über ein{" "}
-          <Link
-            href="/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen"
-            className="text-blue-600 hover:underline"
-          >
-            Treueprogramm ohne App
-          </Link>
-          , in dem wir auch Belohnungsschwellen für verschiedene Branchen beschreiben.
-        </p>
+          Eine kurze SMS mit einem Dessert-Gutschein für einen ruhigeren Wochentag kann Tische genau dann füllen, wenn sie sonst leer sind. Wie das sinnvoll und rechtssicher geht, beschreiben wir im Artikel über <Link href="/de/blog/sms-marketing-gastronomie-gutscheine-versenden-und-gaeste-zurueckholen" className="text-blue-600 hover:underline">SMS-Marketing für Lokale</Link>.</p>
       </div>
 
       {/* ── FAZIT ── */}
@@ -354,7 +335,7 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
             eine Bewertung zu bitten — bei der Rechnung oder beim Bezahlen — und alle technischen
             Hürden zu beseitigen, die den Gast abschrecken könnten. Ein NFC-Aufsteller schafft das in
             einem Sekundenbruchteil, und derselbe Träger kann zugleich Kontaktdaten sammeln sowie
-            SMS-Gutscheine und eine Treuekarte antreiben — und so aus einmaligen Gästen Stammkunden
+            SMS-Gutscheine antreiben — und so aus einmaligen Gästen Stammkunden
             machen.
           </p>
         </section>
@@ -407,12 +388,10 @@ export default function OpinieGoogleRestauracjaKawiarniaDe() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Kann derselbe NFC-Aufsteller Bewertungen sammeln und eine Treuekarte bedienen?
+                Kann derselbe NFC-Aufsteller Bewertungen und Gästekontakte sammeln?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Ja. Ein NFC-Träger kann einen zufriedenen Gast zum Google-Bewertungsformular leiten
-                und zugleich seinen Besuch auf einer digitalen Treuekarte erfassen — ohne zusätzliche
-                Hardware und ohne App.
+                Ja. Ein NFC-Aufsteller kann einen Gast zum Google-Bewertungsformular leiten und zugleich seine Telefonnummer samt Einwilligung für Gutschein-Nachrichten erfassen — ohne zusätzliche Hardware und ohne App.
               </dd>
             </div>
           </dl>

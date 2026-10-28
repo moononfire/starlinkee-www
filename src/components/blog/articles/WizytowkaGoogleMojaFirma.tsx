@@ -365,7 +365,7 @@ export default function WizytowkaGoogleMojaFirma() {
           zewnętrznych serwisów, aktywność profilu i wszelkie wzmianki w lokalnych katalogach
           (np. Pyszne.pl, Tripadvisor, Booksy). Opinie Google są tu kluczowym, bezpośrednim
           czynnikiem — więcej o zbieraniu recenzji piszemy w artykule o{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
             tym, jak szybko zdobyć opinie w Google
           </Link>
           .

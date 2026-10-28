@@ -81,7 +81,7 @@ export default function SmsMarketingDlaLokaluDe() {
                 </li>
                 <li>
                   <a href="#sms-opinie-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. Wie verbinden Sie SMS mit Bewertungen und Treuekarte?
+                    4.2. Wie verbinden Sie SMS mit Google-Bewertungen?
                   </a>
                 </li>
               </ol>
@@ -159,7 +159,7 @@ export default function SmsMarketingDlaLokaluDe() {
           Wie holen Sie die Marketing-Einwilligung beim Scannen des NFC-Aufstellers ein?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Am einfachsten geht das im selben Moment, in dem der Gast den NFC-Aufsteller scannt: Danach kann er eine Telefonnummer hinterlassen und der Zusendung von Gutscheinen zustimmen. Er muss nichts herunterladen und kein Konto anlegen, und Sie haben sofort eine Nummer samt bewusster Einwilligung. Mehr darüber, wie ein solcher Aufsteller funktioniert, lesen Sie im Leitfaden zum <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">schnellen Sammeln von Google-Bewertungen</Link>.
+          Am einfachsten geht das im selben Moment, in dem der Gast den NFC-Aufsteller scannt: Danach kann er eine Telefonnummer hinterlassen und der Zusendung von Gutscheinen zustimmen. Er muss nichts herunterladen und kein Konto anlegen, und Sie haben sofort eine Nummer samt bewusster Einwilligung. Mehr darüber, wie ein solcher Aufsteller funktioniert, lesen Sie im Leitfaden zum <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">schnellen Sammeln von Google-Bewertungen</Link>.
         </p>
 
         <h3
@@ -241,10 +241,10 @@ export default function SmsMarketingDlaLokaluDe() {
           id="sms-opinie-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Wie verbinden Sie SMS mit Bewertungen und Treuekarte?
+          Wie verbinden Sie SMS mit Google-Bewertungen?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          SMS wirkt am besten als Teil eines Ganzen: Der NFC-Aufsteller sammelt Bewertungen und Nummern, die SMS erinnert an Sie, und eine digitale Treuekarte gibt einen Grund für weitere Besuche. Wie Sie ein solches System ohne App aufbauen, beschreiben wir im Artikel über ein <Link href="/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen" className="text-blue-600 hover:underline">Treueprogramm ohne App</Link>. Und wenn Sie mehr über Bewertungen in der Gastronomie lesen möchten, schauen Sie in unseren Text über <Link href="/blog/google-bewertungen-restaurant-cafe-mehr-bewertungen-bekommen" className="text-blue-600 hover:underline">Google-Bewertungen für Restaurants und Cafés</Link>.
+          SMS wirkt am besten als Teil eines Ganzen: Der NFC-Aufsteller sammelt Bewertungen und Nummern, die SMS erinnert an Sie, und ein Gutschein in der Nachricht gibt einen Grund für den nächsten Besuch. Und wenn Sie mehr über Bewertungen in der Gastronomie lesen möchten, schauen Sie in unseren Text über <Link href="/de/blog/google-bewertungen-restaurant-cafe-mehr-bewertungen-bekommen" className="text-blue-600 hover:underline">Google-Bewertungen für Restaurants und Cafés</Link>.
         </p>
       </div>
 
@@ -257,7 +257,7 @@ export default function SmsMarketingDlaLokaluDe() {
             Fazit — wie versenden Sie SMS, die Gäste zurückbringen?
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            SMS-Marketing funktioniert in der Gastronomie, wenn es selten, konkret und einwilligungsbasiert ist. Nummern sammeln Sie am besten beim Scannen des NFC-Aufstellers, zusammen mit einer klaren Marketing-Einwilligung, und in der Nachricht bieten Sie etwas an, das für Gast und Lokal sinnvoll ist: ein Dessert, einen Kaffee oder einen Rabatt an einem ruhigeren Tag. Zur Beurteilung genügen wenige einfache Zahlen, und die größte Wirkung entsteht aus der Kombination von SMS, Google-Bewertungen und Treuekarte.
+            SMS-Marketing funktioniert in der Gastronomie, wenn es selten, konkret und einwilligungsbasiert ist. Nummern sammeln Sie am besten beim Scannen des NFC-Aufstellers, zusammen mit einer klaren Marketing-Einwilligung, und in der Nachricht bieten Sie etwas an, das für Gast und Lokal sinnvoll ist: ein Dessert, einen Kaffee oder einen Rabatt an einem ruhigeren Tag. Zur Beurteilung genügen wenige einfache Zahlen, und die größte Wirkung entsteht aus der Kombination von SMS und Google-Bewertungen.
           </p>
         </section>
 
@@ -300,10 +300,10 @@ export default function SmsMarketingDlaLokaluDe() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Ersetzen SMS die Treuekarte oder Google-Bewertungen?
+                Ersetzen SMS Google-Bewertungen?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Nein, sie ergänzen sich. Bewertungen ziehen neue Gäste an, die Treuekarte gibt einen Grund zur Wiederkehr, und die SMS erinnert im richtigen Moment an Ihr Lokal.
+                Nein, sie ergänzen sich. Bewertungen ziehen neue Gäste an, und die SMS erinnert im richtigen Moment an Ihr Lokal.
               </dd>
             </div>
           </dl>

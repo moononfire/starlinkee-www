@@ -81,7 +81,7 @@ export default function SmsMarketingDlaLokalu() {
                 </li>
                 <li>
                   <a href="#sms-opinie-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. Jak połączyć SMS-y z opiniami i kartą lojalnościową?
+                    4.2. Jak połączyć SMS-y z opiniami Google?
                   </a>
                 </li>
               </ol>
@@ -159,7 +159,7 @@ export default function SmsMarketingDlaLokalu() {
           Jak zbierać zgodę marketingową przy skanowaniu tabliczki NFC?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-6">
-          Najwygodniej zrobić to w tym samym momencie, w którym gość skanuje tabliczkę NFC: po zeskanowaniu może zostawić numer telefonu i zaznaczyć zgodę na wiadomości z kuponami. Nie musi niczego pobierać ani zakładać konta, a Ty od razu masz numer powiązany ze świadomą zgodą. Więcej o tym, jak działa taka tabliczka, przeczytasz w poradniku o <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">szybkim zdobywaniu opinii w Google</Link>.
+          Najwygodniej zrobić to w tym samym momencie, w którym gość skanuje tabliczkę NFC: po zeskanowaniu może zostawić numer telefonu i zaznaczyć zgodę na wiadomości z kuponami. Nie musi niczego pobierać ani zakładać konta, a Ty od razu masz numer powiązany ze świadomą zgodą. Więcej o tym, jak działa taka tabliczka, przeczytasz w poradniku o <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">szybkim zdobywaniu opinii w Google</Link>.
         </p>
 
         <h3
@@ -241,10 +241,10 @@ export default function SmsMarketingDlaLokalu() {
           id="sms-opinie-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Jak połączyć SMS-y z opiniami i kartą lojalnościową?
+          Jak połączyć SMS-y z opiniami Google?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          SMS najlepiej działa jako część całości: tabliczka NFC zbiera opinie i numery, SMS przypomina o sobie, a cyfrowa karta lojalnościowa daje powód do kolejnych wizyt. Jak zbudować taki system bez aplikacji, opisujemy w artykule o <Link href="/blog/program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow" className="text-blue-600 hover:underline">programie lojalnościowym bez aplikacji</Link>. A jeśli chcesz dowiedzieć się więcej o samych opiniach w gastronomii, zajrzyj do tekstu o <Link href="/blog/opinie-google-restauracja-kawiarnia-jak-zdobyc-wiecej-opinii" className="text-blue-600 hover:underline">opiniach Google dla restauracji i kawiarni</Link>.
+          SMS najlepiej działa jako część całości: tabliczka NFC zbiera opinie i numery, SMS przypomina o sobie, a kupon w wiadomości daje powód do kolejnej wizyty. A jeśli chcesz dowiedzieć się więcej o samych opiniach w gastronomii, zajrzyj do tekstu o <Link href="/pl/blog/opinie-google-restauracja-kawiarnia-jak-zdobyc-wiecej-opinii" className="text-blue-600 hover:underline">opiniach Google dla restauracji i kawiarni</Link>.
         </p>
       </div>
 
@@ -257,7 +257,7 @@ export default function SmsMarketingDlaLokalu() {
             Podsumowanie — jak wysyłać SMS-y, żeby goście wracali?
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            SMS marketing działa w gastronomii wtedy, gdy jest rzadki, konkretny i oparty na zgodzie. Numery najlepiej zbierać przy skanowaniu tabliczki NFC, razem z jasną zgodą marketingową, a w wiadomości proponować coś, co ma sens dla gościa i dla lokalu: deser, kawę lub rabat w spokojniejszy dzień. Do oceny wystarczy kilka prostych liczb, a największy efekt daje połączenie SMS-ów z opiniami Google i kartą lojalnościową.
+            SMS marketing działa w gastronomii wtedy, gdy jest rzadki, konkretny i oparty na zgodzie. Numery najlepiej zbierać przy skanowaniu tabliczki NFC, razem z jasną zgodą marketingową, a w wiadomości proponować coś, co ma sens dla gościa i dla lokalu: deser, kawę lub rabat w spokojniejszy dzień. Do oceny wystarczy kilka prostych liczb, a największy efekt daje połączenie SMS-ów z opiniami Google.
           </p>
         </section>
 
@@ -300,10 +300,10 @@ export default function SmsMarketingDlaLokalu() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Czy SMS-y zastąpią kartę lojalnościową lub opinie w Google?
+                Czy SMS-y zastąpią opinie w Google?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Nie, one się uzupełniają. Opinie przyciągają nowych gości, karta lojalnościowa daje powód do powrotu, a SMS przypomina o lokalu w odpowiednim momencie.
+                Nie, one się uzupełniają. Opinie przyciągają nowych gości, a SMS przypomina o lokalu w odpowiednim momencie.
               </dd>
             </div>
           </dl>

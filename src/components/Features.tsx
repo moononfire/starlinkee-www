@@ -1,12 +1,10 @@
 import type { Locale, Translations } from "@/i18n";
-import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { ZoomableImage, VideoTile } from "./Lightbox";
 
 export default function Features({ t, locale }: { t: Translations; locale: Locale }) {
   const featureImages = [
     `/features/${locale}/linktree.webp`,
-    `/features/${locale}/reviews.webp`,
+    `/product/${locale}.webp`,
     `/features/${locale}/promos.webp`,
   ];
 
@@ -16,8 +14,8 @@ export default function Features({ t, locale }: { t: Translations; locale: Local
     { title: t.features.promoTitle, desc: t.features.promoDesc, img: featureImages[2] },
   ];
 
-  // Plik filmu wgrywasz do public/demo/demo.mp4. Bez niego kafelek się nie pokazuje.
-  const hasVideo = existsSync(join(process.cwd(), "public/demo/demo.mp4"));
+  // Film demo: public/demo/demo.mp4. Ustaw false, jeśli plik zostanie usunięty.
+  const hasVideo = true;
 
   return (
     <section id="features" className="py-16 sm:py-24 px-4 sm:px-6 bg-gray-50">

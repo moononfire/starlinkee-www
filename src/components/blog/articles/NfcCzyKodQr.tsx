@@ -169,7 +169,7 @@ export default function NfcCzyKodQr() {
           Kiedy każde z rozwiązań zawodzi?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          NFC nie zadziała, gdy telefon go nie ma albo ma wyłączony, a niektóre grube etui mogą go osłabiać. QR zawiedzie, gdy kod jest porysowany, źle oświetlony albo wydrukowany zbyt mały. Dlatego dobrze, gdy gość ma wybór. Więcej o tym, jak zachęcić gości do zostawienia opinii, przeczytasz w poradniku o <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">szybkim zdobywaniu opinii w Google</Link>.
+          NFC nie zadziała, gdy telefon go nie ma albo ma wyłączony, a niektóre grube etui mogą go osłabiać. QR zawiedzie, gdy kod jest porysowany, źle oświetlony albo wydrukowany zbyt mały. Dlatego dobrze, gdy gość ma wybór. Więcej o tym, jak zachęcić gości do zostawienia opinii, przeczytasz w poradniku o <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">szybkim zdobywaniu opinii w Google</Link>.
         </p>
       </div>
 
@@ -244,7 +244,7 @@ export default function NfcCzyKodQr() {
           Gdzie postawić tabliczkę?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Najlepsze miejsce to takie, które gość widzi bez szukania: na stoliku, przy kasie albo na ladzie, na wysokości wzroku lub w zasięgu ręki. Dobrze, gdy tabliczka stoi stabilnie i nie przeszkadza w jedzeniu. O tym, kiedy prosić o opinię, piszemy w artykule o <Link href="/blog/opinie-google-restauracja-kawiarnia-jak-zdobyc-wiecej-opinii" className="text-blue-600 hover:underline">opiniach Google dla restauracji i kawiarni</Link>.
+          Najlepsze miejsce to takie, które gość widzi bez szukania: na stoliku, przy kasie albo na ladzie, na wysokości wzroku lub w zasięgu ręki. Dobrze, gdy tabliczka stoi stabilnie i nie przeszkadza w jedzeniu. O tym, kiedy prosić o opinię, piszemy w artykule o <Link href="/pl/blog/opinie-google-restauracja-kawiarnia-jak-zdobyc-wiecej-opinii" className="text-blue-600 hover:underline">opiniach Google dla restauracji i kawiarni</Link>.
         </p>
       </div>
 

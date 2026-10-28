@@ -71,7 +71,7 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Why does a legal review filter protect your venue from unfair ratings?
+                    3.2. What should you do when a guest has a complaint?
                   </a>
                 </li>
               </ol>
@@ -88,7 +88,7 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
                 </li>
                 <li>
                   <a href="#kupony-i-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. How do SMS coupons and a loyalty card support repeat visits?
+                    4.2. How do SMS coupons support repeat visits?
                   </a>
                 </li>
               </ol>
@@ -136,7 +136,7 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
           matters too: if the latest review is several months old, the guest wonders whether the
           venue still works the same way. You can read more about how your profile affects
           visibility in the article on{" "}
-          <Link href="/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
             optimising your Google Business Profile
           </Link>
           .
@@ -155,7 +155,7 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
           collects reviews systematically builds a library of proof — about the taste of the
           dishes, the speed of service and the atmosphere — instead of relying on random entries.
           How to do it quickly and within Google&apos;s rules is described in our guide to{" "}
-          <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
             getting Google reviews fast and legally
           </Link>
           .
@@ -253,7 +253,7 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
           anyway, reply calmly and specifically, without arguing. Other guests read such replies
           closely: they judge not the single incident, but how the venue handles problems. You
           will find ready-made reply templates in the article on{" "}
-          <Link href="/blog/how-to-respond-to-google-reviews" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/how-to-respond-to-google-reviews" className="text-blue-600 hover:underline">
             how to respond to Google reviews
           </Link>
           .
@@ -263,16 +263,10 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Why does a legal review filter protect your venue from unfair ratings?
+          What should you do when a guest has a complaint?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          A legal review filter sends satisfied guests straight to Google, and offers unhappy ones
-          an additional internal form for reporting a problem — without blocking anyone&apos;s
-          access to a public rating. This is entirely different from the prohibited{" "}
-          <strong>&ldquo;review gating&rdquo;</strong>, i.e. selecting customers before they leave
-          a review. Thanks to such a filter the manager learns about a problem the same day and
-          can resolve it privately.
-        </p>
+          It helps when an unhappy guest has a simple way to write to you privately: you learn about the problem the same day and can fix it. That message should be an addition, not a replacement for a review. You must not choose who gets the link to Google, because selective review collection (so-called <strong>&ldquo;review gating&rdquo;</strong>) is prohibited by Google and may be treated as misleading in the EU. Every guest should be able to leave a public review.</p>
       </div>
 
       {/* ── TRANSITION 3→4 ── */}
@@ -311,21 +305,10 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
           id="kupony-i-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          How do SMS coupons and a loyalty card support repeat visits?
+          How do SMS coupons support repeat visits?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          A short SMS with a dessert coupon for a quieter day of the week can fill tables exactly
-          when they are usually empty. A digital loyalty card — for example a free coffee after the
-          fifth visit — gives the guest a reason to choose this venue. You will find a detailed
-          guide to building such a system in the article on a{" "}
-          <Link
-            href="/blog/loyalty-program-without-an-app-how-to-build-customer-loyalty"
-            className="text-blue-600 hover:underline"
-          >
-            loyalty program without an app
-          </Link>
-          , where we also describe reward thresholds for different industries.
-        </p>
+          A short SMS with a dessert coupon for a quieter day of the week can fill tables exactly when they are usually empty. How to do it sensibly and legally is covered in the article on <Link href="/en/blog/sms-marketing-for-restaurants-cafes-how-to-send-coupons" className="text-blue-600 hover:underline">SMS marketing for venues</Link>.</p>
       </div>
 
       {/* ── SUMMARY ── */}
@@ -343,7 +326,7 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
             to ask for a review at the moment of greatest satisfaction — at the bill or when
             paying — and to remove every technological barrier that could put the guest off. An NFC
             stand does this in a fraction of a second, and the same carrier can also collect
-            contact details and power SMS coupons and a loyalty card, turning one-time guests into
+            contact details and power SMS coupons, turning one-time guests into
             regular customers.
           </p>
         </section>
@@ -396,12 +379,10 @@ export default function OpinieGoogleRestauracjaKawiarniaEn() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Can the same NFC stand collect reviews and run a loyalty card?
+                Can the same NFC stand collect reviews and guest contacts?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Yes. One NFC carrier can send a satisfied guest to the Google review form and
-                register their visit on a digital loyalty card at the same time — with no extra
-                hardware and no app.
+                Yes. One NFC stand can send a satisfied guest to the Google review form and, at the same time, collect their phone number with consent to coupon messages — with no extra hardware and no app.
               </dd>
             </div>
           </dl>

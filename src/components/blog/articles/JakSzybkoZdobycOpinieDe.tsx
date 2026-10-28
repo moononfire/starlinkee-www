@@ -136,7 +136,7 @@ export default function JakSzybkoZdobycOpinieDe() {
           wenig Bewertungen oder stammt die letzte von vor einem Jahr, entsteht ein Gefühl der
           Stagnation. In der Praxis sollte ein Eintrag so aussehen, als würde er täglich zufriedene
           Kunden bedienen. Mehr dazu lesen Sie in unserem Artikel über{" "}
-          <Link href="/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
             die Grundlagen der Optimierung Ihres Google Business-Profils
           </Link>
           .
@@ -341,7 +341,7 @@ export default function JakSzybkoZdobycOpinieDe() {
           Derselbe NFC-Träger muss nicht bei der Bewertungserfassung stehen bleiben — er kann
           gleichzeitig eine digitale Treuekarte betreiben, mit der Stammgäste Besuche sammeln, ohne
           etwas zu installieren. Erfahren Sie, wie Sie{" "}
-          <Link href="/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/treueprogramm-ohne-app-wie-kundentreue-aufbauen" className="text-blue-600 hover:underline">
             ein Treueprogramm ohne App aufbauen
           </Link>
           .

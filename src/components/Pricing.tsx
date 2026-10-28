@@ -109,6 +109,7 @@ export default function Pricing({
                 {features.map((f) => (
                   <li key={f} className="flex items-center gap-3">
                     <svg
+                      aria-hidden="true"
                       className="w-5 h-5 text-brand-600 shrink-0"
                       fill="none"
                       stroke="currentColor"
@@ -129,7 +130,7 @@ export default function Pricing({
 
             <a
               href={`/${locale}/order${billing === "annual" ? "?billing=annual" : ""}`}
-              className="block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-3.5 text-base hover:bg-brand-700 transition-colors "
+              className="block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-3.5 text-base hover:bg-brand-700 transition-colors"
             >
               {t.pricing.cta}
             </a>

@@ -149,7 +149,7 @@ export default function JakOdpowiadacNaOpinie() {
           słownictwo związane z Twoją branżą i lokalizacją, tym silniejszy sygnał trafności dla
           zapytań lokalnych. To jeden z wielu elementów, które razem budują pozycję profilu —
           pełną listę czynników rankingowych znajdziesz w artykule o tym,{" "}
-          <Link href="/blog/wizytowka-google-moja-firma-jak-zoptymalizowac" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/wizytowka-google-moja-firma-jak-zoptymalizowac" className="text-blue-600 hover:underline">
             jak zoptymalizować wizytówkę Google Moja Firma
           </Link>
           .
@@ -381,7 +381,7 @@ export default function JakOdpowiadacNaOpinie() {
           sytuacji, zanim ktokolwiek inny ją przeczyta. To nie jest blokowanie dostępu do Google —
           to zarządzanie momentem, w którym klient decyduje, gdzie skierować swoją opinię. Więcej
           o samym procesie zbierania recenzji znajdziesz w artykule o tym,{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
             jak szybko zdobyć opinie w Google
           </Link>
           .

@@ -303,12 +303,12 @@ export default function ProgramLojalnosciowyBezAplikacjiEn() {
           works: one device handles the loyalty card, the Google review form, and a filter that
           protects against unfair reviews, all at once. If you want to see how collecting reviews
           itself works step by step, check out our article on{" "}
-          <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
             how to get Google reviews fast
           </Link>
           . We&apos;ve also covered how to reply to those reviews — including the difficult ones —
           in our article on{" "}
-          <Link href="/blog/how-to-respond-to-google-reviews" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/how-to-respond-to-google-reviews" className="text-blue-600 hover:underline">
             how to respond to Google reviews
           </Link>
           .

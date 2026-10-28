@@ -148,7 +148,7 @@ export default function JakOdpowiadacNaOpinieEn() {
           location, the stronger the relevance signal for local searches. It&apos;s just one of
           several elements that together build a profile&apos;s ranking — see the full list of
           ranking factors in our article on{" "}
-          <Link href="/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
             how to optimise your Google Business Profile
           </Link>
           .
@@ -381,7 +381,7 @@ export default function JakOdpowiadacNaOpinieEn() {
           access to Google — it&apos;s managing the moment at which a customer decides where to
           direct their feedback. You can read more about the review-collection process itself in
           our article on{" "}
-          <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">
             how to get Google reviews fast
           </Link>
           .

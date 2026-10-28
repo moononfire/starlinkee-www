@@ -169,7 +169,7 @@ export default function NfcCzyKodQrDe() {
           Wann versagt welche Lösung?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          NFC funktioniert nicht, wenn das Handy es nicht hat oder ausgeschaltet ist, und manche dicken Hüllen können es abschwächen. Ein QR-Code versagt, wenn er zerkratzt, schlecht beleuchtet oder zu klein gedruckt ist. Darum ist es gut, dem Gast die Wahl zu lassen. Mehr dazu, wie Gäste eine Bewertung hinterlassen, lesen Sie in unserem Ratgeber zu <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">schnell Google-Bewertungen bekommen</Link>.
+          NFC funktioniert nicht, wenn das Handy es nicht hat oder ausgeschaltet ist, und manche dicken Hüllen können es abschwächen. Ein QR-Code versagt, wenn er zerkratzt, schlecht beleuchtet oder zu klein gedruckt ist. Darum ist es gut, dem Gast die Wahl zu lassen. Mehr dazu, wie Gäste eine Bewertung hinterlassen, lesen Sie in unserem Ratgeber zu <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">schnell Google-Bewertungen bekommen</Link>.
         </p>
       </div>
 
@@ -244,7 +244,7 @@ export default function NfcCzyKodQrDe() {
           Wo stellt man die Tafel hin?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Der beste Platz ist einer, den der Gast ohne Suchen sieht: auf dem Tisch, an der Kasse oder auf der Theke, in Augenhöhe oder in Reichweite. Die Tafel sollte stabil stehen und beim Essen nicht stören. Wann Sie um eine Bewertung bitten sollten, lesen Sie in unserem Artikel zu <Link href="/blog/google-bewertungen-restaurant-cafe-mehr-bewertungen-bekommen" className="text-blue-600 hover:underline">Google-Bewertungen für Restaurants und Cafés</Link>.
+          Der beste Platz ist einer, den der Gast ohne Suchen sieht: auf dem Tisch, an der Kasse oder auf der Theke, in Augenhöhe oder in Reichweite. Die Tafel sollte stabil stehen und beim Essen nicht stören. Wann Sie um eine Bewertung bitten sollten, lesen Sie in unserem Artikel zu <Link href="/de/blog/google-bewertungen-restaurant-cafe-mehr-bewertungen-bekommen" className="text-blue-600 hover:underline">Google-Bewertungen für Restaurants und Cafés</Link>.
         </p>
       </div>
 

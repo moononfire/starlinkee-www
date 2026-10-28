@@ -136,7 +136,7 @@ export default function JakSzybkoZdobycOpinieEn() {
           left a year ago, it creates a sense of stagnation. In practice, a listing should look as
           though it serves satisfied customers every single day. Read more about this in our article
           on{" "}
-          <Link href="/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/google-business-profile-how-to-optimize" className="text-blue-600 hover:underline">
             the basics of optimising your Google Business Profile
           </Link>
           .
@@ -337,7 +337,7 @@ export default function JakSzybkoZdobycOpinieEn() {
           The same NFC device doesn&apos;t have to stop at collecting reviews — it can also power a
           digital loyalty card, letting regulars rack up visits without installing anything. See how
           to{" "}
-          <Link href="/blog/loyalty-program-without-an-app-how-to-build-customer-loyalty" className="text-blue-600 hover:underline">
+          <Link href="/en/blog/loyalty-program-without-an-app-how-to-build-customer-loyalty" className="text-blue-600 hover:underline">
             build a loyalty program without an app
           </Link>
           .

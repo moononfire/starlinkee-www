@@ -312,11 +312,11 @@ export default function ProgramLojalnosciowyBezAplikacjiDe() {
           : Ein Gerät bedient gleichzeitig die Treuekarte, das Google-Bewertungsformular und einen
           Filter, der vor unfairen Bewertungen schützt. Wie das Sammeln von Bewertungen selbst
           Schritt für Schritt funktioniert, erfahren Sie in unserem Artikel darüber,{" "}
-          <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
             wie man schnell Google-Bewertungen bekommt
           </Link>
           . Wie Sie auf diese Bewertungen — auch auf schwierige — antworten, haben wir im Artikel{" "}
-          <Link href="/blog/wie-auf-google-bewertungen-antworten" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/wie-auf-google-bewertungen-antworten" className="text-blue-600 hover:underline">
             wie man auf Google-Bewertungen antwortet
           </Link>{" "}
           beschrieben.

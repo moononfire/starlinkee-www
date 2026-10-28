@@ -137,7 +137,7 @@ export default function OpinieGoogleSalonFryzjerski() {
           miejsca żadna. Salon z oceną 4,9 i pięćdziesięcioma świeżymi opiniami wygrywa z
           salonem z oceną 4,5 i dziesięcioma opiniami sprzed roku, nawet jeśli oferuje gorszą
           cenę. Więcej o tym, jak zbudować taki profil od podstaw, znajdziesz w artykule o{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
             szybkim i legalnym zdobywaniu opinii w Google
           </Link>
           .
@@ -312,7 +312,7 @@ export default function OpinieGoogleSalonFryzjerski() {
           progiem trzech lub czterech wizyt. Szczegółowy przewodnik po budowaniu takiego systemu
           znajdziesz w artykule o{" "}
           <Link
-            href="/blog/program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow"
+            href="/pl/blog/program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow"
             className="text-blue-600 hover:underline"
           >
             programie lojalnościowym bez aplikacji

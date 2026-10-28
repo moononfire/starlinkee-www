@@ -151,7 +151,7 @@ export default function JakOdpowiadacNaOpinieIt() {
           è il segnale di rilevanza per le ricerche locali. È solo uno dei tanti elementi che
           insieme costruiscono il posizionamento di un profilo — trovi l&apos;elenco completo dei
           fattori di ranking nel nostro articolo su{" "}
-          <Link href="/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
             come ottimizzare il tuo Google Business Profile
           </Link>
           .
@@ -390,7 +390,7 @@ export default function JakOdpowiadacNaOpinieIt() {
           Non si tratta di bloccare l&apos;accesso a Google — si tratta di gestire il momento in
           cui il cliente decide dove indirizzare il proprio feedback. Puoi approfondire il processo
           di raccolta delle recensioni nell&apos;articolo su{" "}
-          <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
             come ottenere rapidamente recensioni su Google
           </Link>
           .

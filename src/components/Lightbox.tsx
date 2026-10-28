@@ -1,36 +1,71 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 
 function Overlay({
   onClose,
   closeLabel,
+  label,
   children,
 }: {
   onClose: () => void;
   closeLabel: string;
+  label: string;
   children: ReactNode;
 }) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    document.addEventListener("keydown", onKey);
-    const prev = document.body.style.overflow;
+    const trigger = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+    const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+        return;
+      }
+      if (e.key !== "Tab" || !dialogRef.current) return;
+      const items = dialogRef.current.querySelectorAll<HTMLElement>(
+        "button, [href], video[controls], [tabindex]:not([tabindex='-1'])",
+      );
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      } else if (!dialogRef.current.contains(active)) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prev;
+      document.body.style.overflow = prevOverflow;
+      trigger?.focus();
     };
   }, [onClose]);
 
   return (
     <div
+      ref={dialogRef}
       role="dialog"
       aria-modal="true"
+      aria-label={label}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4"
       onClick={onClose}
     >
       <button
+        ref={closeRef}
         type="button"
         aria-label={closeLabel}
         onClick={onClose}
@@ -76,7 +111,7 @@ export function ZoomableImage({
         </span>
       </button>
       {open && (
-        <Overlay onClose={() => setOpen(false)} closeLabel={closeLabel}>
+        <Overlay onClose={() => setOpen(false)} closeLabel={closeLabel} label={alt}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={src}
@@ -101,6 +136,15 @@ export function VideoTile({
   closeLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+  const tileVideo = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const v = tileVideo.current;
+    if (!v) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (open || reduced) v.pause();
+    else v.play().catch(() => {});
+  }, [open]);
 
   return (
     <>
@@ -116,6 +160,7 @@ export function VideoTile({
           className="group relative md:col-span-3 block w-full aspect-video bg-brand-50 cursor-pointer"
         >
           <video
+            ref={tileVideo}
             src={src}
             autoPlay
             muted
@@ -132,7 +177,7 @@ export function VideoTile({
         </button>
       </div>
       {open && (
-        <Overlay onClose={() => setOpen(false)} closeLabel={closeLabel}>
+        <Overlay onClose={() => setOpen(false)} closeLabel={closeLabel} label={title}>
           <video
             src={src}
             controls

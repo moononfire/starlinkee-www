@@ -305,11 +305,11 @@ export default function ProgramLojalnosciowyBezAplikacji() {
           : jedno urządzenie obsługuje jednocześnie kartę lojalnościową, formularz oceny Google
           i filtr chroniący przed niesprawiedliwymi opiniami. Jeśli chcesz dowiedzieć się, jak
           samo zbieranie recenzji wygląda krok po kroku, sprawdź artykuł o tym,{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
             jak szybko zdobyć opinie w Google
           </Link>
           . Zasady odpowiadania na te opinie — także te trudniejsze — opisaliśmy z kolei w tekście{" "}
-          <Link href="/blog/jak-odpowiadac-na-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-odpowiadac-na-opinie-w-google" className="text-blue-600 hover:underline">
             jak odpowiadać na opinie w Google
           </Link>
           .

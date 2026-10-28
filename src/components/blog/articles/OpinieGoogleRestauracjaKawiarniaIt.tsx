@@ -71,8 +71,7 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Perché un filtro recensioni legale protegge il locale da valutazioni
-                    ingiuste?
+                    3.2. Cosa fare quando un cliente ha da ridire?
                   </a>
                 </li>
               </ol>
@@ -89,7 +88,7 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
                 </li>
                 <li>
                   <a href="#kupony-i-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. Come favoriscono il ritorno i coupon SMS e la tessera fedeltà?
+                    4.2. Come favoriscono il ritorno i coupon SMS?
                   </a>
                 </li>
               </ol>
@@ -138,7 +137,7 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
           diversi mesi fa, il cliente si chiede se il locale funzioni ancora allo stesso modo. Puoi
           approfondire come il profilo incide sulla visibilità nell&apos;articolo
           sull&apos;
-          <Link href="/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/profilo-google-business-come-ottimizzare" className="text-blue-600 hover:underline">
             ottimizzazione del profilo Google Business
           </Link>
           .
@@ -158,7 +157,7 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
           prove — sul gusto dei piatti, sulla velocità del servizio e sull&apos;atmosfera — invece di
           affidarsi a commenti casuali. Come farlo in fretta e nel rispetto delle regole di Google è
           spiegato nella guida su come{" "}
-          <Link href="/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/come-ottenere-recensioni-google-velocemente" className="text-blue-600 hover:underline">
             ottenere recensioni Google in modo rapido e legale
           </Link>
           .
@@ -258,7 +257,7 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
           concreto, senza polemiche. Gli altri clienti leggono con attenzione queste risposte:
           giudicano non il singolo episodio, ma come il locale gestisce i problemi. Modelli di
           risposta pronti li trovi nell&apos;articolo{" "}
-          <Link href="/blog/come-rispondere-alle-recensioni-google" className="text-blue-600 hover:underline">
+          <Link href="/it/blog/come-rispondere-alle-recensioni-google" className="text-blue-600 hover:underline">
             come rispondere alle recensioni Google
           </Link>
           .
@@ -268,16 +267,10 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Perché un filtro recensioni legale protegge il locale da valutazioni ingiuste?
+          Cosa fare quando un cliente ha da ridire?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Un filtro recensioni legale indirizza i clienti soddisfatti direttamente a Google e ai
-          clienti insoddisfatti propone in aggiunta un modulo interno per segnalare il problema —
-          senza bloccare a nessuno l&apos;accesso alla valutazione pubblica. È una soluzione del tutto
-          diversa dal <strong>&ldquo;review gating&rdquo;</strong> vietato, cioè la selezione dei
-          clienti prima che lascino una recensione. Grazie a un simile filtro il responsabile viene a
-          sapere del problema lo stesso giorno e può risolverlo in privato.
-        </p>
+          È utile che un cliente insoddisfatto abbia un modo semplice per scriverti in privato: così vieni a sapere del problema lo stesso giorno e puoi risolverlo. Quel messaggio però deve essere un&apos;aggiunta, non un sostituto della recensione. Non si può scegliere a chi mostrare il link a Google, perché la raccolta selettiva di recensioni (il cosiddetto <strong>&ldquo;review gating&rdquo;</strong>) è vietata da Google e nell&apos;UE può essere considerata ingannevole. Ogni cliente dovrebbe poter lasciare una recensione pubblica.</p>
       </div>
 
       {/* ── TRANSIZIONE 3→4 ── */}
@@ -316,22 +309,10 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
           id="kupony-i-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Come favoriscono il ritorno i coupon SMS e la tessera fedeltà?
+          Come favoriscono il ritorno i coupon SMS?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Un breve SMS con un coupon per il dolce in un giorno più tranquillo della settimana può
-          riempire i tavoli proprio quando di solito sono vuoti. Una tessera fedeltà digitale — per
-          esempio un caffè gratis dopo la quinta visita — dà al cliente un motivo per scegliere
-          proprio questo locale. Una guida dettagliata su come costruire un simile sistema la trovi
-          nell&apos;articolo sul{" "}
-          <Link
-            href="/blog/programma-fedelta-senza-app-come-costruire-la-fedelta-dei-clienti"
-            className="text-blue-600 hover:underline"
-          >
-            programma fedeltà senza app
-          </Link>
-          , dove descriviamo anche le soglie dei premi per i diversi settori.
-        </p>
+          Un breve SMS con un coupon per il dolce in un giorno più tranquillo della settimana può riempire i tavoli proprio quando di solito sono vuoti. Come farlo in modo sensato e lecito lo descriviamo nell&apos;articolo sull&apos;<Link href="/it/blog/sms-marketing-ristoranti-bar-come-inviare-coupon" className="text-blue-600 hover:underline">SMS marketing per i locali</Link>.</p>
       </div>
 
       {/* ── RIEPILOGO ── */}
@@ -349,7 +330,7 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
             chiave è chiedere una recensione nel momento di maggiore soddisfazione — al conto o al
             pagamento — e rimuovere ogni barriera tecnologica che potrebbe scoraggiare il cliente. Un
             supporto NFC lo fa in una frazione di secondo, e lo stesso supporto può raccogliere
-            contatti e alimentare coupon SMS e tessera fedeltà, trasformando i clienti occasionali in
+            contatti e alimentare coupon SMS, trasformando i clienti occasionali in
             clienti abituali.
           </p>
         </section>
@@ -403,12 +384,10 @@ export default function OpinieGoogleRestauracjaKawiarniaIt() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Lo stesso supporto NFC può raccogliere recensioni e gestire una tessera fedeltà?
+                Lo stesso supporto NFC può raccogliere recensioni e contatti dei clienti?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Sì. Un unico supporto NFC può indirizzare il cliente soddisfatto al modulo di
-                recensione Google e registrare allo stesso tempo la sua visita sulla tessera fedeltà
-                digitale — senza hardware aggiuntivo e senza app.
+                Sì. Un unico supporto NFC può indirizzare il cliente al modulo di recensione Google e raccogliere allo stesso tempo il suo numero di telefono con il consenso ai messaggi con coupon — senza hardware aggiuntivo e senza app.
               </dd>
             </div>
           </dl>

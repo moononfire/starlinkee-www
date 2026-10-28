@@ -742,9 +742,9 @@ export const blogPosts: BlogPostMeta[] = [
           "Zareaguj jeszcze przy stoliku — wymień danie lub zaproponuj rekompensatę. Jeśli negatywna opinia mimo to się pojawi, odpowiedz spokojnie i konkretnie, bez polemiki; kolejni goście ocenią przede wszystkim sposób, w jaki lokal rozwiązuje problemy.",
       },
       {
-        question: "Czy ta sama tabliczka NFC może zbierać opinie i obsługiwać kartę lojalnościową?",
+        question: "Czy ta sama tabliczka NFC może zbierać opinie i kontakty do gości?",
         answer:
-          "Tak. Jeden nośnik NFC może jednocześnie kierować zadowolonego gościa do formularza opinii Google i rejestrować jego wizytę w cyfrowej karcie lojalnościowej — bez dodatkowego sprzętu i bez aplikacji.",
+          "Tak. Jedna tabliczka NFC może kierować gościa do formularza opinii Google i jednocześnie zbierać jego numer telefonu wraz ze zgodą na wiadomości z kuponami — bez dodatkowego sprzętu i bez aplikacji.",
       },
     ],
   },
@@ -860,9 +860,9 @@ export const blogPosts: BlogPostMeta[] = [
           "Prosty i konkretny: deser lub kawa do zamówienia albo rabat na lunch w dzień, kiedy w lokalu jest mniej gości. Dobrze, żeby miał termin ważności.",
       },
       {
-        question: "Czy SMS-y zastąpią kartę lojalnościową lub opinie w Google?",
+        question: "Czy SMS-y zastąpią opinie w Google?",
         answer:
-          "Nie, one się uzupełniają. Opinie przyciągają nowych gości, karta lojalnościowa daje powód do powrotu, a SMS przypomina o lokalu w odpowiednim momencie.",
+          "Nie, one się uzupełniają. Opinie przyciągają nowych gości, a SMS przypomina o lokalu w odpowiednim momencie.",
       },
     ],
   },

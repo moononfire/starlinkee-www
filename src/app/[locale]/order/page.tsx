@@ -119,10 +119,10 @@ const t: Record<Locale, {
   pl: {
     productName: "Starlinkee Pro + tabliczka NFC",
     description:
-      "Starlinkee Pro to abonament, który automatycznie filtruje negatywne opinie Google, wysyła marketingowe kupony SMS do Twoich gości (100/mies. w pakiecie) i zbiera kontakty do Twoich klientów. W zestawie tabliczka NFC, dzięki której klienci zostawiają opinię jednym dotknięciem telefonu.",
+      "Starlinkee Pro to abonament, który pomaga zbierać opinie Google, wysyła marketingowe kupony SMS do Twoich gości (100/mies. w pakiecie) i zbiera kontakty do Twoich klientów. W zestawie tabliczka NFC, dzięki której klienci zostawiają opinię jednym dotknięciem telefonu.",
     subtitle: "Wybierz ile tabliczek NFC potrzebujesz do swoich lokalizacji.",
     subscription: "Abonament Starlinkee Pro",
-    subscriptionDesc: "Filtrowanie opinii, 100 SMS-ów marketingowych/mies., zbieranie kontaktów",
+    subscriptionDesc: "Zbieranie opinii, 100 SMS-ów marketingowych/mies., zbieranie kontaktów",
     perMonth: "/mies.",
     plates: "Tabliczki NFC",
     platesDesc: "Pierwsza tabliczka gratis — każda kolejna 29 zł",
@@ -145,7 +145,7 @@ const t: Record<Locale, {
     includes: "W cenie:",
     features: [
       "1 tabliczka NFC w cenie",
-      "Filtrowanie opinii Google",
+      "Zbieranie opinii Google",
       "System kuponów SMS",
       "100 SMS-ów marketingowych/mies. do Twoich gości",
       "Błyskawiczne wsparcie",
@@ -232,10 +232,10 @@ const t: Record<Locale, {
   en: {
     productName: "Starlinkee Pro + NFC plate",
     description:
-      "Starlinkee Pro is a subscription that automatically filters negative Google reviews, sends marketing SMS coupons to your guests (100/mo included), and collects your customers' contacts. Includes an NFC plate so customers can leave a review with a single tap of their phone.",
+      "Starlinkee Pro is a subscription that helps you collect Google reviews, sends marketing SMS coupons to your guests (100/mo included), and collects your customers' contacts. Includes an NFC plate so customers can leave a review with a single tap of their phone.",
     subtitle: "Choose how many NFC plates you need for your locations.",
     subscription: "Starlinkee Pro subscription",
-    subscriptionDesc: "Review filtering, 100 marketing SMS/mo, contact collection",
+    subscriptionDesc: "Review collection, 100 marketing SMS/mo, contact collection",
     perMonth: "/mo",
     plates: "NFC Plates",
     platesDesc: "First plate free — each additional plate €9",
@@ -258,7 +258,7 @@ const t: Record<Locale, {
     includes: "Includes:",
     features: [
       "1 NFC plate included",
-      "Google review filtering",
+      "Google review collection",
       "SMS coupon system",
       "100 marketing SMS/mo to your guests",
       "Lightning-fast support",
@@ -345,10 +345,10 @@ const t: Record<Locale, {
   de: {
     productName: "Starlinkee Pro + NFC-Aufsteller",
     description:
-      "Starlinkee Pro ist ein Abo, das negative Google-Bewertungen automatisch filtert, Marketing-SMS-Gutscheine an Ihre Gäste versendet (100/Monat inklusive) und die Kontakte Ihrer Kunden sammelt. Inklusive NFC-Aufsteller, mit dem Kunden mit einem Antippen des Telefons eine Bewertung hinterlassen können.",
+      "Starlinkee Pro ist ein Abo, Ihnen hilft, Google-Bewertungen zu sammeln, Marketing-SMS-Gutscheine an Ihre Gäste versendet (100/Monat inklusive) und die Kontakte Ihrer Kunden sammelt. Inklusive NFC-Aufsteller, mit dem Kunden mit einem Antippen des Telefons eine Bewertung hinterlassen können.",
     subtitle: "Wählen Sie, wie viele NFC-Aufsteller Sie für Ihre Standorte benötigen.",
     subscription: "Starlinkee Pro Abo",
-    subscriptionDesc: "Bewertungsfilter, 100 Marketing-SMS/Monat, Kontaktsammlung",
+    subscriptionDesc: "Bewertungen sammeln, 100 Marketing-SMS/Monat, Kontaktsammlung",
     perMonth: "/Monat",
     plates: "NFC-Aufsteller",
     platesDesc: "Erster Aufsteller gratis — jeder weitere 9 €",
@@ -371,7 +371,7 @@ const t: Record<Locale, {
     includes: "Inklusive:",
     features: [
       "1 NFC-Aufsteller inklusive",
-      "Google-Bewertungsfilter",
+      "Google-Bewertungen sammeln",
       "SMS-Gutscheinsystem",
       "100 Marketing-SMS/Monat an Ihre Gäste",
       "Blitzschneller Support",
@@ -458,10 +458,10 @@ const t: Record<Locale, {
   it: {
     productName: "Starlinkee Pro + targa NFC",
     description:
-      "Starlinkee Pro è un abbonamento che filtra automaticamente le recensioni negative su Google, invia coupon SMS di marketing ai tuoi clienti (100/mese inclusi) e raccoglie i contatti dei tuoi clienti. Include una targa NFC che permette ai clienti di lasciare una recensione con un semplice tocco del telefono.",
+      "Starlinkee Pro è un abbonamento che ti aiuta a raccogliere recensioni su Google, invia coupon SMS di marketing ai tuoi clienti (100/mese inclusi) e raccoglie i contatti dei tuoi clienti. Include una targa NFC che permette ai clienti di lasciare una recensione con un semplice tocco del telefono.",
     subtitle: "Scegli quante targhe NFC ti servono per le tue sedi.",
     subscription: "Abbonamento Starlinkee Pro",
-    subscriptionDesc: "Filtro recensioni, 100 SMS di marketing/mese, raccolta contatti",
+    subscriptionDesc: "Raccolta recensioni, 100 SMS di marketing/mese, raccolta contatti",
     perMonth: "/mese",
     plates: "Targhe NFC",
     platesDesc: "Prima targa gratis — ogni altra 9 €",
@@ -484,7 +484,7 @@ const t: Record<Locale, {
     includes: "Include:",
     features: [
       "1 targa NFC inclusa",
-      "Filtro recensioni Google",
+      "Raccolta recensioni Google",
       "Sistema coupon SMS",
       "100 SMS di marketing/mese ai tuoi clienti",
       "Supporto rapidissimo",

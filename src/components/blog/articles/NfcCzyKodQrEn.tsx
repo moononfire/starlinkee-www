@@ -169,7 +169,7 @@ export default function NfcCzyKodQrEn() {
           When does each one fail?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          NFC won&apos;t work if the phone lacks it or has it switched off, and some thick cases can weaken it. QR fails when the code is scratched, badly lit or printed too small. That is why it helps to give guests a choice. For more on getting guests to leave a review, see our guide to <Link href="/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">getting Google reviews fast</Link>.
+          NFC won&apos;t work if the phone lacks it or has it switched off, and some thick cases can weaken it. QR fails when the code is scratched, badly lit or printed too small. That is why it helps to give guests a choice. For more on getting guests to leave a review, see our guide to <Link href="/en/blog/how-to-get-google-reviews-fast" className="text-blue-600 hover:underline">getting Google reviews fast</Link>.
         </p>
       </div>
 
@@ -244,7 +244,7 @@ export default function NfcCzyKodQrEn() {
           Where to put the plate?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          The best spot is one the guest sees without looking: on the table, by the till or on the counter, at eye level or within reach. Make sure the plate stands steady and doesn&apos;t get in the way of eating. On when to ask for a review, see our article on <Link href="/blog/google-reviews-restaurants-cafes-how-to-get-more-reviews" className="text-blue-600 hover:underline">Google reviews for restaurants and cafés</Link>.
+          The best spot is one the guest sees without looking: on the table, by the till or on the counter, at eye level or within reach. Make sure the plate stands steady and doesn&apos;t get in the way of eating. On when to ask for a review, see our article on <Link href="/en/blog/google-reviews-restaurants-cafes-how-to-get-more-reviews" className="text-blue-600 hover:underline">Google reviews for restaurants and cafés</Link>.
         </p>
       </div>
 

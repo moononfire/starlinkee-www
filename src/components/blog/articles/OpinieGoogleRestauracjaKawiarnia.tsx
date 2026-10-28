@@ -72,7 +72,7 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
                 </li>
                 <li>
                   <a href="#filtr-opinii" className="text-blue-600 hover:underline">
-                    3.2. Dlaczego legalny filtr opinii chroni lokal przed niesprawiedliwą oceną?
+                    3.2. Co zrobić, gdy gość ma zastrzeżenia?
                   </a>
                 </li>
               </ol>
@@ -89,7 +89,7 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
                 </li>
                 <li>
                   <a href="#kupony-i-lojalnosc" className="text-blue-600 hover:underline">
-                    4.2. Jak kupony SMS i karta lojalnościowa wspierają powroty?
+                    4.2. Jak kupony SMS wspierają powroty?
                   </a>
                 </li>
               </ol>
@@ -137,7 +137,7 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
           świeżość: jeśli ostatnia opinia pochodzi sprzed kilku miesięcy, gość zastanawia się, czy
           lokal w ogóle jeszcze działa tak samo. Więcej o tym, jak wizytówka wpływa na widoczność,
           przeczytasz w artykule o{" "}
-          <Link href="/blog/wizytowka-google-moja-firma-jak-zoptymalizowac" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/wizytowka-google-moja-firma-jak-zoptymalizowac" className="text-blue-600 hover:underline">
             optymalizacji wizytówki Google Moja Firma
           </Link>
           .
@@ -156,7 +156,7 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
           Lokal, który zbiera opinie systematycznie, buduje bibliotekę dowodów — o smaku dań,
           tempie obsługi i atmosferze — zamiast liczyć na przypadkowe wpisy. Jak to robić szybko i
           zgodnie z regulaminem Google, opisujemy w poradniku o{" "}
-          <Link href="/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-szybko-zdobyc-opinie-w-google" className="text-blue-600 hover:underline">
             szybkim i legalnym zdobywaniu opinii w Google
           </Link>
           .
@@ -255,7 +255,7 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
           polemikę. Kolejni goście czytają takie odpowiedzi uważnie: oceniają nie pojedynczy
           incydent, tylko to, jak lokal radzi sobie z problemami. Gotowe wzory odpowiedzi znajdziesz
           w artykule{" "}
-          <Link href="/blog/jak-odpowiadac-na-opinie-w-google" className="text-blue-600 hover:underline">
+          <Link href="/pl/blog/jak-odpowiadac-na-opinie-w-google" className="text-blue-600 hover:underline">
             jak odpowiadać na opinie w Google
           </Link>
           .
@@ -265,16 +265,10 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
           id="filtr-opinii"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Dlaczego legalny filtr opinii chroni lokal przed niesprawiedliwą oceną?
+          Co zrobić, gdy gość ma zastrzeżenia?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Legalny filtr opinii kieruje zadowolonych gości wprost do Google, a osobom
-          niezadowolonym proponuje dodatkowo wewnętrzny formularz zgłoszenia problemu — bez
-          blokowania nikomu dostępu do publicznej oceny. To rozwiązanie zupełnie inne niż
-          zabroniony <strong>„review gating&rdquo;</strong>, czyli selekcjonowanie klientów przed
-          wystawieniem opinii. Dzięki takiemu filtrowi menedżer dowiaduje się o problemie jeszcze
-          tego samego dnia i może go rozwiązać prywatnie.
-        </p>
+          Dobrze, gdy niezadowolony gość ma prosty sposób, żeby napisać do Ciebie prywatnie: dzięki temu o problemie dowiadujesz się jeszcze tego samego dnia i możesz go rozwiązać. Taka wiadomość ma jednak być dodatkiem, a nie zamiennikiem opinii. Nie wolno wybierać, komu pokazać link do Google, bo selektywne zbieranie opinii (tzw. <strong>„review gating&rdquo;</strong>) jest zabronione przez Google, a w UE może być uznane za wprowadzanie w błąd. Każdy gość powinien móc zostawić publiczną opinię.</p>
       </div>
 
       {/* ── PRZEJŚCIE 3→4 ── */}
@@ -312,21 +306,10 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
           id="kupony-i-lojalnosc"
           className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24"
         >
-          Jak kupony SMS i karta lojalnościowa wspierają powroty?
+          Jak kupony SMS wspierają powroty?
         </h3>
         <p className="text-gray-700 leading-relaxed mb-8">
-          Krótki SMS z kuponem na deser w cichszy dzień tygodnia potrafi wypełnić stoliki wtedy,
-          gdy zwykle są puste. Cyfrowa karta lojalnościowa — na przykład darmowa kawa po
-          piątej wizycie — daje gościowi powód, by wybierać właśnie ten lokal. Szczegółowy
-          przewodnik po budowaniu takiego systemu znajdziesz w artykule o{" "}
-          <Link
-            href="/blog/program-lojalnosciowy-bez-aplikacji-jak-budowac-lojalnosc-klientow"
-            className="text-blue-600 hover:underline"
-          >
-            programie lojalnościowym bez aplikacji
-          </Link>
-          , gdzie opisujemy też progi nagród dopasowane do różnych branż.
-        </p>
+          Krótki SMS z kuponem na deser w cichszy dzień tygodnia potrafi wypełnić stoliki wtedy, gdy zwykle są puste. Jak robić to rozsądnie i zgodnie z prawem, opisujemy w artykule o <Link href="/pl/blog/sms-marketing-dla-lokalu-jak-wysylac-kupony-i-przyciagac-gosci" className="text-blue-600 hover:underline">SMS marketingu dla lokalu</Link>.</p>
       </div>
 
       {/* ── PODSUMOWANIE ── */}
@@ -344,7 +327,7 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
             recenzję w chwili największego zadowolenia — przy rachunku lub zapłacie — oraz
             usunięcie wszystkich barier technologicznych, które mogłyby gościa zniechęcić.
             Tabliczka NFC robi to w ułamek sekundy, a ten sam nośnik może jednocześnie zbierać
-            dane kontaktowe i napędzać kupony SMS oraz kartę lojalnościową, zamieniając
+            dane kontaktowe i napędzać kupony SMS, zamieniając
             jednorazowych gości w stałych klientów.
           </p>
         </section>
@@ -396,12 +379,10 @@ export default function OpinieGoogleRestauracjaKawiarnia() {
             </div>
             <div className="pb-6">
               <dt className="text-lg font-semibold text-gray-900 mb-2">
-                Czy ta sama tabliczka NFC może zbierać opinie i obsługiwać kartę lojalnościową?
+                Czy ta sama tabliczka NFC może zbierać opinie i kontakty do gości?
               </dt>
               <dd className="text-gray-700 leading-relaxed">
-                Tak. Jeden nośnik NFC może jednocześnie kierować zadowolonego gościa do formularza
-                opinii Google i rejestrować jego wizytę w cyfrowej karcie lojalnościowej — bez
-                dodatkowego sprzętu i bez aplikacji.
+                Tak. Jedna tabliczka NFC może kierować gościa do formularza opinii Google i jednocześnie zbierać jego numer telefonu wraz ze zgodą na wiadomości z kuponami — bez dodatkowego sprzętu i bez aplikacji.
               </dd>
             </div>
           </dl>

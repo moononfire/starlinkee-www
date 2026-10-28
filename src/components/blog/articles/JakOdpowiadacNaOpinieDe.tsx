@@ -150,7 +150,7 @@ export default function JakOdpowiadacNaOpinieDe() {
           desto stärker das Relevanzsignal für lokale Suchanfragen. Das ist nur eines von mehreren
           Elementen, die gemeinsam das Ranking eines Profils bilden — die vollständige Liste der
           Rankingfaktoren finden Sie in unserem Artikel darüber,{" "}
-          <Link href="/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/google-unternehmensprofil-optimieren" className="text-blue-600 hover:underline">
             wie Sie Ihr Google Business Profile optimieren
           </Link>
           .
@@ -388,7 +388,7 @@ export default function JakOdpowiadacNaOpinieDe() {
           es ist das Steuern des Moments, in dem der Kunde entscheidet, wohin er sein Feedback
           richtet. Mehr über den eigentlichen Prozess des Bewertungssammelns erfahren Sie im Artikel
           darüber,{" "}
-          <Link href="/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
+          <Link href="/de/blog/schnell-google-bewertungen-bekommen" className="text-blue-600 hover:underline">
             wie man schnell Google-Bewertungen bekommt
           </Link>
           .
