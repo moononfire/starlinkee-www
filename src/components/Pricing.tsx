@@ -130,6 +130,7 @@ export default function Pricing({
 
             <a
               href={`/${locale}/order${billing === "annual" ? "?billing=annual" : ""}`}
+              data-track={billing === "annual" ? "pricing-annual" : "pricing"}
               className="block w-full text-center bg-brand-600 text-white font-medium rounded-lg py-3.5 text-base hover:bg-brand-700 transition-colors"
             >
               {t.pricing.cta}

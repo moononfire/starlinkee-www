@@ -10,6 +10,7 @@ export default function FinalCta({ t, locale }: { t: Translations; locale: Local
         <p className="text-lg text-brand-100 mb-8">{t.finalCta.subtitle}</p>
         <a
           href={`/${locale}/order`}
+          data-track="final"
           className="inline-flex items-center justify-center bg-white text-brand-700 font-semibold rounded-lg px-8 py-3.5 text-base hover:bg-brand-50 transition-colors"
         >
           {t.hero.cta}

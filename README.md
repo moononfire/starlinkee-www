@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Własna analityka (bez cookies)
+
+Odsłony, kliknięcia CTA (`data-track`) i zamówienia trafiają przez `POST /api/a` do tabeli `analytics_events` w Neon.
+IP i User-Agent nie są zapisywane; unikalni to dzienny HMAC (klucz zmienia się co dobę).
+
+Wdrożenie, w tej kolejności:
+1. W Neon SQL Editor uruchom `db/migrations/2026-10-28-analytics-events.sql` (idempotentny, tylko dodaje).
+2. W Vercel ustaw `ANALYTICS_SALT` (losowy, min. 32 znaki) i `ANALYTICS_ADMIN_PASSWORD` (dla panelu `/admin/analityka`).
+3. Dopiero potem push. Bez tabeli lub `ANALYTICS_SALT` endpoint odpowiada 204 i nic nie zapisuje, a strona działa normalnie.
+
+Testy e2e ustawiają `ANALYTICS_STORE=memory` (zapis do pamięci procesu); na produkcji tej zmiennej nie ma.

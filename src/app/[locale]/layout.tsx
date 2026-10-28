@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import GlobalWidgets from "@/components/GlobalWidgets";
 import GoogleAnalyticsGate from "@/components/GoogleAnalyticsGate";
 import { LOCALES, type Locale } from "@/i18n";
@@ -131,6 +132,7 @@ export default async function RootLayout({
       </head>
       <body className="min-h-screen bg-white text-gray-900">
         {children}
+        <AnalyticsTracker />
         <GlobalWidgets locale={locale} />
         <GoogleAnalyticsGate />
       </body>

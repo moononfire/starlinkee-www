@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TrackOrder from "@/components/TrackOrder";
 import { getTranslations, LOCALES, type Locale } from "@/i18n";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default async function OrderSuccess({
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
+      <TrackOrder label={isTrial ? "trial" : "paid"} />
       <div className="max-w-md text-center">
         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg

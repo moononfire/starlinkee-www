@@ -81,6 +81,7 @@ export default function Footer({ t, locale }: { t: Translations; locale: Locale 
               <Link
                 key={href}
                 href={`/${locale}${href}`}
+                data-track={href === "/order" ? "footer" : undefined}
                 className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
               >
                 {label}
