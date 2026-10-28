@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { addMessage } from "@/lib/chatStore";
+import { ADMIN_COOKIE, verifyAdminSession } from "@/lib/adminAuth";
 
 export async function POST(request: NextRequest) {
-  const { sessionId, text, token } = await request.json();
-
-  const adminToken = process.env.CHAT_ADMIN_TOKEN ?? "changeme";
-  if (token !== adminToken) {
+  if (!verifyAdminSession(request.cookies.get(ADMIN_COOKIE)?.value)) {
     return NextResponse.json({ error: "Nieautoryzowany" }, { status: 401 });
   }
+  const { sessionId, text } = await request.json();
 
   if (!sessionId || !text?.trim()) {
     return NextResponse.json({ error: "Brak wymaganych danych" }, { status: 400 });

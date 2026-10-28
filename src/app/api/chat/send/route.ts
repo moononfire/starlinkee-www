@@ -25,9 +25,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Server misconfiguration" }, { status: 500 });
   }
   const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://starlinkee.com";
-  const adminToken = process.env.CHAT_ADMIN_TOKEN ?? "changeme";
 
-  const replyUrl = `${appUrl}/admin/chat?s=${encodeURIComponent(sessionId)}&t=${encodeURIComponent(adminToken)}`;
+  const replyUrl = `${appUrl}/admin/chat?s=${encodeURIComponent(sessionId)}`;
 
   await sendMail(
     notifyEmail,

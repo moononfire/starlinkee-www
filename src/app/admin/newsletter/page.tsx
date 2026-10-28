@@ -1,14 +1,19 @@
-import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import AdminLogin from "@/components/admin/AdminLogin";
+import { ADMIN_COOKIE, verifyAdminSession } from "@/lib/adminAuth";
 import { getDashboardData } from "@/lib/db";
 
+export const metadata: Metadata = { robots: { index: false, follow: false } };
+
 interface Props {
-  searchParams: Promise<{ token?: string }>;
+  searchParams: Promise<{ e?: string }>;
 }
 
 export default async function NewsletterDashboard({ searchParams }: Props) {
-  const { token } = await searchParams;
-  if (token !== process.env.CHAT_ADMIN_TOKEN) {
-    redirect("/");
+  const { e } = await searchParams;
+  if (!verifyAdminSession((await cookies()).get(ADMIN_COOKIE)?.value)) {
+    return <AdminLogin next="/admin/newsletter" failed={e === "1"} />;
   }
 
   const { subscribers, sends, opens, clicks } = await getDashboardData();

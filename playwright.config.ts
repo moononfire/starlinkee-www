@@ -52,6 +52,11 @@ export default defineConfig({
         command: `npm run dev -- -p ${PORT}`,
         url: `${baseURL}/pl`,
         reuseExistingServer: true,
+        env: {
+          CHAT_ADMIN_TOKEN: "e2e-admin-password",
+          // db.ts woła neon() przy imporcie; atrapa wystarcza, bo testy nie dotykają bazy.
+          DATABASE_URL: "postgres://e2e:e2e@localhost:5432/e2e",
+        },
         timeout: 120_000,
       },
 });

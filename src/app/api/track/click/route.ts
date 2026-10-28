@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { recordClick } from "@/lib/db";
+import { isAllowedRedirect } from "@/lib/redirectAllowlist";
 
 export async function GET(req: NextRequest) {
   const sid = req.nextUrl.searchParams.get("sid");
@@ -9,9 +10,12 @@ export async function GET(req: NextRequest) {
     return new NextResponse("Missing url", { status: 400 });
   }
 
-  if (sid) {
-    recordClick(sid, url).catch(() => {}); // fire and forget
+  const target = isAllowedRedirect(url);
+
+  if (sid && target) {
+    recordClick(sid, target.toString()).catch(() => {}); // fire and forget
   }
 
-  return NextResponse.redirect(url);
+  // Adres spoza allowlisty (open redirect) → strona główna, bez liczenia kliknięcia.
+  return NextResponse.redirect(target ?? new URL("/", req.nextUrl.origin));
 }
