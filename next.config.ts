@@ -21,7 +21,14 @@ const nextConfig: NextConfig = {
       }),
     );
 
-    return blogSlugRedirects;
+    // Strona pobierania aplikacji została wycofana (aplikacja jeszcze nie startuje).
+    const appDownloadRedirects = LOCALES.map((locale) => ({
+      source: `/${locale}/pobierz-aplikacje`,
+      destination: `/${locale}`,
+      permanent: true,
+    }));
+
+    return [...blogSlugRedirects, ...appDownloadRedirects];
   },
   async headers() {
     return [
