@@ -3,21 +3,24 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import {
-  ADMIN_COOKIE,
   ADMIN_SESSION_SECONDS,
   checkAdminPassword,
   createAdminSession,
+  isRealm,
+  realmCookie,
   safeAdminPath,
 } from "@/lib/adminAuth";
 
 export async function adminLogin(formData: FormData) {
   const next = safeAdminPath(String(formData.get("next") ?? ""));
   const password = String(formData.get("password") ?? "");
-  const session = checkAdminPassword(password) ? createAdminSession() : null;
+  const rawRealm = formData.get("realm");
+  const realm = isRealm(rawRealm) ? rawRealm : "admin";
+  const session = checkAdminPassword(password, realm) ? createAdminSession(realm) : null;
   if (!session) {
     redirect(`${next}${next.includes("?") ? "&" : "?"}e=1`);
   }
-  (await cookies()).set(ADMIN_COOKIE, session, {
+  (await cookies()).set(realmCookie(realm), session, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",

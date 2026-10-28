@@ -56,6 +56,7 @@ export default defineConfig({
           CHAT_ADMIN_TOKEN: "e2e-admin-password",
           // Analityka w e2e zapisuje do pamięci procesu zamiast do Neon.
           ANALYTICS_STORE: "memory",
+          ANALYTICS_ADMIN_PASSWORD: "e2e-analytics-password",
           ANALYTICS_SALT: "e2e-salt-e2e-salt-e2e-salt-e2e-salt",
           // db.ts woła neon() przy imporcie; atrapa wystarcza, bo testy nie dotykają bazy.
           DATABASE_URL: "postgres://e2e:e2e@localhost:5432/e2e",
