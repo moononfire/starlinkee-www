@@ -17,6 +17,7 @@ const translations = {
       pricing: "Cennik",
       contact: "Kontakt",
       getStarted: "Zacznij za darmo",
+      menu: "Menu",
     },
     hero: {
       badge: "Opinie Google i lojalność klientów",
@@ -163,6 +164,7 @@ const translations = {
       pricing: "Pricing",
       contact: "Contact",
       getStarted: "Start for free",
+      menu: "Menu",
     },
     hero: {
       badge: "Google reviews and customer loyalty",
@@ -309,10 +311,11 @@ const translations = {
       pricing: "Preise",
       contact: "Kontakt",
       getStarted: "Kostenlos starten",
+      menu: "Menü",
     },
     hero: {
       badge: "Google-Bewertungen und Kundenbindung",
-      title: "Mehr 5★-Bewertungen.",
+      title: "Mehr Bewertungen mit 5★.",
       titleHighlight: "Mehr Stammgäste.",
       subtitle:
         "Der Gast hält das Handy an den Aufsteller und hinterlässt eine Bewertung bei Google. Wenn etwas schiefgelaufen ist, können Sie es sofort erfahren.",
@@ -455,6 +458,7 @@ const translations = {
       pricing: "Prezzi",
       contact: "Contatti",
       getStarted: "Inizia gratis",
+      menu: "Menu",
     },
     hero: {
       badge: "Recensioni Google e fidelizzazione clienti",

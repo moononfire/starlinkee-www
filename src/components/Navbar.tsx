@@ -178,7 +178,7 @@ export default function Navbar({
         <button
           className="md:hidden p-2 cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
+          aria-label={t.nav.menu}
           aria-expanded={mobileOpen}
         >
           <svg
@@ -232,7 +232,7 @@ export default function Navbar({
           <a
             href={`/${locale}/blog`}
             onClick={() => setMobileOpen(false)}
-            className="text-sm text-gray-600 border border-gray-300 rounded-lg px-3 py-1.5 self-start"
+            className="text-sm text-gray-600"
           >
             Blog
           </a>
